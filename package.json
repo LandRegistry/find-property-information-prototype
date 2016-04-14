@@ -14,6 +14,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "land-registry-elements": "github:landregistry/land-registry-elements"
+    "land-registry-elements": "landregistry/land-registry-elements"
   }
 }
