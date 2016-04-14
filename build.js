@@ -6,8 +6,8 @@ var landRegistryElements = require('land-registry-elements');
  */
 landRegistryElements({
   'includePath': __dirname,
-  'destination': path.join(__dirname, 'dist'),
-  'assetPath': 'assets',
+  'destination': path.join(__dirname, 'app/assets/.land-registry-elements'),
+  'assetPath': '/public',
   'components': [
     'pages/find-property-information/landing-form',
     'pages/find-property-information/search-form',

@@ -2,10 +2,10 @@
   "name": "find-property-information-prototype",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node build.js"
+    "build": "node build.js",
+    "start": "npm run build && node server.js"
   },
   "engines": {
     "node": "5.x",
@@ -14,6 +14,13 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "land-registry-elements": "landregistry/land-registry-elements"
+    "land-registry-elements": "landregistry/land-registry-elements",
+    "basic-auth": "^1.0.3",
+    "basic-auth-connect": "^1.0.0",
+    "body-parser": "^1.14.1",
+    "express": "4.13.4",
+    "express-nunjucks": "^0.9.3",
+    "portscanner": "^1.0.0",
+    "prompt": "^0.2.14"
   }
 }
