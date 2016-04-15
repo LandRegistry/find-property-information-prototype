@@ -12,8 +12,6 @@ var routes = require('./app/routes.js');
 var port = (process.env.PORT || config.port);
 
 var app = express();
-app.use(routes);
-
 
 // Grab environment variables specified in Procfile or as Heroku config vars
 var releaseVersion = packageJson.version;

@@ -1,5 +1,7 @@
 {% extends "./layout/layout.html" %}
 
+{% block title %}What information are you looking for?{% endblock %}
+
 {% block body %}
   <h1 class="heading-large">What information are you looking for?</h1>
 
@@ -7,15 +9,15 @@
 
     <div class="column-two-thirds tablet-column-two-thirds">
 
-      <form action="sign_in" method="GET" data-clientside-validation="information_form_validation" data-clientside-validation-no-summary>
+      <form action="" method="POST" data-clientside-validation="information_form_validation" data-clientside-validation-no-summary>
 
         <fieldset class="form-group">
           <legend class="visuallyhidden">What information are you looking for?</legend>
 
           <h2 class="heading-small">Available from this service</h2>
 
-          <label class="block-label" for="title_register_and_summary">
-            <input id="title_register_and_summary" type="radio" name="information" value="title_register_and_summary">
+          <label class="block-label" for="title_summary">
+            <input id="title_summary" type="radio" name="information" value="title_summary">
             Title summary <span class="font-xsmall">- brief facts from the register</span><br>
             <strong class="bold-small">£3</strong> <span class="font-xsmall">inc VAT</span><br>
           </label>

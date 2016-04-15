@@ -15,12 +15,13 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "land-registry-elements": "landregistry/land-registry-elements",
     "basic-auth": "^1.0.3",
     "basic-auth-connect": "^1.0.0",
     "body-parser": "^1.14.1",
     "express": "4.13.4",
     "express-nunjucks": "^0.9.3",
+    "glob": "^7.0.3",
+    "land-registry-elements": "landregistry/land-registry-elements",
     "portscanner": "^1.0.0",
     "prompt": "^0.2.14"
   }
