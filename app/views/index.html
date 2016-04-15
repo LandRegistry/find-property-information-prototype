@@ -7,55 +7,28 @@
 {% block content %}
 
 <main id="content" role="main">
+  <h1 class="heading-xlarge">Find property information <span class="heading-secondary">Prototypes</span></h1>
+
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <h1 class="heading-xlarge">The GOV.UK prototype kit</h1>
+      <hr class="spacing-top-flush">
 
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
+      <h2 class="heading-medium spacing-top-flush"><a href="private-beta-01">Private beta 01</a></h2>
+      <p>Prototype to form the baseline for our work going forward into private beta. Set up to match production as closely as reasonably possible and eliminate the small differences between proto and prod that have arisen over time. This is being achieved by pulling in <a href="http://land-registry-elements.herokuapp.com/">land-registry-elements</a></p>
 
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
-
-      <h2 class="heading-medium">About this page</h2>
-
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
-
-			<h2 class="heading-medium">Examples and documentation</h2>
-
-			<ul class="list list-bullet">
-				<li><a href="/examples">Example pages and patterns</a></li>
-				<li><a href="https://github.com/alphagov/govuk_prototype_kit/tree/master/docs">
-						Read the full documentation</a></li>
-			</ul>
-
-      <h2 class="heading-medium">Other resources</h2>
-
-			<ul class="list list-bullet">
-				<li>
-					<a href="http://govuk-elements.herokuapp.com/snippets/">
-						Guide to GOV.UK Elements
-					</a>
-				</li>
-				<li>
-					<a href="https://www.gov.uk/service-manual">
-						Service design manual
-					</a>
-				</li>
-				<li>
-					<a href="https://www.gov.uk/design-principles">
-						Government Digital Service Design Principles
-					</a>
-				</li>
-			</ul>
+      <hr>
 
     </div>
+
+    <div class="column-one-third">
+      <div class="supplementary-panel">
+        <h2 class="heading-medium">Historical prototypes</h2>
+        <p>Historical prototypes can be found at <a href="https://drv-ux-prototype.herokuapp.com/">https://drv-ux-prototype.herokuapp.com/</a></p>
+      </div>
+    </div>
   </div>
+
 </main>
 
 {% endblock %}

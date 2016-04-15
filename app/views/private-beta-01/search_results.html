@@ -1,0 +1,46 @@
+{% extends "./layout.html" %}
+
+{% block title %}Search results{% endblock %}
+
+{% block body %}
+
+  {% set display_page_number = results.get('page_number', 0) + 1 %}
+
+  <div class="grid-row spacing-top-single">
+    <div class="column-two-thirds tablet-column-two-thirds">
+      {% with h1=true, autofocus=false, label='Search results for' %}
+        {% include 'includes/search_form.html' %}
+      {% endwith %}
+
+      <h2 class="font-xsmall expand-bottom-half">{{ results['number_results'] }} result{{ results['number_results']|pluralize }} found</h2>
+      <ol class="search-results-listing">
+        {% for title in results['titles'] %}
+          <li>
+            {% include 'includes/register_teaser.html' %}
+          </li>
+        {% endfor %}
+      </ol>
+
+      {% if results['number_pages'] %}
+        {% include 'includes/pagination.html' %}
+      {% endif %}
+    </div>
+
+    <div class="column-one-third tablet-column-one-third">
+      <aside class="supplementary-panel">
+        <h2 class="heading-medium">Help finding the right property</h2>
+        <strong class="phase-tag-beta spacing-bottom-half">BETA</strong>
+        <p>This is a new service. If you're not seeing the search results you expect please <a rel="external" href="mailto:digital-register-feedback@digital.landregistry.gov.uk">let us know</a></p>
+        <p>If you're having trouble finding the property or land you're looking for, try the <a rel="external" href="https://eservices.landregistry.gov.uk/wps/portal/Property_Search">Land Registry 'Find a Property' service</a> instead</p>
+      </aside>
+    </div>
+  </div>
+{% endblock %}
+
+{% block js_bottom %}
+  <script>
+    number_results = {{ results['titles']|length }};
+    page_number = {{ display_page_number or 0 }};
+  </script>
+  {% assets "js_ga_search_results" %}<script src="{{ ASSET_URL }}"></script>{% endassets %}
+{% endblock %}

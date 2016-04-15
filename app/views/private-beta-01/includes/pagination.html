@@ -1,0 +1,22 @@
+{% if display_page_number > 1 or display_page_number < results['number_pages'] %}
+  <nav class="pager-simple" role="navigation" aria-label="Pagination">
+    <ul>
+      {% if display_page_number > 1 %}
+        <li class="previous-page">
+          <a href="{{ url_for('find_titles', search_term=search_term, page=display_page_number - 1) }}" rel="prev">
+            <span class="pagination-part-title">Previous page</span>
+            <span class="pagination-label">{{display_page_number - 1}} of {{ results['number_pages'] }}</span>
+          </a>
+        </li>
+      {% endif %}
+      {% if display_page_number < results['number_pages'] %}
+        <li class="next-page">
+          <a href="{{ url_for('find_titles', search_term=search_term, page=display_page_number + 1) }}" rel="next">
+            <span class="pagination-part-title">Next page</span>
+            <span class="pagination-label">{{display_page_number + 1}} of {{ results['number_pages'] }}</span>
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+{% endif %}

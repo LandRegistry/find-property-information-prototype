@@ -12,6 +12,7 @@ var routes = require('./app/routes.js');
 var port = (process.env.PORT || config.port);
 
 var app = express();
+app.use(routes);
 
 
 // Grab environment variables specified in Procfile or as Heroku config vars
@@ -32,7 +33,10 @@ if (env === 'production' && useAuth === 'true'){
 
 // Application settings
 app.set('view engine', 'html');
-app.set('views', [__dirname + '/app/views', __dirname + '/lib/']);
+app.set('views', [
+  __dirname + '/app/views',
+  __dirname + '/lib/'
+]);
 
 nunjucks.setup({
   autoescape: true,
@@ -42,11 +46,6 @@ nunjucks.setup({
 
 // Middleware to serve static assets
 app.use('/public', express.static('./app/assets/.land-registry-elements/assets'));
-// app.use('/public', express.static(__dirname + '/public'));
-// app.use('/public', express.static(__dirname + '/govuk_modules/govuk_template/assets'));
-// app.use('/public', express.static(__dirname + '/govuk_modules/govuk_frontend_toolkit'));
-// app.use('/public/images/icons', express.static(__dirname + '/govuk_modules/govuk_frontend_toolkit/images'));
-
 
 // Support for parsing data in POSTs
 app.use(bodyParser.json());
@@ -54,19 +53,14 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-// send assetPath to all views
-app.use(function (req, res, next) {
-  res.locals.asset_path="/public/";
-  next();
-});
-
 // Add variables that are available in all views
-app.use(function (req, res, next) {
-  res.locals.serviceName=config.serviceName;
-  res.locals.cookieText=config.cookieText;
-  res.locals.releaseVersion="v" + releaseVersion;
-  next();
-});
+app.locals.asset_path="/public/";
+app.locals.serviceName=config.serviceName;
+app.locals.cookieText=config.cookieText;
+app.locals.releaseVersion="v" + releaseVersion;
+
+// routes (found in app/routes.js)
+app.use("/", routes);
 
 // auto render any view that exists
 app.get(/^\/([^.]+)$/, function (req, res) {

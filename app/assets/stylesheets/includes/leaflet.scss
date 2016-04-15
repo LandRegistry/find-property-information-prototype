@@ -1,0 +1,10 @@
+/* Prevent the grabby hand on the leaflet map */
+/* Doesn't belong in land-registry-elements because this is application specific */
+.leaflet-container {
+  cursor: default;
+  touch-action: auto;
+}
+
+.leaflet-clickable {
+  cursor: default;
+}

@@ -1,0 +1,48 @@
+{% extends "govuk_template.html" %}
+
+{% block head %}
+  {% include "../includes/head.html" %}
+{% endblock %}
+
+{% block cookie_message %}
+  <p>{{cookieText | safe }}</p>
+{% endblock %}
+
+{% block proposition_header %}
+  {% include "../includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block header_class %}
+  with-proposition
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    {% include '../includes/phase_banner.html' %}
+
+    <div class="grid-row printhidden">
+      <div class="column-two-thirds mobile-column-one-half">
+        {% block header_primary %}{% endblock %}
+      </div>
+      <div class="column-third mobile-column-one-half">
+        {% block header_secondary %}{% endblock %}
+      </div>
+    </div>
+
+    {% block body %}{% endblock %}
+    {% block js_bottom %}{% endblock %}
+  </main>
+{% endblock %}
+
+{% block footer_support_links %}
+  <ul>
+    <li><a href="/cookies">Cookies</a></li>
+    <li> <a href="/terms-and-conditions">Terms &amp; conditions</a>  </li>
+    <li>Built by the <a href="https://www.gov.uk/government/organisations/land-registry">Land Registry</a></li>
+  </ul>
+{% endblock %}
+
+{% block body_end %}
+  {% include "../includes/scripts.html" %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}
