@@ -32,4 +32,33 @@ router.post('/landing_page', function (req, res) {
   res.render('private-beta-01/landing_page');
 });
 
+
+/**
+ * Search results
+ */
+router.get('/search_results', function (req, res) {
+  var rpp = 20;
+
+  var data = {
+    display_page_number: req.query.page ? req.query.page : 1,
+    search_term: req.query.search_term,
+    results: {
+      titles: require('./title_data')(req.query.search_term)
+    }
+  };
+
+  // Total result count
+  data.results.number_results = data.results.titles.length;
+  data.results.number_pages = Math.ceil(data.results.number_results / rpp);
+
+  // Restrict results to this page
+  data.results.titles = data.results.titles.slice((data.display_page_number - 1) * rpp, data.display_page_number * rpp);
+
+  return res.render('private-beta-01/search_results', data);
+
+  // Otherwise just render the search form again
+  // Equivalent to the form failing validation, except we don't have any server side in the proto
+  res.render('private-beta-01/search');
+});
+
 module.exports = router;
