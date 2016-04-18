@@ -22,25 +22,10 @@ module.exports = function(searchTerm, callback) {
   } else {
 
     var terms = searchTerm.split(/[\s,]+/);
-    // var terms = searchTerm.split(',');
-console.log(terms);
+
     terms.forEach(function(term) {
 
       logEntry = 'Searching for address string: ' + searchTerm;
-
-      // var subConditions = {
-      //   $or: []
-      // };
-
-      // term.split(' ').forEach(function(subTerm) {
-      //   subConditions['$or'].push({
-      //     address: {
-      //       $regex: new RegExp(subTerm, 'i')
-      //     }
-      //   });
-      // })
-
-      // conditions['$and'].push(subConditions)
 
       conditions['$or'].push({
         address: {
@@ -49,8 +34,6 @@ console.log(terms);
       });
 
     });
-
-    console.log(conditions)
 
   }
 
