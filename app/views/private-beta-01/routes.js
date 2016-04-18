@@ -43,22 +43,28 @@ router.get('/search_results', function (req, res) {
     display_page_number: req.query.page ? req.query.page : 1,
     search_term: req.query.search_term,
     results: {
-      titles: require('./title_data')(req.query.search_term)
     }
   };
 
-  // Total result count
-  data.results.number_results = data.results.titles.length;
-  data.results.number_pages = Math.ceil(data.results.number_results / rpp);
-
-  // Restrict results to this page
-  data.results.titles = data.results.titles.slice((data.display_page_number - 1) * rpp, data.display_page_number * rpp);
-
-  return res.render('private-beta-01/search_results', data);
-
-  // Otherwise just render the search form again
   // Equivalent to the form failing validation, except we don't have any server side in the proto
-  res.render('private-beta-01/search');
+  if(!req.query.search_term) {
+    res.render('private-beta-01/search');
+  }
+
+  require('./data')(req.query.search_term, function(titles) {
+    data.results.titles = titles;
+
+    // Total result count
+    data.results.number_results = data.results.titles.length;
+    data.results.number_pages = Math.ceil(data.results.number_results / rpp);
+
+    // Restrict results to this page
+    data.results.titles = data.results.titles.slice((data.display_page_number - 1) * rpp, data.display_page_number * rpp);
+
+    return res.render('private-beta-01/search_results', data);
+
+  });
+
 });
 
 module.exports = router;
