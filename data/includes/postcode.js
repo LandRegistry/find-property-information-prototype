@@ -20,9 +20,9 @@ function start(cityName, seed) {
 
     console.log('Postcode collision', postcodeStart);
 
-    casual.seed(casual.integer())
+    casual.seed(++seed)
     postcodeStart = casual.letter();
-    casual.seed(casual.integer())
+    casual.seed(++seed)
     postcodeStart += casual.letter();
 
     postcodeStart = postcodeStart.toUpperCase();
@@ -50,7 +50,7 @@ function end(seed) {
     }
 
     console.log('Postcode collision', postcodeEnd);
-    postcodeEnd = end(casual.integer());
+    postcodeEnd = end(++seed);
     console.log('Replacing with', postcodeEnd);
   }
 

@@ -15,6 +15,7 @@ router.get('/', function (req, res) {
  */
 router.get('/database', function (req, res) {
   var titles = require('../data/titles');
+
   res.render('titles', {
     titles: titles
   });

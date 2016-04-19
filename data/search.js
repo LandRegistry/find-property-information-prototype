@@ -32,7 +32,12 @@ module.exports = function(data, searchTerm, callback) {
     // // If it looks like a title number, do a title number search
     if(searchType === 'title_number') {
 
-      if (result.title_number.toLowerCase() === searchTerm.toLowerCase()) {
+      if(typeof result.data === 'undefined' || typeof result.data.title_number === 'undefined') {
+        // Skip over titles that don't have a title number
+        return;
+      }
+
+      if (result.data.title_number.toLowerCase() === searchTerm.toLowerCase()) {
         searchResults.push(result);
       }
 

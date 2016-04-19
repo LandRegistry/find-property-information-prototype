@@ -1,31 +1,31 @@
 {% extends "./layout/layout.html" %}
 {% from "./includes/back_link.html" import back_link %}
 
-{% block title %}{{ _('Summary of title') }} {{ title.number }}{% endblock %}
+{% block title %}Summary of title {{ title.number }}{% endblock %}
 
 {% block header_primary %}
-  {{ back_link(title='Search again', url=url_for('find_titles_page')) }}
+  {{ back_link(title='Search again', url='/private-beta-01//search') }}
 {% endblock %}
 
 {% block header_secondary %}
-  {% include 'includes/language_switcher.html' %}
+  {% include './includes/language_switcher.html' %}
 {% endblock %}
 
 {% block body %}
 
-  <h1 class="heading-large spacing-top-single">{{ _('Summary of title') }} {{ title.number }}</h1>
+  <h1 class="heading-large spacing-top-single">Summary of title {{ title.number }}</h1>
 
-  <p class="font-xsmall">{{ _('This title was last changed on') }} <time datetime="{{ title.last_changed | date }}">{{ title.last_changed | date }} {{ _('at') }} {{ title.last_changed | time }}</time></p>
+  <p class="font-xsmall">This title was last changed on <time datetime="{{ title.last_changed }}">{{ title.last_changed }} at {{ title.last_changed }}</time></p>
 
   <div class="grid-row column-flip spacing-top-single">
     <div class="column-one-third tablet-column-one-third spacing-bottom-single">
 
       {% if title.indexPolygon %}
         <div class="map polygon" id="map">
-          <p>{{ _('The map relies on JavaScript being enabled in your browser.') }}</p>
+          <p>The map relies on JavaScript being enabled in your browser.</p>
         </div>
 
-        <p class="font-xsmall">{{ _('This map shows the property\'s rough extent and location, <strong class="bold">not legal boundaries.</strong>') }}</p>
+        <p class="font-xsmall">This map shows the property\'s rough extent and location, <strong class="bold">not legal boundaries.</strong></p>
       {% endif %}
     </div>
 
@@ -48,31 +48,30 @@
         {% endif %}
 
         {% if title.address_lines %}
-          <dt>{{ _('Address') }}</dt>
+          <dt>Address</dt>
           <dd class="bold-medium">
             <div class="address">
-              {%- for line in title.address_lines -%}
+              {% for line in title.address_lines %}
                 <span>{{line}}</span>
-              {%- endfor -%}
+              {% endfor %}
             </div>
           </dd>
         {% endif %}
 
         <dt>
-          {%- if is_caution_title -%}
-            {{ _('Cautioner') }}
-          {% elif title.tenure.upper() == 'LEASEHOLD' %}
-            {{ _('Leaseholder') }}
-          {%- else -%}
-            {{ _('Owner') }}
-          {%- endif -%}
-          {{- title.proprietors|length|pluralize -}}
+          {% if title['data']['is_caution_title'] %}
+            Cautioner{% if title.proprietors.length > 1 %}s{% endif %}
+          {% elif title.tenure == 'Leasehold' %}
+            Leaseholder{% if title.proprietors.length > 1 %}s{% endif %}
+          {% else %}
+            Owner{% if title.proprietors.length > 1 %}s{% endif %}
+          {% endif %}
         </dt>
 
         {% for proprietor in title.proprietors %}
           <dd{% if not loop.last%} class="spacing-bottom-single"{% endif %}>
             <div class="address">
-              <span class="bold">{{ proprietor.name }} {{ proprietor.name_extra_info }}</span>
+              <span class="bold">{{ proprietor.name }}</span>
               {% if proprietor.co_reg_no %}
                 <span>{{ proprietor.co_reg_no }}</span>
 
@@ -91,7 +90,7 @@
         {% endfor %}
 
         {% if title.lenders %}
-          <dt>{{ _('Lender') }}{{ title.lenders|length|pluralize }}</dt>
+          <dt>Lender{{ title.lenders|length|pluralize }}</dt>
           {% for lender in title.lenders %}
             <dd{% if not loop.last%} class="spacing-bottom-single"{% endif %}>
               <div class="address">
@@ -115,26 +114,26 @@
           {% endfor %}
         {% endif %}
 
-        <dt>{{ _('Tenure type') }}</dt>
+        <dt>Tenure type</dt>
         <dd class="bold-small">{{ title.tenure }}</dd>
 
         {% if title.ppi_data %}
-          <dt>{{ _('Price paid') }}</dt>
+          <dt>Price paid</dt>
           <dd class="bold-small">{{ title.ppi_data }}</dd>
         {% endif %}
 
       </dl>
 
-      <p class="spacing-top-single">{{ _('This information can change if we receive an application. This service is unable to tell you whether or not there is an application pending with the Land Registry.') }}</p>
+      <p class="spacing-top-single">This information can change if we receive an application. This service is unable to tell you whether or not there is an application pending with the Land Registry.</p>
 
       <div class="printhidden">
         <div class="govuk-box-highlight">
           <p>
-            <strong class="bold">{{ _('You\'ll only be able to view this information once') }}</strong>
-            <br>{{ _('If you want to keep a copy you can print it out') }}
+            <strong class="bold">You\'ll only be able to view this information once</strong>
+            <br>If you want to keep a copy you can print it out
           </p>
 
-          {% include 'includes/print-button.html' %}
+          {% include './includes/print-button.html' %}
         </div>
 
         <h2 class="heading-medium collapse-top">What did you think of this service?</h2>
@@ -213,16 +212,16 @@
     <div class="column-two-thirds">
 
       <div class="panel panel-border-narrow spacing-top-single">
-        <p>{{ _('If you have any problems with your purchase, you can contact Land Registry using the <a href="http://landregistry.custhelp.com/app/contactus_general/">general enquiry contact form</a> or call <a class="bold" href="tel:+443000060411">0300 006 0411</a>.') }}</p>
+        <p>If you have any problems with your purchase, you can contact Land Registry using the <a href="http://landregistry.custhelp.com/app/contactus_general/">general enquiry contact form</a> or call <a class="bold" href="tel:+443000060411">0300 006 0411</a>.</p>
       </div>
 
       <hr>
 
       <div class="printhidden">
-        <h2 class="heading-medium">{{ _('What next') }}</h2>
+        <h2 class="heading-medium">What next</h2>
         <ul class="list list-bullet">
-          <li><a href="{{ url_for('find_titles') }}">{{ _('Search again') }}</a></li>
-          <li><a href="https://gov.uk">{{ _('Return to') }} GOV.UK</a></li>
+          <li><a href="/private-beta-01/search">Search again</a></li>
+          <li><a href="https://gov.uk">Return to GOV.UK</a></li>
         </ul>
       </div>
 
@@ -233,14 +232,14 @@
           <span class="title">{% if is_caution_title %}Caution title register{% else %}Title register{% endif %}</span><br>
           <span class="footnote">{% if is_caution_title %}Caution title {% endif %}PDF document</span>
           <p>
-            <a class="button" id="download-link" style="vertical-align: baseline;" href="{{ url_for('display_title_pdf', title_number=title.number) }}" target="_blank"><b>Download</b></a>
+            <a class="button" id="download-link" style="vertical-align: baseline;" href="#" target="_blank"><b>Download</b></a>
           </p>
         </div>
       {% endif %}
 
       {% if full_title_data %}
         <div style="outline: 2px dashed red;padding:20px">
-          {% include 'includes/full_title_data.html' %}
+
         </div>
       {% endif %}
 
@@ -255,6 +254,6 @@
       var indexData = {{ title.indexPolygon | tojson }};
     </script>
 
-    {% assets "js_map" %}<script defer src="{{ ASSET_URL }}"></script>{% endassets %}
+    <script defer src="/public/assets/javascripts/map.js"></script>
   {% endif %}
 {% endblock %}

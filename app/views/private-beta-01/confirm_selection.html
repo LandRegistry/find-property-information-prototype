@@ -4,7 +4,8 @@
 {% block title %}Confirm your order{% endblock %}
 
 {% block header_primary %}
-  {{ back_link(title='Search results', prefix='Back to', url=url_for('find_titles_page', search_term=params['search_term'], page=params['display_page_number'])) }}
+  {{ back_link(title='Search results', prefix='Back to', url='/private-beta-01/search_results') }}
+  {# url_for('find_titles_page', search_term=params['search_term'], page=params['display_page_number'] #}
 {% endblock %}
 
 {% block body %}
@@ -14,7 +15,7 @@
 
   <div class="grid-row column-flip spacing-top-single">
     <div class="column-one-third tablet-column-one-third spacing-bottom-single">
-      {% if params['title']['indexPolygon'] %}
+      {% if title['indexPolygon'] %}
         <div class="map" id="map">
           <p>The map relies on JavaScript being enabled in your browser.</p>
         </div>
@@ -25,7 +26,7 @@
 
       <dl class="definition-tabular">
 
-        {% if params['title'].get('is_caution_title') %}
+        {% if title['data']['is_caution_title'] %}
           <dt class="bold-small">Caution</dt>
           <dd>
             <details class="font-xsmall">
@@ -39,11 +40,11 @@
           </dd>
         {% endif %}
 
-        {% if params['title'].address_lines %}
+        {% if title.address %}
           <dt>Address</dt>
           <dd class="bold-medium">
             <div class="address">
-              {% for line in params['title'].address_lines %}
+              {% for line in title.address %}
                 <span>{{line}}</span>
               {% endfor %}
             </div>
@@ -51,17 +52,17 @@
         {% endif %}
 
         <dt>Title number</dt>
-        <dd class="bold-small">{{ params['title_number'] }}</dd>
+        <dd class="bold-small">{{ title['data']['title_number'] }}</dd>
 
         <dt>Tenure type</dt>
         <dd>
-          <strong class="bold">{{ params['title']['tenure'] }}</strong>
+          <strong class="bold">{{ title['tenure'] }}</strong>
           <a class="split-detail-trigger font-xsmall" href="#what-is-tenure">What does this mean?</a>
 
           <div class="split-detail-contents" id="what-is-tenure">
             <div class="panel panel-border-narrow font-xsmall">
 
-              {% if params['title']['tenure'].upper() == 'LEASEHOLD' %}
+              {% if title['tenure'] == 'Leasehold' %}
                 <p>You only own a leasehold property for a fixed period of time. You'll have a legal agreement with the landlord (sometimes known as the ‘freeholder’) called a ‘lease’. This tells you how many years you’ll own the property.</p>
                 <p>Most flats are leasehold. Houses can be leasehold too and usually are if they’re bought through a shared ownership scheme.</p>
                 <p>The leasehold and freehold are registered separately with the Land Registry. Each has its own title documents.</p>
@@ -69,7 +70,7 @@
 
                 <a rel="external" href="https://www.gov.uk/leasehold-property/overview">More about Leasehold on GOV.UK</a>
 
-              {% elif params['title']['tenure'].upper() == 'FREEHOLD' %}
+              {% elif title['tenure'] == 'Freehold' %}
                 <p>You own a freehold building and land outright. It is yours until you sell it or give it away.</p>
                 <p>Most houses are freehold. Most flats are leasehold. That means someone else owns the freehold for the building the flat is in.</p>
                 <p><b class="bold">If you want to know who owns a particular flat, you probably need the leasehold instead.</b></p>
@@ -79,20 +80,20 @@
             </div>
           </div>
 
-          <p class="font-xsmall">A property can have both a freehold and a leasehold title. To get a different tenure for this address, <a href="{{ url_for('find_titles_page', search_term=params['search_term'], page=params['display_page_number']) }}" data-back-link>go back</a> and select the one you need.</p>
+          <p class="font-xsmall">A property can have both a freehold and a leasehold title. To get a different tenure for this address, <a href="/search_results" data-back-link>go back</a> and select the one you need.</p>
         </dd>
 
       </dl>
 
       <h2 class="heading-medium collapse-top">The summary will tell you</h2>
       <ul class="list-bullet">
-        {% if params['title'].get('is_caution_title') %}
+        {% if title['data']['is_caution_title'] %}
           <li>the name of the cautioner and their address</li>
           <li>information about the cautioner’s claim</li>
         {% else %}
-          {% if params['title']['tenure'].upper() == 'FREEHOLD' %}
+          {% if title['tenure'] == 'Freehold' %}
             <li>current owner's name and address</li>
-          {% elif params['title']['tenure'].upper() == 'LEASEHOLD' %}
+          {% elif title['tenure'] == 'Leasehold' %}
             <li>current leaseholder's name and address</li>
           {% endif %}
 
@@ -120,24 +121,17 @@
       <p>You can pay by credit or debit card.</p>
 
 
-      <form method="POST" action="{{ action_url }}" data-clientside-validation="cra_form_validation" data-clientside-validation-no-summary>
+      <form method="GET" action="display_title" data-clientside-validation="cra_form_validation" data-clientside-validation-no-summary>
         <p>You need to accept the following terms to continue.</p>
 
-        <input type='hidden' name='MC_titleNumber' id='MC_titleNumber' value="{{params.MC_titleNumber}}"/>
-        <input type='hidden' name='MC_searchType' id='MC_searchType' value="{{params.MC_searchType}}"/>
-        <input type='hidden' name='MC_timestamp' id='MC_timestamp' value="{{params.MC_timestamp}}"/>
-        <input type='hidden' name='MC_purchaseType' id='MC_purchaseType' value="{{params.MC_purchaseType}}"/>
-        <input type='hidden' name='MC_unitCount' id='MC_unitCount' value="{{params.MC_unitCount}}"/>
-        <input type='hidden' name='MC_userId' id='MC_userId' value="{{params.MC_userId}}"/>
-        <input type='hidden' name='cartId' id='cartId' value="{{params.cartId}}"/>
-        <input type='hidden' name='amount' id='amount' value="{{params.amount}}"/>
+        <input type='hidden' name='title_number' id='title_number' value="{{title['data']['title_number']}}"/>
 
         <div class="form-group">
           <label class="block-label" for="right_to_cancel">
             <input id="right_to_cancel" name="right_to_cancel" type="checkbox" value="agree">
             I agree that you will provide the summary as soon as I’ve paid.<br>
             I accept that I will lose my right to cancel the contract once the summary is displayed.<br>
-            I have read and agree to the <a href="{{ url_for('terms_and_conditions') }}">Terms &amp; conditions</a>.
+            I have read and agree to the <a href="/private-beta-01/terms_and_conditions">Terms &amp; conditions</a>.
           </label>
         </div>
 
@@ -156,19 +150,17 @@
         }
       </script>
 
-      {% with title='Search results', prefix='Back to', url=url_for('find_titles_page', search_term=params['search_term'], page=params['display_page_number']), historyBased=True %}
-        {% include 'includes/back_link.html' %}
-      {% endwith %}
+      {{ back_link(title='Search results', prefix='Back to', url='/private-beta-01//search_results') }}
 
     </div>
   </div>
 {% endblock %}
 
 {% block js_additionals %}
-  {% if params['title']['indexPolygon'] %}
+  {% if title['indexPolygon'] %}
     <script>
-      var indexData = {{ params['title']['indexPolygon'] | tojson }};
+      var indexData = {{ title['indexPolygon'] | tojson }};
     </script>
-    {% assets "js_map" %}<script defer src="{{ ASSET_URL }}"></script>{% endassets %}
+    <script defer src="/public/assets/javascripts/map.js"></script>
   {% endif %}
 {% endblock %}

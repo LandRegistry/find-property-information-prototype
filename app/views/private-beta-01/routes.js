@@ -67,4 +67,31 @@ router.get('/search_results', function (req, res) {
 
 });
 
+/**
+ * Confirm order route
+ */
+router.get('/confirm_selection', function (req, res) {
+
+  require('./data')(req.query.title_number, function(titles) {
+    res.render('private-beta-01/confirm_selection', {
+      title: titles.shift()
+    });
+  });
+
+});
+
+/**
+ * Display title route
+ */
+router.get('/display_title', function (req, res) {
+
+  require('./data')(req.query.title_number, function(titles) {
+    res.render('private-beta-01/display_title', {
+      title: titles.shift()
+    });
+  });
+
+});
+
+
 module.exports = router;
