@@ -5,9 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node build.js",
-    "start": "npm run generateData && node server.js",
-    "dev": "npm run generateData && supervisor -i node_modules server.js",
-    "generateData": "node data/generate.js"
+    "start": "node server.js",
+    "dev": "supervisor -i node_modules server.js"
   },
   "engines": {
     "node": "5.x",

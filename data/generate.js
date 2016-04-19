@@ -1,12 +1,9 @@
 var casual = require('casual').functions();
-var db = require('./db');
 var ProgressBar = require('progress');
 var fs = require('fs');
 var path = require('path');
 
-if(fs.existsSync(path.join(__dirname, 'db/titles'))) {
-  fs.unlinkSync(path.join(__dirname, 'db/titles'));
-}
+var results = [];
 
 var totalCities = 10;
 var totalStreets = 50;
@@ -40,7 +37,7 @@ for(var i=1;i<=totalCities;i++) {
 
           (function() {
 
-            db.titles.insert({
+            results.push({
               data: {
               },
               title_number: 'FAKE' + (++title_number),
@@ -63,3 +60,5 @@ for(var i=1;i<=totalCities;i++) {
 }
 
 console.log(totalCities * totalStreets * totalProperties + ' properties generated');
+
+module.exports = results;
