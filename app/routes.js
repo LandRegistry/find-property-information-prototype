@@ -10,6 +10,16 @@ router.get('/', function (req, res) {
   res.render('index');
 });
 
+/**
+ * Database debug route
+ */
+router.get('/database', function (req, res) {
+  var titles = require('../data/titles');
+  res.render('titles', {
+    titles: titles
+  });
+});
+
 // Mount version specific routes
 glob(path.join(__dirname, 'views/**/routes.js'), function(err, files) {
   if(err) {

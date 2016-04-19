@@ -3,6 +3,8 @@ var ProgressBar = require('progress');
 var fs = require('fs');
 var path = require('path');
 
+var postcodeGenerator = require('./includes/postcode');
+
 var results = [];
 
 var totalCities = 10;
@@ -19,19 +21,28 @@ for(var i=1;i<=totalCities;i++) {
 
     casual.seed(i);
     var city = casual.city();
-    var postcodeStart = city.substring(0,2).toUpperCase();
+    var postcodeStart = postcodeGenerator.start(city, i);
 
     // Streets
     for(var j=1;j<=totalStreets;j++) {
 
       (function() {
-        casual.seed(i * j);
+        casual.seed(casual.integer(0, 999999999));
+
         var street = casual.street();
-        var postcode = postcodeStart + j + ' ' + casual.integer(1,9) + casual.state_abbr();
+
+        // Filter out
+        if(street === 'Gaylord Point') {
+          casual.seed(casual.integer())
+          street = casual.street();
+          casual.seed(i * j);
+        }
+
+        var postcode = postcodeStart + postcodeGenerator.end(i * j);
 
         // Individual properties
         for(var k=1;k<=totalProperties;k++) {
-          casual.seed(i * j * k);
+          // casual.seed(i * j * k);
 
           bar.tick();
 

@@ -17,5 +17,13 @@ data.push({
 });
 
 module.exports = function(searchTerm, callback) {
-  search(data, searchTerm, callback);
+  search(data, searchTerm, function(results) {
+
+    // Limit the results returned to 50
+    // (This limit is performed here rather than in the search so that future prototypes
+    // can more easily experiment with derestricting the results)
+    results = results.slice(0, 50);
+
+    callback(results);
+  });
 };

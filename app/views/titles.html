@@ -1,0 +1,22 @@
+{% extends "./private-beta-01/layout/layout.html" %}
+
+{% block page_title %}
+  Titles database
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <h1 class="heading-xlarge">Titles database</h1>
+
+  <ul class="font-xsmall grid-row">
+  {% for title in titles %}
+    <li class="column-one-third"><strong class="bold">{{title.title_number}}</strong>: {{title.address}}</li>
+  {% endfor %}
+  </ul>
+
+</main>
+
+{% endblock %}
+
+
