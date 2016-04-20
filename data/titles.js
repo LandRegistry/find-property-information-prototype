@@ -13,6 +13,7 @@ once(function() {
   require('./providers/proprietors')(casual);
   require('./providers/lenders')(casual);
   require('./providers/postcode')(casual);
+  require('./providers/companyLocation')(casual);
 })();
 
 var results = [];
@@ -60,7 +61,6 @@ for(var i=1;i<=totalCities;i++) {
           (function() {
 
             var item = {
-              // 25% leasehold
               tenure: casual.tenure,
               data: {
                 title_number: 'FAKE' + (++title_number)
@@ -72,17 +72,8 @@ for(var i=1;i<=totalCities;i++) {
               ]
             };
 
-
             item.proprietors = casual.proprietors(randomInteger(1,3), item.address);
             item.lenders = casual.lenders(randomInteger(1,2));
-
-
-            // lenders
-            // name
-            // name_extra_info
-            // co_reg_no?
-            // company_location
-            // addresses
 
             // ppi_data
             item.ppi_data = '£' + randomInteger(80, 999) + ',000 the price stated to have been paid on ' + randomInteger(1, 28) + ' June ' + randomInteger(2000, 2015);

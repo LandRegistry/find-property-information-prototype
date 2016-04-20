@@ -21,13 +21,24 @@ module.exports = function(casual) {
       var proprietor = {
         name: casual.name,
         addresses: [
-          // TODO: multiple addresses, most have single
           address
         ]
-        // co_reg_no (optional)
-        // company_location
-        // addresses
       };
+
+      // Proprietors that represent companies
+      if(casual.integer(0,10) >= 8) {
+        proprietor.name = casual.company_name;
+        proprietor.co_reg_no = casual.integer(777777777, 999999999);
+        proprietor.company_location = casual.companyLocation;
+      }
+
+      if(casual.integer(0,10) >=8) {
+        proprietor.addresses.push([
+          casual.street,
+          casual.city,
+          casual.postcode(casual.city, casual.street)
+        ]);
+      }
 
       return proprietor;
     }
