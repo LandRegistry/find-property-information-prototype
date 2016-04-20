@@ -11,6 +11,7 @@ once(function() {
   require('./providers/tenure')(casual);
   require('./providers/cardinalDirection')(casual);
   require('./providers/proprietors')(casual);
+  require('./providers/lenders')(casual);
   require('./providers/postcode')(casual);
 })();
 
@@ -73,6 +74,7 @@ for(var i=1;i<=totalCities;i++) {
 
 
             item.proprietors = casual.proprietors(randomInteger(1,3), item.address);
+            item.lenders = casual.lenders(randomInteger(1,2));
 
 
             // lenders

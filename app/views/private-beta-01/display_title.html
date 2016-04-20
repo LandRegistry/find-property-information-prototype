@@ -4,7 +4,7 @@
 {% block title %}Summary of title {{ title.number }}{% endblock %}
 
 {% block header_primary %}
-  {{ back_link(title='Search again', url='/private-beta-01//search') }}
+  {{ back_link(title='Search again', url='/private-beta-01//search',historyBased=false) }}
 {% endblock %}
 
 {% block header_secondary %}
@@ -90,7 +90,7 @@
         {% endfor %}
 
         {% if title.lenders %}
-          <dt>Lender{{ title.lenders|length|pluralize }}</dt>
+          <dt>Lender{% if title.lenders.length > 1 %}s{% endif %}</dt>
           {% for lender in title.lenders %}
             <dd{% if not loop.last%} class="spacing-bottom-single"{% endif %}>
               <div class="address">

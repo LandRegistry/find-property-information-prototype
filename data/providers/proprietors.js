@@ -8,18 +8,15 @@ module.exports = function(casual) {
       // If we've been given a "probable" address for the proprietor, use it in
       // 8 out of 10 cases. For the remaining 2 cases, we will generate a random
       // address
-      if(typeof probableAddress !== 'undefined') {
-        if(casual.integer(0,10) <= 8) {
-          address = probableAddress;
-        } else {
-          address = [
-            casual.street,
-            casual.city,
-            casual.postcode(casual.city, casual.street)
-          ];
-        }
+      if(typeof probableAddress !== 'undefined' && casual.integer(0,10) <= 8) {
+        address = probableAddress;
+      } else {
+        address = [
+          casual.street,
+          casual.city,
+          casual.postcode(casual.city, casual.street)
+        ];
       }
-
 
       var proprietor = {
         name: casual.name,

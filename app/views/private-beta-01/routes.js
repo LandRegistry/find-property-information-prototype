@@ -85,6 +85,10 @@ router.get('/confirm_selection', function (req, res) {
  */
 router.get('/display_title', function (req, res) {
 
+  if(typeof req.query.title_number === 'undefined') {
+    return res.sendStatus(404);
+  }
+
   require('./data')(req.query.title_number, function(titles) {
     res.render('private-beta-01/display_title', {
       title: titles.shift()
