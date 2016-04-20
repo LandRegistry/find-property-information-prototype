@@ -13,7 +13,7 @@
 
 {% block body %}
 
-  <h1 class="heading-large spacing-top-single">Summary of title {{ title.number }}</h1>
+  <h1 class="heading-large spacing-top-single">Summary of title {{ title['data']['title_number'] }}</h1>
 
   <p class="font-xsmall">This title was last changed on <time datetime="{{ title.last_changed }}">{{ title.last_changed }} at {{ title.last_changed }}</time></p>
 
@@ -33,7 +33,7 @@
 
       <dl class="definition-tabular">
 
-        {% if is_caution_title %}
+        {% if title['data']['is_caution_title'] %}
           <dt class="bold-small">Caution</dt>
           <dd>
             <details class="font-xsmall">
@@ -47,11 +47,11 @@
           </dd>
         {% endif %}
 
-        {% if title.address_lines %}
+        {% if title.address %}
           <dt>Address</dt>
           <dd class="bold-medium">
             <div class="address">
-              {% for line in title.address_lines %}
+              {% for line in title.address %}
                 <span>{{line}}</span>
               {% endfor %}
             </div>
@@ -81,7 +81,7 @@
               {% endif %}
 
               {% for address in proprietor.addresses %}
-                {% for line in address.lines %}
+                {% for line in address %}
                   <span>{{ line|safe }}</span>
                 {% endfor %}
               {% endfor %}
@@ -105,7 +105,7 @@
                 {% endif %}
 
                 {% for address in lender.addresses %}
-                  {% for line in address.lines %}
+                  {% for line in address %}
                     <span>{{ line|safe }}</span>
                   {% endfor %}
                 {% endfor %}

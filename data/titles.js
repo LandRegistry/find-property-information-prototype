@@ -3,16 +3,22 @@ var ProgressBar = require('progress');
 var fs = require('fs');
 var path = require('path');
 var extend = require('extend');
+var once = require('once');
 
-var postcodeGenerator = require('./includes/postcode');
-require('./providers/tenure')(casual);
-require('./providers/cardinalDirection')(casual);
+// var postcodeGenerator = require('./includes/postcode');
+
+once(function() {
+  require('./providers/tenure')(casual);
+  require('./providers/cardinalDirection')(casual);
+  require('./providers/proprietors')(casual);
+  require('./providers/postcode')(casual);
+})();
 
 var results = [];
 
 var totalCities = 10;
-var totalStreets = 100;
-var totalProperties = 10;
+var totalStreets = 50;
+var totalProperties = 60;
 var title_number = 1000000;
 
 var bar = new ProgressBar(':bar', { total: totalCities * totalStreets * totalProperties });
@@ -25,7 +31,7 @@ for(var i=1;i<=totalCities;i++) {
 
     casual.seed(i);
     var city = casual.city;
-    var postcodeStart = postcodeGenerator.start(city, i);
+    // var postcodeStart = postcodeGenerator.start(city, i);
 
     // Streets
     for(var j=1;j<=totalStreets;j++) {
@@ -40,7 +46,7 @@ for(var i=1;i<=totalCities;i++) {
           return;
         }
 
-        var postcode = postcodeStart + postcodeGenerator.end(title_number);
+        var postcode = casual.postcode(city, street, true);
 
         // Individual properties
         for(var k=1;k<=totalProperties;k++) {
@@ -65,19 +71,9 @@ for(var i=1;i<=totalCities;i++) {
               ]
             };
 
-            // proprietors
-            // name
-            // name_extra_info
-            // co_reg_no?
-            // company_location
-            // addresses
-            item.proprietors = [];
-            var proprietor = {};
-            for(var proprietorsIndex = 1;proprietorsIndex < randomInteger(1,3); proprietorsIndex++) {
 
-              proprietor.name = casual.name;
-              item.proprietors.push(proprietor);
-            }
+            item.proprietors = casual.proprietors(randomInteger(1,3), item.address);
+
 
             // lenders
             // name

@@ -39,17 +39,17 @@ router.post('/landing_page', function (req, res) {
 router.get('/search_results', function (req, res) {
   var rpp = 20;
 
+  // Equivalent to the form failing validation, except we don't have any server side in the proto
+  if(!req.query.search_term) {
+    res.render('private-beta-01/search');
+  }
+
   var data = {
     display_page_number: req.query.page ? req.query.page : 1,
     search_term: req.query.search_term,
     results: {
     }
   };
-
-  // Equivalent to the form failing validation, except we don't have any server side in the proto
-  if(!req.query.search_term) {
-    res.render('private-beta-01/search');
-  }
 
   require('./data')(req.query.search_term, function(titles) {
     data.results.titles = titles;
