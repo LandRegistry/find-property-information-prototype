@@ -22,13 +22,28 @@
 <main id="content" role="main">
   <h1 class="heading-xlarge">Titles database</h1>
 
+  <h2 class="heading-small">Titles of interest</h2>
+  <ul>
+      <li><a href="#">Freehold title with one proprietor</a></li>
+      <li><a href="#">Freehold title with no map</a></li>
+      <li><a href="#">Freehold title with multiple proprietors</a></li>
+      <li><a href="#">Freehold title with company proprietor</a></li>
+      <li><a href="#">Freehold title where proprietor has multiple addresses</a></li>
+      <li><a href="#">Leasehold title with one leaseholder</a></li>
+      <li><a href="#">Leasehold title with an A1 note</a></li>
+      <li><a href="#">Freehold caution title</a></li>
+      <li><a href="#">Leasehold caution title</a></li>
+      <li>No data</li>
+  </ul>
+
+  <h2 class="heading-small">All titles</h2>
   <ul class="database grid-row">
   {% for title in titles %}
     <li class="column-one-third">
       <div class="teaser teaser-register">
     <h2 class="heading-small spacing-top-half">
       {% if title['data'] %}
-        <a href="confirm_selection?title_number={{title['data']['title_number']}}">{{ title['address'] }}</a>
+        <a href="/{{prototypeVersion}}/confirm_selection?title_number={{title['data']['title_number']}}">{{ title['address'] }}</a>
       {% else %}
         {{ title['address'] }}
       {% endif %}

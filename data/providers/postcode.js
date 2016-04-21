@@ -42,7 +42,7 @@ function postcodeGenerator(casual) {
           break;
         }
 
-        console.log(collision, 'Postcode collision', postcodeStart, 'for', city);
+        console.log('Postcode collision', postcodeStart, 'for', city);
 
         // Generate a new postcode start by rolling through the alphabet
         // 26 * 26 = 676 possible combinations here

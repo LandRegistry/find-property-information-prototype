@@ -89,26 +89,45 @@ for(var i=1;i<=totalCities;i++) {
             // ppi_data
             item.ppi_data = '£' + randomInteger(80, 999) + ',000 the price stated to have been paid on ' + randomInteger(1, 28) + ' June ' + randomInteger(2000, 2015);
 
-            // caution titles
-            // These are generated as "Land east/west of X" and are inserted
-            // in addition to the current title we are generating
-            if(randomInteger(0,100) > 95) {
+            // Based on a random integer between 0 and 100, split the titles
+            // into segments. This is just used to help us generate titles of
+            // different types
+            var segment = randomInteger(0,100);
+
+            if(segment > 90 && segment <= 90) {
+
+              // titles without data
+              delete item.data;
+
+            } else if(segment > 90 && segment <= 95) {
+
+              // Standard caution titles
+              item.data.is_caution_title = true;
+
+              // Nuke lenders and price paid data - you don't get this for caution titles
+              delete item.lenders;
+              delete item.ppi_data;
+
+            } else if (segment > 95) {
+
+              // caution titles representing "Land east/west of X"
+              // These are inserted in addition to the current title we are generating
               var cautionItem = extend(true, {}, item);
 
-              cautionItem.data.title_number = 'FAKE' + (++title_number);
-              cautionItem.tenure = 'Freehold';
+              delete cautionItem.lenders;
+              delete cautionItem.ppi_data;
+              delete cautionItem.property_notes;
 
               cautionItem.data.is_caution_title = true;
 
-              if(randomInteger(0,100) > 95) {
-                cautionItem.address.unshift('Land to the ' + casual.cardinalDirection + ' of ');
-              }
-              results.push(cautionItem);
-            }
+              cautionItem.data.title_number = 'FAKE' + (++title_number);
 
-            // no data
-            if(randomInteger(0,100) > 95) {
-              delete item.data;
+              cautionItem.address.unshift('Land to the ' + casual.cardinalDirection + ' of ');
+
+              cautionItem.proprietors = cautionItem.proprietors.slice(0,1);
+
+              results.push(cautionItem);
+
             }
 
             results.push(item);
