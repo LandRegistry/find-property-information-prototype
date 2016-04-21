@@ -4,6 +4,7 @@ var fs = require('fs');
 var path = require('path');
 var extend = require('extend');
 var once = require('once');
+var moment = require('moment');
 
 // var postcodeGenerator = require('./includes/postcode');
 
@@ -60,8 +61,13 @@ for(var i=1;i<=totalCities;i++) {
 
           (function() {
 
+            var timestamp = casual.integer(946684800000, 1451606400000);
+
             var item = {
               tenure: casual.tenure,
+              last_changed_datetime: moment(timestamp).format(),
+              last_changed_date: moment(timestamp).format('D MMMM YYYY'),
+              last_changed_time: moment(timestamp).format('H:mm:ss'),
               data: {
                 title_number: 'FAKE' + (++title_number)
               },
