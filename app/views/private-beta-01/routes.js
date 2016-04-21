@@ -3,6 +3,14 @@ var router = express.Router();
 var path = require('path');
 
 /**
+ * Expose variables to all routes
+ */
+router.use(function (req, res, next) {
+  res.locals.price_text = '£3 inc VAT'
+  next();
+});
+
+/**
  * Landing page form
  * GET route is handled by the default set of routes. This is here to handle POSTs
  */

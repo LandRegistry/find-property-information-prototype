@@ -31,7 +31,7 @@ glob(path.join(__dirname, 'views/**/routes.js'), function(err, files) {
     var prototypeVersion = path.dirname(path.relative(path.join(__dirname, 'views/'), file));
 
     /**
-     * Expose the version prefix to all templates
+     * Expose the version prefix to all routes
      */
     router.use(function (req, res, next) {
       res.locals.prototypeVersion = prototypeVersion;
