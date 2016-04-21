@@ -1,11 +1,10 @@
 {% extends "./layout/layout.html" %}
+{% from "./includes/back_link.html" import back_link %}
 
 {% block title %}Terms &amp; conditions{% endblock %}
 
 {% block header_primary %}
-  {% with title='Back', url='#', historyBased=True %}
-    {% include 'includes/back_link.html' %}
-  {% endwith %}
+  {{ back_link(title='Back', prefix='', url='/private-beta-01/search') }}
 {% endblock %}
 
 {% block body %}
