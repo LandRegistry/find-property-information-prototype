@@ -44,6 +44,8 @@ nunjucks.setup({
 
 // Middleware to serve static assets
 app.use('/public', express.static('./app/assets/.land-registry-elements/assets'));
+app.use('/public/app/images', express.static('./app/assets/images'));
+app.use('/public/app/javascripts', express.static('./app/assets/javascripts'));
 
 // Support for parsing data in POSTs
 app.use(bodyParser.json());

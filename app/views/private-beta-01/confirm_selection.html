@@ -121,10 +121,10 @@
       <p>You can pay by credit or debit card.</p>
 
 
-      <form method="GET" action="display_title" data-clientside-validation="cra_form_validation" data-clientside-validation-no-summary>
+      <form method="POST" action="worldpay_1" data-clientside-validation="cra_form_validation" data-clientside-validation-no-summary>
         <p>You need to accept the following terms to continue.</p>
 
-        <input type='hidden' name='title_number' id='title_number' value="{{title['data']['title_number']}}"/>
+        <input type="hidden" name="title_number" id="title_number" value="{{title['data']['title_number']}}"/>
 
         <div class="form-group">
           <label class="block-label" for="right_to_cancel">

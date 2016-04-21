@@ -81,6 +81,25 @@ router.get('/confirm_selection', function (req, res) {
 });
 
 /**
+ * Worldpay routes
+ */
+router.all('/worldpay_:stage', function (req, res) {
+  var title_number;
+
+  if(typeof req.body.title_number !== 'undefined') {
+    title_number = req.body.title_number;
+  }
+
+  if(typeof req.query.title_number !== 'undefined') {
+    title_number = req.query.title_number;
+  }
+
+  res.render('private-beta-01/worldpay_' + req.params.stage, {
+    'title_number': title_number
+  });
+});
+
+/**
  * Display title route
  */
 router.get('/display_title', function (req, res) {
