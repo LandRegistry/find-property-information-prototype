@@ -4,7 +4,7 @@
 {% block title %}Summary of title {{ title.number }}{% endblock %}
 
 {% block header_primary %}
-  {{ back_link(title='Search again', url='/private-beta-01/search',historyBased=false) }}
+  {{ back_link(title='Search again', url='/' + prototypeVersion + '/search',historyBased=false) }}
 {% endblock %}
 
 {% block header_secondary %}
@@ -228,7 +228,7 @@
       <div class="printhidden">
         <h2 class="heading-medium">What next</h2>
         <ul class="list list-bullet">
-          <li><a href="/private-beta-01/search">Search again</a></li>
+          <li><a href="/{{prototypeVersion}}/search">Search again</a></li>
           <li><a href="https://gov.uk">Return to GOV.UK</a></li>
         </ul>
       </div>

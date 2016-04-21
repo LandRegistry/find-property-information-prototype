@@ -1,13 +1,11 @@
 var express = require('express');
 var router = express.Router();
+var path = require('path');
 
 /**
  * Landing page form
+ * GET route is handled by the default set of routes. This is here to handle POSTs
  */
-router.get('/landing_page', function (req, res) {
-  res.render('private-beta-01/landing_page');
-});
-
 router.post('/landing_page', function (req, res) {
   // Route people to the appropriate places dependant on what they chose
   switch(req.body.information) {
@@ -29,7 +27,7 @@ router.post('/landing_page', function (req, res) {
 
   // Otherwise just render the form again
   // Equivalent to the form failing validation, except we don't have any server side in the proto
-  res.render('private-beta-01/landing_page');
+  res.render(path.join(__dirname, 'landing_page'));
 });
 
 
@@ -41,7 +39,7 @@ router.get('/search_results', function (req, res) {
 
   // Equivalent to the form failing validation, except we don't have any server side in the proto
   if(!req.query.search_term) {
-    res.render('private-beta-01/search');
+    res.render(path.join(__dirname, 'search'));
   }
 
   var data = {
@@ -61,7 +59,7 @@ router.get('/search_results', function (req, res) {
     // Restrict results to this page
     data.results.titles = data.results.titles.slice((data.display_page_number - 1) * rpp, data.display_page_number * rpp);
 
-    return res.render('private-beta-01/search_results', data);
+    return res.render(path.join(__dirname, 'search_results'), data);
 
   });
 
@@ -73,7 +71,7 @@ router.get('/search_results', function (req, res) {
 router.get('/confirm_selection', function (req, res) {
 
   require('./data')(req.query.title_number, function(titles) {
-    res.render('private-beta-01/confirm_selection', {
+    res.render(path.join(__dirname, 'confirm_selection'), {
       title: titles.shift()
     });
   });
@@ -94,7 +92,7 @@ router.all('/worldpay_:stage', function (req, res) {
     title_number = req.query.title_number;
   }
 
-  res.render('private-beta-01/worldpay_' + req.params.stage, {
+  res.render(path.join(__dirname, 'worldpay_' + req.params.stage), {
     'title_number': title_number
   });
 });
@@ -109,7 +107,7 @@ router.get('/display_title', function (req, res) {
   }
 
   require('./data')(req.query.title_number, function(titles) {
-    res.render('private-beta-01/display_title', {
+    res.render(path.join(__dirname, 'display_title'), {
       title: titles.shift()
     });
   });

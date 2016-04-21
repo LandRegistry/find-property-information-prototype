@@ -28,7 +28,19 @@ glob(path.join(__dirname, 'views/**/routes.js'), function(err, files) {
   }
 
   files.forEach(function(file) {
-    router.use('/' + path.dirname(path.relative(path.join(__dirname, 'views/'), file)), require(file));
+    var prototypeVersion = path.dirname(path.relative(path.join(__dirname, 'views/'), file));
+
+    /**
+     * Expose the version prefix to all templates
+     */
+    router.use(function (req, res, next) {
+      res.locals.prototypeVersion = prototypeVersion;
+      next();
+    });
+
+    // Mount all routes exposed onto a path reflecting the prototype version
+    router.use('/' + prototypeVersion, require(file));
+
   });
 });
 
