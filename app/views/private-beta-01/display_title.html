@@ -49,12 +49,20 @@
 
         {% if title.address %}
           <dt>Address</dt>
-          <dd class="bold-medium">
-            <div class="address">
+          <dd>
+            <div class="address bold-medium">
               {% for line in title.address %}
                 <span>{{line}}</span>
               {% endfor %}
             </div>
+
+            {% if title.property_notes %}
+              <ul>
+                {% for note in title.property_notes %}
+                  <li class="spacing-top-single">{{ note|safe }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
           </dd>
         {% endif %}
 

@@ -15,6 +15,7 @@ once(function() {
   require('./providers/lenders')(casual);
   require('./providers/postcode')(casual);
   require('./providers/companyLocation')(casual);
+  require('./providers/leaseholdA1notes')(casual);
 })();
 
 var results = [];
@@ -34,7 +35,6 @@ for(var i=1;i<=totalCities;i++) {
 
     casual.seed(i);
     var city = casual.city;
-    // var postcodeStart = postcodeGenerator.start(city, i);
 
     // Streets
     for(var j=1;j<=totalStreets;j++) {
@@ -80,6 +80,11 @@ for(var i=1;i<=totalCities;i++) {
 
             item.proprietors = casual.proprietors(randomInteger(1,3), item.address);
             item.lenders = casual.lenders(randomInteger(1,2));
+
+            // A1 notes for leasehold properties
+            if(item.tenure === 'Leasehold') {
+              item.property_notes = casual.leaseholdNotes;
+            }
 
             // ppi_data
             item.ppi_data = '£' + randomInteger(80, 999) + ',000 the price stated to have been paid on ' + randomInteger(1, 28) + ' June ' + randomInteger(2000, 2015);
