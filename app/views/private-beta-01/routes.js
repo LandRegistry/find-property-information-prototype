@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var path = require('path');
+var moment = require('moment');
+var casual = require('casual');
 
 /**
  * Expose variables to all routes
@@ -114,10 +116,29 @@ router.get('/display_title', function (req, res) {
     return res.sendStatus(404);
   }
 
+  // VAT receipt data
+  var receipt = {
+    date: moment().format('D MMM YYYY'),
+    trans_id: casual.integer(4000000000, 5000000000),
+    title_number: req.query.title_number,
+    net: '2.50',
+    vat: '0.50',
+    total: '3.00',
+    address1: 'Land Registry',
+    address2: 'Trafalgar house',
+    address3: '1 Bedford Park',
+    address4: 'Croydon',
+    postcode: 'CR0 2AQ',
+    reg_number: 'GB 8888 181 53'
+  }
+
   require('./data')(req.query.title_number, function(titles) {
+
     res.render(path.join(__dirname, 'display_title'), {
-      title: titles.shift()
+      title: titles.shift(),
+      receipt: receipt
     });
+
   });
 
 });
