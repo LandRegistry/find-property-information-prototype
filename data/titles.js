@@ -21,7 +21,7 @@ once(function() {
 var results = [];
 
 var totalCities = 10;
-var totalStreets = 50;
+var totalStreets = 30;
 var totalProperties = 60;
 var title_number = 1000000;
 
@@ -94,7 +94,7 @@ for(var i=1;i<=totalCities;i++) {
             // different types
             var segment = randomInteger(0,100);
 
-            if(segment > 90 && segment <= 90) {
+            if(segment > 85 && segment <= 90) {
 
               // titles without data
               delete item.data;
@@ -102,7 +102,7 @@ for(var i=1;i<=totalCities;i++) {
             } else if(segment > 90 && segment <= 95) {
 
               // Standard caution titles
-              item.data.is_caution_title = true;
+              item.is_caution_title = true;
 
               // Nuke lenders and price paid data - you don't get this for caution titles
               delete item.lenders;
@@ -118,7 +118,7 @@ for(var i=1;i<=totalCities;i++) {
               delete cautionItem.ppi_data;
               delete cautionItem.property_notes;
 
-              cautionItem.data.is_caution_title = true;
+              cautionItem.is_caution_title = true;
 
               cautionItem.data.title_number = 'FAKE' + (++title_number);
 

@@ -33,7 +33,7 @@
 
       <dl class="definition-tabular">
 
-        {% if title['data']['is_caution_title'] %}
+        {% if title['is_caution_title'] %}
           <dt class="bold-small">Caution</dt>
           <dd>
             <details class="font-xsmall">
@@ -67,7 +67,7 @@
         {% endif %}
 
         <dt>
-          {% if title['data']['is_caution_title'] %}
+          {% if title['is_caution_title'] %}
             Cautioner{% if title.proprietors.length > 1 %}s{% endif %}
           {% elif title.tenure == 'Leasehold' %}
             Leaseholder{% if title.proprietors.length > 1 %}s{% endif %}
@@ -232,24 +232,6 @@
           <li><a href="https://gov.uk">Return to GOV.UK</a></li>
         </ul>
       </div>
-
-      <hr class="spacing-top-double">
-
-      {% if show_pdf %}
-        <div style="outline: 2px dashed red;padding:20px;margin-bottom:20px">
-          <span class="title">{% if is_caution_title %}Caution title register{% else %}Title register{% endif %}</span><br>
-          <span class="footnote">{% if is_caution_title %}Caution title {% endif %}PDF document</span>
-          <p>
-            <a class="button" id="download-link" style="vertical-align: baseline;" href="#" target="_blank"><b>Download</b></a>
-          </p>
-        </div>
-      {% endif %}
-
-      {% if full_title_data %}
-        <div style="outline: 2px dashed red;padding:20px">
-
-        </div>
-      {% endif %}
 
     </div>
 

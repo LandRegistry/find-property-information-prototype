@@ -26,7 +26,7 @@
 
       <dl class="definition-tabular">
 
-        {% if title['data']['is_caution_title'] %}
+        {% if title['is_caution_title'] %}
           <dt class="bold-small">Caution</dt>
           <dd>
             <details class="font-xsmall">
@@ -87,7 +87,7 @@
 
       <h2 class="heading-medium collapse-top">The summary will tell you</h2>
       <ul class="list-bullet">
-        {% if title['data']['is_caution_title'] %}
+        {% if title['is_caution_title'] %}
           <li>the name of the cautioner and their address</li>
           <li>information about the cautioner’s claim</li>
         {% else %}
