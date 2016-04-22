@@ -3,18 +3,12 @@ var search = require('../../../data/search');
 
 // Use this space to insert any prototype specific entries onto the available
 // set of data.
-// For example:
-data.push({
-  data: {},
-  title_number: 'FAKE123123',
-  address: [
-    'Seaton Court',
-    '2',
-    'William Prance Rd',
-    'Plymouth',
-    'PL6 5WS'
-  ]
-});
+// To inspect the structure of the data, uncomment the following line. This will
+// log the data structure to your console which you can then copy and paste here
+// before making any modifications you wish to.
+
+// console.log(data[0]);
+
 
 module.exports = function(searchTerm, callback) {
   search(data, searchTerm, function(results) {
