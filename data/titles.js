@@ -89,6 +89,44 @@ for(var i=1;i<=totalCities;i++) {
             // ppi_data
             item.ppi_data = '£' + randomInteger(80, 999) + ',000 the price stated to have been paid on ' + randomInteger(1, 28) + ' June ' + randomInteger(2000, 2015);
 
+            // Map data
+            item.indexPolygon = {
+              "crs": {
+                "properties": {
+                  "name": "urn:ogc:def:crs:EPSG::27700"
+                },
+                "type": "name"
+              },
+              "geometry": {
+                "coordinates": [
+                  [
+                    [441187.5, 112344.0],
+                    [441186.0, 112354.0],
+                    [441193.0, 112356.5],
+                    [441194.5, 112346.5]
+                  ]
+                ],
+                "type": "Polygon"
+              },
+              "properties": {
+                "colour": 25,
+                "feature_id": 4019,
+                "graphic_type": "Bordered Polygon",
+                "render_attributes": {
+                  "border_colour": 25,
+                  "border_width": 0,
+                  "exterior_edge_colour": 1,
+                  "exterior_edge_thickness": 2,
+                  "exterior_edge_thickness_units": "Pixels",
+                  "fill_colour": 25,
+                  "fill_style": 9,
+                  "render_level": "0"
+                },
+                "width": 0
+              },
+              "type": "Feature"
+            };
+
             // Based on a random integer between 0 and 100, split the titles
             // into segments. This is just used to help us generate titles of
             // different types
@@ -117,6 +155,7 @@ for(var i=1;i<=totalCities;i++) {
               delete cautionItem.lenders;
               delete cautionItem.ppi_data;
               delete cautionItem.property_notes;
+              delete cautionItem.indexPolygon;
 
               cautionItem.is_caution_title = true;
 

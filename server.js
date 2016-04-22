@@ -42,6 +42,14 @@ nunjucks.setup({
   noCache: true
 }, app);
 
+// Add a JSON filter.
+// Could be extended later to include more filters
+nunjucks.ready(function(env) {
+  env.addFilter('json', function(data) {
+    return JSON.stringify(data);
+  });
+});
+
 // Middleware to serve static assets
 app.use('/public', express.static('./app/assets/.land-registry-elements/assets'));
 app.use('/public/app/images', express.static('./app/assets/images'));

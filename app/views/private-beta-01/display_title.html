@@ -236,14 +236,11 @@
     </div>
 
   </div>
-{% endblock %}
 
-{% block js_additionals %}
   {% if title.indexPolygon %}
     <script>
-      var indexData = {{ title.indexPolygon | tojson }};
+      var indexData = {{ title['indexPolygon'] | json | safe }};
     </script>
-
-    <script defer src="/public/assets/javascripts/map.js"></script>
+    <script defer src="{{ asset_path }}app/javascripts/map.js"></script>
   {% endif %}
 {% endblock %}
