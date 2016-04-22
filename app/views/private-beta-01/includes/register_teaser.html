@@ -13,7 +13,7 @@
       <p class="font-xsmall spacing-bottom-flush">Title number: {{ title['data']['title_number'] }}</p>
       <b class="bold-xsmall">{{ title['tenure'] }}</b>
 
-      {% if title['data']['is_caution_title'] %}
+      {% if title['is_caution_title'] %}
         <p class="font-xsmall"><strong class="bold">Caution against first registration</strong> <a class="split-detail-trigger" href="#whats-caution-against-first-registration{{ title['data']['title_number'] | replace(' ', '-') }}">What's this?</a></p>
 
         <div class="split-detail-contents font-xsmall" id="whats-caution-against-first-registration{{ title['data']['title_number'] | replace(' ', '-') }}">
