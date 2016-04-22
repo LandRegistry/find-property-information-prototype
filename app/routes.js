@@ -18,17 +18,19 @@ router.get('/', function (req, res) {
 
       var prototype = yaml.safeLoad(fs.readFileSync(filename, 'utf8'));
 
+      prototype.version =  path.dirname(path.relative(path.join(__dirname, 'views/'), filename));
+
       prototypes.push(prototype);
     });
 
     // Sort by date
     prototypes = prototypes.sort(function(a, b) {
       if (a.date > b.date) {
-        return 1;
+        return -1;
       }
 
       if (a.date < b.date) {
-        return -1;
+        return 1;
       }
 
       return 0;

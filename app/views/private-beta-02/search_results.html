@@ -1,0 +1,37 @@
+{% extends "./layout/layout.html" %}
+{% from "./includes/search_form.html" import search_form %}
+{% from "./includes/register_teaser.html" import register_teaser %}
+{% from "./includes/pagination.html" import pagination %}
+
+{% block title %}Search results{% endblock %}
+
+{% block body %}
+
+  <div class="grid-row spacing-top-single">
+    <div class="column-two-thirds tablet-column-two-thirds">
+      {{ search_form(h1=true,autofocus=false,label='Search results for',value=search_term) }}
+
+      <h2 class="font-xsmall expand-bottom-half">{{ results['number_results'] }} result{% if results['number_results'] > 1 %}s{% endif %} found</h2>
+      <ol class="search-results-listing">
+        {% for title in results['titles'] %}
+          <li>
+            {{ register_teaser(title=title,display_page_number=display_page_number,search_term=search_term) }}
+          </li>
+        {% endfor %}
+      </ol>
+
+      {% if results['number_pages'] %}
+        {{ pagination(display_page_number, results['number_pages'],search_term=search_term) }}
+      {% endif %}
+    </div>
+
+    <div class="column-one-third tablet-column-one-third">
+      <aside class="supplementary-panel">
+        <h2 class="heading-medium">Help finding the right property</h2>
+        <strong class="phase-tag-beta spacing-bottom-half">BETA</strong>
+        <p>This is a new service. If you're not seeing the search results you expect please <a rel="external" href="mailto:digital-register-feedback@digital.landregistry.gov.uk">let us know</a></p>
+        <p>If you're having trouble finding the property or land you're looking for, try the <a rel="external" href="https://eservices.landregistry.gov.uk/wps/portal/Property_Search">Land Registry 'Find a Property' service</a> instead</p>
+      </aside>
+    </div>
+  </div>
+{% endblock %}

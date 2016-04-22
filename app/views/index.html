@@ -17,7 +17,9 @@
       <ul>
       {% for prototype in prototypes %}
         <li{% if not loop.first%} class="font-xsmall"{% endif %}>
-          <h2 class="{% if not loop.first%}heading-small{% else %}heading-medium{% endif %} spacing-top-flush"><a href="private-beta-01">{{prototype.name}}</a></h2>
+          <h2 class="{% if not loop.first%}heading-small{% else %}heading-medium{% endif %} spacing-top-flush">
+            <a href="{{ prototype.version }}">{{prototype.name}}</a>
+          </h2>
 
           {{prototype.description | safe}}
 
