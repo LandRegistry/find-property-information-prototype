@@ -48,9 +48,31 @@ router.get('/', function (req, res) {
 router.get('/database', function (req, res) {
   var titles = require('../data/titles');
 
+  var files = glob.sync(path.join(__dirname, 'views/**/prototype.yaml'));
+  var prototypes = [];
+
+  files.forEach(function(filename) {
+    var prototype = yaml.safeLoad(fs.readFileSync(filename, 'utf8'));
+    prototype.version =  path.dirname(path.relative(path.join(__dirname, 'views/'), filename));
+    prototypes.push(prototype);
+  });
+
+  // Sort by date
+  prototypes = prototypes.sort(function(a, b) {
+    if (a.date > b.date) {
+      return -1;
+    }
+
+    if (a.date < b.date) {
+      return 1;
+    }
+
+    return 0;
+  });
+
   var data = {
     titles: titles,
-    prototypeVersion: 'private-beta-01',
+    prototypeVersion: prototypes[0].version,
     examples: []
   };
 
