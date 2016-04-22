@@ -4,8 +4,7 @@
 {% block title %}Confirm your order{% endblock %}
 
 {% block header_primary %}
-  {{ back_link(title='Search results', prefix='Back to', url='/' + prototypeVersion + '/search_results') }}
-  {# url_for('find_titles_page', search_term=params['search_term'], page=params['display_page_number'] #}
+  {{ back_link(title='Search results', prefix='Back to', url='/' + prototypeVersion + '/search_results?page=' + display_page_number + '&search_term=' + search_term) }}
 {% endblock %}
 
 {% block body %}

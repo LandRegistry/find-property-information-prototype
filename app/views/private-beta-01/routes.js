@@ -82,7 +82,9 @@ router.get('/confirm_selection', function (req, res) {
 
   require('./data')(req.query.title_number, function(titles) {
     res.render(path.join(__dirname, 'confirm_selection'), {
-      title: titles.shift()
+      title: titles.shift(),
+      display_page_number: req.query.page,
+      search_term: req.query.search_term
     });
   });
 

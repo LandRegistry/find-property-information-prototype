@@ -15,7 +15,7 @@
       <ol class="search-results-listing">
         {% for title in results['titles'] %}
           <li>
-            {{ register_teaser(title=title) }}
+            {{ register_teaser(title=title,display_page_number=display_page_number,search_term=search_term) }}
           </li>
         {% endfor %}
       </ol>

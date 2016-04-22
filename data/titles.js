@@ -27,7 +27,6 @@ var title_number = 1000000;
 
 var bar = new ProgressBar(':bar', { total: totalCities * totalStreets * totalProperties });
 
-
 // Cities
 for(var i=1;i<=totalCities;i++) {
 
