@@ -77,7 +77,11 @@ window.onload = function() {
       L.marker(bounds.getCenter()).addTo(map);
     }
 
-    map.fitBounds(bounds, {maxZoom: 18, animate: false});
+    map.fitBounds(bounds, {
+      maxZoom: 18,
+      animate: false,
+      padding: [10,10]
+    });
   } else {
     mapElement.parentNode.removeChild(mapElement);
   }
