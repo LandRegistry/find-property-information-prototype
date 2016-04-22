@@ -4,4 +4,5 @@ description: |
   <p>This prototype sets out to test sign-in being moved to a different location as well as updated freehold/leasehold descriptions.</p>
 
 changelog:
-  - To follow
+  - "Buy title summary" button on confirm page changed to say "Continue"
+  - Sign in page moved later in the flow between the confirm page and worldpay

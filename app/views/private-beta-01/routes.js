@@ -20,7 +20,7 @@ router.post('/landing_page', function (req, res) {
   // Route people to the appropriate places dependant on what they chose
   switch(req.body.information) {
     case 'title_summary':
-      return res.redirect('search');
+      return res.redirect('sign_in');
 
       break;
 

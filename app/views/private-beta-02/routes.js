@@ -91,6 +91,21 @@ router.get('/confirm_selection', function (req, res) {
 });
 
 /**
+ * Sign in page
+ */
+router.all('/sign_in', function (req, res) {
+  var title_number;
+
+  if(typeof req.body.title_number !== 'undefined') {
+    title_number = req.body.title_number;
+  }
+
+  res.render(path.join(__dirname, 'sign_in'), {
+    'title_number': title_number
+  });
+});
+
+/**
  * Worldpay routes
  */
 router.all('/worldpay_:stage', function (req, res) {
@@ -98,10 +113,6 @@ router.all('/worldpay_:stage', function (req, res) {
 
   if(typeof req.body.title_number !== 'undefined') {
     title_number = req.body.title_number;
-  }
-
-  if(typeof req.query.title_number !== 'undefined') {
-    title_number = req.query.title_number;
   }
 
   res.render(path.join(__dirname, 'worldpay_' + req.params.stage), {

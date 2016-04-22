@@ -10,7 +10,9 @@
 
       <p>If you don't have one, you can <a rel="external" href="https://eservices.landregistry.gov.uk/www/wps/portal/RegisterForLRO">create an account</a> in the Land Registry 'Find a Property' service</a>.</p>
 
-      <form method="get" action="search" onSubmit="return checkTerms()" id="login-form">
+      <form method="POST" action="worldpay_1" onSubmit="return checkTerms()" id="login-form">
+        <input name="title_number" value="{{title_number}}" type="hidden" />
+
         <!-- Username -->
         <div class="form-group">
           <label class="form-label-bold" for="user-name">Username</label>
@@ -54,13 +56,13 @@
           }
 
           if(document.getElementById('terms').checked) {
-            window.location = 'search';
+
           } else {
             termsGroup.classList.add('error');
             termsGroup.appendChild(msg);
+            return false;
           }
 
-          return false;
         }
       </script>
 

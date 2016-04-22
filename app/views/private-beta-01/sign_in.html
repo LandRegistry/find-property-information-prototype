@@ -54,13 +54,13 @@
           }
 
           if(document.getElementById('terms').checked) {
-            window.location = 'search';
+
           } else {
             termsGroup.classList.add('error');
             termsGroup.appendChild(msg);
+            return false;
           }
 
-          return false;
         }
       </script>
 
