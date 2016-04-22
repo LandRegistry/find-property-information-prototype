@@ -1,0 +1,9 @@
+name: Private beta 01
+date: 2016-04-22
+description: |
+  <p>Prototype to form the baseline for our work going forward into private beta. Set up to match production as closely as reasonably possible and eliminate the small differences between proto and prod that have arisen over time. This is being achieved by pulling in <a href="http://land-registry-elements.herokuapp.com/">land-registry-elements</a></p>
+
+changelog:
+  - <a href="http://land-registry-elements.herokuapp.com/">land-registry-elements</a> used instead of directly using govuk assets.
+  - Rudimentary search engine added
+  - Large database of fictional titles added for users to search through

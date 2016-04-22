@@ -14,10 +14,30 @@
 
       <hr class="spacing-top-flush">
 
-      <h2 class="heading-medium spacing-top-flush"><a href="private-beta-01">Private beta 01</a></h2>
-      <p>Prototype to form the baseline for our work going forward into private beta. Set up to match production as closely as reasonably possible and eliminate the small differences between proto and prod that have arisen over time. This is being achieved by pulling in <a href="http://land-registry-elements.herokuapp.com/">land-registry-elements</a></p>
+      <ul>
+      {% for prototype in prototypes %}
+        <li{% if not loop.first%} class="font-xsmall"{% endif %}>
+          <h2 class="{% if not loop.first%}heading-small{% else %}heading-medium{% endif %} spacing-top-flush"><a href="private-beta-01">{{prototype.name}}</a></h2>
 
-      <hr>
+          {{prototype.description | safe}}
+
+          {% if prototype.changelog %}
+            <details>
+              <summary>Changelog</summary>
+              <div class="panel panel-border-narrow">
+                <ul class="list list-bullet">
+                  {% for log in prototype.changelog %}
+                    <li>{{log | safe}}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </details>
+          {% endif %}
+
+          <hr>
+        </li>
+      {% endfor %}
+      </ul>
 
     </div>
 

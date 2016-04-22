@@ -4,12 +4,40 @@ var glob = require('glob');
 var path = require('path');
 var once = require('once');
 var extend = require('extend');
+var fs = require('fs');
+var yaml = require('js-yaml');
 
 /**
  * Main index page route
  */
 router.get('/', function (req, res) {
-  res.render('index');
+  var prototypes = [];
+
+  glob(path.join(__dirname, 'views/**/prototype.yaml'), function(err, files) {
+    files.forEach(function(filename) {
+
+      var prototype = yaml.safeLoad(fs.readFileSync(filename, 'utf8'));
+
+      prototypes.push(prototype);
+    });
+
+    // Sort by date
+    prototypes = prototypes.sort(function(a, b) {
+      if (a.date > b.date) {
+        return 1;
+      }
+
+      if (a.date < b.date) {
+        return -1;
+      }
+
+      return 0;
+    });
+
+    res.render('index', {
+      prototypes: prototypes
+    });
+  });
 });
 
 /**

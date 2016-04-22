@@ -4,4 +4,6 @@ View online: [https://find-property-information-ux.herokuapp.com/](https://find-
 
 ## Todos
 - Transfer heroku app to LR
-- Consider versioning of static assets?
+- Consider versioning of static assets? At the moment, changes to the frontend assets will affect all sub-prototypes
+- Move sign in
+- Usage documentation
