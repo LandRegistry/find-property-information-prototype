@@ -80,13 +80,16 @@
           <dd>
             <h2 class="bold">{{ proprietor.name }} {{ proprietor.name_extra_info }}</h2>
             {% if proprietor.co_reg_no %}
+              <h3 class="visuallyhidden">Company registration number</h3>
               <div>{{ proprietor.co_reg_no }}</div>
 
               {% if proprietor.company_location %}
+                <h3 class="visuallyhidden">Company location</h3>
                 <div>{{ proprietor.company_location }}</div>
               {% endif %}
             {% endif %}
 
+            <h3 class="visuallyhidden">Addresses</h3>
             {% for address in proprietor.addresses %}
               <div class="address spacing-top-half">
                 {% for line in address %}
