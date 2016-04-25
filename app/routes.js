@@ -97,7 +97,7 @@ router.get('/database', function (req, res) {
     {
       description: 'Freehold title with company proprietor',
       test: function(title) {
-        return title.tenure === 'Freehold' && (typeof title.proprietors[0].co_reg_no === 'undefined') && !title.is_caution_title;
+        return title.tenure === 'Freehold' && (typeof title.proprietors[0].co_reg_no !== 'undefined') && !title.is_caution_title;
       },
       match: false
     },
