@@ -3,6 +3,7 @@ var router = express.Router();
 var path = require('path');
 var moment = require('moment');
 var casual = require('casual');
+var yaml = require('js-yaml');
 
 /**
  * Expose variables to all routes
@@ -146,9 +147,14 @@ router.get('/display_title', function (req, res) {
   }
 
   require('./data')(req.query.title_number, function(titles) {
+    var title = titles.shift();
+
+    console.log('---');
+    console.log(yaml.safeDump(title));
+    console.log('---');
 
     res.render(path.join(__dirname, 'display_title'), {
-      title: titles.shift(),
+      title: title,
       receipt: receipt
     });
 
