@@ -1,0 +1,162 @@
+{% extends "./layout/layout.html" %}
+{% from "./includes/back_link.html" import back_link %}
+
+{% block title %}Confirm your order{% endblock %}
+
+{% block header_primary %}
+  {{ back_link(title='Search results', prefix='Back to', url='/' + prototypeVersion + '/search_results?page=' + display_page_number + '&search_term=' + search_term) }}
+{% endblock %}
+
+{% block body %}
+  <h1 class="heading-large spacing-top-single">Confirm your order</h1>
+
+  <p>You'll get a summary of the information Land Registry holds for this property title.</p>
+
+  <div class="grid-row column-flip spacing-top-single">
+    <div class="column-one-third tablet-column-one-third spacing-bottom-single">
+      {% if title['indexPolygon'] %}
+        <div class="map" id="map">
+          <p>The map relies on JavaScript being enabled in your browser.</p>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <dl class="definition-tabular definition-tabular-sectioned">
+
+        {% if title['is_caution_title'] %}
+          <dt class="bold-small">Caution</dt>
+          <dd>
+            <details class="font-xsmall">
+              <summary class="bold-small">What does Caution mean?</summary>
+              <div class="panel">
+                <p>This property hasn’t been registered yet. You can’t find out who owns it from this service. </p>
+                <p>Someone other than the owner (known as the ‘cautioner’) has registered a right or interest in the property. They will be told if anyone tries to register it, and can object to the registration going ahead until their claim has been looked at. You can get their name and address from this service.</p>
+                <p>Registration has only been compulsory since the 1990s. Property that hasn’t changed hands since then may not be registered.</p>
+              </div>
+            </details>
+          </dd>
+        {% endif %}
+
+        {% if title.address %}
+          <dt>Address</dt>
+          <dd class="bold-medium">
+            <div class="address">
+              {% for line in title.address %}
+                <span>{{line}}</span>
+              {% endfor %}
+            </div>
+          </dd>
+        {% endif %}
+
+        <dt>Title number</dt>
+        <dd class="bold-small">{{ title['data']['title_number'] }}</dd>
+
+        <dt>Tenure type</dt>
+        <dd>
+          <strong class="bold">{{ title['tenure'] }}</strong>
+          <a class="split-detail-trigger font-xsmall" href="#what-is-tenure">What does this mean?</a>
+
+          <div class="split-detail-contents" id="what-is-tenure">
+            <div class="panel panel-border-narrow font-xsmall">
+
+              {% if title['tenure'] == 'Leasehold' %}
+                <p>You only own a leasehold property for a fixed period of time. You'll have a legal agreement with the landlord (sometimes known as the ‘freeholder’) called a ‘lease’. This tells you how many years you’ll own the property.</p>
+                <p>Most flats are leasehold. Houses can be leasehold too and usually are if they’re bought through a shared ownership scheme.</p>
+                <p>The leasehold and freehold are registered separately with the Land Registry. Each has its own title documents.</p>
+                <p><b class="bold">You are buying a summary of the leasehold owner, not the freehold.</b></p>
+
+                <a rel="external" href="https://www.gov.uk/leasehold-property/overview">More about Leasehold on GOV.UK</a>
+
+              {% elif title['tenure'] == 'Freehold' %}
+                <p>You own a freehold building and land outright. It is yours until you sell it or give it away.</p>
+                <p>Most houses are freehold. Most flats are leasehold. That means someone else owns the freehold for the building the flat is in.</p>
+                <p><b class="bold">If you want to know who owns a particular flat, you probably need the leasehold instead.</b></p>
+                <p>Houses can also be leasehold and usually are if they’re bought through a shared ownership scheme.</p>
+
+              {% endif %}
+            </div>
+          </div>
+
+          <p class="font-xsmall">A property can have both a freehold and a leasehold title. To get a different tenure for this address, <a href="/search_results" data-back-link>go back</a> and select the one you need.</p>
+        </dd>
+
+      </dl>
+
+      <h2 class="heading-medium collapse-top">The summary will tell you</h2>
+      <ul class="list-bullet">
+        {% if title['is_caution_title'] %}
+          <li>the name of the cautioner and their address</li>
+          <li>information about the cautioner’s claim</li>
+        {% else %}
+          {% if title['tenure'] == 'Freehold' %}
+            <li>current owner's name and address</li>
+          {% elif title['tenure'] == 'Leasehold' %}
+            <li>current leaseholder's name and address</li>
+          {% endif %}
+
+          <li>what was paid for the property – you won't get this if it was bought before April 2000, if they paid less than &pound;100, or if Land Registry have agreed not to record the price</li>
+          <li>if there is a mortgage on the property, the lender's name and address</li>
+        {% endif %}
+      </ul>
+
+      <p class="spacing-top-single">This information can change if we receive an application. This service is unable to tell you whether or not there is an application pending with the Land Registry.</p>
+
+      <div class="warning media">
+        <div class="media-item">
+          <i class="icon icon-important">
+            <span class="visuallyhidden">Warning</span>
+          </i>
+        </div>
+
+        <div class="media-body">
+          <h2 class="heading-small spacing-bottom-flush">You'll only be able to view the information once</h2>
+          <p class="spacing-top-flush">If you want to keep a copy you can print it out</p>
+        </div>
+      </div>
+
+      <h2 class="heading-medium">The summary costs {{ price_text | safe }} <span class="font-small">(&pound;2.50+VAT)</span></h2>
+      <p>You can pay by credit or debit card.</p>
+
+
+      <form method="POST" action="sign_in" data-clientside-validation="cra_form_validation" data-clientside-validation-no-summary>
+        <p>You need to accept the following terms to continue.</p>
+
+        <input type="hidden" name="title_number" id="title_number" value="{{title['data']['title_number']}}"/>
+
+        <div class="form-group">
+          <label class="block-label" for="right_to_cancel">
+            <input id="right_to_cancel" name="right_to_cancel" type="checkbox" value="agree">
+            I agree that you will provide the summary as soon as I’ve paid.<br>
+            I accept that I will lose my right to cancel the contract once the summary is displayed.<br>
+          </label>
+        </div>
+
+        <input type="submit" class="button" value="Continue">
+
+        <p class="font-xsmall spacing-top-third">for {{ price_text | safe }}</p>
+      </form>
+
+      <script type="application/json" id="cra_form_validation">
+        {
+          "right_to_cancel": {
+            "presence": {
+              "message": "You need to agree to receive the summary right away and that you’ll lose your right to cancel"
+            }
+          }
+        }
+      </script>
+
+      {{ back_link(title='Search results', prefix='Back to', url='/' + prototypeVersion + '/search_results') }}
+
+    </div>
+  </div>
+
+  {% if title['indexPolygon'] %}
+    <script>
+      var indexData = {{ title['indexPolygon'] | json | safe }};
+    </script>
+    <script defer src="{{ asset_path }}app/javascripts/map.js"></script>
+  {% endif %}
+{% endblock %}
