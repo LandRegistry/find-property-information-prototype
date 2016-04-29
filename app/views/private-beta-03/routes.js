@@ -23,7 +23,16 @@ countries = countries.sort(function(a, b) {
  * Expose variables to all routes
  */
 router.use(function (req, res, next) {
-  res.locals.price_text = '£3 inc VAT'
+  res.locals.price_text = '£3 inc VAT';
+
+  if(typeof req.query.account_creation_variant !== 'undefined') {
+    res.locals.account_creation_variant = req.query.account_creation_variant
+  }
+
+  if(typeof req.body.account_creation_variant !== 'undefined') {
+    res.locals.account_creation_variant = req.body.account_creation_variant
+  }
+
   next();
 });
 
@@ -35,7 +44,7 @@ router.post('/landing_page', function (req, res) {
   // Route people to the appropriate places dependant on what they chose
   switch(req.body.information) {
     case 'title_summary':
-      return res.redirect('search');
+      return res.redirect('search?account_creation_variant=' + (res.locals.account_creation_variant ? res.locals.account_creation_variant : ''));
 
       break;
 
@@ -76,6 +85,8 @@ router.get('/search_results', function (req, res) {
 
   require('./data')(req.query.search_term, function(titles) {
     data.results.titles = titles;
+
+    data.account_creation_variant = res.locals.account_creation_variant;
 
     // Total result count
     data.results.number_results = data.results.titles.length;

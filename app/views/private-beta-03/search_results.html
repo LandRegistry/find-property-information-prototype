@@ -15,13 +15,13 @@
       <ol class="search-results-listing">
         {% for title in results['titles'] %}
           <li>
-            {{ register_teaser(title=title,display_page_number=display_page_number,search_term=search_term) }}
+            {{ register_teaser(title=title,display_page_number=display_page_number,search_term=search_term,account_creation_variant=account_creation_variant) }}
           </li>
         {% endfor %}
       </ol>
 
       {% if results['number_pages'] %}
-        {{ pagination(display_page_number, results['number_pages'],search_term=search_term) }}
+        {{ pagination(display_page_number, results['number_pages'],search_term=search_term,account_creation_variant=account_creation_variant) }}
       {% endif %}
     </div>
 

@@ -1,8 +1,8 @@
-{% macro register_teaser(title=title,display_page_number=1,search_term='') %}
+{% macro register_teaser(title=title,display_page_number=1,search_term='',account_creation_variant='') %}
   <div class="teaser teaser-register">
     <h2 class="heading-small spacing-top-half">
       {% if title['data'] %}
-        <a href="confirm_selection?title_number={{title['data']['title_number']}}&amp;page={{display_page_number}}&amp;search_term={{search_term}}">{{ title['address'] }}</a>
+        <a href="confirm_selection?title_number={{title['data']['title_number']}}&amp;account_creation_variant={{account_creation_variant}}&amp;page={{display_page_number}}&amp;search_term={{search_term}}">{{ title['address'] }}</a>
       {% else %}
         {{ title['address'] }}
       {% endif %}
