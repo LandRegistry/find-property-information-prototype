@@ -1,9 +1,8 @@
 name: Account creation
 date: 2016-04-26
 description: |
-  <p>Initial minimal stab at the account creation form.</p>
-  <p><em class="font-xsmall">Note: Cut down prototype just to demo account creation.</em></p>
+  <p>Initial minimal stab at the account creation forms and flow.</p>
 
 changelog:
-  - 'TODO: Adding in account creation screen(s)'
-  - 'TODO: Modifications to login screen'
+  - Account creation forms created
+  - Login screen modified to link to new account creation flow
