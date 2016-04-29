@@ -27,9 +27,14 @@ router.use(function (req, res, next) {
   next();
 });
 
-router.all('/create_account:variant', function(req, res) {
+router.all('/create_account:variant?', function(req, res) {
 
-  res.render(path.join(__dirname, 'create_account' + req.params.variant), {
+  var variant = '';
+  if(typeof req.params.variant !== 'undefined') {
+    variant = req.params.variant;
+  }
+
+  res.render(path.join(__dirname, 'create_account' + variant), {
     countries: countries
   });
 })

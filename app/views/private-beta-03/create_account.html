@@ -45,7 +45,7 @@
 
           <legend class="visuallyhidden">Your name</legend>
 
-          <div class="form-group">
+          <div class="form-group" style="margin-bottom: 80px">
             <label class="form-label" for="title">Title</label>
             <select class="form-control" id="title" name="title">
               <option value="">Please select</option>
@@ -64,6 +64,10 @@
           <div class="form-group">
             <label class="form-label" for="firstname">First name</label>
             <input class="form-control" type="text" id="firstname" name="firstname">
+
+            <div class="proto-annotation">
+              The gov.uk service manual <a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/names.html">recommends that you use a single name field</a> as it is more sensitive to cultural conventions. If necessary, this could be split by the first whitespace character to populate database fields.
+            </div>
           </div>
 
           <div class="form-group">
