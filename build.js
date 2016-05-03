@@ -5,6 +5,7 @@ var landRegistryElements = require('land-registry-elements');
  * Call the land registry elements pattern library to grab our assets
  */
 landRegistryElements({
+  'mode': ((process.env.mode === 'PRODUCTION') ? 'production' : 'dev'),
   'includePath': __dirname,
   'destination': path.join(__dirname, 'app/assets/.land-registry-elements'),
   'assetPath': '/public',
