@@ -57,18 +57,22 @@
               <option value="Other">Other</option>
             </select>
 
-            <div class="proto-annotation">
-              The gov.uk service manual <a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/names.html#titles">recommends against asking for people's title</a> as you risk upsetting people and there are <a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/gender-and-sex.html">a wide range of issues surrounding gender</a>
-            </div>
+            {% if annotation %}
+              <div class="proto-annotation">
+                The gov.uk service manual <a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/names.html#titles">recommends against asking for people's title</a> as you risk upsetting people and there are <a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/gender-and-sex.html">a wide range of issues surrounding gender</a>
+              </div>
+            {% endif %}
           </div>
 
           <div class="form-group">
             <label class="form-label" for="firstname">First name</label>
             <input class="form-control" type="text" id="firstname" name="firstname">
 
-            <div class="proto-annotation">
-              The gov.uk service manual <a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/names.html">recommends that you use a single name field</a> as it is more sensitive to cultural conventions. If necessary, this could be split by the first whitespace character to populate database fields.
-            </div>
+            {% if annotation %}
+              <div class="proto-annotation">
+                The gov.uk service manual <a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/names.html">recommends that you use a single name field</a> as it is more sensitive to cultural conventions. If necessary, this could be split by the first whitespace character to populate database fields.
+              </div>
+            {% endif %}
           </div>
 
           <div class="form-group">

@@ -29,6 +29,7 @@ router.use(function (req, res, next) {
     res.locals.account_creation_variant = req.query.account_creation_variant
   }
 
+
   if(typeof req.body.account_creation_variant !== 'undefined') {
     res.locals.account_creation_variant = req.body.account_creation_variant
   }
@@ -204,7 +205,8 @@ router.all('/create_account:variant?', function(req, res) {
 
   res.render(path.join(__dirname, 'create_account' + variant), {
     countries: countries,
-    title_number: title_number
+    title_number: title_number,
+    annotation: typeof req.query.annotation !== 'undefined'
   });
 })
 
