@@ -1,3 +1,5 @@
 node_modules
 app/assets/.land-registry-elements
 data/db
+
+npm-debug.log

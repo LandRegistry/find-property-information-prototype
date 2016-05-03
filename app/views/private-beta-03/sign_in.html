@@ -10,13 +10,13 @@
 
       <p>If you don't have one, you can <a href="create_account{{account_creation_variant}}?title_number={{title_number}}">create an account</a>.</p>
 
-      <form method="POST" action="worldpay_1" onSubmit="return checkTerms()" id="login-form">
+      <form method="GET" action="{% if action %}{{action}}{% else %}worldpay_1{% endif %}" onSubmit="return checkTerms()" id="login-form">
         <input name="title_number" value="{{title_number}}" type="hidden" />
 
         <!-- Username -->
         <div class="form-group">
           <label class="form-label-bold" for="user-name">Username</label>
-          <input type="text" class="form-control" id="user-name">
+          <input type="text" class="form-control" id="user-name"{% if username %} value="{{username}}"{% endif %}>
         </div>
 
         <!-- Password -->
@@ -70,8 +70,8 @@
       <p>Use the Land Registry 'Find a Property' service to get a reminder of your username or password.</p>
 
       <ul class="list list-bullet">
-        <li><a href="https://eservices.landregistry.gov.uk/wps/portal/RequestUsernameReminder" rel="external" target="_blank">Forgotten your username</a></li>
-        <li><a href="password_reset_send_email?title_number={{title_number}}" rel="external" target="_blank">Forgetten your password</a></li>
+        <li><a href="/{{prototypeVersion}}/reset/username/send_email?title_number={{title_number}}">Forgotten your username</a></li>
+        <li><a href="/{{prototypeVersion}}/reset/password/send_email?title_number={{title_number}}">Forgetten your password</a></li>
       </ul>
 
       <div class="text spacing-top-single">

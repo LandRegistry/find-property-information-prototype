@@ -26,27 +26,36 @@
 
 {% endblock %}
 
-{% block title %}Reset password{% endblock %}
+{% block title %}Reset {{item}}{% endblock %}
 
 {% block body %}
-  <h1 class="heading-large">Reset your password</h1>
+  {% if item == 'password' %}
+    <h1 class="heading-large">Reset your password</h1>
+  {% else %}
+    <h1 class="heading-large">Request username reminder</h1>
+  {% endif %}
 
   <div class="grid-row spacing-top-single">
 
     <div class="column-two-thirds tablet-column-two-thirds">
 
-      <form action="password_reset_click_email" method="GET" novalidate data-clientside-validation="create_account_form_validation">
+      <form action="/{{prototypeVersion}}/reset/{{item}}/click_email" method="GET" novalidate data-clientside-validation="create_account_form_validation">
         <input name="title_number" value="{{title_number}}" type="hidden" />
 
-        <p>To reset your password, enter your username or email address in the box below.</p>
-        <p>We will send a link to your email address which you will need to click to reset your password.</p>
+        {% if item == 'password' %}
+          <p>To reset your {{item}}, enter your {% if item == 'password' %}username or {% endif %}email address in the box below.</p>
+          <p>We will send a link to your email address which you will need to click to reset your {{item}}.</p>
+        {% else %}
+          <p>Enter your email address below and we will send you an email containing the username for the account.</p>
+        {% endif %}
+
 
         <fieldset>
 
           <legend class="visuallyhidden">Enter your username or email address</legend>
 
           <div class="form-group">
-            <label class="form-label" for="pass">Username or email address</label>
+            <label class="form-label" for="pass">{% if item == 'password' %}Username or{% endif %} Email address</label>
             <input class="form-control" type="text" id="username" name="username">
           </div>
 
@@ -59,7 +68,7 @@
         {
           "username": {
             "presence": {
-              "message": "Username or email address is required"
+              "message": "{% if item == 'password' %}Username or {% endif %}Email address is required"
             }
           }
         }

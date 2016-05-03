@@ -123,13 +123,25 @@ router.get('/confirm_selection', function (req, res) {
  */
 router.all('/sign_in', function (req, res) {
   var title_number;
+  var username;
+  var action;
 
-  if(typeof req.body.title_number !== 'undefined') {
-    title_number = req.body.title_number;
+  if(typeof req.query.title_number !== 'undefined') {
+    title_number = req.query.title_number;
+  }
+
+  if(typeof req.query.username !== 'undefined') {
+    username = req.query.username;
+  }
+
+  if(typeof req.query.action !== 'undefined') {
+    action = req.query.action;
   }
 
   res.render(path.join(__dirname, 'sign_in'), {
-    'title_number': title_number
+    'title_number': title_number,
+    'username': username,
+    'action': action
   });
 });
 
@@ -141,6 +153,10 @@ router.all('/worldpay_:stage', function (req, res) {
 
   if(typeof req.body.title_number !== 'undefined') {
     title_number = req.body.title_number;
+  }
+
+  if(typeof req.query.title_number !== 'undefined') {
+    title_number = req.query.title_number;
   }
 
   res.render(path.join(__dirname, 'worldpay_' + req.params.stage), {
@@ -214,17 +230,34 @@ router.all('/create_account:variant?', function(req, res) {
 /**
  * Password reset forms
  */
-router.all('/password_reset:section', function(req, res) {
+router.all('/reset/:item/:section', function(req, res) {
 
   require('./data')(req.query.title_number, function(titles) {
     var title = titles.shift();
 
-    res.render(path.join(__dirname, 'password_reset' + req.params.section), {
+    res.render(path.join(__dirname, 'reset_' + req.params.section), {
+      item: req.params.item,
       title: title,
       title_number: req.query.title_number
     });
   });
 
-})
+});
+
+/**
+ * Password reset forms
+ */
+router.all('/sign_in_successful', function(req, res) {
+
+  require('./data')(req.query.title_number, function(titles) {
+    var title = titles.shift();
+
+    res.render(path.join(__dirname, 'sign_in_successful'), {
+      title: title,
+      title_number: req.query.title_number
+    });
+  });
+
+});
 
 module.exports = router;

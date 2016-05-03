@@ -26,19 +26,19 @@
 
 {% endblock %}
 
-{% block title %}Password reset successful{% endblock %}
+{% block title %}{{item}} reset successful{% endblock %}
 
 {% block body %}
-  <h1 class="heading-large">Password reset successful</h1>
+  <h1 class="heading-large">{{item | capitalize}} reset successful</h1>
 
   <div class="grid-row spacing-top-single">
 
     <div class="column-two-thirds tablet-column-two-thirds">
 
-      <p>Your password has been successfully reset and you are now signed in.</p>
+      <p>Your {{item}} has been successfully reset and you are now signed in.</p>
       <ul class="list list-bullet">
-        <li><a href="display_title?title_number={{title_number}}">Return to viewing {{title.address}}</a></li>
-        <li><a href="search">Start a new search</a></li>
+        <li><a href="/{{prototypeVersion}}/worldpay_1?title_number={{title_number}}">Continue purchasing the summary for {{title.address}}</a></li>
+        <li><a href="/{{prototypeVersion}}/search">Start a new search</a></li>
       </ul>
     </div>
   </div>
