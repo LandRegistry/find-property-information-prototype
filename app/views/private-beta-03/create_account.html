@@ -35,7 +35,7 @@
 
     <div class="column-two-thirds tablet-column-two-thirds">
 
-      <form action="worldpay_1" method="POST" novalidate data-clientside-validation="create_account_form_validation" data-clientside-validation-no-summary>
+      <form action="worldpay_1" method="POST" novalidate data-clientside-validation="create_account_form_validation">
         <input name="title_number" value="{{title_number}}" type="hidden" />
 
         <p>Intro blurb here regarding why an account is required. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
@@ -122,7 +122,7 @@
 
           <div class="form-group">
             <label class="form-label" for="pass">Password</label>
-            <input class="form-control" type="text" id="pass" name="pass">
+            <input class="form-control" type="password" id="pass" name="pass">
 
             <label class="form-checkbox" for="show-password">
               <input id="show-password" name="show-password" type="checkbox">
@@ -137,11 +137,53 @@
 
       <script type="application/json" id="create_account_form_validation">
         {
+          "title": {
+            "presence": {
+              "message": "Title is required"
+            }
+          },
+          "firstname": {
+            "presence": {
+              "message": "First name is required"
+            }
+          },
+          "surname": {
+            "presence": {
+              "message": "Surname is required"
+            }
+          },
+          "address": {
+            "presence": {
+              "message": "Address is required"
+            }
+          },
+          "city": {
+            "presence": {
+              "message": "City is required"
+            }
+          },
+          "country": {
+            "presence": {
+              "message": "Country is required"
+            }
+          },
+          "postcode": {
+            "presence": {
+              "message": "Postcode is required"
+            }
+          },
+          "email": {
+            "presence": {
+              "message": "Email address is required"
+            }
+          },
           "pass": {
+            "presence": {
+              "message": "Password is required"
+            },
             "length": {
-              "minimum": 3,
-              "maximum": 70,
-              "message": "This field should be between 3 and 70 characters"
+              "minimum": 6,
+              "message": "Password should be at least 6 characters long"
             }
           }
         }

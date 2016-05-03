@@ -191,6 +191,7 @@ router.get('/display_title', function (req, res) {
  * Account creation forms
  */
 router.all('/create_account:variant?', function(req, res) {
+  var title_number;
 
   if(typeof req.query.title_number !== 'undefined') {
     title_number = req.query.title_number;
