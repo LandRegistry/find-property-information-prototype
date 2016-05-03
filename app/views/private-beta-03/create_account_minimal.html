@@ -16,7 +16,7 @@
 
         <h2 class="heading-medium">Your name</h2>
 
-        <fieldset class="inline">
+        <fieldset>
 
           <legend class="visuallyhidden">Your name</legend>
 
@@ -28,7 +28,7 @@
 
         <h2 class="heading-medium">Address</h2>
 
-        <fieldset class="inline">
+        <fieldset>
 
           <legend class="visuallyhidden">Address</legend>
 
@@ -60,9 +60,11 @@
 
         <h2 class="heading-medium">Account details</h2>
 
-        <fieldset class="inline">
+        <fieldset>
 
           <legend class="visuallyhidden">Account details</legend>
+
+          <p>These details will be used to log in to your account in future.</p>
 
           <div class="form-group">
             <label class="form-label" for="email">Email address</label>
@@ -78,6 +80,18 @@
               Show typing
             </label>
           </div>
+
+          <script>
+            document.getElementById('show-password').addEventListener('click', function(e) {
+              var password = document.getElementById('pass');
+
+              if(password.type === 'password') {
+                password.type = 'text';
+              } else {
+                password.type = 'password';
+              }
+            });
+          </script>
 
         </fieldset>
 
@@ -117,6 +131,7 @@
             }
           },
           "email": {
+            "email": true,
             "presence": {
               "message": "Email address is required"
             }

@@ -5,6 +5,7 @@ var moment = require('moment');
 var casual = require('casual');
 var yaml = require('js-yaml');
 
+router.use('/images', express.static(path.join(__dirname, 'images')));
 
 var countries = require('./country-records.json');
 countries = countries.sort(function(a, b) {
@@ -208,6 +209,22 @@ router.all('/create_account:variant?', function(req, res) {
     title_number: title_number,
     annotation: typeof req.query.annotation !== 'undefined'
   });
+});
+
+/**
+ * Password reset forms
+ */
+router.all('/password_reset:section', function(req, res) {
+
+  require('./data')(req.query.title_number, function(titles) {
+    var title = titles.shift();
+
+    res.render(path.join(__dirname, 'password_reset' + req.params.section), {
+      title: title,
+      title_number: req.query.title_number
+    });
+  });
+
 })
 
 module.exports = router;
