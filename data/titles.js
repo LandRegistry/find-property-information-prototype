@@ -127,6 +127,8 @@ for(var i=1;i<=totalCities;i++) {
 
               cautionItem.address.unshift('Land to the ' + casual.cardinalDirection + ' of ');
 
+              cautionItem.tenure = 'Freehold';
+
               cautionItem.proprietors = cautionItem.proprietors.slice(0,1);
 
               results.push(cautionItem);
