@@ -46,7 +46,7 @@ module.exports = function(data, searchTerm, callback) {
       // Otherwise do an address search
       // Loop over each component of the address
       result.address.forEach(function(addressItem) {
-        var compareItem = addressItem.toString().toLowerCase();
+        var compareItem = addressItem.toString().toLowerCase().replace(' ', '');
 
         // Loop over each component of the search term (Split by commas and spaces earlier)
         terms.forEach(function(term) {
