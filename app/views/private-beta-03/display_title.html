@@ -82,11 +82,11 @@
             {% if proprietor.co_reg_no %}
               <h3 class="visuallyhidden">Company registration number</h3>
               <div>{{ proprietor.co_reg_no }}</div>
+            {% endif %}
 
-              {% if proprietor.company_location %}
-                <h3 class="visuallyhidden">Company location</h3>
-                <div>{{ proprietor.company_location }}</div>
-              {% endif %}
+            {% if proprietor.company_location %}
+              <h3 class="visuallyhidden">Company location</h3>
+              <div>{{ proprietor.company_location }}</div>
             {% endif %}
 
             <h3 class="visuallyhidden">Addresses</h3>

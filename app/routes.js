@@ -103,6 +103,14 @@ router.get('/database', function (req, res) {
     },
 
     {
+      description: 'Freehold title with non UK company proprietor',
+      test: function(title) {
+        return title.tenure === 'Freehold' && title.proprietors[0].company_location && !title.is_caution_title;
+      },
+      match: false
+    },
+
+    {
       description: 'Freehold title where proprietor has multiple addresses',
       test: function(title) {
         return title.tenure === 'Freehold' && title.proprietors[0].addresses.length > 1 && !title.is_caution_title;
