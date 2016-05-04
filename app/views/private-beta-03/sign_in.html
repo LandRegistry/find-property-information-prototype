@@ -3,12 +3,13 @@
 {% block title %}Sign in{% endblock %}
 
 {% block body %}
-  <h1 class="heading-large">Sign in with your Land Registry account</h1>
+  <h1 class="heading-large">Sign in with your account</h1>
 
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <p>If you don't have one, you can <a href="create_account{{account_creation_variant}}?title_number={{title_number}}">create an account</a>.</p>
+      <p>Accounts created with this service, or existing accounts from "Find a property" or "Property alert" can be used to sign in.</p>
+      <p>If you don't have one, or you last used your account more than 1 year ago, you will need to <a href="create_account{{account_creation_variant}}?title_number={{title_number}}">create an account</a>.</p>
 
       <form method="GET" action="{% if action %}{{action}}{% else %}worldpay_1{% endif %}" onSubmit="return checkTerms()" id="login-form">
         <input name="title_number" value="{{title_number}}" type="hidden" />
@@ -67,7 +68,6 @@
       </script>
 
       <h2 class="heading-medium spacing-top-double">Problems signing in</h2>
-      <p>Use the Land Registry 'Find a Property' service to get a reminder of your username or password.</p>
 
       <ul class="list list-bullet">
         <li><a href="/{{prototypeVersion}}/reset/username/send_email?title_number={{title_number}}">Forgotten your username</a></li>

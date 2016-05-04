@@ -1,0 +1,55 @@
+{% extends "./layout/layout.html" %}
+
+{% from "./includes/register_teaser.html" import register_teaser %}
+
+{% block head_additionals %}
+
+  <style type="text/css">
+  .form-group {
+    position: relative;
+  }
+
+  .form-group .proto-annotation {
+    color: #333;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    margin-left: 20px;
+    top: 0;
+    max-width: 100%;
+    min-height: 100%;
+    padding: 15px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.15);
+    background-color: beige;
+    font-size: 14px;
+    border-bottom-right-radius: 60px 5px;
+  }
+  </style>
+
+{% endblock %}
+
+{% block title %}Account created{% endblock %}
+
+{% block body %}
+  <h1 class="heading-large">Account created</h1>
+
+  <div class="grid-row spacing-top-single">
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <p>Your account has been created and you have been signed in.</p>
+      <h2 class="heading-small spacing-bottom-single">You were viewing</h2>
+      {{ register_teaser(title=title) }}
+
+      <a href="/{{prototypeVersion}}/worldpay_1?title_number={{title_number}}" class="button spacing-top-single spacing-bottom-half">Continue to Worldpay</a>
+
+      <br> or <a href="/{{prototypeVersion}}/search">start a new search</a>
+
+      {# <ul class="list list-bullet spacing-top-double">
+
+        <li><a href="/{{prototypeVersion}}/worldpay_1?title_number={{title_number}}">Continue purchasing the summary for {{title.address}}</a></li>
+        <li><a href="/{{prototypeVersion}}/search">Start a new search</a></li>
+      </ul> #}
+    </div>
+  </div>
+{% endblock %}

@@ -228,6 +228,21 @@ router.all('/create_account:variant?', function(req, res) {
 });
 
 /**
+ * Account creation forms
+ */
+router.all('/account_created_continue', function(req, res) {
+  require('./data')(req.body.title_number, function(titles) {
+    var title = titles.shift();
+
+    res.render(path.join(__dirname, 'account_created_continue'), {
+      title: title,
+      title_number: req.body.title_number
+    });
+  });
+
+});
+
+/**
  * Password reset forms
  */
 router.all('/reset/:item/:section', function(req, res) {
