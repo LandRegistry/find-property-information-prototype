@@ -83,7 +83,7 @@ app.get('/robots.txt', function (req, res) {
 app.use("/", routes);
 
 // auto render any view that exists
-app.get(/^\/([^.]+)$/, function (req, res) {
+app.all(/^\/([^.]+)$/, function (req, res) {
 
   var path = (req.params[0]);
 

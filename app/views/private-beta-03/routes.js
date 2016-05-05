@@ -26,16 +26,37 @@ countries = countries.sort(function(a, b) {
 router.use(function (req, res, next) {
   res.locals.price_text = '£3 inc VAT';
 
-  if(typeof req.query.account_creation_variant !== 'undefined') {
-    res.locals.account_creation_variant = req.query.account_creation_variant
+  res.locals.data = {};
+
+  for(var item in req.query) {
+    if(req.query.hasOwnProperty(item)) {
+      res.locals.data[item] = req.query[item];
+    }
   }
 
-
-  if(typeof req.body.account_creation_variant !== 'undefined') {
-    res.locals.account_creation_variant = req.body.account_creation_variant
+  for(var item in req.body) {
+    if(req.body.hasOwnProperty(item)) {
+      res.locals.data[item] = req.body[item];
+    }
   }
 
-  next();
+  console.log(res.locals.data);
+
+  if(typeof res.locals.data.title_number !== 'undefined') {
+    require('./data')(res.locals.data.title_number, function(titles) {
+      res.locals.title = titles.shift();
+
+      console.log('---');
+      console.log(yaml.safeDump(res.locals.title));
+      console.log('---');
+
+      next();
+
+    });
+  } else {
+    next();
+  }
+
 });
 
 /**
@@ -46,7 +67,7 @@ router.post('/landing_page', function (req, res) {
   // Route people to the appropriate places dependant on what they chose
   switch(req.body.information) {
     case 'title_summary':
-      return res.redirect('search?account_creation_variant=' + (res.locals.account_creation_variant ? res.locals.account_creation_variant : ''));
+      return res.redirect('search?account_creation_variant=' + (res.locals.data.account_creation_variant ? res.locals.data.account_creation_variant : ''));
 
       break;
 
@@ -104,67 +125,6 @@ router.get('/search_results', function (req, res) {
 });
 
 /**
- * Confirm order route
- */
-router.get('/confirm_selection', function (req, res) {
-
-  require('./data')(req.query.title_number, function(titles) {
-    res.render(path.join(__dirname, 'confirm_selection'), {
-      title: titles.shift(),
-      display_page_number: req.query.page,
-      search_term: req.query.search_term
-    });
-  });
-
-});
-
-/**
- * Sign in page
- */
-router.all('/sign_in', function (req, res) {
-  var title_number;
-  var username;
-  var action;
-
-  if(typeof req.query.title_number !== 'undefined') {
-    title_number = req.query.title_number;
-  }
-
-  if(typeof req.query.username !== 'undefined') {
-    username = req.query.username;
-  }
-
-  if(typeof req.query.action !== 'undefined') {
-    action = req.query.action;
-  }
-
-  res.render(path.join(__dirname, 'sign_in'), {
-    'title_number': title_number,
-    'username': username,
-    'action': action
-  });
-});
-
-/**
- * Worldpay routes
- */
-router.all('/worldpay_:stage', function (req, res) {
-  var title_number;
-
-  if(typeof req.body.title_number !== 'undefined') {
-    title_number = req.body.title_number;
-  }
-
-  if(typeof req.query.title_number !== 'undefined') {
-    title_number = req.query.title_number;
-  }
-
-  res.render(path.join(__dirname, 'worldpay_' + req.params.stage), {
-    'title_number': title_number
-  });
-});
-
-/**
  * Display title route
  */
 router.get('/display_title', function (req, res) {
@@ -189,18 +149,8 @@ router.get('/display_title', function (req, res) {
     reg_number: 'GB 8888 181 53'
   }
 
-  require('./data')(req.query.title_number, function(titles) {
-    var title = titles.shift();
-
-    console.log('---');
-    console.log(yaml.safeDump(title));
-    console.log('---');
-
-    res.render(path.join(__dirname, 'display_title'), {
-      title: title,
-      receipt: receipt
-    });
-
+  res.render(path.join(__dirname, 'display_title'), {
+    receipt: receipt
   });
 
 });
@@ -209,37 +159,14 @@ router.get('/display_title', function (req, res) {
  * Account creation forms
  */
 router.all('/create_account:variant?', function(req, res) {
-  var title_number;
-
-  if(typeof req.query.title_number !== 'undefined') {
-    title_number = req.query.title_number;
-  }
-
   var variant = '';
   if(typeof req.params.variant !== 'undefined') {
     variant = req.params.variant;
   }
 
   res.render(path.join(__dirname, 'create_account' + variant), {
-    countries: countries,
-    title_number: title_number,
-    annotation: typeof req.query.annotation !== 'undefined'
+    countries: countries
   });
-});
-
-/**
- * Account creation forms
- */
-router.all('/account_created_continue', function(req, res) {
-  require('./data')(req.body.title_number, function(titles) {
-    var title = titles.shift();
-
-    res.render(path.join(__dirname, 'account_created_continue'), {
-      title: title,
-      title_number: req.body.title_number
-    });
-  });
-
 });
 
 /**
@@ -247,32 +174,11 @@ router.all('/account_created_continue', function(req, res) {
  */
 router.all('/reset/:item/:section', function(req, res) {
 
-  require('./data')(req.query.title_number, function(titles) {
-    var title = titles.shift();
-
-    res.render(path.join(__dirname, 'reset_' + req.params.section), {
-      item: req.params.item,
-      title: title,
-      title_number: req.query.title_number
-    });
-  });
-
-});
-
-/**
- * Password reset forms
- */
-router.all('/sign_in_successful', function(req, res) {
-
-  require('./data')(req.query.title_number, function(titles) {
-    var title = titles.shift();
-
-    res.render(path.join(__dirname, 'sign_in_successful'), {
-      title: title,
-      title_number: req.query.title_number
-    });
+  res.render(path.join(__dirname, 'reset_' + req.params.section), {
+    item: req.params.item,
   });
 
 });
 
 module.exports = router;
+

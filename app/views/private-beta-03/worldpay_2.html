@@ -122,7 +122,7 @@ img.printonly {display:none;}
 
 
 <form action="worldpay_3" method="post" autocomplete="off">
-<input name="title_number" value="{{title_number}}" type="hidden" />
+<input name="title_number" value="{{data.title_number}}" type="hidden" />
 <table class="container" cellpadding="3" cellspacing="0" align="center">
   <tbody><tr>
     <td>
@@ -785,7 +785,7 @@ For an example of the HTML code that this files need to work correctly with your
 
       <tr valign="top">
         <td class="one" valign="top">
-          <nobr><a href="worldpay_2?title_number={{title_number}}" tabindex="250" style="text-decoration:none;"><img src="/public/app/images/startagain.gif" style="border:0px;" alt="CLEAR FORM"></a>&nbsp;<span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #000000;"><b>CLEAR FORM</b></span></nobr>
+          <nobr><a href="worldpay_2?title_number={{data.title_number}}" tabindex="250" style="text-decoration:none;"><img src="/public/app/images/startagain.gif" style="border:0px;" alt="CLEAR FORM"></a>&nbsp;<span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #000000;"><b>CLEAR FORM</b></span></nobr>
         </td>
 
 
@@ -801,7 +801,7 @@ For an example of the HTML code that this files need to work correctly with your
 <!--WP cancel button -->
       <tr valign="top">
         <td class="one" valign="top" align="left">
-          <nobr><a href="worldpay_cancel?title_number={{title_number}}" tabindex="260" style="text-decoration:none;"><img src="/public/app/images/cancel.gif" alt="CANCEL" style="border:0px;"></a>&nbsp;<span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #000000;"><b>CANCEL</b></span></nobr>
+          <nobr><a href="worldpay_cancel?title_number={{data.title_number}}" tabindex="260" style="text-decoration:none;"><img src="/public/app/images/cancel.gif" alt="CANCEL" style="border:0px;"></a>&nbsp;<span style=" font-family: Arial,Geneva,Helvetica,Sans-Serif; font-size: 10pt; color: #000000;"><b>CANCEL</b></span></nobr>
         </td>
       </tr>
 <!--WP end cancelButton -->

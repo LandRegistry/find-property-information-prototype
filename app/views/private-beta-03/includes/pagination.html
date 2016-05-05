@@ -4,7 +4,7 @@
       <ul>
         {% if display_page_number > 1 %}
           <li class="previous-page">
-            <a href="search_results?search_term={{search_term}}&amp;page={{display_page_number|int - 1 }}&amp;account_creation_variant={{account_creation_variant}}" rel="prev">
+            <a href="search_results?search_term={{search_term}}&amp;page={{display_page_number|int - 1 }}&amp;account_creation_variant={{data.account_creation_variant}}" rel="prev">
               <span class="pagination-part-title">Previous page</span>
               <span class="pagination-label">{{display_page_number|int - 1}} of {{ number_pages }}</span>
             </a>
@@ -12,7 +12,7 @@
         {% endif %}
         {% if display_page_number < number_pages %}
           <li class="next-page">
-            <a href="search_results?search_term={{search_term}}&amp;page={{display_page_number|int + 1 }}&amp;account_creation_variant={{account_creation_variant}}" rel="next">
+            <a href="search_results?search_term={{search_term}}&amp;page={{display_page_number|int + 1 }}&amp;account_creation_variant={{data.account_creation_variant}}" rel="next">
               <span class="pagination-part-title">Next page</span>
               <span class="pagination-label">{{display_page_number|int + 1}} of {{ number_pages }}</span>
             </a>

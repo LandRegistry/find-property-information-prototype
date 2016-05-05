@@ -36,7 +36,7 @@
     <div class="column-two-thirds tablet-column-two-thirds">
 
       <form action="account_created_continue" method="POST" novalidate data-clientside-validation="create_account_form_validation">
-        <input name="title_number" value="{{title_number}}" type="hidden" />
+        <input name="title_number" value="{{data.title_number}}" type="hidden" />
 
         <h2 class="heading-medium">Your details</h2>
 
@@ -44,7 +44,7 @@
 
           <legend class="visuallyhidden">Your details</legend>
 
-          <div class="form-group"{% if annotation %} style="margin-bottom: 80px"{% endif %}>
+          <div class="form-group"{% if data.annotation %} style="margin-bottom: 80px"{% endif %}>
             <label class="form-label" for="title">Title</label>
             <select class="form-control" id="title" name="title">
               <option value="">Please select</option>
@@ -55,7 +55,7 @@
               <option value="Other">Other</option>
             </select>
 
-            {% if annotation %}
+            {% if data.annotation %}
               <div class="proto-annotation">
                 The gov.uk service manual <a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/names.html#titles">recommends against asking for people's title</a> as you risk upsetting people and there are <a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/gender-and-sex.html">a wide range of issues surrounding gender</a>
               </div>
@@ -66,7 +66,7 @@
             <label class="form-label" for="firstname">First name</label>
             <input class="form-control" type="text" id="firstname" name="firstname">
 
-            {% if annotation %}
+            {% if data.annotation %}
               <div class="proto-annotation">
                 The gov.uk service manual <a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/names.html">recommends that you use a single name field</a> as it is more sensitive to cultural conventions. If necessary, this could be split by the first whitespace character to populate database fields.
               </div>
