@@ -38,7 +38,8 @@
     <div class="column-two-thirds tablet-column-two-thirds">
 
       <p>Your account has been created and you have been signed in.</p>
-      <h2 class="heading-small spacing-bottom-single">You were viewing</h2>
+      <p>You were purchasing {{title.address}}:</p>
+
       {{ register_teaser(title=title) }}
 
       <a href="/{{prototypeVersion}}/worldpay_1?title_number={{title_number}}" class="button spacing-top-single spacing-bottom-half">Continue to Worldpay</a>
