@@ -14,6 +14,11 @@
       <form method="GET" action="{% if data.action %}{{data.action}}{% else %}worldpay_1{% endif %}" onSubmit="return checkTerms()" id="login-form">
         <input name="title_number" value="{{data.title_number}}" type="hidden" />
 
+        <!-- If this field is present in the GET or POST data sent to the server -->
+        <!-- it will instantly log the user in. This is obviously not how "real" -->
+        <!-- sign-ins work! It is a massive hack for prototyping only -->
+        <input name="do_sign_in" value="true" type="hidden" />
+
         <!-- Username -->
         <div class="form-group">
           <label class="form-label-bold" for="user-name">Username</label>

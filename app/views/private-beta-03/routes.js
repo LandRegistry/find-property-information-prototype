@@ -26,6 +26,9 @@ countries = countries.sort(function(a, b) {
 router.use(function (req, res, next) {
   res.locals.price_text = '£3 inc VAT';
 
+  // Pass the entire session through to the frontend
+  res.locals.session = req.session;
+
   res.locals.data = {};
 
   for(var item in req.query) {
@@ -39,8 +42,6 @@ router.use(function (req, res, next) {
       res.locals.data[item] = req.body[item];
     }
   }
-
-  console.log(res.locals.data);
 
   if(typeof res.locals.data.title_number !== 'undefined') {
     require('./data')(res.locals.data.title_number, function(titles) {
@@ -60,31 +61,78 @@ router.use(function (req, res, next) {
 });
 
 /**
+ * Sign in / out hack
+ */
+router.use(function (req, res, next) {
+  // In order to quickly prototype sign in, if the GET or POST data sent to the
+  // server contains either do_sign_in or do_sign_out values we will act
+  // accordingly and sign the user in or out. No passwords are checked, no
+  // accounts exist anywhere in any databases. This is a straight up hack
+  // for prototyping purposes only. Move along now.
+
+  // Default to not being logged in
+  if(typeof req.session.isLoggedIn === 'undefined') {
+    req.session.isLoggedIn = false;
+  }
+
+  // If we've been asked to sign in, reflect this in the session
+  if(typeof req.query.do_sign_in !== 'undefined' || typeof req.body.do_sign_in !== 'undefined') {
+    req.session.isLoggedIn = true;
+    return next();
+  }
+
+  // If we've been asked to sign out, destroy the session
+  else if(typeof req.query.do_sign_out !== 'undefined' || typeof req.body.do_sign_out !== 'undefined') {
+    req.session.destroy(function(err) {
+      next();
+    });
+  }
+
+  else {
+    next();
+  }
+
+});
+
+/**
+ * Sign out route
+ */
+router.get('/sign-out', function(req, res) {
+  req.session.destroy(function() {
+    return res.redirect('search?account_creation_variant=' + (res.locals.data.account_creation_variant ? res.locals.data.account_creation_variant : ''));
+  })
+});
+
+/**
  * Landing page form
  * GET route is handled by the default set of routes. This is here to handle POSTs
  */
 router.post('/landing_page', function (req, res) {
-  // Route people to the appropriate places dependant on what they chose
-  switch(req.body.information) {
-    case 'title_summary':
-      return res.redirect('search?account_creation_variant=' + (res.locals.data.account_creation_variant ? res.locals.data.account_creation_variant : ''));
+  req.session.destroy(function() {
 
-      break;
+    // Route people to the appropriate places dependant on what they chose
+    switch(req.body.information) {
+      case 'title_summary':
+        return res.redirect('search?account_creation_variant=' + (res.locals.data.account_creation_variant ? res.locals.data.account_creation_variant : ''));
 
-    case 'full_title_documents':
-      return res.redirect('https://eservices.landregistry.gov.uk/wps/portal/Property_Search');
+        break;
 
-      break;
+      case 'full_title_documents':
+        return res.redirect('https://eservices.landregistry.gov.uk/wps/portal/Property_Search');
 
-    case 'official_copy':
-      return res.redirect('https://www.gov.uk/government/publications/official-copies-of-register-or-plan-registration-oc1');
+        break;
 
-      break;
-  }
+      case 'official_copy':
+        return res.redirect('https://www.gov.uk/government/publications/official-copies-of-register-or-plan-registration-oc1');
 
-  // Otherwise just render the form again
-  // Equivalent to the form failing validation, except we don't have any server side in the proto
-  res.render(path.join(__dirname, 'landing_page'));
+        break;
+    }
+
+    // Otherwise just render the form again
+    // Equivalent to the form failing validation, except we don't have any server side in the proto
+    res.render(path.join(__dirname, 'landing_page'));
+
+  });
 });
 
 

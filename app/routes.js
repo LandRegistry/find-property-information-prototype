@@ -1,4 +1,5 @@
 var express = require('express');
+var session = require('express-session');
 var router = express.Router();
 var glob = require('glob');
 var path = require('path');
@@ -6,6 +7,13 @@ var once = require('once');
 var extend = require('extend');
 var fs = require('fs');
 var yaml = require('js-yaml');
+
+// Initialise express-session so we can do some fake sign stuff
+router.use(session({
+  saveUninitialized: false,
+  resave: false,
+  secret: 'doesnt-matter-because-its-a-prototype'
+}));
 
 /**
  * Main index page route

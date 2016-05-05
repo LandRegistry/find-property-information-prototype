@@ -21,6 +21,7 @@
     "casual": "^1.5.2",
     "express": "4.13.4",
     "express-nunjucks": "^0.9.3",
+    "express-session": "^1.13.0",
     "glob": "^7.0.3",
     "js-yaml": "^3.6.0",
     "land-registry-elements": "landregistry/land-registry-elements",
