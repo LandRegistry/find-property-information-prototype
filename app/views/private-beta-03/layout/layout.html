@@ -29,10 +29,6 @@
         {% block header_primary %}{% endblock %}
       </div>
       <div class="column-third mobile-column-one-half">
-        {% if session.isLoggedIn %}
-          <a class="font-xsmall" href="/{{prototypeVersion}}/sign-out">Sign out</a>
-        {% endif %}
-
         {% block header_secondary %}{% endblock %}
       </div>
     </div>
