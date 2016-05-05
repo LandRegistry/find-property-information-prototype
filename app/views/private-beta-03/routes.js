@@ -105,34 +105,31 @@ router.get('/sign-out', function(req, res) {
 
 /**
  * Landing page form
- * GET route is handled by the default set of routes. This is here to handle POSTs
  */
 router.post('/landing_page', function (req, res) {
-  req.session.destroy(function() {
 
-    // Route people to the appropriate places dependant on what they chose
-    switch(req.body.information) {
-      case 'title_summary':
-        return res.redirect('search?account_creation_variant=' + (res.locals.data.account_creation_variant ? res.locals.data.account_creation_variant : ''));
+  // Route people to the appropriate places dependant on what they chose
+  switch(req.body.information) {
+    case 'title_summary':
+      return res.redirect('search?account_creation_variant=' + (res.locals.data.account_creation_variant ? res.locals.data.account_creation_variant : ''));
 
-        break;
+      break;
 
-      case 'full_title_documents':
-        return res.redirect('https://eservices.landregistry.gov.uk/wps/portal/Property_Search');
+    case 'full_title_documents':
+      return res.redirect('https://eservices.landregistry.gov.uk/wps/portal/Property_Search');
 
-        break;
+      break;
 
-      case 'official_copy':
-        return res.redirect('https://www.gov.uk/government/publications/official-copies-of-register-or-plan-registration-oc1');
+    case 'official_copy':
+      return res.redirect('https://www.gov.uk/government/publications/official-copies-of-register-or-plan-registration-oc1');
 
-        break;
-    }
+      break;
+  }
 
-    // Otherwise just render the form again
-    // Equivalent to the form failing validation, except we don't have any server side in the proto
-    res.render(path.join(__dirname, 'landing_page'));
+  // Otherwise just render the form again
+  // Equivalent to the form failing validation, except we don't have any server side in the proto
+  res.render(path.join(__dirname, 'landing_page'));
 
-  });
 });
 
 
