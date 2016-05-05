@@ -38,6 +38,11 @@
       <form action="account_created_continue" method="POST" novalidate data-clientside-validation="create_account_form_validation">
         <input name="title_number" value="{{data.title_number}}" type="hidden" />
 
+        <!-- If this field is present in the GET or POST data sent to the server -->
+        <!-- it will instantly log the user in. This is obviously not how "real" -->
+        <!-- sign-ins work! It is a massive hack for prototyping only -->
+        <input name="do_sign_in" value="true" type="hidden" />
+
         <h2 class="heading-medium">Your details</h2>
 
         <fieldset>
