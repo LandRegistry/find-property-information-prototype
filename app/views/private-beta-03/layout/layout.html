@@ -34,7 +34,6 @@
     </div>
 
     {% block body %}{% endblock %}
-    {% block js_bottom %}{% endblock %}
   </main>
 {% endblock %}
 
@@ -48,4 +47,5 @@
 
 {% block body_end %}
   {% include "../includes/scripts.html" %}
+  {% block js_bottom %}{% endblock %}
 {% endblock %}

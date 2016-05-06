@@ -43,6 +43,74 @@
         <!-- sign-ins work! It is a massive hack for prototyping only -->
         <input name="do_sign_in" value="true" type="hidden" />
 
+        <h2 class="heading-medium">Account details</h2>
+
+        <fieldset>
+
+          <legend class="visuallyhidden">Account details</legend>
+
+            <div class="form-group">
+              <label class="form-label" for="email">Email address</label>
+              <input class="form-control" type="email" id="email" name="email">
+              <p class="form-hint">We will use this to allow you to reset your password.</p>
+              <p class="form-hint">We won't use your email address for any purposes other than access to this service. We will never share your email with third parties.</p>
+            </div>
+
+            <div class="panel panel-border-narrow visuallyhidden email-hint">
+              <p>Please ensure your email address is displayed correctly below. We will need this if you need to reset your password in future.</p>
+              <p id="email-hint-value" class="bold"></p>
+            </div>
+
+            <script>
+              (function() {
+                var emailHint = document.querySelectorAll('.email-hint');
+                var emailHintValue = document.getElementById('email-hint-value');
+                var emailInput = document.getElementById('email');
+
+                function change(e) {
+                  [].forEach.call(emailHint, function(hint) {
+                    hint.classList.remove('visuallyhidden');
+                  });
+
+                  emailHintValue.textContent = emailInput.value;
+                }
+
+                emailInput.addEventListener('keyup', change);
+                emailInput.addEventListener('change', change);
+              })();
+            </script>
+
+<!--           <div class="form-group">
+            <label class="form-label" for="username">Create a username</label>
+            <input class="form-control" type="text" id="username" name="username">
+            <p class="form-hint">You'll need this to sign in again, so make it memorable.</p>
+          </div> -->
+
+          <div class="form-group">
+            <label class="form-label" for="pass">Create a password</label>
+            <input class="form-control" type="password" id="pass" name="pass">
+            <p class="form-hint">Your password must have at least 6 characters</p>
+
+            <label class="form-checkbox" for="show-password">
+              <input id="show-password" name="show-password" type="checkbox">
+              Show typing
+            </label>
+          </div>
+
+          <script>
+            document.getElementById('show-password').addEventListener('click', function(e) {
+              var password = document.getElementById('pass');
+
+              if(password.type === 'password') {
+                password.type = 'text';
+              } else {
+                password.type = 'password';
+              }
+            });
+          </script>
+
+        </fieldset>
+
         <h2 class="heading-medium">Your details</h2>
 
         <fieldset>
@@ -83,37 +151,6 @@
             <input class="form-control" type="text" id="surname" name="surname">
           </div>
 
-          <div class="form-group">
-            <label class="form-label" for="email">Email address</label>
-            <input class="form-control" type="email" id="email" name="email">
-            <p class="form-hint">We will use this to allow you to reset your password.</p>
-            <p class="form-hint">We will never share your email with third parties.</p>
-          </div>
-
-          <div class="panel panel-border-narrow visuallyhidden email-hint">
-            <p>Please ensure your email address is displayed correctly below. We will need this if you need to reset your password in future.</p>
-            <p id="email-hint-value" class="bold"></p>
-          </div>
-
-          <script>
-            (function() {
-              var emailHint = document.querySelectorAll('.email-hint');
-              var emailHintValue = document.getElementById('email-hint-value');
-              var emailInput = document.getElementById('email');
-
-              function change(e) {
-                [].forEach.call(emailHint, function(hint) {
-                  hint.classList.remove('visuallyhidden');
-                });
-
-                emailHintValue.textContent = emailInput.value;
-              }
-
-              emailInput.addEventListener('keyup', change);
-              emailInput.addEventListener('change', change);
-            })();
-          </script>
-
         </fieldset>
 
         <h2 class="heading-medium">Address</h2>
@@ -145,43 +182,6 @@
             <label class="form-label" for="postcode">Postcode</label>
             <input class="form-control" type="text" id="postcode" name="postcode">
           </div>
-
-        </fieldset>
-
-        <h2 class="heading-medium">Account details</h2>
-
-        <fieldset>
-
-          <legend class="visuallyhidden">Account details</legend>
-
-          <div class="form-group">
-            <label class="form-label" for="username">Create a username</label>
-            <input class="form-control" type="text" id="username" name="username">
-            <p class="form-hint">You'll need this to sign in again, so make it memorable.</p>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="pass">Create a password</label>
-            <input class="form-control" type="password" id="pass" name="pass">
-            <p class="form-hint">Your password must have at least 6 characters</p>
-
-            <label class="form-checkbox" for="show-password">
-              <input id="show-password" name="show-password" type="checkbox">
-              Show typing
-            </label>
-          </div>
-
-          <script>
-            document.getElementById('show-password').addEventListener('click', function(e) {
-              var password = document.getElementById('pass');
-
-              if(password.type === 'password') {
-                password.type = 'text';
-              } else {
-                password.type = 'password';
-              }
-            });
-          </script>
 
         </fieldset>
 
@@ -238,11 +238,6 @@
               "message": "Email address is required"
             }
           },
-          "username": {
-            "presence": {
-              "message": "Username is required"
-            }
-          },
           "pass": {
             "presence": {
               "message": "Password is required"
@@ -261,4 +256,17 @@
       </script>
     </div>
   </div>
+{% endblock %}
+
+{% block js_bottom %}
+  <script>
+    validate.validators.checkUsernameExists = function(value) {
+      return new validate.Promise(function(resolve, reject) {
+        setTimeout(function() {
+          if (value === "foo") resolve();
+          else resolve("is not foo");
+        }, 100);
+      });
+    };
+  </script>
 {% endblock %}
