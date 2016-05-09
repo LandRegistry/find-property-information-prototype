@@ -27,7 +27,7 @@
         <!-- Email -->
         <div class="form-group">
           <label class="form-label-bold" for="email">Email address</label>
-          <input type="text" class="form-control" name="email" id="email"{#{% if data.username %} value="{{data.username}}"{% endif %}#}>
+          <input type="text" class="form-control" name="email" id="email"{% if data.email %} value="{{data.email}}"{% endif %}>
         </div>
 
         <!-- Password -->
@@ -84,7 +84,8 @@
         <!-- <li><a href="/{{prototypeVersion}}/reset/username/send_email?title_number={{data.title_number}}">Forgotten your username</a></li> -->
         <li><a href="/{{prototypeVersion}}/reset/password/send_email?title_number={{data.title_number}}">Forgotten your password?</a></li>
         <li>Your username is your email address. If you don't use this email address any more you will need to create a new account.</li>
-      </ul>
+        <li>You can also <a href="https://www.gov.uk/government/publications/official-copies-of-register-or-plan-registration-oc1">order information in paper format</a>.</li>
+       </ul>
 
       <div class="text spacing-top-single">
         <div class="panel panel-border-narrow">
