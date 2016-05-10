@@ -4,5 +4,7 @@ description: |
   <p>Initial minimal stab at the account creation forms and flow.</p>
 
 changelog:
-  - Account creation forms created
-  - Login screen modified to link to new account creation flow
+  - New - account creation forms
+  - New - password reset flow
+  - New - sign in page overhauled
+  - New - Additional page added to flow after account creation (Account created - continue...)
