@@ -67,6 +67,11 @@ app.locals.serviceName=config.serviceName;
 app.locals.cookieText=config.cookieText;
 app.locals.releaseVersion="v" + releaseVersion;
 
+// Force HTTPs on production connections
+if (env === 'production'){
+  app.use(utils.forceHttps);
+}
+
 // Disallow search index idexing
 app.use(function (req, res, next) {
   // Setting headers stops pages being indexed even if indexed pages link to them.
