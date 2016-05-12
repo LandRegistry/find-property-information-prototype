@@ -20,7 +20,7 @@
       <!-- <p>Accounts created with this service, or existing accounts from "Find a property" or "Property alert" can be used to sign in.</p> -->
 
 
-      <form method="GET" action="{% if data.action %}{{data.action}}{% else %}worldpay_1{% endif %}" onSubmit="return checkTerms()" id="login-form"  novalidate data-clientside-validation="login_form_validation">
+      <form method="POST" action="{% if data.action %}{{data.action}}{% else %}worldpay_1{% endif %}" onSubmit="return checkTerms()" id="login-form"  novalidate data-clientside-validation="login_form_validation">
         <input name="title_number" value="{{data.title_number}}" type="hidden" />
 
         <!-- If this field is present in the GET or POST data sent to the server -->
