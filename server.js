@@ -67,6 +67,11 @@ app.locals.serviceName=config.serviceName;
 app.locals.cookieText=config.cookieText;
 app.locals.releaseVersion="v" + releaseVersion;
 
+// Force HTTPs on production connections
+if (env === 'production'){
+  app.use(utils.forceHttps);
+}
+
 // Disallow search index idexing
 app.use(function (req, res, next) {
   // Setting headers stops pages being indexed even if indexed pages link to them.
@@ -83,7 +88,7 @@ app.get('/robots.txt', function (req, res) {
 app.use("/", routes);
 
 // auto render any view that exists
-app.get(/^\/([^.]+)$/, function (req, res) {
+app.all(/^\/([^.]+)$/, function (req, res) {
 
   var path = (req.params[0]);
 

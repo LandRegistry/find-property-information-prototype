@@ -1,0 +1,54 @@
+{% extends "./layout/layout.html" %}
+
+{% block head_additionals %}
+
+  <style type="text/css">
+  .form-group {
+    position: relative;
+  }
+
+  .form-group .proto-annotation {
+    color: #333;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    margin-left: 20px;
+    top: 0;
+    max-width: 100%;
+    min-height: 100%;
+    padding: 15px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.15);
+    background-color: beige;
+    font-size: 14px;
+    border-bottom-right-radius: 60px 5px;
+  }
+  </style>
+
+{% endblock %}
+
+{% block title %}Reset {{item}}{% endblock %}
+
+{% block body %}
+  {% if item == 'password' %}
+    <h1 class="heading-large">Password reset link sent</h1>
+  {% else %}
+    <h1 class="heading-large">Username reminder sent</h1>
+  {% endif %}
+
+  <div class="grid-row spacing-top-single">
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+      <a href="click_email?title_number={{data.title_number}}" style="text-decoration: inherit;color:inherit">
+
+        {% if item == 'username' %}
+          <p>We have sent you an email containing your username.</p>
+          <p>Once you receive the email, follow the included instructions in order to sign in to the service.</p>
+        {% else %}
+          <p>We have sent an email to <strong class="bold">{{data.email}}</strong> containing a {{item}} reset link.</p>
+          <p>Once you receive the email, follow the included instructions in order to reset your password.</p>
+        {% endif %}
+      </a>
+    </div>
+
+  </div>
+{% endblock %}

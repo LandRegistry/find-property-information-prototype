@@ -1,4 +1,5 @@
 var express = require('express');
+var session = require('express-session');
 var router = express.Router();
 var glob = require('glob');
 var path = require('path');
@@ -6,6 +7,13 @@ var once = require('once');
 var extend = require('extend');
 var fs = require('fs');
 var yaml = require('js-yaml');
+
+// Initialise express-session so we can do some fake sign stuff
+router.use(session({
+  saveUninitialized: false,
+  resave: false,
+  secret: 'doesnt-matter-because-its-a-prototype'
+}));
 
 /**
  * Main index page route
@@ -98,6 +106,14 @@ router.get('/database', function (req, res) {
       description: 'Freehold title with company proprietor',
       test: function(title) {
         return title.tenure === 'Freehold' && (typeof title.proprietors[0].co_reg_no !== 'undefined') && !title.is_caution_title;
+      },
+      match: false
+    },
+
+    {
+      description: 'Freehold title with non UK company proprietor',
+      test: function(title) {
+        return title.tenure === 'Freehold' && title.proprietors[0].company_location && !title.is_caution_title;
       },
       match: false
     },
