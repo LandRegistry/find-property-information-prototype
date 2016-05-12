@@ -95,11 +95,22 @@ router.use(function (req, res, next) {
 });
 
 /**
+ * Sign in route
+ */
+router.get('/sign_in', function(req, res) {
+  req.session.isLoggedIn = false;
+
+  req.session.destroy(function() {
+    res.render(path.join(__dirname, 'sign_in'));
+  })
+});
+
+/**
  * Sign out route
  */
 router.get('/sign-out', function(req, res) {
   req.session.destroy(function() {
-    return res.redirect('search?account_creation_variant=' + (res.locals.data.account_creation_variant ? res.locals.data.account_creation_variant : ''));
+    return res.redirect('landing_page?account_creation_variant=' + (res.locals.data.account_creation_variant ? res.locals.data.account_creation_variant : ''));
   })
 });
 

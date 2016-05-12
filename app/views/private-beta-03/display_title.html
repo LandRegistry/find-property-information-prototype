@@ -13,7 +13,7 @@
 
 {% block body %}
 
-  <h1 class="heading-large spacing-top-single">Summary of{% if title['is_caution_title'] %} caution {% endif %}title {{ title['data']['title_number'] }}</h1>
+  <h1 class="heading-large spacing-top-single">Summary of{% if title['is_caution_title'] %} caution{% endif %} title {{ title['data']['title_number'] }}</h1>
 
   <p class="font-xsmall">This title was last changed on <time datetime="{{ title.last_changed_datetime }}">{{ title.last_changed_date }} at {{ title.last_changed_time }}</time></p>
 
