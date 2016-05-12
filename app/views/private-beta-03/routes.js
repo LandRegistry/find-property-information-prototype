@@ -153,6 +153,7 @@ router.get('/search_results', function (req, res) {
   // Equivalent to the form failing validation, except we don't have any server side in the proto
   if(!req.query.search_term) {
     res.render(path.join(__dirname, 'search'));
+    return;
   }
 
   var data = {
