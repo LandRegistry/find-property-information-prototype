@@ -39,8 +39,14 @@
 
     <div class="column-two-thirds tablet-column-two-thirds">
       <a href="click_email?title_number={{data.title_number}}" style="text-decoration: inherit;color:inherit">
-        <p>We have sent an email to <strong class="bold">{{data.email}}</strong> containing a password reset link.</p>
-        <p>Once you receive the email, follow the included instructions in order to reset your password.</p>
+
+        {% if item == 'username' %}
+          <p>We have sent you an email containing your username.</p>
+          <p>Once you receive the email, follow the included instructions in order to sign in to the service.</p>
+        {% else %}
+          <p>We have sent an email to <strong class="bold">{{data.email}}</strong> containing a {{item}} reset link.</p>
+          <p>Once you receive the email, follow the included instructions in order to reset your password.</p>
+        {% endif %}
       </a>
     </div>
 
