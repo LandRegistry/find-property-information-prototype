@@ -4,3 +4,5 @@ description: |
   <p>Tweaking the registration flow.</p>
 
 changelog:
+  - Rename "Create account" to "Register"
+  - Add "Why register?" text to account creation form
