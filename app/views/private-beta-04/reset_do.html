@@ -1,0 +1,93 @@
+{% extends "./layout/layout.html" %}
+
+{% block head_additionals %}
+
+  <style type="text/css">
+  .form-group {
+    position: relative;
+  }
+
+  .form-group .proto-annotation {
+    color: #333;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    margin-left: 20px;
+    top: 0;
+    max-width: 100%;
+    min-height: 100%;
+    padding: 15px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.15);
+    background-color: beige;
+    font-size: 14px;
+    border-bottom-right-radius: 60px 5px;
+  }
+  </style>
+
+{% endblock %}
+
+{% block title %}Reset your {{item}}{% endblock %}
+
+{% block body %}
+  <h1 class="heading-large">Reset your {{item}}</h1>
+
+  <div class="grid-row spacing-top-single">
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <form action="/{{prototypeVersion}}/reset/{{item}}/confirm" method="POST" novalidate data-clientside-validation="create_account_form_validation">
+        <input name="title_number" value="{{title_number}}" type="hidden" />
+
+        <p>To reset your {{item}}, enter a new one in the box below.</p>
+
+        <fieldset>
+
+          <legend class="visuallyhidden">Enter your new {{item}}</legend>
+
+          <div class="form-group">
+            <label class="form-label" for="{{item}}">Create a new {{item}}</label>
+            <input class="form-control" type="{% if item == 'password' %}password{% else %}text{% endif %}" id="{{item}}" name="{{item}}">
+
+            {% if item == 'password' %}
+              <label class="form-checkbox" for="show-password">
+                <input id="show-password" name="show-password" type="checkbox">
+                Show typing
+              </label>
+
+              <script>
+                document.getElementById('show-password').addEventListener('click', function(e) {
+                  var password = document.getElementById('{{item}}');
+
+                  if(password.type === 'password') {
+                    password.type = 'text';
+                  } else {
+                    password.type = 'password';
+                  }
+                });
+              </script>
+            {% endif %}
+          </div>
+
+        </fieldset>
+
+        <input type="submit" class="button" value="Reset {{item}}">
+      </form>
+
+      <script type="application/json" id="create_account_form_validation">
+        {
+          "{{item}}": {
+            "presence": {
+              "message": "{{item | capitalize}} is required"
+            }
+            {% if item == 'password' %}
+              ,"length": {
+                "minimum": 6,
+                "message": "Password should be at least 6 characters long"
+              }
+            {% endif %}
+          }
+        }
+      </script>
+    </div>
+  </div>
+{% endblock %}
