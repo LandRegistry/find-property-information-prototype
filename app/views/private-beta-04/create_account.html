@@ -3,26 +3,6 @@
 {% block head_additionals %}
 
   <style type="text/css">
-  .form-group {
-    position: relative;
-  }
-
-  .form-group .proto-annotation {
-    color: #333;
-    font-weight: bold;
-    position: absolute;
-    left: 50%;
-    margin-left: 20px;
-    top: 0;
-    max-width: 100%;
-    min-height: 100%;
-    padding: 15px;
-    box-shadow: 0 10px 10px rgba(0,0,0,0.15);
-    background-color: beige;
-    font-size: 14px;
-    border-bottom-right-radius: 60px 5px;
-  }
-
   #circularG{
     position:relative;
     height:21px;
@@ -315,7 +295,7 @@
 
           <legend class="visuallyhidden">Your details</legend>
 
-          <div class="form-group"{% if data.annotation %} style="margin-bottom: 80px"{% endif %}>
+          <div class="form-group">
             <label class="form-label" for="title">Title</label>
             <select class="form-control" id="title" name="title">
               <option value="">Please select</option>
@@ -325,23 +305,11 @@
               <option value="Ms">Ms</option>
               <option value="Other">Other</option>
             </select>
-
-            {% if data.annotation %}
-              <div class="proto-annotation">
-                The gov.uk service manual <a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/names.html#titles">recommends against asking for people's title</a> as you risk upsetting people and there are <a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/gender-and-sex.html">a wide range of issues surrounding gender</a>
-              </div>
-            {% endif %}
           </div>
 
           <div class="form-group">
             <label class="form-label" for="firstname">First name</label>
             <input class="form-control" type="text" id="firstname" name="firstname">
-
-            {% if data.annotation %}
-              <div class="proto-annotation">
-                The gov.uk service manual <a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/names.html">recommends that you use a single name field</a> as it is more sensitive to cultural conventions. If necessary, this could be split by the first whitespace character to populate database fields.
-              </div>
-            {% endif %}
           </div>
 
           <div class="form-group">

@@ -110,8 +110,12 @@ router.get('/sign_in', function(req, res) {
  */
 router.get('/sign-out', function(req, res) {
   req.session.destroy(function() {
-    return res.redirect('landing_page?account_creation_variant=' + (res.locals.data.account_creation_variant ? res.locals.data.account_creation_variant : ''));
+    return res.redirect('landing_page');
   })
+});
+
+router.get('/', function(req, res) {
+  return res.redirect('private-beta-04/landing_page');
 });
 
 /**
@@ -122,7 +126,7 @@ router.post('/landing_page', function (req, res) {
   // Route people to the appropriate places dependant on what they chose
   switch(req.body.information) {
     case 'title_summary':
-      return res.redirect('search?account_creation_variant=' + (res.locals.data.account_creation_variant ? res.locals.data.account_creation_variant : ''));
+      return res.redirect('search');
 
       break;
 
@@ -165,8 +169,6 @@ router.get('/search_results', function (req, res) {
 
   require('./data')(req.query.search_term, function(titles) {
     data.results.titles = titles;
-
-    data.account_creation_variant = res.locals.account_creation_variant;
 
     // Total result count
     data.results.number_results = data.results.titles.length;
