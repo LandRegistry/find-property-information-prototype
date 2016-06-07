@@ -124,8 +124,7 @@
       <h2 class="heading-medium">The summary costs {{ price_text | safe }} <span class="font-small">(&pound;2.50+VAT)</span></h2>
       <p>You can pay by credit or debit card.</p>
 
-
-      <form method="GET" action="{% if session.isLoggedIn %}worldpay_1{% else %}sign_in{% endif %}" data-clientside-validation="cra_form_validation" data-clientside-validation-no-summary>
+      <form method="GET" class="spacing-bottom-double" action="{% if session.isLoggedIn %}worldpay_1{% else %}sign_in{% endif %}" data-clientside-validation="cra_form_validation" data-clientside-validation-no-summary>
         <p>You need to accept the following terms to continue.</p>
 
         <input type="hidden" name="title_number" id="title_number" value="{{title['data']['title_number']}}"/>
@@ -138,9 +137,14 @@
           </label>
         </div>
 
-        <input type="submit" class="button" value="Buy title summary">
+        {% if session.isLoggedIn %}
+          <input type="submit" class="button" value="Buy title summary">
+        {% else %}
+          <!-- <p class="form-hint">You will need to sign in or create an account to continue </p> -->
+          <p>You will be asked to sign in on the next page before continuing to purchase this summary.</p>
+          <input type="submit" class="button" value="Continue to sign in page">
+        {% endif %}
 
-        <p class="font-xsmall spacing-top-third">for {{ price_text | safe }}</p>
       </form>
 
       <script type="application/json" id="cra_form_validation">
@@ -152,6 +156,8 @@
           }
         }
       </script>
+
+
 
       {{ back_link(title='Search results', prefix='Back to', url=path + '/search_results') }}
 

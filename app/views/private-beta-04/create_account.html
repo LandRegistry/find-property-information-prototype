@@ -209,7 +209,9 @@
 {% block title %}Create account{% endblock %}
 
 {% block body %}
-  <h1 class="heading-large">Register <a href="#why-register" class="font-xsmall split-detail-trigger">Why register?</a></h1>
+  <h1 class="heading-large">Register <a href="#why-register" class="font-xsmall split-detail-trigger">Why register?</a>
+    <span class="heading-secondary">with Find property information</span>
+  </h1>
 
   <div class="grid-row">
 
@@ -222,7 +224,7 @@
         </div>
       </div>
 
-      <form action="account_created_continue" method="POST" novalidate data-clientside-validation="create_account_form_validation">
+      <form class="spacing-top-double" action="account_created_continue" method="POST" novalidate data-clientside-validation="create_account_form_validation">
         <input name="title_number" value="{{data.title_number}}" type="hidden" />
 
         <!-- If this field is present in the GET or POST data sent to the server -->
@@ -230,15 +232,16 @@
         <!-- sign-ins work! It is a massive hack for prototyping only -->
         <input name="do_sign_in" value="true" type="hidden" />
 
-        <h2 class="heading-medium">Account details</h2>
-
         <fieldset>
 
           <legend class="visuallyhidden">Account details</legend>
 
             <div class="form-group">
-              <label class="form-label" for="email">Email address <a href="#why-do-we-need-email" class="font-xsmall split-detail-trigger">Why do we need this?</a></label>
+              <label class="form-label" for="email">Email address</label>
 
+
+              <input class="form-control" type="email" id="email" name="email" data-email-hint>
+              <a href="#why-do-we-need-email" class="font-xsmall split-detail-trigger">Why do we need this?</a>
               <div class="split-detail-contents font-xsmall" id="why-do-we-need-email">
                 <div class="panel panel-border-narrow spacing-bottom-single">
                   <p>Your email address will be used to log into the service in future. We will also use this to allow you to reset your password.</p>
@@ -246,8 +249,6 @@
                   <p>We won't share your email with third parties.</p>
                 </div>
               </div>
-
-              <input class="form-control" type="email" id="email" name="email" data-email-hint>
               <div id="circularG"><div id="circularG_1" class="circularG"></div><div id="circularG_2" class="circularG"></div><div id="circularG_3" class="circularG"></div><div id="circularG_4" class="circularG"></div><div id="circularG_5" class="circularG"></div><div id="circularG_6" class="circularG"></div><div id="circularG_7" class="circularG"></div><div id="circularG_8" class="circularG"></div></div>
             </div>
 
@@ -274,7 +275,7 @@
             <input class="form-control" type="password" id="pass" name="pass" data-password-reveal>
 
             <p class="form-hint">Your password must:</p>
-            <ul class="form-hint list list-bullet">
+            <ul class="form-hint list list-bullet spacing-bottom-flush">
               <li>be between 8 and 20 characters</li>
               <li>contain at least 1 letter and 2 numbers</li>
               <li>not be the same as your email address</li>

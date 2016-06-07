@@ -10,3 +10,4 @@ changelog:
   - Password requirements updated
   - Various tweaks made to account creation and sign in forms. Major tweak being that we are now focusing the user interface around new accounts and not existing FaP users.
   - Return to govuk link on final page now goes to our start page, not to bare gov.uk
+  - Tweak wording around the button on the confirm purchase screen
