@@ -8,5 +8,5 @@ changelog:
   - Add "Why register?" text to account creation form
   - Title number removed from list page
   - Password requirements updated
-  - Various tweaks made to account creation and sign in forms
+  - Various tweaks made to account creation and sign in forms. Major tweak being that we are now focusing the user interface around new accounts and not existing FaP users.
   - Return to govuk link on final page now goes to our start page, not to bare gov.uk
