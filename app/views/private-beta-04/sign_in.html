@@ -3,9 +3,13 @@
 {% block title %}Sign in{% endblock %}
 
 {% block body %}
-  <h1 class="heading-large">Sign in
-    <span class="heading-secondary spacing-top-half">Not been here before? <a href="create_account?title_number={{data.title_number}}">Register with us</a></span>
+  <h1 class="heading-large spacing-top-double spacing-bottom-half">Sign in
+    <span class="heading-secondary">to Find property information</span>
   </h1>
+
+  <div class="panel panel-border-narrow spacing-top-single spacing-bottom-single">
+    <p>Not been here before? <a href="create_account?title_number={{data.title_number}}">Register with us</a></p>
+  </div>
 
   <div class="grid-row">
     <div class="column-two-thirds">
@@ -30,6 +34,7 @@
             Password
           </label>
           <input type="password" class="form-control" id="password" name="password">
+          <p class="spacing-top-half font-xsmall"><a href="{{path}}/reset/password/send_email?title_number={{data.title_number}}">Forgotten your password?</a></p>
         </div>
 
         <!-- T&Cs -->
@@ -40,7 +45,7 @@
           </label>
         </div>
 
-        <div class="form-group">
+        <div class="form-group spacing-bottom-double">
           <input type="submit" class="button" value="Sign in">
         </div>
 
@@ -66,19 +71,16 @@
         }
       </script>
 
-      <h2 class="heading-medium spacing-top-double">Problems signing in</h2>
+      <details>
+        <summary>Problems signing in</summary>
 
-      <ul class="list list-bullet">
-        <li><a href="{{path}}/reset/password/send_email?title_number={{data.title_number}}">Forgotten your password?</a></li>
-        <!-- <li><a href="{{path}}/reset/username/send_email?title_number={{data.title_number}}">Forgotten your "Find a Property" username?</a></li> -->
-        <li>Alternatively you can <a href="https://www.gov.uk/government/publications/official-copies-of-register-or-plan-registration-oc1">order information in paper format</a>.</li>
-       </ul>
+          <div class="panel panel-border-narrow">
+            <p>If you have any problems signing in, you can contact Land Registry using the <a href="http://landregistry.custhelp.com/app/contactus_general/">general enquiry contact form</a> or call <b style="font-weight: 600;white-space: nowrap;">0300 006 0411</b>.</p>
+            <p>You can also <a href="https://www.gov.uk/government/publications/official-copies-of-register-or-plan-registration-oc1">order information in paper format</a>.</p>
+          </div>
 
-      <div class="text spacing-top-single">
-        <div class="panel panel-border-narrow">
-          <p>If you have any other problems signing in, you can contact Land Registry using the <a href="http://landregistry.custhelp.com/app/contactus_general/">general enquiry contact form</a> or call <b style="font-weight: 600;white-space: nowrap;">0300 006 0411</b>.</p>
-        </div>
-      </div>
+      </details>
+
     </div>
   </div>
 
