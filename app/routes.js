@@ -7,6 +7,7 @@ var once = require('once');
 var extend = require('extend');
 var fs = require('fs');
 var yaml = require('js-yaml');
+var url = require('url');
 
 // Initialise express-session so we can do some fake sign stuff
 router.use(session({
@@ -14,6 +15,49 @@ router.use(session({
   resave: false,
   secret: 'doesnt-matter-because-its-a-prototype'
 }));
+
+/**
+ * Expose variables to all routes
+ */
+router.use(function (req, res, next) {
+  res.locals.price_text = '£3 inc VAT';
+
+  // Pass the entire session through to the frontend
+  res.locals.session = req.session;
+
+  res.locals.data = {};
+
+  res.locals.path = '/' + req.path.split('/')[1];
+
+  for(var item in req.query) {
+    if(req.query.hasOwnProperty(item)) {
+      res.locals.data[item] = req.query[item];
+    }
+  }
+
+  for(var item in req.body) {
+    if(req.body.hasOwnProperty(item)) {
+      res.locals.data[item] = req.body[item];
+    }
+  }
+
+  if(typeof res.locals.data.title_number !== 'undefined') {
+
+    require(path.join(__dirname, 'views', req.path.split('/')[1], 'data'))(res.locals.data.title_number, function(titles) {
+      res.locals.title = titles.shift();
+
+      console.log('---');
+      console.log(yaml.safeDump(res.locals.title));
+      console.log('---');
+
+      next();
+
+    });
+  } else {
+    next();
+  }
+
+});
 
 /**
  * Main index page route
@@ -206,14 +250,6 @@ glob(path.join(__dirname, 'views/**/routes.js'), function(err, files) {
 
   files.forEach(function(file) {
     var prototypeVersion = path.dirname(path.relative(path.join(__dirname, 'views/'), file));
-
-    /**
-     * Expose the version prefix to all routes
-     */
-    router.use(function (req, res, next) {
-      res.locals.prototypeVersion = prototypeVersion;
-      next();
-    });
 
     // Mount all routes exposed onto a path reflecting the prototype version
     router.use('/' + prototypeVersion, require(file));

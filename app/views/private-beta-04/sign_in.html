@@ -4,9 +4,9 @@
 
 {% block body %}
   <h1 class="heading-large spacing-bottom-flush">Sign in
-    <span class="heading-secondary spacing-top-half">Don't have an account? <a href="create_account?title_number={{data.title_number}}">Create one now</a></span>
+    <span class="heading-secondary spacing-top-half">Not been here before? <a href="create_account?title_number={{data.title_number}}">Register with us</a></span>
   </h1>
-  <p class="spacing-bottom-double">You can use a Land Registry "Find a Property" or "Property Alert" account.</p>
+  <p class="spacing-bottom-double">You can use a Land Registry "Find a Property" account.</p>
 
   <div class="grid-row">
     <div class="column-two-thirds">
@@ -21,8 +21,9 @@
 
         <!-- Email -->
         <div class="form-group">
-          <label class="form-label" for="email"><strong class="bold">Email address</strong> or <strong class="bold">"Find a Property" Username</strong></label>
+          <label class="form-label-bold" for="email">Username</label>
           <input type="text" class="form-control" name="email" id="email"{% if data.email %} value="{{data.email}}"{% endif %}{% if data.username %} value="{{data.username}}"{% endif %}>
+          <!-- <p class="form-hint">Your email address is your username unless you come from Find a Property</p> -->
         </div>
 
         <!-- Password -->
@@ -70,9 +71,9 @@
       <h2 class="heading-medium spacing-top-double">Problems signing in</h2>
 
       <ul class="list list-bullet">
-        <li><a href="/{{prototypeVersion}}/reset/password/send_email?title_number={{data.title_number}}">Forgotten your password?</a></li>
+        <li><a href="{{path}}/reset/password/send_email?title_number={{data.title_number}}">Forgotten your password?</a></li>
         <li>If you have a "Find a Property" account, enter your username</li>
-        <li><a href="/{{prototypeVersion}}/reset/username/send_email?title_number={{data.title_number}}">Forgotten your "Find a Property" username?</a></li>
+        <li><a href="{{path}}/reset/username/send_email?title_number={{data.title_number}}">Forgotten your "Find a Property" username?</a></li>
         <li>You can also <a href="https://www.gov.uk/government/publications/official-copies-of-register-or-plan-registration-oc1">order information in paper format</a>.</li>
        </ul>
 

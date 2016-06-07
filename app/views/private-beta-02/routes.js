@@ -4,14 +4,21 @@ var path = require('path');
 var moment = require('moment');
 var casual = require('casual');
 var yaml = require('js-yaml');
+var glob = require('glob');
+
+var prototypeVersion = path.basename(__dirname);
 
 /**
- * Expose variables to all routes
+ * Basic routes for templates
  */
-router.use(function (req, res, next) {
-  res.locals.price_text = '£3 inc VAT'
-  next();
+glob(path.join(__dirname, '*.html'), function(err, files) {
+  files.forEach(function(file) {
+    router.get('/' + path.basename(file, '.html'), function(req, res) {
+      res.render(prototypeVersion + '/' + path.basename(file, '.html'));
+    })
+  });
 });
+
 
 /**
  * Landing page form
