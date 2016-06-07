@@ -71,9 +71,11 @@ router.get('/sign_in', function(req, res) {
 /**
  * Sign out route
  */
-router.get('/sign-out', function(req, res) {
+router.get('/sign_out', function(req, res) {
+  req.session.isLoggedIn = false;
+
   req.session.destroy(function() {
-    return res.redirect('landing_page');
+    return res.render(path.join(__dirname, 'signed_out'));
   })
 });
 
