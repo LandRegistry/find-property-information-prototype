@@ -11,8 +11,8 @@
   <h1 class="heading-large spacing-top-single">Confirm your order</h1>
 
   <p>You'll get a summary of the information Land Registry holds for this property title.</p>
-
   <div class="grid-row column-flip spacing-top-single">
+
     <div class="column-one-third tablet-column-one-third spacing-bottom-single">
       {% if title['indexPolygon'] %}
         <div class="map" id="map">
@@ -121,8 +121,14 @@
         </div>
       </div>
 
+
       <h2 class="heading-medium">The summary costs {{ price_text | safe }} <span class="font-small">(&pound;2.50+VAT)</span></h2>
-      <p>You can pay by credit or debit card.</p>
+      {% if not session.isLoggedIn %}
+        <p>You will need to tell us who you are before purchasing this summary.</p>
+      {% endif %}
+
+      <!-- <p>You can pay by credit or debit card.</p> -->
+
 
       <form method="GET" class="spacing-bottom-double" action="{% if session.isLoggedIn %}worldpay_1{% else %}sign_in{% endif %}" data-clientside-validation="cra_form_validation" data-clientside-validation-no-summary>
         <p>You need to accept the following terms to continue.</p>
@@ -141,7 +147,6 @@
           <input type="submit" class="button" value="Buy title summary">
         {% else %}
           <!-- <p class="form-hint">You will need to sign in or create an account to continue </p> -->
-          <p>You will be asked to sign in on the next page before continuing to purchase this summary.</p>
           <input type="submit" class="button" value="Continue to sign in page">
         {% endif %}
 
@@ -156,8 +161,6 @@
           }
         }
       </script>
-
-
 
       {{ back_link(title='Search results', prefix='Back to', url=path + '/search_results') }}
 

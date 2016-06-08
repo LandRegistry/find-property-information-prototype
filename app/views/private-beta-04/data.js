@@ -8,6 +8,20 @@ var search = require('../../../data/search');
 // before making any modifications you wish to.
 
 // console.log(data[0]);
+//
+//FAKE1001200
+
+// One lender of HSBC
+// Date to be today
+
+
+// data.forEach(function(item) {
+//   if(item.data.title_number === 'FAKE1001200') {
+//     console.log('HERE');
+//   }
+// });
+
+// Fix it so that
 
 
 module.exports = function(searchTerm, callback) {

@@ -3,13 +3,9 @@
 {% block title %}Sign in{% endblock %}
 
 {% block body %}
-  <h1 class="heading-large spacing-bottom-half">Sign in
-    <span class="heading-secondary">to Find property information</span>
-  </h1>
+  <h1 class="heading-large spacing-bottom-flush">Sign in</h1>
 
-  <div class="panel panel-border-narrow spacing-top-single spacing-bottom-single">
-    <p>Not been here before? <a href="create_account?title_number={{data.title_number}}">Register with us</a></p>
-  </div>
+  <p class="lede">or <a href="create_account?title_number={{data.title_number}}">register to use this service</a></p>
 
   <div class="grid-row">
     <div class="column-two-thirds">
@@ -25,7 +21,7 @@
         <!-- Email -->
         <div class="form-group">
           <label class="form-label-bold" for="email">Email address</label>
-          <input type="email" placeholder="someone@example.com" class="form-control" name="email" id="email"{% if data.email %} value="{{data.email}}"{% endif %}{% if data.username %} value="{{data.username}}"{% endif %}>
+          <input type="email" class="form-control" name="email" id="email"{% if data.email %} value="{{data.email}}"{% endif %}{% if data.username %} value="{{data.username}}"{% endif %}>
         </div>
 
         <!-- Password -->
@@ -34,7 +30,7 @@
             Password
           </label>
           <input type="password" class="form-control" id="password" name="password">
-          <p class="spacing-top-half font-xsmall"><a href="{{path}}/reset/password/send_email?title_number={{data.title_number}}">Forgotten your password?</a></p>
+          <p class="spacing-top-half"><a href="{{path}}/reset/password/send_email?title_number={{data.title_number}}">Forgotten your password?</a></p>
         </div>
 
         <!-- T&Cs -->
@@ -46,7 +42,8 @@
         </div>
 
         <div class="form-group spacing-bottom-double">
-          <input type="submit" class="button" value="Sign in">
+          <input type="submit" class="button" value="Continue to payment">
+          <!-- <p class="form-hint spacing-top-half">You will proceed to payment after this step</p> -->
         </div>
 
       </form>
@@ -71,15 +68,11 @@
         }
       </script>
 
-      <details>
-        <summary>Problems signing in?</summary>
+      <div class="panel panel-border-narrow spacing-bottom-single">
+        <p>If you have any problems signing in, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact Land Registry</a>.</p>
+      </div>
 
-          <div class="panel panel-border-narrow">
-            <p>If you have any problems signing in, you can contact Land Registry using the <a href="http://landregistry.custhelp.com/app/contactus_general/">general enquiry contact form</a> or call <b style="font-weight: 600;white-space: nowrap;">0300 006 0411</b>.</p>
-            <p>You can also <a href="https://www.gov.uk/government/publications/official-copies-of-register-or-plan-registration-oc1">order information in paper format</a>.</p>
-          </div>
-
-      </details>
+      <p>You can also <a href="https://www.gov.uk/government/publications/official-copies-of-register-or-plan-registration-oc1">order information in paper format</a>.</p>
 
     </div>
   </div>
