@@ -16,6 +16,7 @@ landRegistryElements({
     'pages/find-property-information/order-confirmation',
     'pages/find-property-information/summary',
     'pages/find-property-information/cookies',
+    'pages/find-property-information/account/create',
     'pages/land-registry/error-page'
   ]
 })

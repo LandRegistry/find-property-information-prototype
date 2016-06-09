@@ -4,7 +4,7 @@
 {% block title %}Confirm your order{% endblock %}
 
 {% block header_primary %}
-  {{ back_link(title='Search results', prefix='Back to', url='/' + prototypeVersion + '/search_results?page=' + display_page_number + '&search_term=' + search_term) }}
+  {{ back_link(title='Search results', prefix='Back to', url=path + '/search_results?page=' + display_page_number + '&search_term=' + search_term) }}
 {% endblock %}
 
 {% block body %}
@@ -148,7 +148,7 @@
         }
       </script>
 
-      {{ back_link(title='Search results', prefix='Back to', url='/' + prototypeVersion + '/search_results') }}
+      {{ back_link(title='Search results', prefix='Back to', url=path + '/search_results') }}
 
     </div>
   </div>

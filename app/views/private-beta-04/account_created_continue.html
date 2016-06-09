@@ -1,0 +1,30 @@
+{% extends "./layout/layout.html" %}
+
+{% from "./includes/register_teaser.html" import register_teaser %}
+
+{% block title %}Account created{% endblock %}
+
+{% block body %}
+  <h1 class="heading-large">Registration successful</h1>
+
+  <div class="grid-row spacing-top-single">
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <p>Your registration was successful and you have been signed in.</p>
+      <p>You were purchasing {{title.address}}:</p>
+
+      {{ register_teaser(title=title) }}
+
+      <a href="{{path}}/worldpay_1?title_number={{title_number}}" class="button spacing-top-single spacing-bottom-half">Buy title summary</a>
+
+      <br> or <a href="{{path}}/search">start a new search</a>
+
+      {# <ul class="list list-bullet spacing-top-double">
+
+        <li><a href="{{path}}/worldpay_1?title_number={{title_number}}">Continue purchasing the summary for {{title.address}}</a></li>
+        <li><a href="{{path}}/search">Start a new search</a></li>
+      </ul> #}
+    </div>
+  </div>
+{% endblock %}

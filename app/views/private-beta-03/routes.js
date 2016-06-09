@@ -4,8 +4,11 @@ var path = require('path');
 var moment = require('moment');
 var casual = require('casual');
 var yaml = require('js-yaml');
+var glob = require('glob');
 
 router.use('/images', express.static(path.join(__dirname, 'images')));
+
+var prototypeVersion = path.basename(__dirname);
 
 var countries = require('./country-records.json');
 countries = countries.sort(function(a, b) {
@@ -18,46 +21,6 @@ countries = countries.sort(function(a, b) {
   }
 
   return 0;
-});
-
-/**
- * Expose variables to all routes
- */
-router.use(function (req, res, next) {
-  res.locals.price_text = '£3 inc VAT';
-
-  // Pass the entire session through to the frontend
-  res.locals.session = req.session;
-
-  res.locals.data = {};
-
-  for(var item in req.query) {
-    if(req.query.hasOwnProperty(item)) {
-      res.locals.data[item] = req.query[item];
-    }
-  }
-
-  for(var item in req.body) {
-    if(req.body.hasOwnProperty(item)) {
-      res.locals.data[item] = req.body[item];
-    }
-  }
-
-  if(typeof res.locals.data.title_number !== 'undefined') {
-    require('./data')(res.locals.data.title_number, function(titles) {
-      res.locals.title = titles.shift();
-
-      console.log('---');
-      console.log(yaml.safeDump(res.locals.title));
-      console.log('---');
-
-      next();
-
-    });
-  } else {
-    next();
-  }
-
 });
 
 /**
@@ -112,6 +75,17 @@ router.get('/sign-out', function(req, res) {
   req.session.destroy(function() {
     return res.redirect('landing_page?account_creation_variant=' + (res.locals.data.account_creation_variant ? res.locals.data.account_creation_variant : ''));
   })
+});
+
+/**
+ * Basic routes for templates
+ */
+glob(path.join(__dirname, '*.html'), function(err, files) {
+  files.forEach(function(file) {
+    router.get('/' + path.basename(file, '.html'), function(req, res) {
+      res.render(prototypeVersion + '/' + path.basename(file, '.html'));
+    })
+  });
 });
 
 /**
