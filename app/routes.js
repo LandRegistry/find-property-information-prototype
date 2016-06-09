@@ -46,9 +46,9 @@ router.use(function (req, res, next) {
     require(path.join(__dirname, 'views', req.path.split('/')[1], 'data'))(res.locals.data.title_number, function(titles) {
       res.locals.title = titles.shift();
 
-      console.log('---');
-      console.log(yaml.safeDump(res.locals.title));
-      console.log('---');
+      // console.log('---');
+      // console.log(yaml.safeDump(res.locals.title));
+      // console.log('---');
 
       next();
 
