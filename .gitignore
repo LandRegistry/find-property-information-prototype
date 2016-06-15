@@ -1,5 +1,6 @@
 node_modules
 app/assets/.land-registry-elements
 data/db
+.tmp
 
 npm-debug.log
