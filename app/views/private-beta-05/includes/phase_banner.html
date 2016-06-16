@@ -1,0 +1,17 @@
+<div class="phase-banner-beta printhidden">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <p>
+        <strong class="phase-tag">BETA</strong>
+        <span>This is a new service – your <a href="https://www.gov.uk/done/search-property-information-land-registry">feedback</a>  will help us to improve it.</span>
+      </p>
+    </div>
+
+    <div class="column-one-third" style="text-align: right">
+
+      {% if session.isLoggedIn %}
+        <p style="display: block" class="font-xsmall">You are signed in as Pat Smith&nbsp;&nbsp;|&nbsp;&nbsp;<a href="{{path}}/sign_out">Sign out</a></p>
+      {% endif %}
+    </div>
+  </div>
+</div>
