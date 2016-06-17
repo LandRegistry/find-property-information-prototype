@@ -1,0 +1,80 @@
+{% extends "./layout/layout.html" %}
+
+{% block title %}Sign in{% endblock %}
+
+{% block body %}
+  <h1 class="heading-large spacing-bottom-flush">Sign in</h1>
+
+  <p class="lede">or <a href="create_account?title_number={{data.title_number}}">register to use this service</a></p>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="POST" action="{% if data.action %}{{data.action}}{% else %}worldpay_1{% endif %}" id="login-form"  novalidate data-clientside-validation="login_form_validation">
+        <input name="title_number" value="{{data.title_number}}" type="hidden" />
+
+        <!-- If this field is present in the GET or POST data sent to the server -->
+        <!-- it will instantly log the user in. This is obviously not how "real" -->
+        <!-- sign-ins work! It is a massive hack for prototyping only -->
+        <input name="do_sign_in" value="true" type="hidden" />
+
+        <!-- Email -->
+        <div class="form-group">
+          <label class="form-label-bold" for="email">Email address</label>
+          <input type="email" class="form-control" name="email" id="email"{% if data.email %} value="{{data.email}}"{% endif %}{% if data.username %} value="{{data.username}}"{% endif %}>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label class="form-label-bold" for="password">
+            Password
+          </label>
+          <input type="password" class="form-control" id="password" name="password">
+          <p class="spacing-top-half"><a href="{{path}}/reset/password/send_email?title_number={{data.title_number}}">Forgotten your password?</a></p>
+        </div>
+
+        <!-- T&Cs -->
+        <div class="form-group" id="terms_group">
+          <label class="block-label" for="terms">
+            <input id="terms" name="terms" type="checkbox" value="terms">
+            I have read and agree to the <a href="terms_and_conditions">terms &amp; conditions</a>
+          </label>
+        </div>
+
+        <div class="form-group spacing-bottom-double">
+          <input type="submit" class="button" value="Continue to payment">
+          <!-- <p class="form-hint spacing-top-half">You will proceed to payment after this step</p> -->
+        </div>
+
+      </form>
+
+      <script type="application/json" id="login_form_validation">
+        {
+          "email": {
+            "presence": {
+              "message": "Email address is required"
+            }
+          },
+          "password": {
+            "presence": {
+              "message": "Password is required"
+            }
+          },
+          "terms": {
+            "presence": {
+              "message": "You must agree to our terms and conditions before continuing"
+            }
+          }
+        }
+      </script>
+
+      <div class="panel panel-border-narrow spacing-bottom-single">
+        <p>If you have any problems signing in, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact Land Registry</a>.</p>
+      </div>
+
+      <p>You can also <a href="https://www.gov.uk/government/publications/official-copies-of-register-or-plan-registration-oc1">order information in paper format</a>.</p>
+
+    </div>
+  </div>
+
+{% endblock %}
