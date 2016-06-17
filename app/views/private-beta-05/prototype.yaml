@@ -1,13 +1,15 @@
-name: Account creation / registration tweaks
-date: 2016-06-06
+name: release candidate - 'tell us who you are'
+date: 2016-06-16
 description: |
-  <p>Tweaking the registration flow.</p>
+  <p>'sign-in or register' &amp; as late as possible in the user journey; <br>narrower &amp; clearer proposition;<br>move title numbers after sign-in</p>
 
 changelog:
-  - Rename "Create account" to "Register"
-  - Add "Why register?" text to account creation form
-  - Title number removed from list page
-  - Password requirements updated
-  - Various tweaks made to account creation and sign in forms. Major tweak being that we are now focusing the user interface around new accounts and not existing FaP users.
-  - Return to govuk link on final page now goes to our start page, not to bare gov.uk
-  - Tweak wording around the button on the confirm purchase screen
+  - search page - call proposition basci (not summary), clearer what happens if search by non-postcode 
+  - remove all beta references - except banner
+  - 
+  - Continue using "register" - clearer supporting copy
+  - require sign-in to get title number(s) - remove from confirm
+  - show title number on results and confirm once signed-in
+  - help Find a property users understand they can sign in with their existing username/pwd
+  - 
+  - remove 3 routes 'landing page' and tighten up copy on what proposition does, and onward journey if we cant help here
