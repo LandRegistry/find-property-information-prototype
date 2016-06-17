@@ -9,7 +9,7 @@
 
   {% if data.page %}
     {% set page = data.page %}
-  
+  {% else %}  
     {% set page = 1 %}
   {% endif %}
 
@@ -20,7 +20,7 @@
       {% if results['number_results'] <= 49 %}     
         <h2 class="font-xsmall expand-bottom-half">{{ results['number_results'] }} result{% if results['number_results'] > 1 %}s{% endif %} found</h2>
       {% else %}
-        <h2 class="font-xsmall expand-bottom-half">Showing first {{ results['number_results'] }} results</h2>
+        <h2 class="font-xsmall expand-bottom-half">Showing first {{ results['number_results'] }} results only</h2>
         <p class="font-small">Land Registry have more than 50 property records for this postcode</p>
       {% endif %}
 
