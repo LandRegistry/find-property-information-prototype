@@ -10,7 +10,7 @@
 {% block body %}
   <h1 class="heading-large spacing-top-single">Confirm your order</h1>
 
-  <p>You'll get a summary of the information Land Registry holds for this property title.</p>
+  <p>You'll get basic information Land Registry holds about this property title.</p>
   <div class="grid-row column-flip spacing-top-single">
 
     <div class="column-one-third tablet-column-one-third spacing-bottom-single">
@@ -49,13 +49,15 @@
             </div>
           </dd>
         {% endif %}
+      </dl>
 
-        <dt>Title number</dt>
-        <dd class="bold-small">{{ title['data']['title_number'] }}</dd>
+ <!--        <dt>Title number</dt>
+        <dd class="bold-small">{{ title['data']['title_number'] }}</dd> -->
 
-        <dt>Tenure type</dt>
-        <dd>
-          <strong class="bold">{{ title['tenure'] }}</strong>
+        <!-- <dt>Tenure type</dt> -->
+        <!-- <dd> -->
+          <!-- <strong class="bold">{{ title['tenure'] }}</strong> -->
+          <h2 class="heading-medium" style="display:inline-block;">{{ title['tenure'] }} title</h2>
           <a class="split-detail-trigger font-xsmall" href="#what-is-tenure">What does this mean?</a>
 
           <div class="split-detail-contents" id="what-is-tenure">
@@ -64,30 +66,36 @@
               {% if title['tenure'] == 'Leasehold' %}
                 <p>You only own a leasehold property for a fixed period of time. You'll have a legal agreement with the landlord (sometimes known as the ‘freeholder’) called a ‘lease’. This tells you how many years you’ll own the property.</p>
                 <p>Most flats are leasehold. Houses can be leasehold too and usually are if they’re bought through a shared ownership scheme.</p>
-                <p>The leasehold and freehold are registered separately with the Land Registry. Each has its own title documents.</p>
-                <p><b class="bold">You are buying a summary of the leasehold owner, not the freehold.</b></p>
-
-                <a rel="external" href="https://www.gov.uk/leasehold-property/overview">More about Leasehold on GOV.UK</a>
+                <p><a rel="external" href="https://www.gov.uk/leasehold-property/overview">More about Leasehold on GOV.UK</a></p>
 
               {% elif title['tenure'] == 'Freehold' %}
                 <p>You own a freehold building and land outright. It is yours until you sell it or give it away.</p>
                 <p>Most houses are freehold. Most flats are leasehold. That means someone else owns the freehold for the building the flat is in.</p>
                 <p><b class="bold">If you want to know who owns a particular flat, you probably need the leasehold instead.</b></p>
                 <p>Houses can also be leasehold and usually are if they’re bought through a shared ownership scheme.</p>
+                <p><a rel="external" href="https://www.gov.uk/leasehold-property/overview">More about Leasehold on GOV.UK</a></p>
 
               {% endif %}
             </div>
           </div>
 
-          <p class="font-xsmall">A property can have both a freehold and a leasehold title. To get a different tenure for this address, <a href="/search_results" data-back-link>go back</a> and select the one you need.</p>
-        </dd>
+          {% if title['tenure'] == 'Leasehold' %}
+            <!-- <p class="font-xsmall">A property can have both a freehold and a leasehold title. A property with a Leasehold always has a Freehold title. Take care to select the right title for this property</p> -->
+            <p class="font-xsmall">The leasehold and freehold are registered separately with the Land Registry. Each has its own title documents. A property with a leasehold always has a freehold title.</p>
+            <p class="font-xsmall"><b class="bold">You are buying information about the leasehold, not the freehold.</b></p>
+          {% else %}
+            <!-- <p class="font-xsmall">A property can have both a freehold and a leasehold title. To get a different tenure for this address, <a href="/search_results" data-back-link>go back</a> and select the one you need.</p> -->
+            <p class="font-xsmall">The leasehold and freehold are registered separately with the Land Registry. Each has its own title documents.</p>
+            <p class="font-xsmall"><b class="bold">You are buying information about the freehold.</b></p>
+          {% endif %}
+        <!-- </dd> -->
 
-      </dl>
+      <!-- </dl> -->
 
       {% if title['is_caution_title'] %}
         <h2 class="heading-medium collapse-top">Land Registry does not know the owner of this property</h2>
       {% else %}
-        <h2 class="heading-medium collapse-top">The summary will tell you</h2>
+        <h2 class="heading-medium collapse-top">What this service will tell you about the {{ title['tenure'] }} title</h2>
       {% endif %}
 
       <ul class="list-bullet">
@@ -96,17 +104,17 @@
           <li><strong class="bold">The summary will give you the cautioner's name and address.</strong></li>
         {% else %}
           {% if title['tenure'] == 'Freehold' %}
-            <li>current owner's name and address</li>
+            <li>current owner's name and address(es)</li>
           {% elif title['tenure'] == 'Leasehold' %}
-            <li>current leaseholder's name and address</li>
+            <li>current leaseholder's name and address(es)</li>
           {% endif %}
-
-          <li>what was paid for the property – you won't get this if it was bought before April 2000, if they paid less than &pound;100, or if Land Registry have agreed not to record the price</li>
-          <li>if there is a mortgage on the property, the lender's name and address</li>
+          <li>Title Number - the unique reference for this title</li>
+          <li>what was paid for the {{ title['tenure'] }} – you won't get this if it was bought before April 2000, if they paid less than &pound;100, or if Land Registry have agreed not to record the price</li>
+          <li>if there is a mortgage recorded on this title, the lender's name and address</li>
         {% endif %}
       </ul>
 
-      <p class="spacing-top-single">This information can change if we receive an application. This service is unable to tell you whether or not there is an application pending with the Land Registry.</p>
+      <p class="spacing-top-single font-xsmall">This service is unable to tell you whether Land Registry is holding an application requesting a change to this {{ title['tenure'] }} title</p>
 
       <div class="warning media">
         <div class="media-item">
@@ -122,32 +130,44 @@
       </div>
 
 
-      <h2 class="heading-medium">The summary costs {{ price_text | safe }} <span class="font-small">(&pound;2.50+VAT)</span></h2>
-      {% if not session.isLoggedIn %}
-        <p>You will need to tell us who you are before purchasing this summary.</p>
-      {% endif %}
+      <h2 class="heading-medium">What happens next</h2>
+
+      <ul class="list-bullet">
+        {% if not session.isLoggedIn %}
+          <li>You will need to tell Land Registry who you are</li>
+        {% endif %}
+
+        <li>You will have to pay {{ price_text | safe }} <span class="font-small">(&pound;2.50+VAT)</span></li>
+
+        <!-- <li>You wont be sent a copy of the information</li> -->
+      </ul>
 
       <!-- <p>You can pay by credit or debit card.</p> -->
 
 
-      <form method="GET" class="spacing-bottom-double" action="{% if session.isLoggedIn %}worldpay_1{% else %}sign_in{% endif %}" data-clientside-validation="cra_form_validation" data-clientside-validation-no-summary>
-        <p>You need to accept the following terms to continue.</p>
+      <form method="GET" class="spacing-top-single spacing-bottom-double" action="{% if session.isLoggedIn %}worldpay_1{% else %}sign_in{% endif %}" data-clientside-validation="cra_form_validation" data-clientside-validation-no-summary>
+
+        <!-- <p>You need to accept the following terms.</p> -->
 
         <input type="hidden" name="title_number" id="title_number" value="{{title['data']['title_number']}}"/>
 
         <div class="form-group">
+<!--           <label class="block-label" for="right_to_cancel">
+            <input id="right_to_cancel" name="right_to_cancel" type="checkbox" value="agree">
+            I agree that you will provide this information as soon as I’ve paid.<br>
+            I accept that I will lose my right to cancel the contract once the information is displayed.<br>
+          </label> -->
           <label class="block-label" for="right_to_cancel">
             <input id="right_to_cancel" name="right_to_cancel" type="checkbox" value="agree">
-            I agree that you will provide the summary as soon as I’ve paid.<br>
-            I accept that I will lose my right to cancel the contract once the summary is displayed.<br>
+            I accept that, once i've paid, I won't be able to ask for my money back, unless you fail to reveal this title information to me<br>
           </label>
         </div>
 
         {% if session.isLoggedIn %}
-          <input type="submit" class="button" value="Buy title summary">
+          <input type="submit" class="button" value="Buy title information">
         {% else %}
           <!-- <p class="form-hint">You will need to sign in or create an account to continue </p> -->
-          <input type="submit" class="button" value="Continue to sign in page">
+          <input type="submit" class="button" value="Continue">
         {% endif %}
 
       </form>

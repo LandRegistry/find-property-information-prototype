@@ -4,11 +4,17 @@ description: |
   <p>'sign-in or register' &amp; as late as possible in the user journey; <br>narrower &amp; clearer proposition;<br>move title numbers after sign-in</p>
 
 changelog:
-  - search page clerer copy - proposition is basic (not summary) &amp; what happens if search by non-postcode 
+  - search page clearer copy - proposition is basic (not summary) &amp; what happens if search by non-postcode 
   - remove all beta references - except banner
-  - 
+  - search results clearer copy - when 50 result limit reached
+  - remove title number before sign-in, and tell user they'll get a title no, and explain it
+  - clearer copy on confirm - more specific about 'what you will get' and if we are processing an application
+  - stop calling it summary. call it this service, information or basic information from a title
+  - remove reference to tenure and expalin title better, make people more aware fo many titles at a property
   - Continue using "register" - clearer supporting copy
   - require sign-in to get title number(s) - remove from confirm
+  -
+  - todo...
   - show title number on results and confirm once signed-in
   - help Find a property users understand they can sign in with their existing username/pwd
   - 
