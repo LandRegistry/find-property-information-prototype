@@ -12,9 +12,11 @@
     <div class="column-two-thirds tablet-column-two-thirds">
 
       <p>Your registration was successful and you have been signed in.</p>
-      <p>You were purchasing {{title.address}}:</p>
+      <p>You were purchasing information for the following property title:</p>
 
-      {{ register_teaser(title=title) }}
+      <div class="panel panel-border-narrow">
+        {{ register_teaser(title=title,single=true) }}
+      </div>
 
       <a href="{{path}}/worldpay_1?title_number={{data.title_number}}" class="button spacing-top-single spacing-bottom-half">Buy title summary</a>
 
