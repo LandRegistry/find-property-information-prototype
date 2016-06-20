@@ -14,6 +14,7 @@ changelog:
   - Continue using "register" - clearer supporting copy
   - require sign-in to get title number(s) - remove from confirm
   - Tweak consumer rights act tickbox text
+  - Removed "You are signed in as Pat Smith" from the header
   -
   - todo...
   - show title number on results and confirm once signed-in
