@@ -1,14 +1,14 @@
 {% extends "./layout/layout.html" %}
 {% from "./includes/back_link.html" import back_link %}
 
-{% block title %}Confirm your order{% endblock %}
+{% block title %}Confirm your selection{% endblock %}
 
 {% block header_primary %}
   {{ back_link(title='Search results', prefix='Back to', url=path + '/search_results?page=' + data.page + '&search_term=' + data.search_term) }}
 {% endblock %}
 
 {% block body %}
-  <h1 class="heading-large spacing-top-single">Confirm your order</h1>
+  <h1 class="heading-large spacing-top-single">Confirm your selection</h1>
 
   <p>You'll get basic information Land Registry holds about this property title.</p>
   <div class="grid-row column-flip spacing-top-single">
@@ -93,9 +93,9 @@
       <!-- </dl> -->
 
       {% if title['is_caution_title'] %}
-        <h2 class="heading-medium collapse-top">Land Registry does not know the owner of this property</h2>
+        <h2 class="heading-medium spacing-top-double">Land Registry does not know the owner of this property</h2>
       {% else %}
-        <h2 class="heading-medium collapse-top">What this service will tell you about the {{ title['tenure'] }} title</h2>
+        <h2 class="heading-medium spacing-top-double">What this service will tell you about the {{ title['tenure'] }} title</h2>
       {% endif %}
 
       <ul class="list list-bullet">
@@ -130,7 +130,7 @@
       </div> -->
 
 
-      <h2 class="heading-medium">To get this information:</h2>
+      <h2 class="heading-medium">To get this information</h2>
 
       <ul class="list list-bullet">
         {% if not session.isLoggedIn %}
