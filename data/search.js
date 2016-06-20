@@ -13,7 +13,7 @@ module.exports = function(data, searchTerm, callback) {
   });
 
   // If it looks like a title number, do a title number search
-  if(searchTerm.length === 11 && searchTerm.indexOf('FAKE') !== -1 && searchTerm.indexOf(' ') === -1) {
+  if(searchTerm.length === 9 && searchTerm.indexOf('DN') !== -1 && searchTerm.indexOf(' ') === -1) {
     logEntry = 'Searching for title number: ' + searchTerm;
     searchType = 'title_number';
   } else {

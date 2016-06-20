@@ -68,7 +68,7 @@ for(var i=1;i<=totalCities;i++) {
               last_changed_date: moment(timestamp).format('D MMMM YYYY'),
               last_changed_time: moment(timestamp).format('H:mm:ss'),
               data: {
-                title_number: 'FAKE' + (++title_number)
+                title_number: 'DN' + (++title_number)
               },
               address: [
                 k + ' ' + street,
