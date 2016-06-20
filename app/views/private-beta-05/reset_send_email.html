@@ -30,8 +30,8 @@
           <legend class="visuallyhidden">Enter your username or email address</legend>
 
           <div class="form-group">
-            <label class="form-label" for="pass"><strong class="bold">Email address</strong></label>
-            <input class="form-control" type="text" id="username" name="username">
+            <label class="form-label" for="email"><strong class="bold">Email address</strong></label>
+            <input class="form-control" type="text" id="email" name="email">
           </div>
 
         </fieldset>
@@ -41,9 +41,9 @@
 
       <script type="application/json" id="create_account_form_validation">
         {
-          "username": {
+          "email": {
             "presence": {
-              "message": "{% if item == 'password' %}Username or {% endif %}Email address is required"
+              "message": "Email address is required"
             }
           }
         }
