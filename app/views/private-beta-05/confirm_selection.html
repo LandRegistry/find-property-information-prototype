@@ -98,7 +98,7 @@
         <h2 class="heading-medium collapse-top">What this service will tell you about the {{ title['tenure'] }} title</h2>
       {% endif %}
 
-      <ul class="list-bullet">
+      <ul class="list list-bullet">
         {% if title['is_caution_title'] %}
           <li>Someone other than the owner (known as the ‘cautioner’) has registered a right or interest in the property.</li>
           <li><strong class="bold">The summary will give you the cautioner's name and address.</strong></li>
@@ -114,7 +114,7 @@
         {% endif %}
       </ul>
 
-      <p class="spacing-top-single font-xsmall">This service is unable to tell you whether Land Registry is holding an application requesting a change to this {{ title['tenure'] }} title</p>
+      <p class="spacing-top-single font-xsmall">This information may be out of date. This service is unable to tell you if it is currently being changed.</p>
 
       <div class="warning media">
         <div class="media-item">
@@ -132,7 +132,7 @@
 
       <h2 class="heading-medium">What happens next</h2>
 
-      <ul class="list-bullet">
+      <ul class="list list-bullet">
         {% if not session.isLoggedIn %}
           <li>You will need to tell Land Registry who you are</li>
         {% endif %}
@@ -159,7 +159,7 @@
           </label> -->
           <label class="block-label" for="right_to_cancel">
             <input id="right_to_cancel" name="right_to_cancel" type="checkbox" value="agree">
-            I accept that, once i've paid, I won't be able to ask for my money back, unless you fail to reveal this title information to me<br>
+            I accept that, once I've paid, I won't be able to ask for my money back, unless you fail to reveal this title information to me
           </label>
         </div>
 
