@@ -115,7 +115,7 @@
       </ul>
 
       <p class="spacing-top-single font-xsmall">This information may be out of date. This service is unable to tell you if it is currently being changed.</p>
-
+<!--
       <div class="warning media">
         <div class="media-item">
           <i class="icon icon-important">
@@ -127,21 +127,23 @@
           <h2 class="heading-small spacing-bottom-flush">You'll only be able to view the information once</h2>
           <p class="spacing-top-flush">If you want to keep a copy you can print it out</p>
         </div>
-      </div>
+      </div> -->
 
 
-      <h2 class="heading-medium">What happens next</h2>
+      <h2 class="heading-medium">To get this information:</h2>
 
       <ul class="list list-bullet">
         {% if not session.isLoggedIn %}
-          <li>You will need to tell Land Registry who you are</li>
+          <li>you will need to tell Land Registry who you are</li>
         {% endif %}
 
-        <li>You will need to pay {{ price_text | safe }} <span class="font-small">(&pound;2.50+VAT)</span></li>
+        <li>you will need to pay {{ price_text | safe }} <span class="font-small">(&pound;2.50+VAT)</span></li>
+
 
         <!-- <li>You wont be sent a copy of the information</li> -->
       </ul>
 
+        <p>The information will then be displayed on screen</p>
       <!-- <p>You can pay by credit or debit card.</p> -->
 
 
