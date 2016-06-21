@@ -24,6 +24,16 @@
           <p>Once you receive the email, follow the included instructions in order to reset your password.</p>
         {% endif %}
       </a>
+
+      {% if item != 'username' %}
+        <div class="panel panel-border-narrow spacing-top-double">
+          <h2 class="heading-small">Didn't receive an email?</h2>
+          <ul class="list list-bullet">
+            <li>Try checking your spam or junk folder - emails can sometimes get mistakenly flagged</li>
+            <li>Alternatively you can <a href="send_email?title_number={{data.title_number}}">request another password reset email here</a></li>
+          </ul>
+        </div>
+      {% endif %}
     </div>
 
   </div>
