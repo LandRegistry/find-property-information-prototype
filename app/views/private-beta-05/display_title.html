@@ -13,7 +13,15 @@
 
 {% block body %}
 
-  <h1 class="heading-large spacing-top-single">Summary of{% if title['is_caution_title'] %} caution{% endif %} title {{ title['data']['title_number'] }}</h1>
+  <h1 class="heading-large spacing-top-single">
+  Basic information for 
+  {% if title['is_caution_title'] %}
+    caution 
+  {% else %}
+    {{ title['tenure'] }}
+  {% endif %}
+   title {{ title['data']['title_number'] }}</h1>
+
 
   <p class="font-xsmall">This title was last changed on <time datetime="{{ title.last_changed_datetime }}">{{ title.last_changed_date }} at {{ title.last_changed_time }}</time></p>
 
@@ -128,6 +136,9 @@
         <dt>Tenure type</dt>
         <dd class="bold-small">{{ title.tenure }}</dd>
 
+        <dt>Title Number</dt>
+        <dd class="bold-small">{{ data.title_number }}</dd>
+
         {% if title.ppi_data %}
           <dt>Price paid</dt>
           <dd class="bold-small">{{ title.ppi_data }}</dd>
@@ -135,7 +146,8 @@
 
       </dl>
 
-      <p class="spacing-top-single">This information can change if we receive an application. This service is unable to tell you whether or not there is an application pending with the Land Registry.</p>
+      <!-- <p class="spacing-top-single">This information can change if we receive an application. This service is unable to tell you whether or not there is an application pending with the Land Registry.</p> -->
+      <p class="spacing-top-single font-xsmall">This information may be out of date. This service is unable to tell you if it is currently being changed.</p>
 
       <div class="printhidden">
         <div class="govuk-box-highlight">
