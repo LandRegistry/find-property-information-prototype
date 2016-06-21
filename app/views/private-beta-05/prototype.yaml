@@ -12,14 +12,12 @@ changelog:
   - stop calling it summary. call it this service, information or basic information from a title
   - remove reference to tenure and expalin title better, make people more aware fo many titles at a property
   - Continue using "register" - clearer supporting copy
-  - require sign-in to get title number(s) - remove from confirm
-  - Tweak consumer rights act tickbox text
+  - require sign-in to get title number(s) - remove from confirm page
+  - try simple copy on consumer rights act tickbox
   - Removed "You are signed in as Pat Smith" from the header
   - Clarify 50 limit when you reach the end of the result set
   - Tweak copy on register page
-  -
+  - explain the new service more clearly on the gov uk start page
+
   - todo...
   - show title number on results and confirm once signed-in
-  - help Find a property users understand they can sign in with their existing username/pwd
-  -
-  - remove 3 routes 'landing page' and tighten up copy on what proposition does, and onward journey if we cant help here
