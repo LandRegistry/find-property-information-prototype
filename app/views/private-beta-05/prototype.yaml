@@ -16,6 +16,7 @@ changelog:
   - Tweak consumer rights act tickbox text
   - Removed "You are signed in as Pat Smith" from the header
   - Clarify 50 limit when you reach the end of the result set
+  - Tweak copy on register page
   -
   - todo...
   - show title number on results and confirm once signed-in
