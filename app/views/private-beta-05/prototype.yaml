@@ -18,6 +18,6 @@ changelog:
   - Clarify 50 limit when you reach the end of the result set
   - Tweak copy on register page
   - explain the new service more clearly on the gov uk start page
-
+  - improve fogotten password to password reset copy
   - todo...
   - show title number on results and confirm once signed-in
