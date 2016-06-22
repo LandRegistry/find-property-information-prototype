@@ -1,14 +1,14 @@
 {% extends "./layout/layout.html" %}
 {% from "./includes/back_link.html" import back_link %}
 
-{% block title %}Confirm your order{% endblock %}
+{% block title %}Confirm your selection{% endblock %}
 
 {% block header_primary %}
   {{ back_link(title='Search results', prefix='Back to', url=path + '/search_results?page=' + data.page + '&search_term=' + data.search_term) }}
 {% endblock %}
 
 {% block body %}
-  <h1 class="heading-large spacing-top-single">Confirm your order</h1>
+  <h1 class="heading-large spacing-top-single">Confirm your selection</h1>
 
   <p>You'll get basic information Land Registry holds about this property title.</p>
   <div class="grid-row column-flip spacing-top-single">
@@ -93,12 +93,12 @@
       <!-- </dl> -->
 
       {% if title['is_caution_title'] %}
-        <h2 class="heading-medium collapse-top">Land Registry does not know the owner of this property</h2>
+        <h2 class="heading-medium spacing-top-double">Land Registry does not know the owner of this property</h2>
       {% else %}
-        <h2 class="heading-medium collapse-top">What this service will tell you about the {{ title['tenure'] }} title</h2>
+        <h2 class="heading-medium spacing-top-double">What this service will tell you about the {{ title['tenure'] }} title</h2>
       {% endif %}
 
-      <ul class="list-bullet">
+      <ul class="list list-bullet">
         {% if title['is_caution_title'] %}
           <li>Someone other than the owner (known as the ‘cautioner’) has registered a right or interest in the property.</li>
           <li><strong class="bold">The summary will give you the cautioner's name and address.</strong></li>
@@ -114,8 +114,8 @@
         {% endif %}
       </ul>
 
-      <p class="spacing-top-single font-xsmall">This service is unable to tell you whether Land Registry is holding an application requesting a change to this {{ title['tenure'] }} title</p>
-
+      <p class="spacing-top-single font-xsmall">This information may be out of date. This service is unable to tell you if it is currently being changed.</p>
+<!--
       <div class="warning media">
         <div class="media-item">
           <i class="icon icon-important">
@@ -127,39 +127,35 @@
           <h2 class="heading-small spacing-bottom-flush">You'll only be able to view the information once</h2>
           <p class="spacing-top-flush">If you want to keep a copy you can print it out</p>
         </div>
-      </div>
+      </div> -->
 
 
-      <h2 class="heading-medium">What happens next</h2>
+      <h2 class="heading-medium">To get this information</h2>
 
-      <ul class="list-bullet">
+      <ul class="list list-bullet">
         {% if not session.isLoggedIn %}
-          <li>You will need to tell Land Registry who you are</li>
+          <li>you will need to tell Land Registry who you are</li>
         {% endif %}
 
-        <li>You will have to pay {{ price_text | safe }} <span class="font-small">(&pound;2.50+VAT)</span></li>
+        <li>you will need to pay {{ price_text | safe }} <span class="font-small">(&pound;2.50+VAT)</span></li>
+
 
         <!-- <li>You wont be sent a copy of the information</li> -->
       </ul>
 
+        <p>The information will then be displayed on screen</p>
       <!-- <p>You can pay by credit or debit card.</p> -->
 
 
       <form method="GET" class="spacing-top-single spacing-bottom-double" action="{% if session.isLoggedIn %}worldpay_1{% else %}sign_in{% endif %}" data-clientside-validation="cra_form_validation" data-clientside-validation-no-summary>
 
-        <!-- <p>You need to accept the following terms.</p> -->
-
         <input type="hidden" name="title_number" id="title_number" value="{{title['data']['title_number']}}"/>
 
         <div class="form-group">
-<!--           <label class="block-label" for="right_to_cancel">
-            <input id="right_to_cancel" name="right_to_cancel" type="checkbox" value="agree">
-            I agree that you will provide this information as soon as I’ve paid.<br>
-            I accept that I will lose my right to cancel the contract once the information is displayed.<br>
-          </label> -->
           <label class="block-label" for="right_to_cancel">
             <input id="right_to_cancel" name="right_to_cancel" type="checkbox" value="agree">
-            I accept that, once i've paid, I won't be able to ask for my money back, unless you fail to reveal this title information to me<br>
+            I accept that once I've been shown the information, I won't be able to ask for my money back
+            <!-- I agree that you will provide the summary as soon as I’ve paid. I accept that I will lose my right to cancel the contract once the summary is displayed. -->
           </label>
         </div>
 

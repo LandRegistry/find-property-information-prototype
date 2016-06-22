@@ -19,6 +19,11 @@
           </li>
         {% endif %}
       </ul>
+
+      {% if display_page_number == number_pages %}
+        <p>You've reached the 50 result limit.</p>
+        <p>Please use the <a href="https://eservices.landregistry.gov.uk/wps/portal/Property_Search">Land Registry 'Find a Property' service</a>.</p>
+      {% endif %}
     </nav>
   {% endif %}
 {% endmacro %}

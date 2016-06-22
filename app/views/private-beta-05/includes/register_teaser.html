@@ -1,6 +1,6 @@
-{% macro register_teaser(title=title,display_page_number=1,search_term='') %}
+{% macro register_teaser(title=title,display_page_number=1,search_term='',single=false) %}
   <div class="teaser teaser-register">
-    <h2 class="heading-small spacing-top-half">
+    <h2 class="heading-small {% if not single %}spacing-top-half{% endif %}">
       {% if title['data'] %}
         <a href="confirm_selection?title_number={{title['data']['title_number']}}&amp;page={{display_page_number}}&amp;search_term={{search_term}}">{{ title['address'] }}</a>
       {% else %}

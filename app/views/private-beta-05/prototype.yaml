@@ -4,7 +4,7 @@ description: |
   <p>'sign-in or register' &amp; as late as possible in the user journey; <br>narrower &amp; clearer proposition;<br>move title numbers after sign-in</p>
 
 changelog:
-  - search page clearer copy - proposition is basic (not summary) &amp; what happens if search by non-postcode 
+  - search page clearer copy - proposition is basic (not summary) &amp; what happens if search by non-postcode
   - remove all beta references - except banner
   - search results clearer copy - when 50 result limit reached
   - remove title number before sign-in, and tell user they'll get a title no, and explain it
@@ -12,10 +12,15 @@ changelog:
   - stop calling it summary. call it this service, information or basic information from a title
   - remove reference to tenure and expalin title better, make people more aware fo many titles at a property
   - Continue using "register" - clearer supporting copy
-  - require sign-in to get title number(s) - remove from confirm
-  -
+  - require sign-in to get title number(s) - remove from confirm page
+  - try simple copy on consumer rights act tickbox
+  - Removed "You are signed in as Pat Smith" from the header
+  - Clarify 50 limit when you reach the end of the result set
+  - Tweak copy on register page
+  - explain the new service more clearly on the gov uk start page
+  - improve fogotten password to password reset copy
+  - worldpay product description improved
+  - signed out page
+  - summary page - basic information, page title, title number, application pending - cant say
   - todo...
   - show title number on results and confirm once signed-in
-  - help Find a property users understand they can sign in with their existing username/pwd
-  - 
-  - remove 3 routes 'landing page' and tighten up copy on what proposition does, and onward journey if we cant help here

@@ -6,7 +6,7 @@
 
 {% block body %}
   {% if item == 'password' %}
-    <h1 class="heading-large">Password reset link sent</h1>
+    <h1 class="heading-large">Password reset email sent</h1>
   {% else %}
     <h1 class="heading-large">Username reminder sent</h1>
   {% endif %}
@@ -21,9 +21,19 @@
           <p>Once you receive the email, follow the included instructions in order to sign in to the service.</p>
         {% else %}
           <p>We have sent an email to <strong class="bold">{{data.email}}</strong> containing a {{item}} reset link.</p>
-          <p>Once you receive the email, follow the included instructions in order to reset your password.</p>
+          <p>Once you receive the email, follow the instructions to reset your password.</p>
         {% endif %}
       </a>
+
+      {% if item != 'username' %}
+        <div class="panel panel-border-narrow spacing-top-double">
+          <h2 class="heading-small">Didn't receive an email?</h2>
+          <ul class="list list-bullet">
+            <li>Try checking your spam or junk folder - emails can sometimes get mistakenly flagged</li>
+            <li>Alternatively you can <a href="send_email?title_number={{data.title_number}}">request another password reset email here</a></li>
+          </ul>
+        </div>
+      {% endif %}
     </div>
 
   </div>
