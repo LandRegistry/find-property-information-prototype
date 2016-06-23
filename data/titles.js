@@ -25,6 +25,9 @@ var totalStreets = 30;
 var totalProperties = 60;
 var title_number = 1000000;
 
+var minDate = 957139200000;
+var maxDate = 1451606400000;
+
 var bar = new ProgressBar(':bar', { total: totalCities * totalStreets * totalProperties });
 
 // Cities
@@ -60,13 +63,13 @@ for(var i=1;i<=totalCities;i++) {
 
           (function() {
 
-            var timestamp = casual.integer(946684800000, 1451606400000);
+            var last_changed_timestamp = casual.integer(minDate, maxDate);
 
             var item = {
               tenure: casual.tenure,
-              last_changed_datetime: moment(timestamp).format(),
-              last_changed_date: moment(timestamp).format('D MMMM YYYY'),
-              last_changed_time: moment(timestamp).format('H:mm:ss'),
+              last_changed_datetime: moment(last_changed_timestamp).format(),
+              last_changed_date: moment(last_changed_timestamp).format('D MMMM YYYY'),
+              last_changed_time: moment(last_changed_timestamp).format('H:mm:ss'),
               data: {
                 title_number: 'DN' + (++title_number)
               },
@@ -86,7 +89,9 @@ for(var i=1;i<=totalCities;i++) {
             }
 
             // ppi_data
-            item.ppi_data = '£' + randomInteger(80, 999) + ',000 the price stated to have been paid on ' + randomInteger(1, 28) + ' June ' + randomInteger(2000, 2015);
+            var ppi_timestamp = casual.integer(minDate, maxDate);
+            ppi_timestamp = Math.min(last_changed_timestamp, ppi_timestamp);
+            item.ppi_data = '£' + randomInteger(80, 999) + ',000 the price stated to have been paid on ' + moment(ppi_timestamp).format('D MMMM YYYY');
 
             // Map data
             item.indexPolygon = require('./includes/indexPolygon');
