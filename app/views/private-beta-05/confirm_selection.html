@@ -143,19 +143,37 @@
         <!-- <li>You wont be sent a copy of the information</li> -->
       </ul>
 
-        <p>The information will then be displayed on screen</p>
+      <p>The information will then be displayed on screen</p>
       <!-- <p>You can pay by credit or debit card.</p> -->
 
 
-      <form method="GET" class="spacing-top-single spacing-bottom-double" action="{% if session.isLoggedIn %}worldpay_1{% else %}sign_in{% endif %}" data-clientside-validation="cra_form_validation" data-clientside-validation-no-summary>
+      <form method="GET" class="spacing-bottom-double" action="{% if session.isLoggedIn %}worldpay_1{% else %}sign_in{% endif %}" data-clientside-validation="cra_form_validation" data-clientside-validation-no-summary>
+
 
         <input type="hidden" name="title_number" id="title_number" value="{{title['data']['title_number']}}"/>
 
         <div class="form-group">
           <label class="block-label" for="right_to_cancel">
             <input id="right_to_cancel" name="right_to_cancel" type="checkbox" value="agree">
+<!--        Original accepted wording:
+            I agree that you will provide the summary as soon as I’ve paid.
+            I accept that I will lose my right to cancel the contract once the summary is displayed.
+
+
+            "Unacceptable" version
+            (It's not about money / refunds, it's about the "contract")
             I accept that once I've been shown the information, I won't be able to ask for my money back
-            <!-- I agree that you will provide the summary as soon as I’ve paid. I accept that I will lose my right to cancel the contract once the summary is displayed. -->
+
+
+            Attempted rewording -->
+<!--        The information will be presented as soon as I have paid.<br><br>
+            I acknowledge that once I have been shown the information I lose my right to cancel -->
+
+
+            I agree that you will provide the information as soon as I’ve paid.<br>
+            I accept that I will lose my right to cancel once the information is displayed.
+
+
           </label>
         </div>
 
