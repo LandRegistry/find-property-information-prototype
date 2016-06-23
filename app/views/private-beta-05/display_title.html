@@ -1,7 +1,13 @@
 {% extends "./layout/layout.html" %}
 {% from "./includes/back_link.html" import back_link %}
 
-{% block title %}Summary of title {{ title.number }}{% endblock %}
+{% block title %}Basic information for
+  {% if title['is_caution_title'] %}
+    caution
+  {% else %}
+    {{ title['tenure'] }}
+  {% endif %}
+   title {{ title['data']['title_number'] }}{% endblock %}
 
 {% block header_primary %}
   {{ back_link(title='Search again', url=path + '/search',historyBased=false) }}
@@ -14,9 +20,9 @@
 {% block body %}
 
   <h1 class="heading-large spacing-top-single">
-  Basic information for 
+  Basic information for
   {% if title['is_caution_title'] %}
-    caution 
+    caution
   {% else %}
     {{ title['tenure'] }}
   {% endif %}
