@@ -1,0 +1,21 @@
+{% extends "./layout/layout.html" %}
+
+{% block title %}Logout{% endblock %}
+
+{% block body %}
+  <h1 class="heading-large">Signed out</h1>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <!-- <p>PatSmith</p> -->
+      <p>You have now signed out.</p>
+      <a class="button" href="{{path}}">Return to the start page</a>
+
+      <div class="text spacing-top-double">
+        <div class="panel panel-border-narrow spacing-top-single">
+          <p>If you have any queries, you can contact Land Registry using the <a href="http://landregistry.custhelp.com/app/contactus_general/">general enquiry contact form</a> or call <a class="bold" href="tel:+443000060411">0300 006 0411</a>.</p>
+          <p>If you need to speak to someone in Welsh call <a class="bold" href="tel:+443000060422">0300 006 0422</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
