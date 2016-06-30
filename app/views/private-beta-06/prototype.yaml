@@ -26,6 +26,9 @@ changelog:
   - register - town or city
   - register - Last name
   - register - pat@gmail - signin or create a new password
+  - registered - new content
+  - password reset successful - new content and button text
+  - signed out - new copy
   - sign-in - button text
 
 
