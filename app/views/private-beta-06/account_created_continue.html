@@ -1,8 +1,8 @@
 {% extends "./layout/layout.html" %}
 
-{% from "./includes/register_teaser.html" import register_teaser %}
+<!-- {% from "./includes/register_teaser.html" import register_teaser %} -->
 
-{% block title %}Account created{% endblock %}
+{% block title %}Registration successful{% endblock %}
 
 {% block body %}
   <h1 class="heading-large">Registration successful</h1>
@@ -11,22 +11,19 @@
 
     <div class="column-two-thirds tablet-column-two-thirds">
 
-      <p>Your registration was successful and you have been signed in.</p>
-      <p>You were purchasing information for the following property title:</p>
+      <p class="lede">You have been signed in.</p>
+      <!-- <p>You were purchasing information for the following property title:</p> -->
 
-      <div class="panel panel-border-narrow">
+<!--       <div class="panel panel-border-narrow">
         {{ register_teaser(title=title,single=true) }}
-      </div>
+      </div> -->
 
-      <a href="{{path}}/worldpay_1?title_number={{data.title_number}}" class="button spacing-top-single spacing-bottom-half">Buy title summary</a>
+      <!-- <a href="{{path}}/worldpay_1?title_number={{data.title_number}}" class="button spacing-top-single spacing-bottom-half">Buy title summary</a> -->
 
-      <br> or <a href="{{path}}/search">start a new search</a>
+      <!-- <br> or <a href="{{path}}/search">start a new search</a> -->
 
-      {# <ul class="list list-bullet spacing-top-double">
+      <a href="search" class="button spacing-top-single spacing-bottom-half">Continue</a>
 
-        <li><a href="{{path}}/worldpay_1?title_number={{title_number}}">Continue purchasing the summary for {{title.address}}</a></li>
-        <li><a href="{{path}}/search">Start a new search</a></li>
-      </ul> #}
     </div>
   </div>
 {% endblock %}

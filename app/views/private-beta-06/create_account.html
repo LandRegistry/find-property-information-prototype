@@ -258,7 +258,7 @@
 
               <div class="media-body">
                 <h2 class="heading-small spacing-bottom-flush">This email address is already in use</h2>
-                <p class="spacing-top-flush">Would you like to <a href="sign_in?title_number={{data.title_number}}&amp;email=pat@gmail.com">sign in</a> or <a href="reset/password/email_sent?title_number={{data.title_number}}&amp;email=pat@gmail.com">request a new password</a>?</p>
+                <p class="spacing-top-flush">Would you like to <a href="sign_in?title_number={{data.title_number}}&amp;email=pat@gmail.com">sign in</a> or <a href="reset/password/email_sent?title_number={{data.title_number}}&amp;email=pat@gmail.com">create a new password</a>?</p>
               </div>
             </div>
 
@@ -306,8 +306,8 @@
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="surname">Surname</label>
-            <input class="form-control" type="text" id="surname" name="surname">
+            <label class="form-label" for="surname">Last name</label>
+            <input class="form-control" type="text" id="lastname" name="lastname">
           </div>
 
         </fieldset>
@@ -387,9 +387,9 @@
               "message": "First name is required"
             }
           },
-          "surname": {
+          "lastname": {
             "presence": {
-              "message": "Surname is required"
+              "message": "Last name is required"
             }
           },
           "address": {
