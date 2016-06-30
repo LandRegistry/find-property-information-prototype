@@ -5,18 +5,30 @@ description: |
 
 changelog:
   - todo... 
-  - sign-in back to the start of journey
   - title number back - can be on every page after sign in
   - words back to prod version (although we know they dont work well)
   - sympatheic words about signin and account on the pages around it
   - signin and register as per v5 - with some minor word tweaks
-  - improve fwd journey if your 'account' exsits -> by your email address we know you
+  - improve fwd journey if your 'account' exists -> by your email address we know you
   - youve logged out - journey fwd is back to start page
   - pwd reset (aka forgotten pwd) - at end make it clearer people are now signed in
   - forgotten pwd - becomes reset pwd - consider improve copy and offering reset pwd
-  - terms and condition need reworking (add just waht needed for signin and register)
+  - terms and condition need reworking (add just what needed for signin and register)
   - pages for more user journeys (less 'happy path') - session timed out; reset password email addr isnt one we have;
   - ensure we are always giving someone a forward option
-  - look at mobile - see if pages look ok / need tweak - like oprhan words or obvious info hidden from view
+  - look at mobile - see if pages look ok / need tweak - like orphan words or obvious info hidden from view
   -
   - done...
+  - sign-in back to the start of journey
+  - register - why do we need email copy - and position
+  - register - error message order matches field order
+  - register - lede para copy
+  - register - town or city
+  - register - Last name
+  - register - pat@gmail - signin or create a new password
+  - registered - new content
+  - password reset successful - new content and button text
+  - signed out - new copy
+  - sign-in - button text
+
+

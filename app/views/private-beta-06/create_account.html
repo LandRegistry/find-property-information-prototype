@@ -215,7 +215,11 @@
 
     <div class="column-two-thirds tablet-column-two-thirds">
 
-      <p class="lede">Due to the information this service reveals we ask users to register with us so we can monitor access.</p>
+      <p class="lede">Due to the information this service reveals, we ask people to register with us so we can monitor access.</p>
+
+<!--
+      Customer registration has been introduced so that our Find A Property service conforms to standard industry practice and is brought in line with other online service providers who ask users to register in order to gain access to information. This change also makes our service more secure. 
+-->
 
       <form class="spacing-top-double" action="account_created_continue" method="POST" novalidate data-clientside-validation="create_account_form_validation">
         <input name="title_number" value="{{data.title_number}}" type="hidden" />
@@ -230,14 +234,14 @@
           <legend class="visuallyhidden">Account details</legend>
 
             <div class="form-group">
-              <label class="form-label" for="email">Email address</label>
+              <label class="form-label" for="email">Email address
+              <a href="#why-do-we-need-email" class="font-xsmall split-detail-trigger spacing-left-single">Our email usage policy</a></label>
 
 
               <input class="form-control" type="email" id="email" name="email" data-email-hint>
-              <a href="#why-do-we-need-email" class="font-xsmall split-detail-trigger">Why do we need this?</a>
               <div class="split-detail-contents font-xsmall" id="why-do-we-need-email">
                 <div class="panel panel-border-narrow spacing-bottom-single">
-                  <p>Your email address will be used to log into the service in future. We will also use this to allow you to reset your password.</p>
+                  <p>Your email address will be used to log into the service in future. If you forget your password we will use your email address to help you reset it.</p>
                   <p>We won't use your email address for any purposes other than access to this service.</p>
                   <p>We won't share your email with third parties.</p>
                 </div>
@@ -254,12 +258,12 @@
 
               <div class="media-body">
                 <h2 class="heading-small spacing-bottom-flush">This email address is already in use</h2>
-                <p class="spacing-top-flush">Would you like to <a href="sign_in?title_number={{data.title_number}}&amp;email=pat@gmail.com">sign in</a> or <a href="reset/password/email_sent?title_number={{data.title_number}}&amp;email=pat@gmail.com">request a new password</a>?</p>
+                <p class="spacing-top-flush">Would you like to <a href="sign_in?title_number={{data.title_number}}&amp;email=pat@gmail.com">sign in</a> or <a href="reset/password/email_sent?title_number={{data.title_number}}&amp;email=pat@gmail.com">create a new password</a>?</p>
               </div>
             </div>
 
             <div class="panel panel-border-narrow visuallyhidden email-hint">
-              <p>Please ensure your email address is displayed correctly below. We will need this if you need to reset your password in future.</p>
+              <p>Please ensure your email address is displayed correctly below. If you forget your password we will use your email address to help you reset it.</p>
               <p id="email-hint-value" class="bold"></p>
             </div>
 
@@ -302,8 +306,8 @@
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="surname">Surname</label>
-            <input class="form-control" type="text" id="surname" name="surname">
+            <label class="form-label" for="surname">Last name</label>
+            <input class="form-control" type="text" id="lastname" name="lastname">
           </div>
 
         </fieldset>
@@ -320,8 +324,8 @@
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="city">City</label>
-            <input class="form-control" type="text" id="city" name="city">
+            <label class="form-label" for="city">Town or City</label>
+            <input class="form-control" type="text" id="town" name="town">
           </div>
 
           <div class="form-group">
@@ -356,41 +360,6 @@
 
       <script type="application/json" id="create_account_form_validation">
         {
-          "title": {
-            "presence": {
-              "message": "Title is required"
-            }
-          },
-          "firstname": {
-            "presence": {
-              "message": "First name is required"
-            }
-          },
-          "surname": {
-            "presence": {
-              "message": "Surname is required"
-            }
-          },
-          "address": {
-            "presence": {
-              "message": "Address is required"
-            }
-          },
-          "city": {
-            "presence": {
-              "message": "City is required"
-            }
-          },
-          "country": {
-            "presence": {
-              "message": "Country is required"
-            }
-          },
-          "postcode": {
-            "presence": {
-              "message": "Postcode is required"
-            }
-          },
           "email": {
             "email": true,
             "presence": {
@@ -407,6 +376,41 @@
               "message": "Password should be between 8 and 20 characters long. Characters can include letters, number and symbols."
             },
             "find_property_information_password": true
+          },
+          "title": {
+            "presence": {
+              "message": "Title is required"
+            }
+          },
+          "firstname": {
+            "presence": {
+              "message": "First name is required"
+            }
+          },
+          "lastname": {
+            "presence": {
+              "message": "Last name is required"
+            }
+          },
+          "address": {
+            "presence": {
+              "message": "Address is required"
+            }
+          },
+          "town": {
+            "presence": {
+              "message": "Town or City is required"
+            }
+          },
+          "country": {
+            "presence": {
+              "message": "Country is required"
+            }
+          },
+          "postcode": {
+            "presence": {
+              "message": "Postcode is required"
+            }
           },
           "terms": {
             "presence": {
