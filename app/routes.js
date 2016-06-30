@@ -29,12 +29,14 @@ router.use(function (req, res, next) {
 
   res.locals.path = '/' + req.path.split('/')[1];
 
+  // get
   for(var item in req.query) {
     if(req.query.hasOwnProperty(item)) {
       res.locals.data[item] = req.query[item];
     }
   }
 
+  // post
   for(var item in req.body) {
     if(req.body.hasOwnProperty(item)) {
       res.locals.data[item] = req.body[item];

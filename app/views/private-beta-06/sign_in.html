@@ -5,13 +5,17 @@
 {% block body %}
   <h1 class="heading-large spacing-bottom-flush">Sign in</h1>
 
-  <p class="lede">or <a href="create_account?title_number={{data.title_number}}">register to use this service</a></p>
+<!--   <p class="lede">or <a href="create_account?title_number={{data.title_number}}">register to use this service</a></p> -->
+  <p class="lede">or <a href="create_account">register to use this service</a></p>
 
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <form method="POST" action="{% if data.action %}{{data.action}}{% else %}worldpay_1{% endif %}" id="login-form"  novalidate data-clientside-validation="login_form_validation">
-        <input name="title_number" value="{{data.title_number}}" type="hidden" />
+      <form method="POST" action="{% if data.action %}{{data.action}}{% else %}search{% endif %}" id="login-form"  novalidate data-clientside-validation="login_form_validation">
+
+        {% if data.title_number %}
+          <input name="title_number" value="{{data.title_number}}" type="hidden" />
+        {% endif %}
 
         <!-- If this field is present in the GET or POST data sent to the server -->
         <!-- it will instantly log the user in. This is obviously not how "real" -->
