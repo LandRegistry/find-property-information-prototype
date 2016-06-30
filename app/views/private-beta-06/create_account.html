@@ -230,14 +230,14 @@
           <legend class="visuallyhidden">Account details</legend>
 
             <div class="form-group">
-              <label class="form-label" for="email">Email address</label>
+              <label class="form-label" for="email">Email address
+              <a href="#why-do-we-need-email" class="font-xsmall split-detail-trigger spacing-left-single">Email usage policy</a></label>
 
 
               <input class="form-control" type="email" id="email" name="email" data-email-hint>
-              <a href="#why-do-we-need-email" class="font-xsmall split-detail-trigger">Why do we need this?</a>
               <div class="split-detail-contents font-xsmall" id="why-do-we-need-email">
                 <div class="panel panel-border-narrow spacing-bottom-single">
-                  <p>Your email address will be used to log into the service in future. We will also use this to allow you to reset your password.</p>
+                  <p>Your email address will be used to log into the service in future. If you forget your password we will use your email address to help you reset it.</p>
                   <p>We won't use your email address for any purposes other than access to this service.</p>
                   <p>We won't share your email with third parties.</p>
                 </div>
@@ -356,6 +356,23 @@
 
       <script type="application/json" id="create_account_form_validation">
         {
+          "email": {
+            "email": true,
+            "presence": {
+              "message": "Email address is required"
+            }
+          },
+          "pass": {
+            "presence": {
+              "message": "Password is required"
+            },
+            "length": {
+              "minimum": 8,
+              "maximum": 20,
+              "message": "Password should be between 8 and 20 characters long. Characters can include letters, number and symbols."
+            },
+            "find_property_information_password": true
+          },
           "title": {
             "presence": {
               "message": "Title is required"
@@ -390,23 +407,6 @@
             "presence": {
               "message": "Postcode is required"
             }
-          },
-          "email": {
-            "email": true,
-            "presence": {
-              "message": "Email address is required"
-            }
-          },
-          "pass": {
-            "presence": {
-              "message": "Password is required"
-            },
-            "length": {
-              "minimum": 8,
-              "maximum": 20,
-              "message": "Password should be between 8 and 20 characters long. Characters can include letters, number and symbols."
-            },
-            "find_property_information_password": true
           },
           "terms": {
             "presence": {

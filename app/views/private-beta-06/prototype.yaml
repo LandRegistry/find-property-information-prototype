@@ -5,7 +5,6 @@ description: |
 
 changelog:
   - todo... 
-  - sign-in back to the start of journey
   - title number back - can be on every page after sign in
   - words back to prod version (although we know they dont work well)
   - sympatheic words about signin and account on the pages around it
@@ -20,3 +19,7 @@ changelog:
   - look at mobile - see if pages look ok / need tweak - like oprhan words or obvious info hidden from view
   -
   - done...
+  - sign-in back to the start of journey
+  - register - why do we need email copy
+  - register - error message order matches field order
+  
