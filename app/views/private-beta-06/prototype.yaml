@@ -28,6 +28,7 @@ changelog:
   - register - Last name
   - register - pat@gmail - signin or create a new password
   - register - phone number
+  - register - length of title field
   - registered - new content
   - password reset successful - new content and button text
   - signed out - new copy
