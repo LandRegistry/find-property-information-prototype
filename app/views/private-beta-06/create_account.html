@@ -274,8 +274,7 @@
             <p class="form-hint">Your password must:</p>
             <ul class="form-hint list list-bullet spacing-bottom-flush">
               <li>be between 8 and 20 characters</li>
-              <li>contain at least 1 letter and 2 numbers</li>
-              <li>not be the same as your email address</li>
+              <li>contain 2 numbers</li>
               <li>not contain the symbols &pound; &#x20AC; &#x00AC; &#x00A6;</li>
             </ul>
           </div>
@@ -310,6 +309,20 @@
             <input class="form-control" type="text" id="lastname" name="lastname">
           </div>
 
+          <div class="form-group">
+          <label class="form-label" for="phone">Phone number (optional)
+              <a href="#why-do-we-need-phone" class="font-xsmall split-detail-trigger spacing-left-single">Why we ask for phone number</a></label>
+
+
+              <input style="width:auto;" size="20" class="form-control" type="phone" id="phone" name="phone" data-phone-hint>
+              <div class="split-detail-contents font-xsmall" id="why-do-we-need-phone">
+                <div class="panel panel-border-narrow spacing-bottom-single">
+                  <p>We won't contact you by phone.</p>
+                  <p>We won't share your phone number with third parties.</p>
+                </div>
+              </div>
+          </div>
+
         </fieldset>
 
         <h2 class="heading-medium disabled-if-email-exists">Address</h2>
@@ -339,7 +352,7 @@
 
           <div class="form-group">
             <label class="form-label" for="postcode">Postcode</label>
-            <input class="form-control" type="text" id="postcode" name="postcode">
+            <input size="12" style="width:auto;" class="form-control" type="text" id="postcode" name="postcode">
           </div>
 
         </fieldset>
