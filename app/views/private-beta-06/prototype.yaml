@@ -1,7 +1,7 @@
 name: assessment candidate - 'tell us who you are'
 date: 2016-06-29
 description: |
-  <p>current production plus 'sign-in or register'</p>
+  <p>current production plus 'sign-in or register' plus tweaks to copy to make new flow sit better</p>
 
 changelog:
   - todo... 
@@ -36,5 +36,10 @@ changelog:
   - search - copy as per production
   - search results - as prod but without title number
   - worldpay - matches prod
+  - confirm - remove title no
+  - confirm - copy - the summary will tell you Title number
+  - confirm - copy - the summary costs selection
+  - confirm - button copy
+  - confirm - page title
 
 
