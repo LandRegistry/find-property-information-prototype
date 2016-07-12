@@ -17,20 +17,24 @@ changelog:
   - pages for more user journeys (less 'happy path') - session timed out; reset password email addr isnt one we have;
   - ensure we are always giving someone a forward option
   - look at mobile - see if pages look ok / need tweak - like orphan words or obvious info hidden from view
-  - why are we asking for phone number - copy needed
+  - why are we asking for phone number - better copy needed
   -
   - done...
-  - sign-in back to the start of journey
+  - sign-in - after confirm your selection/order
   - register - why do we need email copy - and position
   - register - error message order matches field order
   - register - lede para copy
   - register - town or city
   - register - Last name
   - register - pat@gmail - signin or create a new password
-  - register - phone number
+  - register - phone number field + why phone copy (needs more work)
+  - register - length of title field
   - registered - new content
   - password reset successful - new content and button text
   - signed out - new copy
   - sign-in - button text
+  - search - copy as per production
+  - search results - as prod but without title number
+  - worldpay - matches prod
 
 
