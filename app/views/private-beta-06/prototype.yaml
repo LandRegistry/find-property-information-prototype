@@ -6,6 +6,7 @@ description: |
 changelog:
   - todo... 
   - register - at end - continue journey to pay
+  - reset password - at end - continue journey to pay
   - pwd reset (aka forgotten pwd) - at end make it clearer people are now signed in
   - forgotten pwd - becomes reset pwd - consider improve copy and offering reset pwd
   - terms and condition need reworking (add just what needed for signin and register)
