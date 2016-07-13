@@ -8,8 +8,7 @@
     </div>
 
     <div class="column-one-third" style="text-align: right">
-
-      {% if session.isLoggedIn %}
+      {% if session.isLoggedIn and not suppressSignOutLink %}
         <a class="font-xsmall" href="{{path}}/sign_out">Sign out</a>
       {% endif %}
     </div>

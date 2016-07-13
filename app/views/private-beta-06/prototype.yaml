@@ -5,12 +5,7 @@ description: |
 
 changelog:
   - todo... 
-  - title number back - can be on every page after sign in
-  - words back to prod version (although we know they dont work well)
-  - sympatheic words about signin and account on the pages around it
-  - signin and register as per v5 - with some minor word tweaks
-  - improve fwd journey if your 'account' exists -> by your email address we know you
-  - youve logged out - journey fwd is back to start page
+  - register - at end - continue journey to pay
   - pwd reset (aka forgotten pwd) - at end make it clearer people are now signed in
   - forgotten pwd - becomes reset pwd - consider improve copy and offering reset pwd
   - terms and condition need reworking (add just what needed for signin and register)
@@ -43,5 +38,7 @@ changelog:
   - confirm - page title
   - summary - remove property notes (A1)
   - summary - title number
+  - reset password - new password rules copy
+  - reset password - create new password - removed sign out link
 
 
