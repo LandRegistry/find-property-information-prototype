@@ -26,6 +26,7 @@ changelog:
   - register - phone number field + why phone copy (needs more work)
   - register - length of title field
   - registered - new content
+  - registered - continue to payment
   - password reset successful - new content and button text
   - signed out - new copy
   - sign-in - button text
