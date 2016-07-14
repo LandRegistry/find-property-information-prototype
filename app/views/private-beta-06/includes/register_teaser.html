@@ -1,8 +1,8 @@
-{% macro register_teaser(title=title,display_page_number=1,search_term='',single=false) %}
+{% macro register_teaser(title=title,display_page_number=1,search_term='',single=false, suppressAddressLink=false) %}
   <div class="teaser teaser-register">
     <h2 class="heading-small {% if not single %}spacing-top-half{% endif %}">
-      {% if title['data'] %}
-        <p href="confirm_selection?title_number={{title['data']['title_number']}}&amp;page={{display_page_number}}&amp;search_term={{search_term}}">{{ title['address'] }}</p>
+      {% if title['data'] and not suppressAddressLink %}
+        <a href="confirm_selection?title_number={{title['data']['title_number']}}&amp;page={{display_page_number}}&amp;search_term={{search_term}}">{{ title['address'] }}</a>
       {% else %}
         {{ title['address'] }}
       {% endif %}

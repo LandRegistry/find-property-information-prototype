@@ -1,3 +1,4 @@
+
 {% extends "./layout/layout.html" %}
 
 {% from "./includes/register_teaser.html" import register_teaser %}
@@ -16,7 +17,7 @@
       <p>You were purchasing information for the following property title:</p>
 
       <div class="panel panel-border-narrow">
-        {{ register_teaser(title=title,single=true) }}
+        {{ register_teaser(title=title,single=true,suppressAddressLink=true) }}
       </div>
 
       <a href="{{path}}/worldpay_1?title_number={{data.title_number}}" class="button spacing-top-single spacing-bottom-half">Buy title summary</a>
