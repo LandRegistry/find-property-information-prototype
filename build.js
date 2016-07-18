@@ -6,7 +6,6 @@ var landRegistryElements = require('land-registry-elements');
  */
 landRegistryElements({
   'mode': ((process.env.mode === 'PRODUCTION') ? 'production' : 'dev'),
-  'includePath': __dirname,
   'destination': path.join(__dirname, 'app/assets/.land-registry-elements'),
   'assetPath': '/public',
   'components': [
