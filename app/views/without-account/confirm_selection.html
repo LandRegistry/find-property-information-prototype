@@ -131,10 +131,6 @@
       <h2 class="heading-medium">To get this information</h2>
 
       <ul class="list list-bullet">
-        {% if not session.isLoggedIn %}
-          <li>you will need to sign in or register</li>
-        {% endif %}
-
         <li>you will need to pay {{ price_text | safe }} <span class="font-small">(&pound;2.50+VAT)</span></li>
 
 
@@ -144,7 +140,7 @@
       <!-- <p>You can pay by credit or debit card.</p> -->
 
 
-      <form method="GET" class="spacing-bottom-double" action="{% if session.isLoggedIn %}worldpay_1{% else %}sign_in{% endif %}" data-clientside-validation="cra_form_validation" data-clientside-validation-no-summary>
+      <form method="GET" class="spacing-bottom-double" action="worldpay_1" data-clientside-validation="cra_form_validation" data-clientside-validation-no-summary>
         <p>You need to accept the following terms to continue.</p>
 
         <input type="hidden" name="title_number" id="title_number" value="{{title['data']['title_number']}}"/>
@@ -161,7 +157,7 @@
           <input type="submit" class="button" value="Buy title summary">
         {% else %}
           <!-- <p class="form-hint">You will need to sign in or create an account to continue </p> -->
-          <input type="submit" class="button" value="Continue to sign in page">
+          <input type="submit" class="button" value="Continue to payment">
         {% endif %}
 
       </form>
