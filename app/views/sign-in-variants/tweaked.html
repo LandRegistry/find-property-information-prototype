@@ -27,8 +27,6 @@
           <input type="email" class="form-control" name="email" id="email"{% if data.email %} value="{{data.email}}"{% endif %}{% if data.username %} value="{{data.username}}"{% endif %}>
         </div>
 
-        <p class="spacing-bottom-flush">If you already have an account, please enter your password.</p>
-        <p class="spacing-bottom-single">If you do not have an account you will need to <a href="create_account?title_number={{data.title_number}}" id="register-link">Register</a></p>
 
         <!-- Password -->
         <div class="form-group">
@@ -36,6 +34,8 @@
             Password
           </label>
           <input type="password" class="form-control" id="password" name="password">
+          <p class="form-hint spacing-bottom-flush">If you already have an account, please enter your password.</p>
+          <p class="form-hint spacing-bottom-single">If you do not have an account you will need to <a href="create_account?title_number={{data.title_number}}" id="register-link">Register</a></p>
           <p class="spacing-top-half"><a href="{{path}}/reset/password/send_email?title_number={{data.title_number}}">Forgotten your password?</a></p>
         </div>
 

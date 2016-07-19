@@ -11,7 +11,7 @@
     <div class="column-two-thirds">
 
       <form id="been-here-before" method="GET" action="create_account">
-        <h1 class="heading-medium">Do you already have an account?</h1>
+        <h1 class="heading-medium spacing-top-flush">Do you already have an account?</h1>
 
         {% if data.title_number %}
           <input name="title_number" value="{{data.title_number}}" type="hidden" />
@@ -36,6 +36,8 @@
 
       <form id="registration-form" method="POST" action="{% if data.action %}{{data.action}}{% else %}worldpay_1{% endif %}" id="login-form"  novalidate data-clientside-validation="login_form_validation">
 
+        <p class="spacing-bottom-single">If you do not have an account you will need to <a href="create_account?title_number={{data.title_number}}" id="register-link">Register</a></p>
+
         {% if data.title_number %}
           <input name="title_number" value="{{data.title_number}}" type="hidden" />
         {% endif %}
@@ -50,9 +52,6 @@
           <label class="form-label-bold" for="email">Email address</label>
           <input type="email" class="form-control" name="email" id="email"{% if data.email %} value="{{data.email}}"{% endif %}{% if data.username %} value="{{data.username}}"{% endif %}>
         </div>
-
-        <p class="spacing-bottom-flush">If you already have an account, please enter your password.</p>
-        <p class="spacing-bottom-single">If you do not have an account you will need to <a href="create_account?title_number={{data.title_number}}" id="register-link">Register</a></p>
 
         <!-- Password -->
         <div class="form-group">
