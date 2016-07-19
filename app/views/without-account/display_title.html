@@ -1,0 +1,252 @@
+{% extends "./layout/layout.html" %}
+{% from "./includes/back_link.html" import back_link %}
+
+{% block title %}Summary of title {{ title.number }}{% endblock %}
+
+{% block header_primary %}
+  {{ back_link(title='Search again', url=path + '/search',historyBased=false) }}
+{% endblock %}
+
+{% block header_secondary %}
+  {% include './includes/language_switcher.html' %}
+{% endblock %}
+
+{% block body %}
+
+  <h1 class="heading-large spacing-top-single">Summary of{% if title['is_caution_title'] %} caution{% endif %} title {{ title['data']['title_number'] }}</h1>
+
+  <p class="font-xsmall">This title was last changed on <time datetime="{{ title.last_changed_datetime }}">{{ title.last_changed_date }} at {{ title.last_changed_time }}</time></p>
+
+  <div class="grid-row column-flip spacing-top-single">
+    <div class="column-one-third tablet-column-one-third spacing-bottom-single">
+
+      {% if title.indexPolygon %}
+        <div class="map polygon" id="map">
+          <p>The map relies on JavaScript being enabled in your browser.</p>
+        </div>
+
+        <p class="font-xsmall">This map shows the property's rough extent and location, <strong class="bold">not legal boundaries.</strong></p>
+      {% endif %}
+    </div>
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <dl class="definition-tabular definition-tabular-sectioned">
+
+        {% if title['is_caution_title'] %}
+          <dt class="bold-small">Caution</dt>
+          <dd>
+            <details class="font-xsmall">
+              <summary class="bold-small">What does Caution mean?</summary>
+              <div class="panel">
+                <p>This property hasn’t been registered yet. You can’t find out who owns it from this service. </p>
+                <p>Someone other than the owner (known as the ‘cautioner’) has registered a right or interest in the property. They will be told if anyone tries to register it, and can object to the registration going ahead until their claim has been looked at. You can get their name and address from this service.</p>
+                <p>Registration has only been compulsory since the 1990s. Property that hasn’t changed hands since then may not be registered.</p>
+              </div>
+            </details>
+          </dd>
+        {% endif %}
+
+        {% if title.address %}
+          <dt>Address</dt>
+          <dd>
+            <div class="address bold-medium">
+              {% for line in title.address %}
+                <span>{{line}}</span>
+              {% endfor %}
+            </div>
+
+<!--             {% if title.property_notes %}
+              <ul>
+                {% for note in title.property_notes %}
+                  <li class="spacing-top-single">{{ note|safe }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %} -->
+          </dd>
+        {% endif %}
+
+        <dt>
+          {% if title['is_caution_title'] %}
+            Cautioner{% if title.proprietors.length > 1 %}s{% endif %}
+          {% elif title.tenure == 'Leasehold' %}
+            Leaseholder{% if title.proprietors.length > 1 %}s{% endif %}
+          {% else %}
+            Owner{% if title.proprietors.length > 1 %}s{% endif %}
+          {% endif %}
+        </dt>
+
+        {% for proprietor in title.proprietors %}
+          <dd>
+            <h2 class="bold">{{ proprietor.name }} {{ proprietor.name_extra_info }}</h2>
+            {% if proprietor.co_reg_no %}
+              <h3 class="visuallyhidden">Company registration number</h3>
+              <div>{{ proprietor.co_reg_no }}</div>
+            {% endif %}
+
+            {% if proprietor.company_location %}
+              <h3 class="visuallyhidden">Company location</h3>
+              <div>{{ proprietor.company_location }}</div>
+            {% endif %}
+
+            <h3 class="visuallyhidden">Addresses</h3>
+            {% for address in proprietor.addresses %}
+              <div class="address spacing-top-half">
+                {% for line in address %}
+                  <span>{{ line|safe }}</span>
+                {% endfor %}
+              </div>
+            {% endfor %}
+          </dd>
+        {% endfor %}
+
+        {% if title.lenders %}
+          <dt>Lender{% if title.lenders.length > 1 %}s{% endif %}</dt>
+          {% for lender in title.lenders %}
+            <dd>
+              <h2 class="bold">{{ lender.name }} {{ lender.name_extra_info }}</h2>
+
+              {% if lender.co_reg_no %}
+                <div>{{ lender.co_reg_no }}</div>
+              {% endif %}
+
+              {% if lender.company_location %}
+                <div>{{ lender.company_location }}</div>
+              {% endif %}
+
+              {% for address in lender.addresses %}
+                <div class="address spacing-bottom-half">
+                  {% for line in address %}
+                    <span>{{ line|safe }}</span>
+                  {% endfor %}
+                </div>
+              {% endfor %}
+            </dd>
+          {% endfor %}
+        {% endif %}
+
+        <dt>Tenure type</dt>
+        <dd class="bold-small">{{ title.tenure }}</dd>
+
+        <dt>Title number</dt>
+        <dd class="bold-small">{{ title['data']['title_number'] }}</dd>
+
+        {% if title.ppi_data %}
+          <dt>Price paid</dt>
+          <dd class="bold-small">{{ title.ppi_data }}</dd>
+        {% endif %}
+
+      </dl>
+
+      <p class="spacing-top-single">This information can change if we receive an application. This service is unable to tell you whether or not there is an application pending with the Land Registry.</p>
+
+      <div class="printhidden">
+        <div class="govuk-box-highlight">
+          <p>
+            <strong class="bold">You'll only be able to view this information once</strong>
+            <br>If you want to keep a copy you can print it out
+          </p>
+
+          {% include './includes/print-button.html' %}
+        </div>
+
+        <h2 class="heading-medium collapse-top">What did you think of this service?</h2>
+        <p><a rel="external" href="mailto:digital-register-feedback@digital.landregistry.gov.uk">Please give us your feedback</a> (takes 30 seconds). <br>This is a new service and your feedback will help us improve it.</p>
+
+      </div>
+
+      <hr>
+
+      {% if receipt %}
+
+        <div class="vat-receipt page-break-before font-xsmall">
+          <h2 class="heading-medium">VAT receipt</h2>
+          <div class="grid-row">
+            <div class="column-two-thirds mobile-column-one-half">
+              <dl class="definition-tabular definition-tabular-1-2">
+
+                {% if receipt.date %}
+                  <dt class="bold">Date</dt>
+                  <dd>{{receipt.date}}</dd>
+                {% endif %}
+
+                {% if receipt.trans_id %}
+                  <dt class="bold">Transaction ID</dt>
+                  <dd>{{ receipt.trans_id }}</dd>
+                {% endif %}
+
+
+                {% if receipt.title_number %}
+                  <dt class="bold">Description</dt>
+                  <dd>Summary of title: {{ receipt.title_number }}</dd>
+                {% endif %}
+
+                {% if receipt.net %}
+                  <dt class="bold">Net amount</dt>
+                  <dd>&pound;{{receipt.net}}</dd>
+                {% endif %}
+
+                {% if receipt.vat %}
+                  <dt class="bold">VAT @ 20%</dt>
+                  <dd>&pound;{{ receipt.vat }}</dd>
+                {% endif %}
+
+                {% if receipt.total %}
+                  <dt class="bold">Total inc VAT</dt>
+                  <dd>&pound;{{ receipt.total }}</dd>
+                {% endif %}
+
+              </dl>
+            </div>
+            <div class="column-one-third mobile-column-one-half">
+              {% if receipt.address1 %}
+                <div itemscope="" itemtype="http://schema.org/Organization">
+                  <span itemprop="name" class="bold">{{ receipt.address1 }}</span>
+                  <div class="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+                    <span itemprop="streetAddress">{{ receipt.address2 }}<br>{{ receipt.address3 }}</span>
+                    <span itemprop="addressLocality">{{ receipt.address4 }}</span>
+                    <span itemprop="postalCode">{{ receipt.postcode }}</span>
+                  </div>
+                </div>
+
+                {% if receipt.reg_number %}
+                  <p class="spacing-top-single-third"><strong class="bold">VAT registration number:</strong><br> {{ receipt.reg_number }}</p>
+                {% endif %}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+      {% endif %}
+
+    </div>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <div class="panel panel-border-narrow spacing-top-single">
+        <p>If you have any problems with your purchase, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact Land Registry</a>.</p>
+      </div>
+
+      <hr>
+
+      <div class="printhidden">
+        <h2 class="heading-medium">What next</h2>
+        <ul class="list list-bullet">
+          <li><a href="{{path}}/search">Search again</a></li>
+          <li><a href="{{path}}">Return to the start page</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+  {% if title.indexPolygon %}
+    <script>
+      var indexData = {{ title['indexPolygon'] | json | safe }};
+    </script>
+    <script defer src="{{ asset_path }}app/javascripts/map.js"></script>
+  {% endif %}
+{% endblock %}
