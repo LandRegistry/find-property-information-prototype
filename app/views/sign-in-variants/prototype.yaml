@@ -2,3 +2,6 @@ name: sign in variants
 date: 2016-07-19
 description: |
   <p>Variants of the sign in page</p>
+
+changelog:
+  - When linking to the account creation form - pass the user's email address across form the sign in form
