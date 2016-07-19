@@ -5,7 +5,7 @@
 {% block body %}
   <h1 class="heading-large spacing-bottom-flush">Sign in</h1>
 
-  <p class="lede">or <a href="create_account?title_number={{data.title_number}}">register to use this service</a></p>
+  <p class="lede">or <a href="create_account?title_number={{data.title_number}}" id="register-link">register to use this service</a></p>
 
   <div class="grid-row">
     <div class="column-two-thirds">
@@ -50,6 +50,19 @@
         </div>
 
       </form>
+
+      <script>
+      (function() {
+        var link = document.getElementById('register-link');
+        var email = document.getElementById('email');
+
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+
+          window.location = this.getAttribute('href') + '&email=' + email.value;
+        });
+      })();
+      </script>
 
       <script type="application/json" id="login_form_validation">
         {
