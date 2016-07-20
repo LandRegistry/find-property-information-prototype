@@ -3,15 +3,13 @@
 {% block title %}Sign in{% endblock %}
 
 {% block body %}
-  <h1 class="heading-large">Sign in</h1>
-
   <!--<p style="vertical-align:top">Don't have an account? <a class="button" style="margin-left:30px;line-height: inherit;vertical-align:middle;background-color: #333" href="create_account?title_number={{data.title_number}}" id="register-link">register to use this service</a></p>-->
 
   <div class="grid-row">
     <div class="column-two-thirds">
-
+    <h1 class="heading-large">Sign in to Find property information</h1>
       <form id="been-here-before" method="GET" action="create_account">
-        <h1 class="heading-medium spacing-top-flush">Do you already have an account?</h1>
+        <h2 class="heading-medium">Have you used this service before?</h2>
 
         {% if data.title_number %}
           <input name="title_number" value="{{data.title_number}}" type="hidden" />
@@ -35,6 +33,8 @@
       </form>
 
       <form id="registration-form" method="POST" action="{% if data.action %}{{data.action}}{% else %}worldpay_1{% endif %}" id="login-form"  novalidate data-clientside-validation="login_form_validation">
+
+        <h1 class="heading-large">Sign in</h1>
 
         <p class="spacing-bottom-single">If you do not have an account you will need to <a href="create_account?title_number={{data.title_number}}" id="register-link">Register</a></p>
 

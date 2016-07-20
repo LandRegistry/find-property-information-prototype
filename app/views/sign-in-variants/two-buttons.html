@@ -3,17 +3,40 @@
 {% block title %}Sign in{% endblock %}
 
 {% block body %}
-  <h1 class="heading-large spacing-bottom-single">Sign in<br> <span class="font-medium">or <a href="create_account?title_number={{data.title_number}}" class="register-link">register to use this service</a></span></h1>
+
+
+  <style type="text/css">
+  .island {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .form-control,
+  .block-label,
+  .button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .button.register-link {
+    text-align: center;
+    background-color: #999;
+    color: #000;
+  }
+  </style>
 
   <!--<p style="vertical-align:top">Don't have an account? <a class="button" style="margin-left:30px;line-height: inherit;vertical-align:middle;background-color: #333" href="create_account?title_number={{data.title_number}}" id="register-link">register to use this service</a></p>-->
 
-  <div class="grid-row">
-    <div class="column-two-thirds">
+{#   <div class="grid-row">
+    <div class="column-two-thirds"> #}
+
+    <div class="island">
+      <h1 class="heading-large">Sign in</h1>
 
       <form method="POST" action="{% if data.action %}{{data.action}}{% else %}worldpay_1{% endif %}" id="login-form"  novalidate data-clientside-validation="login_form_validation">
         {# Due to the information this service reveals, we ask people to register with us so we can monitor access. #}
 
-        <!-- <p class="lede">or <a href="create_account?title_number={{data.title_number}}" class="register-link">register to use this service</a></p> -->
+        {# <p class="lede">or <a href="create_account?title_number={{data.title_number}}" class="register-link">register to use this service</a></p> #}
 
         {% if data.title_number %}
           <input name="title_number" value="{{data.title_number}}" type="hidden" />
@@ -40,9 +63,11 @@
             Password
           </label>
 
-          <p>If you do not have a password you will need to <a href="create_account?title_number={{data.title_number}}" class="register-link">register to use this service</a></p>
+          {# <p>If you do not have a password you will need to <a href="create_account?title_number={{data.title_number}}" class="register-link">create an account</a></p> #}
 
           <input type="password" class="form-control" id="password" name="password">
+
+          <p><a href="{{path}}/reset/password/send_email?title_number={{data.title_number}}">Forgotten password?</a></p>
 
         </div>
 
@@ -55,15 +80,23 @@
           </label>
         </div>
 
-        <input type="submit" class="button" value="Sign in">
+        <div class="form-group spacing-bottom-double">
+          <input type="submit" class="button" value="Sign in">
+
+          {# <p class="spacing-top-double spacing-bottom-single lede" style="text-align: center">New to Find property information?</p> #}
+          <a href="create_account?title_number={{data.title_number}}" class="button register-link spacing-top-half">Create an account</a>
+          <!-- <p class="form-hint spacing-top-half">You will proceed to payment after this step</p> -->
+        </div>
 
       </form>
 
-      <div class="panel panel-border-narrow spacing-bottom-single spacing-top-double">
-        <p>If you have forgotten your password you can <a href="{{path}}/reset/password/send_email?title_number={{data.title_number}}">request a new password here</a></p>
-        <p>You can also <a href="https://www.gov.uk/government/publications/official-copies-of-register-or-plan-registration-oc1">order information in paper format</a>.</p>
-        <p class="spacing-top-double">If you are having problems signing in, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact Land Registry</a>.</p>
+      <p>You can also <a href="https://www.gov.uk/government/publications/official-copies-of-register-or-plan-registration-oc1">order information in paper format</a>.</p>
+
+      <div class="panel panel-border-narrow spacing-bottom-single">
+        <p>If you are having problems signing in, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact Land Registry</a>.</p>
       </div>
+
+    </div>
 
       <script>
       (function() {
@@ -100,9 +133,9 @@
           }
         }
       </script>
-
+{#
 
     </div>
   </div>
-
+ #}
 {% endblock %}
