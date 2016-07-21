@@ -100,7 +100,7 @@
           </dd>
         {% endfor %}
 
-        {% if title.lenders %}
+        {% if title.lenders.length > 0 %}
           <dt>Lender{% if title.lenders.length > 1 %}s{% endif %}</dt>
           {% for lender in title.lenders %}
             <dd>

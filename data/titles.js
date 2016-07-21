@@ -81,7 +81,7 @@ for(var i=1;i<=totalCities;i++) {
             };
 
             item.proprietors = casual.proprietors(randomInteger(1,3), item.address);
-            item.lenders = casual.lenders(randomInteger(1,2));
+            item.lenders = casual.lenders(randomInteger(0,2));
 
             // A1 notes for leasehold properties
             if(item.tenure === 'Leasehold') {
