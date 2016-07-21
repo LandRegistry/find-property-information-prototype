@@ -26,9 +26,10 @@
   <ul>
     {% for title in examples %}
       {% if title['data'] %}
-        <li><a href="{{path}}/display_title?title_number={{title['data']['title_number']}}">{{title['address']}}</a> ({{title.description}})</li>
+        <!-- <li><a href="{{path}}/display_title?title_number={{title['data']['title_number']}}">{{title['address']}}</a> ({{title.description}})</li> -->
+        <li>{{ title['address'] }} ({{title.description}})</li>
       {% else %}
-        {{ title['address'] }} ({{title.description}})
+        <li>{{ title['address'] }} ({{title.description}})</li>
       {% endif %}
     {% endfor %}
   </ul>
@@ -40,7 +41,8 @@
       <div class="teaser teaser-register">
     <h2 class="heading-small spacing-top-half">
       {% if title['data'] %}
-        <a href="{{path}}/display_title?title_number={{title['data']['title_number']}}">{{ title['address'] }}</a>
+        <!-- <a href="{{path}}/display_title?title_number={{title['data']['title_number']}}">{{ title['address'] }}</a> -->
+        <li>{{ title['address'] }} ({{title.description}})</li>
       {% else %}
         {{ title['address'] }}
       {% endif %}

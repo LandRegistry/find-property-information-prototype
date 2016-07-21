@@ -205,6 +205,14 @@ router.get('/database', function (req, res) {
     },
 
     {
+      description: 'Freehold title with no lender',
+      test: function(title) {
+        return title.tenure === 'Freehold' && title.lenders.length === 0;
+      },
+      match: false
+    },
+
+    {
       description: 'No data',
       test: function(title) {
         return typeof title.data === 'undefined';
