@@ -3,7 +3,7 @@
 {% block title %}Sign in{% endblock %}
 
 {% block body %}
-  <h1 class="heading-large spacing-bottom-single">Sign in<br> <span class="font-medium">or <a href="create_account?title_number={{data.title_number}}" class="register-link">register to use this service</a></span></h1>
+  <h1 class="heading-large">Sign in</h1>
 
   <!--<p style="vertical-align:top">Don't have an account? <a class="button" style="margin-left:30px;line-height: inherit;vertical-align:middle;background-color: #333" href="create_account?title_number={{data.title_number}}" id="register-link">register to use this service</a></p>-->
 
@@ -40,7 +40,7 @@
             Password
           </label>
 
-          <p>If you do not have a password you will need to <a href="create_account?title_number={{data.title_number}}" class="register-link">register to use this service</a></p>
+          <p>If this is your first visit, you will need to <a href="create_account?title_number={{data.title_number}}" class="register-link">register to use this service</a></p>
 
           <input type="password" class="form-control" id="password" name="password">
 
