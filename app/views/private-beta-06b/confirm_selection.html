@@ -1,14 +1,14 @@
 {% extends "./layout/layout.html" %}
 {% from "./includes/back_link.html" import back_link %}
 
-{% block title %}Confirm your selection{% endblock %}
+{% block title %}Confirm your order{% endblock %}
 
 {% block header_primary %}
   {{ back_link(title='Search results', prefix='Back to', url=path + '/search_results?page=' + data.page + '&search_term=' + data.search_term) }}
 {% endblock %}
 
 {% block body %}
-  <h1 class="heading-large spacing-top-single">Confirm your selection</h1>
+  <h1 class="heading-large spacing-top-single">Confirm your order</h1>
 
   <p>You'll get a summary of the information Land Registry holds for this property title.</p>
   <div class="grid-row column-flip spacing-top-single">
@@ -103,7 +103,7 @@
 
           <li>what was paid for the property – you won't get this if it was bought before April 2000, if they paid less than &pound;100, or if Land Registry have agreed not to record the price</li>
           <li>if there is a mortgage on the property, the lender's name and address</li>
-          <li>the Title Number (unique reference number)</li>
+          <!-- <li>the Title Number (unique reference number)</li> -->
         {% endif %}
       </ul>
 
@@ -123,25 +123,9 @@
       </div>
 
 
-<!--       <h2 class="heading-medium">The summary costs {{ price_text | safe }} <span class="font-small">(&pound;2.50+VAT)</span></h2>
-      {% if not session.isLoggedIn %}
-        <p>You will need to tell us who you are before purchasing this summary.</p>
-      {% endif %} -->
+      <h2 class="heading-medium">The summary costs {{ price_text | safe }} <span class="font-small">(&pound;2.50+VAT)</span></h2>
 
-      <h2 class="heading-medium">To get this information</h2>
-
-      <ul class="list list-bullet">
-        {% if not session.isLoggedIn %}
-          <li>you will need to sign in</li>
-        {% endif %}
-
-        <li>you will need to pay {{ price_text | safe }} <span class="font-small">(&pound;2.50+VAT)</span></li>
-
-
-        <!-- <li>You wont be sent a copy of the information</li> -->
-      </ul>
-
-      <!-- <p>You can pay by credit or debit card.</p> -->
+      <p>You can pay by credit or debit card.</p>
 
 
       <form method="GET" class="spacing-bottom-double" action="{% if session.isLoggedIn %}worldpay_1{% else %}sign_in{% endif %}" data-clientside-validation="cra_form_validation" data-clientside-validation-no-summary>
@@ -163,6 +147,8 @@
           <!-- <p class="form-hint">You will need to sign in or create an account to continue </p> -->
           <input type="submit" class="button" value="Continue to sign in page">
         {% endif %}
+
+        <p class="font-xsmall spacing-top-third">for £3 inc VAT</p>
 
       </form>
 
