@@ -1,0 +1,85 @@
+{% set suppressSignOutLink = true %}
+
+{% extends "./layout/layout.html" %}
+
+{% block title %}Change your password{% endblock %}
+
+{% block body %}
+
+  <h1 class="heading-large">Change your password</h1>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <form method="POST" action="{{path}}/search" novalidate data-clientside-validation="password_form_validation" data-clientside-validation-no-summary>
+
+
+      <p>You are changing the password for: <strong class="bold">patsmith@gmail.com</strong></p>
+
+      <div class="form-group">
+        <label class="form-label-bold" for="old">Temporary password</label>
+        <p class="form-hint">This was sent to you in an email</p>
+        <input class="form-control" id="old" name="old" type="password">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label-bold" for="new1">Create new password</label>
+        <input class="form-control" id="new1" name="new1" type="password">
+
+        <p class="form-hint">Your password must:</p>
+        <ul class="form-hint list list-bullet">
+          <li>be between 8 and 20 characters</li>
+          <li>contain 2 numbers</li>
+          <li>not contain the symbols &pound; &#x20AC; &#x00AC; &#x00A6;</li>
+        </ul>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label-bold" for="new2">Repeat new password</label>
+        <input class="form-control" id="new2" name="new2" type="password">
+      </div>
+
+      <input type="hidden" name="username" value="%USERNAME%">
+
+      <script type="application/json" id="password_form_validation">
+        {
+          "old": {
+            "presence": {
+              "message": "Please enter the temporary password from the email we sent you"
+            }
+          },
+          "new1": {
+            "presence": {
+              "message": "Please create a new password"
+            },
+            "length": {
+              "minimum": 8,
+              "maximum": 20,
+              "message": "Password should be between 8 and 20 characters long. Characters can include letters, number and symbols."
+            },
+            "find_property_information_password": true
+          },
+          "new2": {
+            "presence": {
+              "message": "Please repeat your new password"
+            },
+            "equality": {
+              "attribute": "new1",
+              "message": "Please ensure both new password fields match"
+            }
+          }
+        }
+      </script>
+
+
+      <button type="submit" class="button">Change password</button>
+    </form>
+
+    <div class="panel panel-border-narrow spacing-bottom-single spacing-top-double">
+      <p>If you have any problems, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact Land Registry</a>.</p>
+    </div>
+
+
+  </div>
+</div>
+
+{% endblock %}

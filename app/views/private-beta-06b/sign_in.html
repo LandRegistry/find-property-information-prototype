@@ -1,0 +1,108 @@
+{% extends "./layout/layout.html" %}
+
+{% block title %}Sign in{% endblock %}
+
+{% block body %}
+  <h1 class="heading-large">Sign in</h1>
+
+  <!--<p style="vertical-align:top">Don't have an account? <a class="button" style="margin-left:30px;line-height: inherit;vertical-align:middle;background-color: #333" href="create_account?title_number={{data.title_number}}" id="register-link">register to use this service</a></p>-->
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form method="POST" action="{% if data.action %}{{data.action}}{% else %}search{% endif %}" id="login-form"  novalidate data-clientside-validation="login_form_validation">
+        {# Due to the information this service reveals, we ask people to register with us so we can monitor access. #}
+
+        <!-- <p class="lede">or <a href="create_account?title_number={{data.title_number}}" class="register-link">register to use this service</a></p> -->
+
+        {% if data.title_number %}
+          <input name="title_number" value="{{data.title_number}}" type="hidden" />
+        {% endif %}
+
+        <!-- If this field is present in the GET or POST data sent to the server -->
+        <!-- it will instantly log the user in. This is obviously not how "real" -->
+        <!-- sign-ins work! It is a massive hack for prototyping only -->
+        <input name="do_sign_in" value="true" type="hidden" />
+
+        <!-- Email -->
+        <div class="form-group">
+          <label class="form-label-bold" for="email">Email address</label>
+          <input type="email" class="form-control" name="email" id="email"{% if data.email %} value="{{data.email}}"{% endif %}{% if data.username %} value="{{data.username}}"{% endif %}>
+        </div>
+
+
+        <!-- Password -->
+        <div class="form-group">
+
+          {# <p class="form-hint spacing-bottom-flush">If you already have an account, please enter your password.</p> #}
+
+          <label class="form-label-bold" for="password">
+            Password
+          </label>
+
+          <p>If this is your first visit, you will need to <a href="create_account?title_number={{data.title_number}}" class="register-link">register to use this service</a></p>
+
+          <input type="password" class="form-control" id="password" name="password">
+
+        </div>
+
+
+        <!-- T&Cs -->
+        <div class="form-group" id="terms_group">
+          <label class="block-label" for="terms">
+            <input id="terms" name="terms" type="checkbox" value="terms">
+            I have read and agree to the <a href="terms_and_conditions">terms &amp; conditions</a>
+          </label>
+        </div>
+
+        <input type="submit" class="button" value="Sign in">
+
+      </form>
+
+      <div class="panel panel-border-narrow spacing-bottom-single spacing-top-double">
+        <p>If you have forgotten your password you can <a href="{{path}}/reset/password/send_email?title_number={{data.title_number}}">request a new password here</a></p>
+        <p>You can also <a href="https://www.gov.uk/government/publications/official-copies-of-register-or-plan-registration-oc1">order information in paper format</a>.</p>
+        <p class="spacing-top-double">If you are having problems signing in, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact Land Registry</a>.</p>
+      </div>
+
+      <script>
+      (function() {
+        var registerLinks = document.querySelectorAll('.register-link');
+        var email = document.getElementById('email');
+
+        [].forEach.call(registerLinks, function(link) {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            window.location = this.getAttribute('href') + '&email=' + email.value;
+          });
+        });
+
+      })();
+      </script>
+
+      <script type="application/json" id="login_form_validation">
+        {
+          "email": {
+            "presence": {
+              "message": "Email address is required"
+            }
+          },
+          "password": {
+            "presence": {
+              "message": "Password is required"
+            }
+          },
+          "terms": {
+            "presence": {
+              "message": "You must agree to our terms and conditions before continuing"
+            }
+          }
+        }
+      </script>
+
+
+    </div>
+  </div>
+
+{% endblock %}
