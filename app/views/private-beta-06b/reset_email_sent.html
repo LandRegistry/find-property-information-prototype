@@ -20,10 +20,20 @@
           <p>We have sent you an email containing your username.</p>
           <p>Once you receive the email, follow the included instructions in order to sign in to the service.</p>
         {% else %}
-          <p>We have sent an email to <strong class="bold">{{data.email}}</strong> containing a temporary password.</p>
-          <p>Once you receive the email, follow the instructions to reset your password.</p>
-        {% endif %}
+<!--           <p>We have sent an email to <strong class="bold">{{data.email}}</strong> containing a temporary password.</p>
+          <p>Once you receive the email, follow the instructions to reset your password.</p> -->
+            <p>We have sent an email to <strong class="bold">{{data.email}}</strong> containing a temporary password</p>
       </a>
+          <h2 class="heading-medium">Once you've received an email from us</h2>
+          <ul class="list-bullet">
+            <li>use the temporary password to sign in</li>
+            <li>you will be asked to create a new password</li>
+            <li>you will then be able to search for property information</li>
+          </ul>
+         <p class="spacing-top-single">When you have the email, <a href="{{path}}/sign_in?action=reset_do">continue to sign in</a> with your temporary password</p>
+
+        {% endif %}
+
 
       {% if item != 'username' %}
         <div class="panel panel-border-narrow spacing-top-double">
