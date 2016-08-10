@@ -171,7 +171,7 @@
 
 <h2>New service for basic searches</h2>
 
-<p><a rel="external" href="{{path}}/search">Try the new service</a> if you just want to know:</p>
+<p><a rel="external" href="{% if data.destination %}{{data.destination}}{% else %}{{path}}/search{% endif %}">Try the new service</a> if you just want to know:</p>
 <!-- <p><a rel="external" href="{{path}}/sign_in">Try the new service</a> if you just want to know:</p> -->
 
 <ul>
