@@ -6,7 +6,7 @@
 
 {% block body %}
 
-  <h1 class="heading-large">Reset your {{item}}</h1>
+  <h1 class="heading-large">Create a new {{item}}</h1>
 
   <div class="grid-row spacing-top-single">
 
@@ -15,7 +15,7 @@
       <form action="{{path}}/reset/{{item}}/confirm" method="POST" novalidate data-clientside-validation="create_account_form_validation">
         <input name="title_number" value="{{data.title_number}}" type="hidden" />
 
-        <p>To reset your {{item}}, enter a new one in the box below.</p>
+        <!-- <p>To reset your {{item}}, enter a new one in the box below.</p> -->
 
         <fieldset>
 
