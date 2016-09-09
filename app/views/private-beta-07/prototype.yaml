@@ -7,6 +7,9 @@ changelog:
   - proposed password reset flow
   - make sign in and register like prod
   - move sign-in to start
+  - 
+  - Todo
+  - Register - passwords - error/help message when they don't match
 
 
 
