@@ -1,7 +1,7 @@
 name: reset password email link
 date: 2016-08-09
 description: |
-  <p>sign-in, register like prod + new reset password flow.  The rest of this proto is not like prod - built from v6</p>
+  <p>sign-in, register like prod + new reset password flow.  The rest of this proto is may not match prod - built from v6</p>
 
 changelog:
   - proposed password reset flow

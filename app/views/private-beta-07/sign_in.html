@@ -10,7 +10,8 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <form method="POST" action="{% if data.action %}{{data.action}}{% else %}worldpay_1{% endif %}" id="login-form"  novalidate data-clientside-validation="login_form_validation">
+      <!-- <form method="POST" action="{% if data.action %}{{data.action}}{% else %}worldpay_1{% endif %}" id="login-form"  novalidate data-clientside-validation="login_form_validation"> -->
+      <form method="GET" action="{{path}}/search" id="login-form"  novalidate data-clientside-validation="login_form_validation">
         {# Due to the information this service reveals, we ask people to register with us so we can monitor access. #}
 
         <!-- <p class="lede">or <a href="create_account?title_number={{data.title_number}}" class="register-link">register to use this service</a></p> -->
