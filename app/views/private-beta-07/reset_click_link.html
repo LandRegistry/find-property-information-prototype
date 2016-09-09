@@ -15,10 +15,6 @@
         font-size: 13px;
       }
 
-      .gmail a {
-        color: inherit;
-        text-decoration: none;
-      }
     /* Base ------------------------------ */
     *:not(br):not(tr):not(html) {
       font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
@@ -129,7 +125,7 @@
     }
     p {
       margin-top: 0;
-      color: #000;
+      color: #74787E;
       font-size: 16px;
       line-height: 1.5em;
       text-align: left;
@@ -176,27 +172,74 @@
       }
     }
   </style>
-  <title>Gmail: Find property information - password reset</title>
   </head>
   <body>
     <div class="gmail" style="background-image:url({{path}}/images/password-reset-email.jpg)">
-      <!-- <p>Find property information password reset</p> -->
-      <p>You asked to reset your password for the Find property information service.</p>
+      <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+          <td align="center">
+            <table class="email-content" width="100%" cellpadding="0" cellspacing="0">
+              <!-- Email Body -->
+              <tr>
+                <td class="email-body" width="100%">
+                  <table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0">
+                    <!-- Body content -->
+                    <tr>
+                      <td class="content-cell">
+                        <h1>Hi,</h1>
+
+                        {% if item == 'password' %}
+                          <p>You've asked to reset the {{item}} for the Find property information service. Click the button below to reset it.</p>
+                          <p>You will be taken to the Find property information service and asked to create a new password.</p>
+                          <!-- Action -->
+                          <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td align="center">
+                                <div>
+                                  <a href="{{path}}/reset/{{item}}/do?71234897289456092390467540897520372734&amp;title_number={{data.title_number}}&amp;do_sign_in" class="button button--green">Reset your {{item}}</a>
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                          <p>If you did not request a {{item}} reset, please ignore this email or <a href="http://landregistry.custhelp.com/app/contactus_general/">get in touch to let us know</a>.</p>
+
+                          <!-- Sub copy -->
+                          <table class="body-sub">
+                            <tr>
+                              <td>
+                                <p class="sub">If you're having trouble clicking the {{item}} reset button, copy and paste the link below into your web browser.</p>
+                                <p class="sub"><a href="{{path}}/reset/{{item}}/do?71234897289456092390467540897520372734&amp;title_number={{data.title_number}}&amp;do_sign_in">{{path}}/reset/{{item}}/do?71234897289456092390467540897520372734&amp;title_number={{data.title_number}}&amp;do_sign_in</a></p>
+                              </td>
+                            </tr>
+                          </table>
+                        {% else %}
+
+                          <p>You recently requested a username reminder for your Find property information account.</p>
+                          <p>You username is <strong>patsmith</strong></p>
+                          <!-- Action -->
+                          <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td align="center">
+                                <div>
+                                  <a href="{{path}}/sign_in?username=patsmith&amp;action=sign_in_successful&amp;title_number={{data.title_number}}" class="button button--green">Sign in</a>
+                                </div>
+                              </td>
+                            </tr>
+                          </table>
+                          <p>If you did not request a username reminder, please ignore this email or <a href="http://landregistry.custhelp.com/app/contactus_general/">get in touch to let us know</a>.</p>
+
+                        {% endif %}
 
 
-      <p>This link will allow you to <a target="_blank" href="{{path}}/sign_in?action=reset_do">https://search-property-information.service.gov.uk/search</a> create a new password</p>
-
-      <p>If you have any problems resetting your password, you can contact Land Registry via email or phone, quoting the Find property information service:
-      <br>0300 006 0411<br>
-      digital-register-feedback@digital.landregistry.gov.uk</p>
-
-
-      <a href="{{path}}/sign_in?action=reset_do">
-        <br><br>
-        <p>Please do not reply to this email as it was sent from an account that cannot receive emails.</p>
-      </a>
-
-
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
     </div>
   </body>
 </html>
