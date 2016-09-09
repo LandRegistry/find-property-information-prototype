@@ -4,12 +4,9 @@ description: |
   <p>sign-in, register like prod + new reset password flow.  The rest of this proto is not like prod - built from v6</p>
 
 changelog:
-  - todo...
-  - reset password - 
+  - proposed password reset flow
   - make sign in and register like prod
-  - make the rest like prd - move sign-in to start.
+  - move sign-in to start
 
-  - done...
-  - 
 
 
