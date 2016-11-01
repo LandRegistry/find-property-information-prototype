@@ -1,7 +1,13 @@
 name: username - if we also ask for username
 date: 2016-10-31
 description: |
-  <p>Username (option 4) - if we also ask for username.  Probable service with username - and sign-in moved to where we expect it to be (not at the start)</p>
+  <p>Username (option 4) - and sign-in moved to where we expect it to be (not at the start)</p>
+  <ul>Rules:
+    <li>usernames have to be unique across FPI and FaP</li>
+    <li>usernames cannot be the users email/an email</li>
+    <li>users can only have one account (across FPI and FaP) per email</li>
+  </ul>
+  </br>
 
 changelog:
   - todo...

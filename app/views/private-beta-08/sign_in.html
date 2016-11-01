@@ -26,7 +26,7 @@
 
         <!-- Email -->
         <div class="form-group">
-          <label class="form-label-bold" for="email">Email address</label>
+          <label class="form-label-bold" for="email">Username or email address</label>
           <input type="email" class="form-control" name="email" id="email"{% if data.email %} value="{{data.email}}"{% endif %}{% if data.username %} value="{{data.username}}"{% endif %}>
         </div>
 
@@ -61,7 +61,8 @@
 
       <div class="panel panel-border-narrow spacing-bottom-single spacing-top-double">
         <p>If you have forgotten your password you can <a href="{{path}}/reset/password/send_email?title_number={{data.title_number}}">request a new password here</a></p>
-        <p>You can also <a href="https://www.gov.uk/government/publications/official-copies-of-register-or-plan-registration-oc1">order information in paper format</a>.</p>
+        <p>If you have forgotten your username you can <a href="#">get a username reminder</a></p>
+        <p class="spacing-top-double"> You can also <a href="https://www.gov.uk/government/publications/official-copies-of-register-or-plan-registration-oc1">order information in paper format</a>.</p>
         <p class="spacing-top-double">If you are having problems signing in, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact Land Registry</a>.</p>
       </div>
 
