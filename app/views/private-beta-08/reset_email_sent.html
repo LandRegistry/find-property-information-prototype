@@ -17,7 +17,8 @@
       <a href="click_email?title_number={{data.title_number}}" style="text-decoration: inherit;color:inherit">
 
         {% if item == 'username' %}
-          <p>We have sent you an email containing your username.</p>
+          <p>We have sent an email to <strong class="bold">{{data.email}}</strong> containing your username.</p>
+          <p>You can <a href="{{path}}/sign_in">sign in</a> with the email address you have just used, or the username we have sent you.</p>
           <p>Once you receive the email, follow the included instructions in order to sign in to the service.</p>
         {% else %}
 <!--           <p>We have sent an email to <strong class="bold">{{data.email}}</strong> containing a temporary password.</p>
@@ -35,12 +36,21 @@
         {% endif %}
 
 
-      {% if item != 'username' %}
+      {% if item == 'password' %}
         <div class="panel panel-border-narrow spacing-top-double">
           <h2 class="heading-small">Didn't receive an email?</h2>
           <ul class="list list-bullet">
             <li>Try checking your spam or junk folder - emails can sometimes get mistakenly flagged</li>
             <li>Alternatively you can <a href="send_email?title_number={{data.title_number}}">request another password reset email here</a></li>
+            <li class="spacing-top-single">If you continue to have problems resetting your password, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact Land Registry</a>.</li>
+          </ul>
+        </div>
+      {% else %}
+        <div class="panel panel-border-narrow spacing-top-double">
+          <h2 class="heading-small">Didn't receive an email?</h2>
+          <ul class="list list-bullet">
+            <li>Try checking your spam or junk folder - emails can sometimes get mistakenly flagged</li>
+            <li>Alternatively you can <a href="send_email?title_number={{data.title_number}}">request another username reminder email here</a></li>
             <li class="spacing-top-single">If you continue to have problems resetting your password, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact Land Registry</a>.</li>
           </ul>
         </div>
