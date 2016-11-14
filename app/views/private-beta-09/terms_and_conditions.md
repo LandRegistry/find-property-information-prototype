@@ -90,7 +90,7 @@ The Land Registry’s Find a Property service will hold the following informatio
 
 Land Registry complies with the requirements set by the Data Protection Act 1998 and European Parliament Directives.
 
-It uses personal information you provide in accordance with its personal information charter to: 
+It uses personal information you provide in accordance with its [personal information charter](https://www.gov.uk/government/organisations/land-registry/about/personal-information-charter) to: 
 
 1. supply title summary information to you
 2. process your payment for this information
