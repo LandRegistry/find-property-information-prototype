@@ -5,10 +5,10 @@ description: |
 
 changelog:
   - done...
-  - searche before sign-in (against paywall)
+  - search before sign-in (against paywall)
   - sign out on any page after sign in
   - after signed in - search again
-  - new terms and conditions
+  - new terms and conditions (signed off version and revisions re github TandC repo)
 
 
   - todo...

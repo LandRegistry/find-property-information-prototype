@@ -10,7 +10,9 @@ The summary tells you when the title was last changed and can change if Land Reg
 
 You can only view your purchased information once but you can print a copy.
 
-Use [Land Registry’s Find a Property service](https://www.gov.uk/government/publications/official-copies-of-register-or-plan-registration-oc1) instead if you need more detailed information, such as the official title plan, full legal register entry or details of any access rights and restrictions.
+Use [Land Registry’s Find a Property service](https://eservices.landregistry.gov.uk/wps/portal/Property_Search) instead if you need more detailed information, such as the title plan, full legal register entry or details of any access rights and restrictions.
+
+You’ll need to order an [official copy of the register](https://www.gov.uk/get-information-about-property-and-land/search-the-register) if you need to prove property ownership, eg for a court case.
 
 **By using this service you accept the terms of use set out on this page.  Each term of use is separate.  If any court decides any is unlawful the rest will continue to be fully effective.  You can stop using this service at any time. Land Registry can stop you from using this service if you don’t comply with its terms of use.**
 
@@ -31,13 +33,13 @@ To protect you, if you don’t use your account it’ll be deleted 12 months aft
 
 ## Terms and conditions of use
 By registering an account, you agree that you will not:
-1. attempt to damage, impair or interrupt the service or access to it
-2. use any automated software agents to search, copy, monitor, display, obtain links to or otherwise access this or any other Land Registry system
-3. copy or display the information provided for display on another website
-4. attempt to add, change or delete any information provided and held by Land Registry 
-5. allow any unauthorised person to access your account
-6. use the information provided by the service to claim any arrangement or official partnership with Land Registry to supply or reuse data and/or information
-7. use the data for any fraudulent or unlawful activity that breaches data protection law
+* attempt to damage, impair or interrupt the service or access to it
+* use any automated software agents to search, copy, monitor, display, obtain links to or otherwise access this or any other Land Registry system
+* copy or display the information provided for display on another website
+* attempt to add, change or delete any information provided and held by Land Registry 
+* allow any unauthorised person to access your account
+* use the information provided by the service to claim any arrangement or official partnership with Land Registry to supply or reuse data and/or information
+* use the data for any fraudulent or unlawful activity that breaches data protection law
 
 The Land Registry has the right to cancel your account at any time without notice if it suspects or has evidence you are not complying with these terms of use.  If this happens you will have to pay any unpaid fees.
 
@@ -53,7 +55,7 @@ If Land Registry has to contact you, it’ll write to you at the email address y
 
 ## Using the service – your contract with Land Registry
 
-By using the Find Property Information service (‘the service’), you have the ability to:
+By using the Find property information service (‘the service’), you have the ability to:
 * search for a property by postcode
 * select a property from a list of property addresses that match your search
 * view and print ‘title summary’ information for a property for the fee stated
@@ -80,7 +82,7 @@ Land Registry is not liable to you or any third party for any losses arising fro
 
 ## Information the Land Registry holds about you
 
-The Land Registry’s Find a Property service will hold the following information about you:
+The Land Registry’s Find property information service will hold the following information about you:
 * your email address
 * your password
 * your postal address
@@ -109,9 +111,7 @@ There are some cases when your information can be shared for other reasons, for 
 
 If you’re unhappy with the title summary information or any other aspect of the service, contact the Land Registry by completing its online [contact form](https://landregistry.custhelp.com/app/contactus_general/) or calling 0300 006 0411. To speak to a Welsh speaker, call 0300 003 0422.
 
-If you’re unhappy with the answer you receive, follow [the Land Registry’s internal complaints procedure](https://www.gov.uk/government/organisations/land-registry/about/complaints-procedure).
-
-If you’re still unhappy with the answer or need any advice, contact the [Information Commissioner’s Office (ICO)](https://ico.org.uk/concerns/getting/). The ICO can investigate your complaint independently from the Land Registry.
+If you’re unhappy with the answer you receive, follow [the Land Registry’s internal complaints procedure](https://www.gov.uk/government/organisations/land-registry/about/complaints-procedure). The complaints procedure also explains how to have your complaint investigated independently from Land Registry.
 
 Important: Land Registry is not directly responsible for the security or privacy of information you provide when making a transaction through the service’s online payment provider. If you have an issue with this, you should:
 * contact the online payment provider directly
