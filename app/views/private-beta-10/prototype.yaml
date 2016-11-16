@@ -4,6 +4,12 @@ description: |
   <p>Content designer rewrite.</p>
 
 changelog:
+  - done... 
+  - start page
+  - search
+  - search results
+  - confirm selection
+
   - redo...
   - search before sign-in (against paywall)
   - sign out on any page after sign in
@@ -12,12 +18,10 @@ changelog:
 
 
   - todo...
-  - see trello list, and ensure do/check these...
-  - reword current confirm page, and introduce new conform after sign in
-  - check - reset password - end of journey - continue on journey to pay like register flow
-  - check - make reset password end of flow variant - mailed temp pwd - then change tmp pwd
-  - pages for more user journeys (less 'happy path') - session timed out; reset password email addr isnt one we have;
-  - look at mobile - see if pages look ok - like orphan words or obvious info hidden from view
-  - register copy - why do we ask for all this info; why are we asking for phone number
+  - confirm page - price paid (y/n)
+  - confirm page - owner (y/n)
+  - confirm page - lender (y/n)
+  - search results - if signed in goes to confirm purchase (or a confirm purchase panel)
+  - check all routing
 
 
