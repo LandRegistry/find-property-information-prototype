@@ -5,16 +5,17 @@ description: |
 
 changelog:
   - done... 
+  - Terms of use (signed off version and revisions re github TandC repo)
   - start page
   - search
   - search results
   - confirm selection
+  - sign-in 
 
   - redo...
   - search before sign-in (against paywall)
   - sign out on any page after sign in
   - after signed in - search again
-  - new terms and conditions (signed off version and revisions re github TandC repo)
 
 
   - todo...
@@ -23,5 +24,6 @@ changelog:
   - confirm page - lender (y/n)
   - search results - if signed in goes to confirm purchase (or a confirm purchase panel)
   - check all routing
+  - sign-in needs to route onward
 
 

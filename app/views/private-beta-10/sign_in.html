@@ -1,6 +1,11 @@
 {% extends "./layout/layout.html" %}
+{% from "./includes/back_link.html" import back_link %}
 
 {% block title %}Sign in{% endblock %}
+
+{% block header_primary %}
+  {{ back_link(title='Back', url=path + '',historyBased=true) }}
+{% endblock %}
 
 {% block body %}
   <h1 class="heading-large">Sign in</h1>
@@ -40,7 +45,7 @@
             Password
           </label>
 
-          <p>If this is your first visit, you will need to <a href="create_account?title_number={{data.title_number}}" class="register-link">register to use this service</a></p>
+          <!-- <p>If this is your first visit, you will need to <a href="create_account?title_number={{data.title_number}}" class="register-link">register to use this service</a></p> -->
 
           <input type="password" class="form-control" id="password" name="password">
 
@@ -48,22 +53,22 @@
 
 
         <!-- T&Cs -->
-        <div class="form-group" id="terms_group">
+<!--         <div class="form-group" id="terms_group">
           <label class="block-label" for="terms">
             <input id="terms" name="terms" type="checkbox" value="terms">
             I have read and agree to the <a href="terms_and_conditions">terms &amp; conditions</a>
           </label>
-        </div>
+        </div> -->
 
-        <input type="submit" class="button" value="Sign in">
+        <input type="submit" class="button" value="Continue to purchase">
 
       </form>
 
-      <div class="panel panel-border-narrow spacing-bottom-single spacing-top-double">
+<!--       <div class="panel panel-border-narrow spacing-bottom-single spacing-top-double">
         <p>If you have forgotten your password you can <a href="{{path}}/reset/password/send_email?title_number={{data.title_number}}">request a new password here</a></p>
         <p>You can also <a href="https://www.gov.uk/government/publications/official-copies-of-register-or-plan-registration-oc1">order information in paper format</a>.</p>
         <p class="spacing-top-double">If you are having problems signing in, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact Land Registry</a>.</p>
-      </div>
+      </div> -->
 
       <script>
       (function() {
@@ -91,11 +96,6 @@
           "password": {
             "presence": {
               "message": "Password is required"
-            }
-          },
-          "terms": {
-            "presence": {
-              "message": "You must agree to our terms and conditions before continuing"
             }
           }
         }
