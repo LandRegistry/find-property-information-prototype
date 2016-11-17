@@ -11,6 +11,7 @@ changelog:
   - search results
   - confirm selection
   - sign-in 
+  - Privacy policy - to personal info charter
 
   - redo...
   - search before sign-in (against paywall)
@@ -25,5 +26,6 @@ changelog:
   - search results - if signed in goes to confirm purchase (or a confirm purchase panel)
   - check all routing
   - sign-in needs to route onward
+  - Privacy policy - own page for service
 
 
