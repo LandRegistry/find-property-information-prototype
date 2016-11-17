@@ -1,0 +1,183 @@
+{% extends "./layout/layout.html" %}
+{% from "./includes/back_link.html" import back_link %}
+
+{% block title %}Summary for title {{ title.number }}{% endblock %}
+
+{% block header_primary %}
+  {{ back_link(title='Search again', url=path + '/search',historyBased=false) }}
+{% endblock %}
+
+{% block header_secondary %}
+  {% include './includes/language_switcher.html' %}
+{% endblock %}
+
+{% block body %}
+
+  <h1 class="heading-large spacing-top-single">Summary for {% if title['is_caution_title'] %} caution{% endif %} title {{ title['data']['title_number'] }}</h1>
+
+
+  <p class="font-xsmall">Purchased on <span id="today"></span>. WorldPay transaction 3043404577</p>
+
+  <div class="grid-row column-flip spacing-top-single">
+    <div class="column-one-third tablet-column-one-third spacing-bottom-single">
+
+      {% if title.indexPolygon %}
+        <div class="map polygon " id="map">
+          <p>The map relies on JavaScript being enabled in your browser.</p>
+        </div>
+
+        <p class="font-xsmall spacing-top-half">This map shows the property's rough extent and location, <strong class="bold">not legal boundaries.</strong></p>
+      {% endif %}
+
+      <p class="font-xsmall">The information provided in this summary is correct at <span id="today-time"></span>.</p>
+
+      <p class="font-xsmall">This information has been sent to your email address (insert email) along with a VAT receipt for your purchase.</p>
+
+      <!-- print this page -->
+      <div class="printhidden">
+        <button data-print class="button button-light bold"><span class="icon icon-print"></span>Print this page</button>
+      </div>
+
+    </div>
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <dl class="definition-tabular definition-tabular-sectioned">
+
+        {% if title['is_caution_title'] %}
+<!--           <dt class="bold-small">Caution</dt>
+          <dd>
+            <details class="font-xsmall">
+              <summary class="bold-small">What does Caution mean?</summary>
+              <div class="panel">
+                <p>This property hasn’t been registered yet. You can’t find out who owns it from this service. </p>
+                <p>Someone other than the owner (known as the ‘cautioner’) has registered a right or interest in the property. They will be told if anyone tries to register it, and can object to the registration going ahead until their claim has been looked at. You can get their name and address from this service.</p>
+                <p>Registration has only been compulsory since the 1990s. Property that hasn’t changed hands since then may not be registered.</p>
+              </div>
+            </details>
+          </dd> -->
+        {% endif %}
+
+        {% if title.address %}
+          <dt class="spacing-bottom-single">Address</dt>
+          <dd class="spacing-bottom-single">
+            <div class="address bold-medium">
+              {% for line in title.address %}
+                <span>{{line}}</span>
+              {% endfor %}
+            </div>
+
+<!--             {% if title.property_notes %}
+              <ul>
+                {% for note in title.property_notes %}
+                  <li class="spacing-top-single">{{ note|safe }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %} -->
+          </dd>
+        {% endif %}
+
+        <dt class="spacing-bottom-single">Ownership type</dt>
+        <dd class="bold-small spacing-bottom-single">{{ title.tenure }}</dd>
+
+        <dt class="spacing-bottom-single">
+          {% if title['is_caution_title'] %}
+            Cautioner{% if title.proprietors.length > 1 %}s{% endif %}
+          {% else %}Owned by{% endif %}</dt>
+
+        {% for proprietor in title.proprietors %}
+          <dd class="spacing-bottom-single">
+            <h2 class="bold">{{ proprietor.name }} {{ proprietor.name_extra_info }}</h2>
+            {% if proprietor.co_reg_no %}
+              <h3 class="visuallyhidden">Company registration number</h3>
+              <div>{{ proprietor.co_reg_no }}</div>
+            {% endif %}
+
+            {% if proprietor.company_location %}
+              <h3 class="visuallyhidden">Company location</h3>
+              <div>{{ proprietor.company_location }}</div>
+            {% endif %}
+
+            <h3 class="visuallyhidden">Addresses</h3>
+            {% for address in proprietor.addresses %}
+              <div class="address">
+                {% for line in address %}
+                  <span>{{ line|safe }}</span>
+                {% endfor %}
+              </div>
+            {% endfor %}
+          </dd>
+        {% endfor %}
+
+        {% if title.lenders.length > 0 %}
+          <dt class="spacing-bottom-single">Mortgaged to</dt>
+          {% for lender in title.lenders %}
+            <dd class="spacing-bottom-single">
+              <h2 class="bold">{{ lender.name }} {{ lender.name_extra_info }}</h2>
+
+              {% if lender.co_reg_no %}
+                <div>{{ lender.co_reg_no }}</div>
+              {% endif %}
+
+              {% if lender.company_location %}
+                <div>{{ lender.company_location }}</div>
+              {% endif %}
+
+              {% for address in lender.addresses %}
+                <div class="address spacing-bottom-half">
+                  {% for line in address %}
+                    <span>{{ line|safe }}</span>
+                  {% endfor %}
+                </div>
+              {% endfor %}
+            </dd>
+          {% endfor %}
+        {% endif %}
+
+        {% if title.ppi_data %}
+          <dt class="spacing-bottom-single">Price paid</dt>
+          <dd class="bold-small spacing-bottom-single">{{ title.ppi_data }}</dd>
+        {% endif %}
+
+        <dt>Last updated</dt>
+        <dd class="bold-small"><time datetime="{{ title.last_changed_datetime }}">{{ title.last_changed_date }}</time></dd>
+
+      </dl>
+
+
+      <div class="printhidden spacing-top-double">
+
+        <a class="button" href="search_results" role="button">Search for another property</a>
+
+      
+        <p class="spacing-top-single"><a href="mailto:digital-register-feedback@digital.landregistry.gov.uk">What did you think of this service?</a> (takes 30 seconds)</p>
+
+      </div>
+
+      
+    </div>
+  </div>
+
+
+  {% if title.indexPolygon %}
+    <script>
+      var indexData = {{ title['indexPolygon'] | json | safe }};
+    </script>
+    <script defer src="{{ asset_path }}app/javascripts/map.js"></script>
+  {% endif %}
+
+  <script>
+
+    var d = new Date;
+    var date = d.toString();
+
+    span = document.getElementById('today');
+    txt = document.createTextNode(date);
+    span.innerText = txt.textContent;
+
+    span = document.getElementById('today-time');
+    txt = document.createTextNode(date);
+    span.innerText = txt.textContent;
+
+  </script>
+{% endblock %}
