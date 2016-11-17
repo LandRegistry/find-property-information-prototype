@@ -1,35 +1,132 @@
-
 {% extends "./layout/layout.html" %}
+{% from "./includes/back_link.html" import back_link %}
 
 {% from "./includes/register_teaser.html" import register_teaser %}
 
-{% block title %}Registration successful{% endblock %}
+{% block title %}Confirm your purchase{% endblock %}
 
 {% block body %}
-  <h1 class="heading-large">Registration successful</h1>
 
-  <div class="grid-row spacing-top-single">
+
+
+  <div class="grid-row spacing-top-double">
 
     <div class="column-two-thirds tablet-column-two-thirds">
 
-      <p class="lede">You have been signed in.</p>
+      <h1 class="heading-large" style="margin-top:0px;">Confirm your purchase</h1>
 
-      <p>You were purchasing information for the following property title:</p>
+        <!-- inner grid - confirm the place/title (text and map) -->
+        <div class="grid-row column-flip spacing-top-single">
 
-      <div class="panel panel-border-narrow">
-        {{ register_teaser(title=title,single=true,suppressAddressLink=true) }}
-      </div>
 
-      <a href="{{path}}/worldpay_1?title_number={{data.title_number}}" class="button spacing-top-single spacing-bottom-half">Buy title summary</a>
+          <!-- inner grid one-third - map -->
+          <div class="column-one-third tablet-column-one-third spacing-bottom-single">
+            {% if title['indexPolygon'] %}
+              <div class="map" id="map">
+                <p>The map relies on JavaScript being enabled in your browser.</p>
+              </div>
+            {% endif %}
+          </div>
+          <!-- end inner grid column-one-third - map -->
 
-      <!-- <br> or <a href="{{path}}/search">start a new search</a> -->
+          <!-- inner grid column-two-thirds - register text -->
+          <div class="column-two-thirds tablet-column-two-thirds">           
 
-      <!-- <a href="search" class="button spacing-top-single spacing-bottom-half">Start a search</a> -->
+            <dl class="definition-tabular definition-tabular-sectioned">
 
-      {% if title['data'] %}
-        <p class="spacing-top-single"><span class="back-link-destination">go back to <a href="confirm_selection?title_number={{title['data']['title_number']}}&amp;page={{display_page_number}}&amp;search_term={{search_term}}">the property title you were viewing</a></span></p>
-      {% endif %}
+              {% if title.address %}
+                <dt class="spacing-bottom-single">Address</dt>
+                <dd class="bold-medium spacing-bottom-single">
+                  <div class="address">
+                    {% for line in title.address %}
+                      <span>{{line}}</span>
+                    {% endfor %}
+                  </div>
+                </dd>
+              {% endif %}
 
+<!--               <dt>Title number</dt>
+              <dd class="bold-small">{{ title['data']['title_number'] }}</dd> -->
+
+              <dt class="spacing-bottom-single">Ownership type</dt>
+              <dd class="spacing-bottom-single">
+                <strong class="bold">{{ title['tenure'] }}</strong>
+              </dd>
+
+              <dt>You'll receive</dt>
+              <dd>
+                <ul class="list-bullet">
+                  <li class="bold-small">Owners' names and addresses</li>
+                  <li class="bold-small">Details of any mortgages</li>
+                  <li><span class="bold-small">Price paid</span> (if available)</li>
+                  <li class="bold-small">Title number</li>
+                </ul>
+              </dd>
+
+            </dl>
+
+          </div> <!-- end inner grid column-two-thirds - register text -->
+          
+        </div>
+
+      
+      <div class="panel panel-simple spacing-top-single"> <!-- pay form panel -->
+
+        <form action="{{path}}/worldpay_1?title_number={{data.title_number}}" method="POST">
+          <input name="title_number" value="{{data.title_number}}" type="hidden" />
+
+          <h2 class="heading-medium spacing-top-third">How to pay</h2>
+          <p>This information costs £3. Payment will be taken by WorldPay on the Land Registry's behalf.</p>
+
+
+          <div class="notice">
+            <div>
+            <i class="icon icon-important">
+              <span class="visually-hidden">Warning</span>
+            </i>
+            </div>
+            <div>
+                <p style="display:block; padding-left: 65px;margin-left: -15px;"">
+                  <span class="bold-small">Important: make sure this is the property you want.</span><br>You can't cancel once you've paid and the information is displayed.
+                </p>
+            </div> 
+           
+          </div>
+
+          <div class="form-group spacing-top-single">
+            <label class="block-label" for="terms">
+              <input id="terms" name="terms" type="checkbox" value="terms">
+              I have read and agree to the <a href="terms_and_conditions">terms of use</a>
+            </label>
+          </div>
+
+          <input type="submit" class="button" value="Pay now">
+
+        </form>
+
+        <p class="spacing-top-single">
+          <a href="search_results">Cancel and return to search results</a>
+        </p>
+
+      </div> <!-- end pay form panel -->
+
+    </div> <!-- end column-two-thirds -->
+
+
+    <div class="column-one-third tablet-column-one-third">
+      <aside class="supplementary-panel">
+        <h2 class="heading-medium">Need help with this service?</h2>
+        <p>Call Land Registry on 0300 006 0411 to report a problem, or if you're stuck and need help.</p>
+      </aside>
     </div>
+
   </div>
+
+
+  {% if title['indexPolygon'] %}
+    <script>
+      var indexData = {{ title['indexPolygon'] | json | safe }};
+    </script>
+    <script defer src="{{ asset_path }}app/javascripts/map.js"></script>
+  {% endif %}
 {% endblock %}

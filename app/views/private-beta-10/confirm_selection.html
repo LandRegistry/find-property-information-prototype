@@ -115,7 +115,7 @@
           <li>who owns this property (name and address)</li>
           <li>how much they paid (if the Land Registry holds this information)</li>
           <li>if there's a mortgage on it</li>
-      </ul>
+        </ul>
 
 
 
@@ -152,8 +152,7 @@
         <form method="GET" class="spacing-top-double" action="sign_in" >
 
           <input type="hidden" name="title_number" id="title_number" value="{{title['data']['title_number']}}"/>
-
-          <a class="button" href="create_account?{{title['data']['title_number']}}" role="button">Create a new account</a>
+          <a class="button" href="create_account?title_number={{title['data']['title_number']}}" role="button">Create a new account</a>
           <p class="spacing-top-half spacing-bottom-half"><strong class="bold">or</strong></p>
           <input type="submit" class="button" value="Sign in with an existing account">
         </form>
