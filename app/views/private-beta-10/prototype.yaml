@@ -12,6 +12,7 @@ changelog:
   - confirm selection
   - sign-in 
   - Privacy policy - to personal info charter
+  - create account
 
   - redo...
   - search before sign-in (against paywall)
@@ -27,5 +28,6 @@ changelog:
   - check all routing
   - sign-in needs to route onward
   - Privacy policy - own page for service
+  - create account - disabled button
 
 
