@@ -26,8 +26,11 @@ changelog:
   - confirm page - lender (y/n)
   - search results - if signed in goes to confirm purchase (or a confirm purchase panel)
   - check all routing
+  - check error messaging
+  - forgotten password
   - sign-in needs to route onward
   - Privacy policy - own page for service
   - create account - disabled button
+
 
 
