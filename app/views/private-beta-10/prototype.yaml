@@ -27,7 +27,7 @@ changelog:
   - Privacy policy - own page for service?
   - create account - disabled button
   - shame.css? head style + inline style in confirm(s)
-  - confoirm selection - remove form - just 2 links
+  - confirm selection - remove form - just 2 links
   - T and C - put copy in two thirds column
   - confirm your purchase - return to search results link (need to pass search term and page number about)
   - confirm your purchase - disabled button until terms of use checked
@@ -37,5 +37,6 @@ changelog:
   - confirm page - price paid (y/n)
   - confirm page - owner (y/n)
   - confirm page - lender (y/n)
+  - rename pages - make page urls closer to the h1 title
 
 
