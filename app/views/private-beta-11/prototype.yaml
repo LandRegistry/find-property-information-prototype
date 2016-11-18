@@ -1,25 +1,13 @@
-name: Content review output
-date: 2016-11-15
+name: New content Plus
+date: 2016-11-18
 description: |
-  <p>Content designer rewrite.</p>
+  <p>New content v10, plus things we've learnt previously</p>
 
 changelog:
-  - done... 
-  - Terms of use (signed off version and revisions re github TandC repo)
-  - start page
-  - search
-  - search results
-  - confirm selection
-  - sign-in 
-  - Privacy policy - to personal info charter
-  - create account
-  - confirm your purchase
-  - summary page
-  - remove 3rd payment page - receipt (world pay 3)
-  - signed in, 2nd purchase
-
-  - todo.?.
-  - show email on display_title
+  - todo...
+  - 2nd time around - conform property + confirm pay (confusing)
+  - freehold leasehols explain?
+  - caution titles
   - search results - if signed in goes to confirm purchase (or a confirm purchase panel)
   - what does confirm your selection page do if signed in?
   - check all routing
