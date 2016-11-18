@@ -16,9 +16,9 @@ changelog:
   - confirm your purchase
   - summary page
   - remove 3rd payment page - receipt (world pay 3)
+  - signed in, 2nd purchase
 
   - todo.?.
-  - sort dates and times on display_title
   - show email on display_title
   - search results - if signed in goes to confirm purchase (or a confirm purchase panel)
   - what does confirm your selection page do if signed in?
@@ -36,5 +36,6 @@ changelog:
   - confirm page - owner (y/n)
   - confirm page - lender (y/n)
   - rename pages - make page urls closer to the h1 title
+  - session object for all data needed to pass about
 
 

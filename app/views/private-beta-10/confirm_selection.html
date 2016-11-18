@@ -119,26 +119,44 @@
 
 
 
-      <h2 class="heading-medium">How to buy this information</h2>
+        {% if session.isLoggedIn %}
 
-      <ol class="list example-icon-list">
-        {% if not session.isLoggedIn %}
-          <li><span class="circle circle-step-large spacing-right-half">1</span><strong class="bold">create an account</strong> with an email address to receive the PDF</li>
+          <h2 class="heading-medium">How to buy this information</h2>
 
-          <li><span class="circle circle-step-large spacing-right-half">2</span><strong class="bold">pay online</strong> by debit or credit card</li>
+          <ol class="list example-icon-list">
 
-        {% else %}
+            <li><strong class="bold">pay online</strong> by debit or credit card</li>
 
-          <li><strong class="bold">pay online</strong> by debit or credit card</li>
+          </ol>
+
+          <div class="spacing-top-double"> <!-- continue to pay -->
+            <p>
+              <a class="button" href="confirm_your_purchase?title_number={{title['data']['title_number']}}" role="button">Continue to purchase</a>
+            </p>
+          </div>
+
+        {% else %} <!-- not logged in -->
+
+          <h2 class="heading-medium">How to buy this information</h2>
+
+          <ol class="list example-icon-list">
+
+            <li><span class="circle circle-step-large spacing-right-half">1</span><strong class="bold">create an account</strong> with an email address to receive the PDF</li>
+
+            <li><span class="circle circle-step-large spacing-right-half">2</span><strong class="bold">pay online</strong> by debit or credit card</li> 
+
+          </ol>
+
+          <p>This information will be displayed on-screen and emailed to you as a PDF.</p>
+
+          <div class="panel panel-border-narrow">
+            If you've already used this service and created an account, sign in with the email address you used before.
+          </div>         
 
         {% endif %}
 
-      </ol>
-      <p>This information will be displayed on-screen and emailed to you as a PDF.</p>
+      
 
-      <div class="panel panel-border-narrow">
-        If you've already used this service and created an account, sign in with the email address you used before.
-      </div>
 
 
       {% if session.isLoggedIn %}
