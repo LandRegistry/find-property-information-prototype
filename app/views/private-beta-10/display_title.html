@@ -31,7 +31,7 @@
 
       <p class="font-xsmall">The information provided in this summary is correct at <span id="today-time"></span>.</p>
 
-      <p class="font-xsmall">This information has been sent to your email address (insert email) along with a VAT receipt for your purchase.</p>
+      <p class="font-xsmall">This information has been sent to your email address ({{ data.email }}) along with a VAT receipt for your purchase.</p>
 
       <!-- print this page -->
       <div class="printhidden">
@@ -166,18 +166,21 @@
     <script defer src="{{ asset_path }}app/javascripts/map.js"></script>
   {% endif %}
 
+
+  <script src="{{ asset_path }}app/javascripts/moment.js"></script>
   <script>
 
-    var d = new Date;
-    var date = d.toString();
+    var date = moment().format('DD MMMM YYYY'); // November 18th 2016
+    var dateTime = moment().format('h:mm [on] DD MMMM YYYY'); // November 18th 2016, 3:50:43 pm
 
     span = document.getElementById('today');
     txt = document.createTextNode(date);
     span.innerText = txt.textContent;
 
     span = document.getElementById('today-time');
-    txt = document.createTextNode(date);
+    txt = document.createTextNode(dateTime);
     span.innerText = txt.textContent;
 
   </script>
+
 {% endblock %}

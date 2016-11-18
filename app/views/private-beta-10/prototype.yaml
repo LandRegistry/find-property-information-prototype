@@ -15,27 +15,27 @@ changelog:
   - create account
   - confirm your purchase
   - summary page
+  - remove 3rd payment page - receipt (world pay 3)
+  - signed in, 2nd purchase
 
   - todo.?.
-  - worldpay screen / screens?
+  - show email on display_title
   - search results - if signed in goes to confirm purchase (or a confirm purchase panel)
   - what does confirm your selection page do if signed in?
   - check all routing
   - check error messaging
   - forgotten password flow
-  - sign-in needs to route onward
   - Privacy policy - own page for service?
   - create account - disabled button
   - shame.css? head style + inline style in confirm(s)
-  - confoirm selection - remove form - just 2 links
   - T and C - put copy in two thirds column
   - confirm your purchase - return to search results link (need to pass search term and page number about)
   - confirm your purchase - disabled button until terms of use checked
-  - sort dates and times on display_title
-  - show email on display_title
   - make summary pdf and vat receipt pdf (maybe also mock up email with those attached)
   - confirm page - price paid (y/n)
   - confirm page - owner (y/n)
   - confirm page - lender (y/n)
+  - rename pages - make page urls closer to the h1 title
+  - session object for all data needed to pass about
 
 
