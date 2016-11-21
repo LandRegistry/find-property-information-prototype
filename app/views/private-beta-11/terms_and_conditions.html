@@ -4,13 +4,17 @@
 {% block title %}Terms &amp; conditions{% endblock %}
 
 {% block header_primary %}
-  {{ back_link(title='Back', prefix='', url=path + '/search') }}
+  {{ back_link(title='Back', prefix='', url=path + '', historyBased=true) }}
 {% endblock %}
 
 {% block body %}
 
-    <h1 class="heading-xlarge expand-bottom">Find property information: terms of use</h1>
-    
+    <h1 class="heading-xlarge">Find property information: terms of use</h1>
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
     <article>
         <h2 class="heading-large">About this service</h2>
         <p>Use this service to get a summary of who owns or leases a property, including:</p>
@@ -56,7 +60,12 @@
         <p>This service is for domestic and private use only.  Land Registry is not responsible for any losses that may result if you use the service for commercial business or re-sale purposes.</p>
         <p>You can access the service from any <a href="https://www.gov.uk/service-manual/user-centred-design/browsers-and-devices.html">suitable internet-connected device and browser</a>. You can print a copy of your purchased information and VAT receipts.</p>
         <p>The service is available every day but may be taken down for updates and maintenance. If you are logged in when this happens, you’ll receive notification on-screen.</p>
+<!-- prototype hack -->
+ <h2 id="contract" class="visually-hidden">Contract</h2>   
+<!-- end proto hack -->    
         <p>If Land Registry has to contact you, it’ll write to you at the email address you provided when you registered.</p>
+
+
 
         <h2 class="heading-large"></a>Using the service – your contract with Land Registry</h2>
         <p>By using the Find property information service (‘the service’), you have the ability to:</p>
@@ -119,4 +128,11 @@
             <li>tell Land Registry about the outcome by calling 0300 006 0411</li>
         </ul>
     </article>
+
+    {{ back_link(title='Back', prefix='', url=path + '', historyBased=true) }}
+
+    </div>
+
+  </div>
+
 {% endblock %}

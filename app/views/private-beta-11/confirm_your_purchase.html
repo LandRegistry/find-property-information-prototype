@@ -58,7 +58,7 @@
                 <ul class="list-bullet">
                   <li class="bold-small">Owners' names and addresses</li>
                   <li class="bold-small">Details of any mortgages</li>
-                  <li><span class="bold-small">Price paid</span> (if available)</li>
+                  <li><span class="bold-small">Price paid</span></li>
                   <li class="bold-small">Title number</li>
                 </ul>
               </dd>
@@ -97,11 +97,11 @@
           <div class="form-group spacing-top-single">
             <label class="block-label" for="terms">
               <input id="terms" name="terms" type="checkbox" value="terms">
-              I have read and agree to the <a href="terms_and_conditions">terms of use</a>
+              I have read and agree to the <a href="terms_and_conditions#contract">terms of use</a>
             </label>
           </div>
 
-          <input type="submit" class="button" value="Pay now">
+          <input type="submit" id="payNow" class="button" value="Pay now" disabled>
 
         </form>
 
@@ -122,6 +122,26 @@
     </div>
 
   </div>
+
+
+  <script>
+    (function() {
+      var terms = document.getElementById('terms');
+
+      var payButton = document.getElementById('payNow');
+
+      function change(e) {
+
+            if((terms.checked) == true) {
+                payButton.disabled = false;
+            } else {
+                payButton.disabled = true;
+            };
+
+      }
+      terms.addEventListener('change', change);
+    })();
+  </script>
 
 
   {% if title['indexPolygon'] %}
