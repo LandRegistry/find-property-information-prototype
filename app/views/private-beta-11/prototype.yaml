@@ -21,7 +21,7 @@ changelog:
   - confirm your purchase - return to search results link (need to pass search term and page number about)
   - confirm your purchase - disabled button until terms of use checked
   - make summary pdf and vat receipt pdf (maybe also mock up email with those attached)
-  - confirm page - price paid (y/n)
+
   - confirm page - owner (y/n)
   - confirm page - lender (y/n)
   - rename pages - make page urls closer to the h1 title
@@ -34,5 +34,6 @@ changelog:
   - T and C - when opened from confirm payment - go to heading about contract
   - disable buttons until accept terms - create account and pay (removed account lookup on create)
   - forgotten password (like what we hope to build - except journey doesn't continue after creat new)
-
+  - confirm page - price paid (y/n)
+  - title number (although says has to be bought)
 
