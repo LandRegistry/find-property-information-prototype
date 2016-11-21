@@ -5,18 +5,18 @@ description: |
 
 changelog:
   - todo...
-  - 2nd time around - conform property + confirm pay (confusing)
-  - freehold leasehols explain?
+  - 2nd time around - confirm property + confirm pay (confusing)
   - caution titles
+  - forgotten password flow
+  - freehold leasehold explain? - help people choose the right property
   - search results - if signed in goes to confirm purchase (or a confirm purchase panel)
   - what does confirm your selection page do if signed in?
   - check all routing
   - check error messaging
-  - forgotten password flow
+  - title number (explain you can get this from service; display after signed in; show on last page (not just in heading))
   - Privacy policy - own page for service?
   - create account - disabled button
   - shame.css? head style + inline style in confirm(s)
-  - T and C - put copy in two thirds column
   - confirm your purchase - return to search results link (need to pass search term and page number about)
   - confirm your purchase - disabled button until terms of use checked
   - make summary pdf and vat receipt pdf (maybe also mock up email with those attached)
@@ -25,5 +25,9 @@ changelog:
   - confirm page - lender (y/n)
   - rename pages - make page urls closer to the h1 title
   - session object for all data needed to pass about
+
+  - done...
+  - T and C - put copy in two thirds column
+  - terms and conditions - back link
 
 

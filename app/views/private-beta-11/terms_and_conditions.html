@@ -4,13 +4,17 @@
 {% block title %}Terms &amp; conditions{% endblock %}
 
 {% block header_primary %}
-  {{ back_link(title='Back', prefix='', url=path + '/search') }}
+  {{ back_link(title='Back', prefix='', url=path + '', historyBased=true) }}
 {% endblock %}
 
 {% block body %}
 
-    <h1 class="heading-xlarge expand-bottom">Find property information: terms of use</h1>
-    
+    <h1 class="heading-xlarge">Find property information: terms of use</h1>
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
     <article>
         <h2 class="heading-large">About this service</h2>
         <p>Use this service to get a summary of who owns or leases a property, including:</p>
@@ -119,4 +123,11 @@
             <li>tell Land Registry about the outcome by calling 0300 006 0411</li>
         </ul>
     </article>
+
+    {{ back_link(title='Back', prefix='', url=path + '', historyBased=true) }}
+
+    </div>
+
+  </div>
+
 {% endblock %}
