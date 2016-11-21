@@ -335,7 +335,7 @@
           </label>
         </div>
 
-        <input type="submit" class="button spacing-top-single disabled-if-email-exists" value="Continue to purchase">
+        <input type="submit" id="continueToPay" class="button spacing-top-single disabled-if-email-exists" value="Continue to purchase" disabled>
       </form>
 
 <!--       <div class="panel panel-border-narrow spacing-top-double">
@@ -401,20 +401,15 @@
             "presence": {
               "message": "Postcode is required"
             }
-          },
-          "terms": {
-            "presence": {
-              "message": "You must agree to our terms of use before continuing"
-            }
           }
         }
       </script>
 
-      <script>
+      <!-- <script>
         (function() {
           var emailInput = document.getElementById('email');
 
-          var fields = document.querySelectorAll('input[type="text"], input[type="password"], input[type="checkbox"], input[type="submit"], select');
+          var fields = document.querySelectorAll('input[type="text"], input[type="password"], input[type="submit"], select');
           var disabledIfEmailExists = document.querySelectorAll('.disabled-if-email-exists');
 
           var emailDebounceTimeout;
@@ -445,6 +440,7 @@
 
                   [].forEach.call(fields, function(field) {
                     field.disabled = false;
+                    // document.getElementById('continueToPay').disabled = true;
 
                     [].forEach.call(disabledIfEmailExists, function(item) {
                       item.style.opacity = 1;
@@ -470,7 +466,27 @@
           emailInput.addEventListener('keyup', change);
           emailInput.addEventListener('change', change);
         })();
+      </script> -->
+
+      <script>
+        (function() {
+          var terms = document.getElementById('terms');
+
+          var payButton = document.getElementById('continueToPay');
+
+          function change(e) {
+
+                if((terms.checked) == true) {
+                    payButton.disabled = false;
+                } else {
+                    payButton.disabled = true;
+                };
+
+          }
+          terms.addEventListener('change', change);
+        })();
       </script>
+
 
     </div>
 
