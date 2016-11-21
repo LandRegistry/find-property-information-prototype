@@ -101,7 +101,7 @@
             </label>
           </div>
 
-          <input type="submit" class="button" value="Pay now">
+          <input type="submit" id="payNow" class="button" value="Pay now" disabled>
 
         </form>
 
@@ -122,6 +122,26 @@
     </div>
 
   </div>
+
+
+  <script>
+    (function() {
+      var terms = document.getElementById('terms');
+
+      var payButton = document.getElementById('payNow');
+
+      function change(e) {
+
+            if((terms.checked) == true) {
+                payButton.disabled = false;
+            } else {
+                payButton.disabled = true;
+            };
+
+      }
+      terms.addEventListener('change', change);
+    })();
+  </script>
 
 
   {% if title['indexPolygon'] %}

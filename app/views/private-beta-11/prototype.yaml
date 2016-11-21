@@ -6,8 +6,10 @@ description: |
 changelog:
   - todo...
   - 2nd time around - confirm property + confirm pay (confusing)
+  - greyed out buttons until accept terms
   - caution titles
   - forgotten password flow
+  - summary - signon onward journey
   - freehold leasehold explain? - help people choose the right property
   - search results - if signed in goes to confirm purchase (or a confirm purchase panel)
   - what does confirm your selection page do if signed in?
