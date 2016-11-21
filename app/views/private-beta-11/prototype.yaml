@@ -32,6 +32,6 @@ changelog:
   - done...
   - T and C - put copy in two thirds column
   - terms and conditions - back link
-  - greyed out buttons until accept terms - create account and pay
+  - disable buttons until accept terms - create account and pay (removed account lookup on create)
 
 
