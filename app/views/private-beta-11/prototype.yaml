@@ -25,6 +25,7 @@ changelog:
   - confirm page - lender (y/n)
   - rename pages - make page urls closer to the h1 title
   - session object for all data needed to pass about
+  - have a look at it on mobile / no style
 
   - done...
   - T and C - put copy in two thirds column
