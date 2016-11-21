@@ -8,9 +8,8 @@ changelog:
   - todo...
   - 2nd time around - confirm property + confirm pay (confusing)
   - caution titles
-  - forgotten password flow
   - summary - signon onward journey
-  - freehold leasehold explain? - help people choose the right property
+  - freehold leasehold explain? - help people choose the right property record
   - search results - if signed in goes to confirm purchase (or a confirm purchase panel)
   - what does confirm your selection page do if signed in?
   - check all routing
@@ -33,5 +32,6 @@ changelog:
   - T and C - put copy in two thirds column
   - terms and conditions - back link
   - disable buttons until accept terms - create account and pay (removed account lookup on create)
+  - forgotten password (like what we hope to build - except journey doesn't continue after creat new)
 
 
