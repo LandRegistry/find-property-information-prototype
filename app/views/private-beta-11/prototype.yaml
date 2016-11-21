@@ -8,7 +8,6 @@ changelog:
   - todo...
   - 2nd time around - confirm property + confirm pay (confusing)
   - caution titles
-  - summary - signon onward journey
   - freehold leasehold explain? - help people choose the right property record
   - search results - if signed in goes to confirm purchase (or a confirm purchase panel)
   - what does confirm your selection page do if signed in?
@@ -21,7 +20,6 @@ changelog:
   - confirm your purchase - return to search results link (need to pass search term and page number about)
   - confirm your purchase - disabled button until terms of use checked
   - make summary pdf and vat receipt pdf (maybe also mock up email with those attached)
-
   - confirm page - owner (y/n)
   - confirm page - lender (y/n)
   - rename pages - make page urls closer to the h1 title
@@ -36,4 +34,5 @@ changelog:
   - forgotten password (like what we hope to build - except journey doesn't continue after creat new)
   - confirm page - price paid (y/n)
   - title number (although says has to be bought)
+  - summary - signoff onward journey
 
