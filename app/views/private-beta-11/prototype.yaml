@@ -8,7 +8,6 @@ changelog:
   - done...
   - T and C - put copy in two thirds column
   - T and C - back link
-  - T and C - when opened from confirm payment - go to heading about contract
   - disable buttons until accept terms - create account and pay (removed account lookup on create)
   - forgotten password (like what we hope to build - except journey doesn't continue after creat new)
   - confirm page - price paid (y/n)
