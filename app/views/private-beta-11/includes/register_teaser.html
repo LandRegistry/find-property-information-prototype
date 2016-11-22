@@ -2,7 +2,7 @@
   <div class="teaser teaser-register">
     <h2 class="heading-small {% if not single %}spacing-top-half{% endif %}">
       {% if title['data'] and not suppressAddressLink %}
-        <a href="confirm_selection?title_number={{title['data']['title_number']}}&amp;page={{display_page_number}}&amp;search_term={{search_term}}">{{ title['address'] }}</a>
+      <a href="confirm_selection?title_number={{title['data']['title_number']}}&amp;page={{display_page_number}}&amp;search_term={{search_term}}">{{ title['address'] }}</a>
       {% else %}
         {{ title['address'] }}
       {% endif %}

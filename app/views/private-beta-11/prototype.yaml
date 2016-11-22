@@ -8,22 +8,20 @@ changelog:
   - done...
   - T and C - put copy in two thirds column
   - T and C - back link
-  - T and C - when opened from confirm payment - go to heading about contract
   - disable buttons until accept terms - create account and pay (removed account lookup on create)
   - forgotten password (like what we hope to build - except journey doesn't continue after creat new)
   - confirm page - price paid (y/n)
-  - title number (although says has to be bought)
   - summary - signoff onward journey
+  - 2nd time around - compress confirm property + confirm pay into one page)
+  - title number before pay if signed in
 
-  - todo...
-  - 2nd time around - confirm property + confirm pay (confusing)
+  - todo..?
   - caution titles
-  - freehold leasehold explain? - help people choose the right property record
-  - search results - if signed in goes to confirm purchase (or a confirm purchase panel)
-  - what does confirm your selection page do if signed in?
+  - freehold leasehold explain? - see v5 help people choose the right property record
+  - pdfs for VAT and Summary - flow on to mail and show pdfs?
   - check all routing
   - check error messaging
-  - title number (explain you can get this from service; display after signed in; show on last page (not just in heading))
+  - title number (display after signed in; show on last page (not just in heading))
   - Privacy policy - own page for service?
   - shame.css? head style + inline style in confirm(s)
   - confirm your purchase - return to search results link (need to pass search term and page number about)

@@ -5,6 +5,7 @@
 
 {% block title %}Confirm your purchase{% endblock %}
 
+
 {% block body %}
 
 
@@ -35,8 +36,8 @@
             <dl class="definition-tabular definition-tabular-sectioned">
 
               {% if title.address %}
-                <dt class="spacing-bottom-single">Address</dt>
-                <dd class="bold-medium spacing-bottom-single">
+                <dt class="wide spacing-bottom-single">Address</dt>
+                <dd class="wide bold-medium spacing-bottom-single">
                   <div class="address">
                     {% for line in title.address %}
                       <span>{{line}}</span>
@@ -45,21 +46,21 @@
                 </dd>
               {% endif %}
 
-<!--               <dt>Title number</dt>
-              <dd class="bold-small">{{ title['data']['title_number'] }}</dd> -->
-
-              <dt class="spacing-bottom-single">Ownership type</dt>
-              <dd class="spacing-bottom-single">
+              <dt class="wide spacing-bottom-single">Ownership type</dt>
+              <dd class="wide spacing-bottom-single">
                 <strong class="bold">{{ title['tenure'] }}</strong>
               </dd>
 
-              <dt>You'll receive</dt>
-              <dd>
-                <ul class="list-bullet">
+              <dt class="wide spacing-bottom-single">Title number</dt>
+              <dd class="wide bold-small spacing-bottom-single">{{ title['data']['title_number'] }}</dd>
+
+              <dt class="wide spacing-bottom-single">You'll receive</dt>
+              <dd class="wide spacing-bottom-single">
+                <ul class="list-no-bullet">
                   <li class="bold-small">Owners' names and addresses</li>
                   <li class="bold-small">Details of any mortgages</li>
                   <li><span class="bold-small">Price paid</span></li>
-                  <li class="bold-small">Title number</li>
+                  <!-- <li class="bold-small">Title number</li> -->
                 </ul>
               </dd>
 

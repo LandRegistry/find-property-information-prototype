@@ -84,14 +84,6 @@
           <p class="font-xsmall">A property can have both a freehold and a leasehold title. To get a different tenure for this address, <a href="/search_results" data-back-link>go back</a> and select the one you need.</p> -->
         </dd>
 
-          {% if session.isLoggedIn %}
-
-          <dt class="spacing-bottom-single">Title number</dt>
-          <dd class="spacing-bottom-single">
-          <strong class="bold">{{ title['data']['title_number'] }}</strong>
-          
-          {% endif %}
-
       </dl>
 
 <!--       {% if title['is_caution_title'] %}
@@ -124,16 +116,14 @@
           <!-- <li>how much they paid (if the Land Registry holds this information)</li> -->
           <li>how much they paid</li>
           <li>if there's a mortgage on it</li>
-          {% if not session.isLoggedIn %}
-            <li>title number (the unique reference number)</li>
-          {% endif %}
+          <li>title number (the unique reference number)
         </ul>
 
 
 
         {% if session.isLoggedIn %}
 
-<!--           <h2 class="heading-medium">How to buy this information</h2>
+          <h2 class="heading-medium">How to buy this information</h2>
 
           <ol class="list example-icon-list">
 
@@ -141,11 +131,11 @@
 
           </ol>
 
-          <div class="spacing-top-double"> 
+          <div class="spacing-top-double"> <!-- continue to pay -->
             <p>
               <a class="button" href="confirm_your_purchase?title_number={{title['data']['title_number']}}" role="button">Continue to purchase</a>
             </p>
-          </div> -->
+          </div>
 
         {% else %} <!-- not logged in -->
 
@@ -171,7 +161,13 @@
 
 
 
-{% if not session.isLoggedIn %}
+      {% if session.isLoggedIn %}
+        <!-- just show continue to buy button / form  -->
+        <!-- bring in the pay panel - form -->
+<!--         <form method="GET" class="spacing-bottom-double" action="worldpay_1" data-clientside-validation="cra_form_validation" data-clientside-validation-no-summary>
+          <input type="submit" class="button" value="Buy title summary">
+        </form> -->
+      {% else %}
         <div class="spacing-top-double"> <!-- sign-in / creat account -->
           <p>
             <a class="button" href="create_account?title_number={{title['data']['title_number']}}" role="button">Create a new account</a>
@@ -183,6 +179,39 @@
             <a class="button" href="sign_in?title_number={{title['data']['title_number']}}" role="button">Sign in with an existing account</a>
           </p>
         </div>
+      {% endif %}
+
+
+<!--       <form method="GET" class="spacing-bottom-double" action="{% if session.isLoggedIn %}worldpay_1{% else %}sign_in{% endif %}" data-clientside-validation="cra_form_validation" data-clientside-validation-no-summary>
+        <p>You need to accept the following terms to continue.</p>
+
+        <input type="hidden" name="title_number" id="title_number" value="{{title['data']['title_number']}}"/>
+
+        <div class="form-group">
+          <label class="block-label" for="right_to_cancel">
+            <input id="right_to_cancel" name="right_to_cancel" type="checkbox" value="agree">
+            I agree that you will provide the summary as soon as I’ve paid.<br>
+            I accept that I will lose my right to cancel the contract once the summary is displayed.<br>
+          </label>
+        </div>
+
+        {% if session.isLoggedIn %}
+          <input type="submit" class="button" value="Buy title summary">
+        {% else %}
+          <input type="submit" class="button" value="Continue to sign in page">
+        {% endif %}
+
+      </form> -->
+
+<!--       <script type="application/json" id="cra_form_validation">
+        {
+          "right_to_cancel": {
+            "presence": {
+              "message": "You need to agree to receive the summary right away and that you’ll lose your right to cancel"
+            }
+          }
+        }
+      </script> -->
 
       <p class="spacing-top-single">
       {{ back_link(title='Cancel and return to search results', prefix='Back to', url=path + '/search_results') }}
@@ -190,90 +219,6 @@
 
     </div>
   </div>
-{% else %}
-    </div>
-  </div>
-  <div class="grid-row spacing-top-single">
-
-    <div class="column-two-thirds tablet-column-two-thirds">
-      
-      <div class="panel panel-simple spacing-top-single"> <!-- pay form panel -->
-
-        <form action="{{path}}/worldpay_1?title_number={{data.title_number}}" method="POST">
-          <input name="title_number" value="{{data.title_number}}" type="hidden" />
-          <input name="email" value="{{data.email}}" type="hidden" />
-
-          <h2 class="heading-medium spacing-top-third">How to pay</h2>
-          <p>This information costs £3. Payment will be taken by WorldPay on the Land Registry's behalf.</p>
-
-
-          <div class="notice">
-            <div>
-            <i class="icon icon-important">
-              <span class="visually-hidden">Warning</span>
-            </i>
-            </div>
-            <div>
-                <p style="display:block; padding-left: 65px;margin-left: -15px;"">
-                  <span class="bold-small">Important: make sure this is the property you want.</span><br>You can't cancel once you've paid and the information is displayed.
-                </p>
-            </div> 
-           
-          </div>
-
-          <div class="form-group spacing-top-single">
-            <label class="block-label" for="terms">
-              <input id="terms" name="terms" type="checkbox" value="terms">
-              I have read and agree to the <a href="terms_and_conditions">terms of use</a>
-            </label>
-          </div>
-
-          <input type="submit" id="payNow" class="button" value="Pay now" disabled>
-
-        </form>
-
-        <p class="spacing-top-single">
-          <a href="search_results">Cancel and return to search results</a>
-        </p>
-
-      </div> <!-- end pay form panel -->
-
-    </div> <!-- end column-two-thirds -->
-
-
-<!--     <div class="column-one-third tablet-column-one-third spacing-top-single">
-      <aside class="supplementary-panel">
-        <h2 class="heading-medium">Need help with this service?</h2>
-        <p>Call Land Registry on 0300 006 0411 to report a problem, or if you're stuck and need help.</p>
-      </aside>
-    </div> -->
-
-  </div>
-
-
-  <script>
-    (function() {
-      var terms = document.getElementById('terms');
-
-      var payButton = document.getElementById('payNow');
-
-      function change(e) {
-
-            if((terms.checked) == true) {
-                payButton.disabled = false;
-            } else {
-                payButton.disabled = true;
-            };
-
-      }
-      terms.addEventListener('change', change);
-    })();
-  </script>
-
-{% endif %}
-
-
-
 
   {% if title['indexPolygon'] %}
     <script>
