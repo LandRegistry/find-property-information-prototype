@@ -11,11 +11,11 @@ changelog:
   - disable buttons until accept terms - create account and pay (removed account lookup on create)
   - forgotten password (like what we hope to build - except journey doesn't continue after creat new)
   - confirm page - price paid (y/n)
-  - title number (although says has to be bought)
   - summary - signoff onward journey
   - 2nd time around - compress confirm property + confirm pay into one page)
+  - title number before pay if signed in
 
-  - todo...
+  - todo..?
   - caution titles
   - freehold leasehold explain? - see v5 help people choose the right property record
   - search results - if signed in goes to confirm purchase (or a confirm purchase panel)

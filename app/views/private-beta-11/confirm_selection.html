@@ -84,6 +84,14 @@
           <p class="font-xsmall">A property can have both a freehold and a leasehold title. To get a different tenure for this address, <a href="/search_results" data-back-link>go back</a> and select the one you need.</p> -->
         </dd>
 
+          {% if session.isLoggedIn %}
+
+          <dt class="spacing-bottom-single">Title number</dt>
+          <dd class="spacing-bottom-single">
+          <strong class="bold">{{ title['data']['title_number'] }}</strong>
+          
+          {% endif %}
+
       </dl>
 
 <!--       {% if title['is_caution_title'] %}
@@ -116,7 +124,9 @@
           <!-- <li>how much they paid (if the Land Registry holds this information)</li> -->
           <li>how much they paid</li>
           <li>if there's a mortgage on it</li>
-          <li>title number (the unique reference number)
+          {% if not session.isLoggedIn %}
+            <li>title number (the unique reference number)</li>
+          {% endif %}
         </ul>
 
 
@@ -231,12 +241,12 @@
     </div> <!-- end column-two-thirds -->
 
 
-    <div class="column-one-third tablet-column-one-third spacing-top-single">
+<!--     <div class="column-one-third tablet-column-one-third spacing-top-single">
       <aside class="supplementary-panel">
         <h2 class="heading-medium">Need help with this service?</h2>
         <p>Call Land Registry on 0300 006 0411 to report a problem, or if you're stuck and need help.</p>
       </aside>
-    </div>
+    </div> -->
 
   </div>
 
