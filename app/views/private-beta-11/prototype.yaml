@@ -1,23 +1,25 @@
 name: New content Plus
 date: 2016-11-18
 description: |
-  <p>New content v10, plus things we've learnt previously</p>
-  <p>NOTE: removed email address lookup on create account (probably want back)</p>
+  <p>New content v10, plus some things we've learnt previously</p>
+  <p>NOTE: not all previously learnt things are in</p>
 
 changelog:
   - done...
   - T and C - put copy in two thirds column
   - T and C - back link
-  - forgotten password (like what we hope to build - except journey doesn't continue after creat new)
+  - forgotten password (like what we hope to build - except journey doesn't continue after create new)
   - confirm page - price paid (y/n)
   - summary - signoff onward journey
   - 2nd time around - compress confirm property + confirm pay into one page)
   - title number before pay if signed in
+  - email address lookup on create account
+  - pdfs for VAT and Summary - flow on to mail and show pdfs
 
   - todo..?
+  - help picking the right title - freehold / leasehold
   - caution titles
-  - freehold leasehold explain? - see v5 help people choose the right property record
-  - pdfs for VAT and Summary - flow on to mail and show pdfs?
+  - improve search / explain better
   - check all routing
   - check error messaging
   - title number (display after signed in; show on last page (not just in heading))
@@ -25,9 +27,11 @@ changelog:
   - shame.css? head style + inline style in confirm(s)
   - confirm your purchase - return to search results link (need to pass search term and page number about)
   - confirm your purchase - disabled button until terms of use checked
-  - make summary pdf and vat receipt pdf (maybe also mock up email with those attached)
+  - confirm page - price paid - examples of we don't have pp
   - confirm page - owner (y/n)
   - confirm page - lender (y/n)
+  - title number under - pay £3 to find out - wrong
   - rename pages - make page urls closer to the h1 title
   - session object for all data needed to pass about
   - have a look at it on mobile / no style
+  - improve downloads - email, summmary + vat receipt

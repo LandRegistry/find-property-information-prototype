@@ -215,5 +215,16 @@ router.all('/reset/:item/:section', function(req, res) {
 
 });
 
+/**
+ * Send summay and vat recepits
+ */
+router.all('/send/:item/:section', function(req, res) {
+
+  res.render(path.join(__dirname, 'send_' + req.params.section), {
+    item: req.params.item,
+  });
+
+});
+
 module.exports = router;
 

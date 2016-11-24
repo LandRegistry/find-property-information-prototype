@@ -199,7 +199,7 @@
       
       <div class="panel panel-simple spacing-top-single"> <!-- pay form panel -->
 
-        <form action="{{path}}/worldpay_1?title_number={{data.title_number}}" method="POST">
+        <form action="{{path}}/worldpay_1?title_number={{data.title_number}}" method="POST" novalidate data-clientside-validation="pay_form_validation">
           <input name="title_number" value="{{data.title_number}}" type="hidden" />
           <input name="email" value="{{data.email}}" type="hidden" />
 
@@ -228,7 +228,8 @@
             </label>
           </div>
 
-          <input type="submit" id="payNow" class="button" value="Pay now" disabled>
+          <input type="submit" id="payNow" class="button" value="Pay now">
+          <!-- <input type="submit" id="payNow" class="button" value="Pay now" disabled> -->
 
         </form>
 
@@ -250,8 +251,16 @@
 
   </div>
 
-
-  <script>
+        <script type="application/json" id="pay_form_validation">
+        {
+          "terms": {
+            "presence": {
+              "message": "You must agree to the terms of use before continuing"
+            }
+          }
+        }
+      </script>
+<!--   <script>
     (function() {
       var terms = document.getElementById('terms');
 
@@ -268,7 +277,7 @@
       }
       terms.addEventListener('change', change);
     })();
-  </script>
+  </script> -->
 
 {% endif %}
 
