@@ -335,7 +335,9 @@
           </label>
         </div>
 
-        <input type="submit" class="button spacing-top-single disabled-if-email-exists" value="Continue to purchase">
+<!--         <input type="submit" class="button spacing-top-single disabled-if-email-exists" value="Continue to purchase"> -->
+
+        <input type="submit" id="continueToPay" class="button spacing-top-single disabled-if-email-exists" value="Continue to purchase" disabled>
       </form>
 
 <!--       <div class="panel panel-border-narrow spacing-top-double">
@@ -401,16 +403,11 @@
             "presence": {
               "message": "Postcode is required"
             }
-          },
-          "terms": {
-            "presence": {
-              "message": "You must agree to our terms of use before continuing"
-            }
           }
         }
       </script>
 
-      <script>
+<!--       <script>
         (function() {
           var emailInput = document.getElementById('email');
 
@@ -469,6 +466,25 @@
 
           emailInput.addEventListener('keyup', change);
           emailInput.addEventListener('change', change);
+        })();
+      </script> -->
+
+      <script>
+        (function() {
+          var terms = document.getElementById('terms');
+
+          var payButton = document.getElementById('continueToPay');
+
+          function change(e) {
+
+                if((terms.checked) == true) {
+                    payButton.disabled = false;
+                } else {
+                    payButton.disabled = true;
+                };
+
+          }
+          terms.addEventListener('change', change);
         })();
       </script>
 
