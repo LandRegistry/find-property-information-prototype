@@ -8,7 +8,7 @@ Use this service to get a summary of who owns or leases a property, including:
 
 The summary tells you when the title was last changed and can change if Land Registry receives an application.  This service cannot tell you if a change is being processed.
 
-You can only view your purchased information once but you can print a copy.
+You can view your purchased information once and print a copy.  Copies of the summary and VAT receipt will be sent to your email address.
 
 Use [Land Registry’s Find a Property service](https://eservices.landregistry.gov.uk/wps/portal/Property_Search) instead if you need more detailed information, such as the title plan, full legal register entry or details of any access rights and restrictions.
 
@@ -47,7 +47,7 @@ The Land Registry has the right to cancel your account at any time without notic
 
 This service is for domestic and private use only.  Land Registry is not responsible for any losses that may result if you use the service for commercial business or re-sale purposes.   
 
-You can access the service from any [suitable internet-connected device and browser](https://www.gov.uk/service-manual/user-centred-design/browsers-and-devices.html). You can print a copy of your purchased information and VAT receipts.
+You can access the service from any [suitable internet-connected device and browser](https://www.gov.uk/service-manual/user-centred-design/browsers-and-devices.html). You can print a copy of your purchased information. A copy of the information you purchased and a VAT receipt will be sent to your email address.
 
 The service is available every day but may be taken down for updates and maintenance. If you are logged in when this happens, you’ll receive notification on-screen.
 
