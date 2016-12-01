@@ -1,0 +1,293 @@
+{% extends "./layout/layout.html" %}
+{% from "./includes/back_link.html" import back_link %}
+
+{% block title %}About this property{% endblock %}
+
+{% block header_primary %}
+  {{ back_link(title='Search results', prefix='Back to', url=path + '/search_results?page=' + data.page + '&search_term=' + data.search_term) }}
+{% endblock %}
+
+{% block body %}
+
+
+
+  <h1 class="heading-large">About this property</h1>
+
+  <div class="grid-row column-flip spacing-top-single">
+
+    <div class="column-one-third tablet-column-one-third spacing-bottom-single">
+      {% if title['indexPolygon'] %}
+        <div class="map" id="map">
+          <p>The map relies on JavaScript being enabled in your browser.</p>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <dl class="definition-tabular definition-tabular-sectioned">
+
+<!--         {% if title['is_caution_title'] %}
+          <dt class="bold-small">Caution</dt>
+          <dd>
+            <details class="font-xsmall">
+              <summary class="bold-small">What does Caution mean?</summary>
+              <div class="panel">
+                <p>This property hasn’t been registered yet. You can’t find out who owns it from this service. </p>
+                <p>Someone other than the owner (known as the ‘cautioner’) has registered a right or interest in the property. They will be told if anyone tries to register it, and can object to the registration going ahead until their claim has been looked at. You can get their name and address from this service.</p>
+                <p>Registration has only been compulsory since the 1990s. Property that hasn’t changed hands since then may not be registered.</p>
+              </div>
+            </details>
+          </dd>
+        {% endif %} -->
+
+        {% if title.address %}
+          <dt class="spacing-bottom-single">Address</dt>
+          <dd class="bold-medium spacing-bottom-single">
+            <div class="address">
+              {% for line in title.address %}
+                <span>{{line}}</span>
+              {% endfor %}
+            </div>
+          </dd>
+        {% endif %}
+
+<!--         <dt>Title number</dt>
+        <dd class="bold-small">{{ title['data']['title_number'] }}</dd> -->
+
+        <dt class="spacing-bottom-single">Ownership type</dt>
+        <dd class="spacing-bottom-single">
+          <strong class="bold">{{ title['tenure'] }}</strong>
+<!--           <a class="split-detail-trigger font-xsmall" href="#what-is-tenure">What does this mean?</a>
+
+          <div class="split-detail-contents" id="what-is-tenure">
+            <div class="panel panel-border-narrow font-xsmall">
+
+              {% if title['tenure'] == 'Leasehold' %}
+                <p>You only own a leasehold property for a fixed period of time. You'll have a legal agreement with the landlord (sometimes known as the ‘freeholder’) called a ‘lease’. This tells you how many years you’ll own the property.</p>
+                <p>Most flats are leasehold. Houses can be leasehold too and usually are if they’re bought through a shared ownership scheme.</p>
+                <p>The leasehold and freehold are registered separately with the Land Registry. Each has its own title documents.</p>
+                <p><b class="bold">You are buying a summary of the leasehold owner, not the freehold.</b></p>
+
+                <a rel="external" href="https://www.gov.uk/leasehold-property/overview">More about Leasehold on GOV.UK</a>
+
+              {% elif title['tenure'] == 'Freehold' %}
+                <p>You own a freehold building and land outright. It is yours until you sell it or give it away.</p>
+                <p>Most houses are freehold. Most flats are leasehold. That means someone else owns the freehold for the building the flat is in.</p>
+                <p><b class="bold">If you want to know who owns a particular flat, you probably need the leasehold instead.</b></p>
+                <p>Houses can also be leasehold and usually are if they’re bought through a shared ownership scheme.</p>
+
+              {% endif %}
+            </div>
+          </div>
+
+          <p class="font-xsmall">A property can have both a freehold and a leasehold title. To get a different tenure for this address, <a href="/search_results" data-back-link>go back</a> and select the one you need.</p> -->
+        </dd>
+
+          {% if session.isLoggedIn %}
+
+          <dt class="spacing-bottom-single">Title number</dt>
+          <dd class="spacing-bottom-single">
+          <strong class="bold">{{ title['data']['title_number'] }}</strong>
+          
+          {% endif %}
+
+      </dl>
+
+<!--       {% if title['is_caution_title'] %}
+        <h2 class="heading-medium collapse-top">Land Registry does not know the owner of this property</h2>
+      {% else %}
+        <h2 class="heading-medium collapse-top">The summary will tell you</h2>
+      {% endif %} -->
+
+<!--       <ul class="list-bullet">
+        {% if title['is_caution_title'] %}
+          <li>Someone other than the owner (known as the ‘cautioner’) has registered a right or interest in the property.</li>
+          <li><strong class="bold">The summary will give you the cautioner's name and address.</strong></li>
+        {% else %}
+          {% if title['tenure'] == 'Freehold' %}
+            <li>current owner's name and address</li>
+          {% elif title['tenure'] == 'Leasehold' %}
+            <li>current leaseholder's name and address</li>
+          {% endif %}
+
+          <li>what was paid for the property – you won't get this if it was bought before April 2000, if they paid less than &pound;100, or if Land Registry have agreed not to record the price</li>
+          <li>if there is a mortgage on the property, the lender's name and address</li>
+          <li>the Title Number (unique reference number)</li>
+        {% endif %}
+      </ul> -->
+
+        <h2 class="heading-medium spacing-top-single">Pay £3 to find out:</h2>
+
+        <ul class="list-bullet">
+          <li>who owns this property (name and address)</li>
+          <!-- <li>how much they paid (if the Land Registry holds this information)</li> -->
+          <li>how much they paid</li>
+          <li>if there's a mortgage on it</li>
+          {% if not session.isLoggedIn %}
+            <li>title number (the unique reference number)</li>
+          {% endif %}
+        </ul>
+
+
+
+        {% if session.isLoggedIn %}
+
+<!--           <h2 class="heading-medium">How to buy this information</h2>
+
+          <ol class="list example-icon-list">
+
+            <li><strong class="bold">pay online</strong> by debit or credit card</li>
+
+          </ol>
+
+          <div class="spacing-top-double"> 
+            <p>
+              <a class="button" href="confirm_your_purchase?title_number={{title['data']['title_number']}}" role="button">Continue to purchase</a>
+            </p>
+          </div> -->
+
+        {% else %} <!-- not logged in -->
+
+          <h2 class="heading-medium">How to buy this information</h2>
+
+          <ol class="list example-icon-list">
+
+            <li><span class="circle circle-step-large spacing-right-half">1</span><strong class="bold">create an account</strong> with an email address to receive the PDF</li>
+
+            <li><span class="circle circle-step-large spacing-right-half">2</span><strong class="bold">pay online</strong> by debit or credit card</li> 
+
+          </ol>
+
+          <p>This information will be displayed on-screen and emailed to you as a PDF.</p>
+
+          <div class="panel panel-border-narrow">
+            If you've already used this service and created an account, sign in with the email address you used before.
+          </div>         
+
+        {% endif %}
+
+      
+
+
+
+{% if not session.isLoggedIn %}
+        <div class="spacing-top-double"> <!-- sign-in / creat account -->
+          <p>
+            <a class="button" href="create_account?title_number={{title['data']['title_number']}}" role="button">Create a new account</a>
+          </p>
+
+          <p class="spacing-top-half spacing-bottom-half"><strong class="bold">or</strong></p>
+
+          <p>
+            <a class="button" href="sign_in?title_number={{title['data']['title_number']}}" role="button">Sign in with an existing account</a>
+          </p>
+        </div>
+
+      <p class="spacing-top-single">
+      {{ back_link(title='Cancel and return to search results', prefix='Back to', url=path + '/search_results') }}
+      </p>
+
+    </div>
+  </div>
+{% else %}
+    </div>
+  </div>
+  <div class="grid-row spacing-top-single">
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+      
+      <div class="panel panel-simple spacing-top-single"> <!-- pay form panel -->
+
+        <form action="{{path}}/worldpay_1?title_number={{data.title_number}}" method="POST" novalidate data-clientside-validation="pay_form_validation">
+          <input name="title_number" value="{{data.title_number}}" type="hidden" />
+          <input name="email" value="{{data.email}}" type="hidden" />
+
+          <h2 class="heading-medium spacing-top-third">How to pay</h2>
+          <p>This information costs £3. Payment will be taken by WorldPay on the Land Registry's behalf.</p>
+
+
+          <div class="notice">
+            <div>
+            <i class="icon icon-important">
+              <span class="visually-hidden">Warning</span>
+            </i>
+            </div>
+            <div>
+                <p style="display:block; padding-left: 65px;margin-left: -15px;"">
+                  <span class="bold-small">Important: make sure this is the property you want.</span><br>You can't cancel once you've paid and the information is displayed.
+                </p>
+            </div> 
+           
+          </div>
+
+          <div class="form-group spacing-top-single">
+            <label class="block-label" for="terms">
+              <input id="terms" name="terms" type="checkbox" value="terms">
+              I have read and agree to the <a href="terms_and_conditions">terms of use</a>
+            </label>
+          </div>
+
+          <input type="submit" id="payNow" class="button" value="Pay now">
+          <!-- <input type="submit" id="payNow" class="button" value="Pay now" disabled> -->
+
+        </form>
+
+        <p class="spacing-top-single">
+          <a href="search_results">Cancel and return to search results</a>
+        </p>
+
+      </div> <!-- end pay form panel -->
+
+    </div> <!-- end column-two-thirds -->
+
+
+<!--     <div class="column-one-third tablet-column-one-third spacing-top-single">
+      <aside class="supplementary-panel">
+        <h2 class="heading-medium">Need help with this service?</h2>
+        <p>Call Land Registry on 0300 006 0411 to report a problem, or if you're stuck and need help.</p>
+      </aside>
+    </div> -->
+
+  </div>
+
+        <script type="application/json" id="pay_form_validation">
+        {
+          "terms": {
+            "presence": {
+              "message": "You must agree to the terms of use before continuing"
+            }
+          }
+        }
+      </script>
+<!--   <script>
+    (function() {
+      var terms = document.getElementById('terms');
+
+      var payButton = document.getElementById('payNow');
+
+      function change(e) {
+
+            if((terms.checked) == true) {
+                payButton.disabled = false;
+            } else {
+                payButton.disabled = true;
+            };
+
+      }
+      terms.addEventListener('change', change);
+    })();
+  </script> -->
+
+{% endif %}
+
+
+
+
+  {% if title['indexPolygon'] %}
+    <script>
+      var indexData = {{ title['indexPolygon'] | json | safe }};
+    </script>
+    <script defer src="{{ asset_path }}app/javascripts/map.js"></script>
+  {% endif %}
+{% endblock %}
