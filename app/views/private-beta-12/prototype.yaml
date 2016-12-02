@@ -8,8 +8,11 @@ changelog:
   - todo..?
   - document in v11 what learnt, and include here what changes being made as a result.
   - help picking the right title - freehold / leasehold
+  - payment confirmation - (because not seen on last page / what if journey broke before summary delivered)
+  - sign in / create account - better pattern (? and/or document prev patterns tried)
   - caution titles
   - improve search / explain better
+  - double (if create account) email on summary (may explain comma on single)
   - check all routing
   - check error messaging
   - title number (display after signed in; show on last page (not just in heading))
