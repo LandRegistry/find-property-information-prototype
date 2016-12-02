@@ -1,11 +1,12 @@
 name: pre Xmas proto
 date: 2016-12-01
 description: |
-  <p>V11 + things learnt; Things not included in 11 (find thing and select right title), password reset for build</
+  <p>V11 + things learnt; Things not included in 11 (find thing and select right title), password reset for build</p>
 
 changelog:
   - done...
   - todo..?
+  - password reset - page/route if an expired link is used
   - document in v11 what learnt, and include here what changes being made as a result.
   - help picking the right title - freehold / leasehold
   - payment confirmation - (because not seen on last page / what if journey broke before summary delivered)
