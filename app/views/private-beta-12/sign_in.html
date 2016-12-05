@@ -33,7 +33,7 @@
         <!-- Email -->
         <div class="form-group">
           <label class="form-label-bold" for="email">Email address</label>
-          <input type="email" class="form-control" name="email" id="email"{% if data.email %} value="{{data.email}}"{% endif %}{% if data.username %} value="{{data.username}}"{% endif %}>
+          <input type="email" class="form-control" name="email" id="email" data-session-storage-set="find-property-information-email" data-session-storage-get="find-property-information-email" {% if data.email %} value="{{data.email}}"{% endif %}{% if data.username %} value="{{data.username}}"{% endif %}>
         </div>
 
 

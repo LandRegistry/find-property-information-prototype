@@ -3,17 +3,17 @@
 {% block title %}{{item}} reset successful{% endblock %}
 
 {% block body %}
-  <h1 class="heading-large">{{item | capitalize}} reset successful</h1>
+  <h1 class="heading-large">You've successfully changed your {{item | capitalize}} </h1>
 
   <div class="grid-row spacing-top-single">
 
     <div class="column-two-thirds tablet-column-two-thirds">
 
       <!-- <p>Your {{item}} has been successfully reset.</p>  -->
-      <p>Your password has been changed.</p>
-      <p>You are now signed in.</p>
+      <!-- <p>Your password has been changed.</p> -->
+      <p class="lede">You can now sign in and search for property information</p>
 
-      <p><a class="button" href="{{path}}/search">Start a search</a></p>
+      <p><a class="button" href="{{path}}/search">Sign in</a></p>
 
       {# <ul class="list list-bullet">
         <li><a href="{{path}}/worldpay_1?title_number={{data.title_number}}">Continue purchasing the summary for {{title.address}}</a></li>

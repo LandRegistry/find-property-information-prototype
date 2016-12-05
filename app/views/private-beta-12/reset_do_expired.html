@@ -1,0 +1,37 @@
+{% set suppressSignOutLink = true %}
+
+{% extends "./layout/layout.html" %}
+
+{% block title %}Reseting your {{item}}{% endblock %}
+
+{% block body %}
+
+  <h1 class="heading-large">Sorry</h1>
+
+  <div class="grid-row spacing-top-single">
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <form action="{{path}}/reset/{{item}}/email_sent" method="POST" novalidate data-clientside-validation="create_account_form_validation">
+        <input name="title_number" value="{{data.title_number}}" type="hidden" />
+
+        <p class="lede">The link we sent you is no longer valid.</p>
+
+        <p>Enter your email address and we'll send you a new email to help you reset your {{item}}.</p>
+
+        <div class="spacing-top-double">
+          <legend class="visuallyhidden">Enter your email address</legend>
+
+          <div class="form-group">
+            <label class="form-label" for="email"><strong class="bold">Email address</strong></label>
+            <input class="form-control" type="text" id="email" name="email">
+          </div>
+
+        
+          <input type="submit" class="button" value="Send {{item}} reset email">
+        </div>
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

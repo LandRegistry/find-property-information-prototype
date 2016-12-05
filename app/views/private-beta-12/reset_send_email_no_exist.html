@@ -15,7 +15,7 @@
 
     <div class="column-two-thirds tablet-column-two-thirds">
 
-      <form action="{{path}}/reset/{{item}}/email_sent" method="GET" novalidate data-clientside-validation="create_account_form_validation">
+      <form action="{{path}}/reset/{{item}}/email_sent_no_exist" method="GET" novalidate data-clientside-validation="create_account_form_validation">
         <input name="title_number" value="{{data.title_number}}" type="hidden" />
 
         {% if item == 'password' %}

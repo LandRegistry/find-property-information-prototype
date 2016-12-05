@@ -1,0 +1,43 @@
+{% extends "./layout/layout.html" %}
+
+
+
+{% block title %}Account does not exist{% endblock %}
+
+{% block body %}
+  {% if item == 'password' %}
+    <h1 class="heading-large">Account does not exist</h1>
+  {% else %}
+    <h1 class="heading-large">Username reminder sent</h1>
+  {% endif %}
+
+  <div class="grid-row spacing-top-single">
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+      <a href="click_email?title_number={{data.title_number}}" style="text-decoration: inherit;color:inherit">
+
+        {% if item == 'username' %}
+          <p>We have sent you an email containing your username.</p>
+          <p>Once you receive the email, follow the included instructions in order to sign in to the service.</p>
+        {% else %}
+          <p>We don't have an account for <strong class="bold">{{data.email}}</strong>.</p>
+          <p>You may have mistyped your email address</p>
+          <p class="spacing-top-double"><a href="{{path}}/reset/{{item}}/send_email">Go back and retype your email</a></p>
+          <p><a href="{{path}}/create_account">Create an account</a> for {{data.email}}</p>
+          
+        {% endif %}
+      </a>
+
+      {% if item != 'username' %}
+<!--         <div class="panel panel-border-narrow spacing-top-double">
+          <h2 class="heading-small">Didn't receive an email?</h2>
+          <ul class="list list-bullet">
+            <li>Try checking your spam or junk folder - emails can sometimes get mistakenly flagged</li>
+            <li>Alternatively you can <a href="send_email?title_number={{data.title_number}}">request another password reset email here</a></li>
+          </ul>
+        </div> -->
+      {% endif %}
+    </div>
+
+  </div>
+{% endblock %}
