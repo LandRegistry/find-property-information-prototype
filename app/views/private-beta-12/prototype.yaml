@@ -7,6 +7,7 @@ changelog:
   - done...
   - todo..?
   - password reset - page/route if an expired link is used
+  - take it away (remove print button, you've been mailed this - clearer)
   - document in v11 what learnt, and include here what changes being made as a result.
   - help picking the right title - freehold / leasehold
   - payment confirmation - (because not seen on last page / what if journey broke before summary delivered)
