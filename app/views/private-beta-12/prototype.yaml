@@ -1,0 +1,35 @@
+name: pre Xmas proto
+date: 2016-12-01
+description: |
+  <p>V11 + things learnt; Things not included in 11 (find thing and select right title), password reset for build</p>
+
+changelog:
+  - done...
+  - password reset.
+  - todo..?
+  - password reset - someone mistyping / email we don;t know (creat acc pattern)
+  - take it away (remove print button, you've been mailed this - clearer)
+  - improve map (how?  extent earlier on?)
+  - document in v11 what learnt, and include here what changes being made as a result.
+  - help picking the right title - freehold / leasehold
+  - payment confirmation - (because not seen on last page / what if journey broke before summary delivered)
+  - sign in / create account - better pattern (? and/or document prev patterns tried)
+  - caution titles
+  - improve search / explain better
+  - double (if create account) email on summary (may explain comma on single)
+  - check all routing
+  - check error messaging
+  - title number (display after signed in; show on last page (not just in heading))
+  - Privacy policy - own page for service?
+  - shame.css? head style + inline style in confirm(s)
+  - confirm your purchase - return to search results link (need to pass search term and page number about)
+  - confirm your purchase - disabled button until terms of use checked
+  - confirm page - price paid - examples of we don't have pp
+  - confirm page - owner (y/n)
+  - confirm page - lender (y/n)
+  - title number under - pay £3 to find out - wrong
+  - rename pages - make page urls closer to the h1 title
+  - session object for all data needed to pass about
+  - have a look at it on mobile / no style
+  - improve downloads - email, summmary + vat receipt
+  - Register / project history?
