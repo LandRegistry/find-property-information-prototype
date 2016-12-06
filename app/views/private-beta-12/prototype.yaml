@@ -7,7 +7,6 @@ changelog:
   - done...
   - password reset.
   - todo..?
-  - password reset - someone mistyping / email we don;t know (creat acc pattern)
   - take it away (remove print button, you've been mailed this - clearer)
   - improve map (how?  extent earlier on?)
   - document in v11 what learnt, and include here what changes being made as a result.
@@ -19,15 +18,16 @@ changelog:
   - double (if create account) email on summary (may explain comma on single)
   - check all routing
   - check error messaging
-  - title number (display after signed in; show on last page (not just in heading))
+  - title number (display on search results after signed in?)
+  - title number under - pay £3 to find out - wrong
   - Privacy policy - own page for service?
   - shame.css? head style + inline style in confirm(s)
+  - password reset - someone mistyping / email we don't know
   - confirm your purchase - return to search results link (need to pass search term and page number about)
   - confirm your purchase - disabled button until terms of use checked
   - confirm page - price paid - examples of we don't have pp
-  - confirm page - owner (y/n)
-  - confirm page - lender (y/n)
-  - title number under - pay £3 to find out - wrong
+  - confirm page - owner (y/n) - examples of no owner (eg caution)
+  - confirm page - lender (y/n) - examples of doesn't have a mortgage/lender
   - rename pages - make page urls closer to the h1 title
   - session object for all data needed to pass about
   - have a look at it on mobile / no style
