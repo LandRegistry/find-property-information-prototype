@@ -5,9 +5,9 @@ description: |
 
 changelog:
   - done...
+  - password reset.
   - todo..?
-  - reset - CD changes
-  - if email doesn't exist - addr lookup on reset_send_email as per create account 
+  - password reset - someone mistyping / email we don;t know (creat acc pattern)
   - take it away (remove print button, you've been mailed this - clearer)
   - improve map (how?  extent earlier on?)
   - document in v11 what learnt, and include here what changes being made as a result.
