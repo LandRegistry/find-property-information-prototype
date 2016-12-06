@@ -186,38 +186,19 @@
                     <!-- Body content -->
                     <tr>
                       <td class="content-cell">
-                        <h1>Hello</h1>
 
                         {% if item == 'password' %}
-                          <p>You recently requested to reset your {{item}} for the Find property information service.<p>
-                          <p>Clicking the link below will take you to the Find property information service where you'll be asked to create a new password.</p>
-                          <br>
-                          <p>Password reset link: <br><a href="{{path}}/reset/{{item}}/do?71234897289456092390467540897520372734&amp;title_number={{data.title_number}}&amp;do_sign_in">https://www.gov.uk/search-property-information-land-registry/reset/do?71234897289456092390467540897520372734</a></p>
-                          <!-- Action -->
-<!--                           <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
-                            <tr>
-                              <td align="center">
-                                <div>
-                                  <a href="{{path}}/reset/{{item}}/do?71234897289456092390467540897520372734&amp;title_number={{data.title_number}}&amp;do_sign_in" class="button button--green">Reset your {{item}}</a>
-                                </div>
-                              </td>
-                            </tr>
-                          </table> -->
-                          <br>
-                          <p>If clicking the link does not work, you can copy and paste the link into your web browser.</p>
-                          <p class="spacing-top-single">If you continue to have trouble resetting your password, you can call Land Registry on 0300 006 0411.</p>
-<!--                           <p>If you did not request a {{item}} reset, please ignore this email or <a href="http://landregistry.custhelp.com/app/contactus_general/">get in touch to let us know</a>.</p> -->
-                          <p>If you did not request a {{item}} reset, please ignore this email or you could let us know using our general contact form: <a href="http://landregistry.custhelp.com/app/contactus_general/">http://landregistry.custhelp.com/app/contactus_general/</a>.</p>
 
-                          <!-- Sub copy -->
-<!--                           <table class="body-sub">
-                            <tr>
-                              <td>
-                                <p class="sub">If you're having trouble clicking the {{item}} reset button, copy and paste the URL below into your web browser.</p>
-                                <p class="sub"><a href="{{path}}/reset/{{item}}/do?71234897289456092390467540897520372734&amp;title_number={{data.title_number}}&amp;do_sign_in">{{path}}/reset/{{item}}/do?71234897289456092390467540897520372734&amp;title_number={{data.title_number}}&amp;do_sign_in</a></p>
-                              </td>
-                            </tr>
-                          </table> -->
+                          <p>We received a request to reset your password for the 'Find property information' service.</p>
+
+                          <p>Ignore this email if this wasn't you - your password won't be reset.</p> 
+
+                          <p>If it was you, click on or copy this link into a web browser:</p>
+
+                          <p><a href="{{path}}/reset/{{item}}/do?71234897289456092390467540897520372734&amp;title_number={{data.title_number}}&amp;do_sign_in">https://www.gov.uk/search-property-information-land-registry/reset/do?71234897289456092390467540897520372734</a></p>
+
+                          <p>You'll be asked to choose a new password.</p>
+
                         {% else %}
 
                           <p>You recently requested a username reminder for your Find property information account.</p>

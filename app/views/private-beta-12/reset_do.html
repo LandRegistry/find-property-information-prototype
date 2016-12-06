@@ -6,7 +6,7 @@
 
 {% block body %}
 
-  <h1 class="heading-large">Create your new {{item}}</h1>
+  <h1 class="heading-large">Create a new {{item}}</h1>
 
   <div class="grid-row spacing-top-single">
 
@@ -19,7 +19,7 @@
 
         <fieldset>
 
-          <legend class="visuallyhidden">Enter your new {{item}}</legend>
+          <legend class="visuallyhidden">Create a new {{item}}</legend>
 
           {% if item == 'password' %}
             <div class="form-group">            
@@ -41,7 +41,7 @@
             
           {% else %}
             <div class="form-group">
-              <label class="form-label" for="{{item}}">Create a new {{item}}</label>
+              <label class="form-label" for="{{item}}">Continue</label>
               <input class="form-control" type="text" id="{{item}}" name="{{item}}">
             </div>
           {% endif %}
@@ -49,7 +49,7 @@
         </fieldset>
 
         <div class="form-group spacing-top-single">
-          <input type="submit" class="button" value="Reset {{item}}">
+          <input type="submit" class="button" value="Continue">
         </div>
       </form>
 
