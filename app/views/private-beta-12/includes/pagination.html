@@ -19,10 +19,10 @@
           </li>
         {% endif %}
         {% if display_page_number == number_pages %}
-          <li class="next-page">
-            <div style="padding: 0.75em 3em 0.75em 0;">
-              <span class="pagination-part-title" style="font-size: 27px;line-height: 1.25;font-weight: 400;">Limit reached</span><br>
-              <span class="pagination-label" style="font-weight: 400;">This service only displays 50 results</span>
+          <li class="next-page last-page">
+            <div>
+              <span class="pagination-part-title">Limit reached</span><br>
+              <span class="pagination-label">This service only displays 50 results</span>
             </div>
           </li>
         <!-- <p >Search limit reached. This beta service is limited to 50 results</p> -->
@@ -35,7 +35,7 @@
 
     {% if display_page_number == number_pages %}
       <h3 class="heading-small">This service is limited to 50 results</h3>
-      If the property you want isn't listed, use the <a href="https://eservices.landregistry.gov.uk/wps/portal/Property_Search">Find a Property service</a> instead to search by street address, title number or by using a map</p>
+      If the property isn't listed, use the <a href="https://eservices.landregistry.gov.uk/wps/portal/Property_Search">Find a Property service</a> instead to search by street address, title number or by using a map</p>
     {% endif %}
   {% endif %}
 {% endmacro %}
