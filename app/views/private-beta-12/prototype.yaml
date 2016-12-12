@@ -6,6 +6,8 @@ description: |
 changelog:
   - done...
   - password reset.
+  - search results limit - nicer
+  - mobile - about this property - tenure bottom border
   - todo..?
   - take it away (remove print button, you've been mailed this - clearer)
   - improve map (how?  extent earlier on?)
@@ -13,7 +15,9 @@ changelog:
   - help picking the right title - freehold / leasehold
   - payment confirmation - (because not seen on last page / what if journey broke before summary delivered)
   - sign in / create account - better pattern (? and/or document prev patterns tried)
+  - owner addresses - 14 Blanda Views, AA7 6FT - 2 addr runs into 1
   - caution titles
+  - password reset - this account does not exist would you like to create an account
   - improve search / explain better
   - double (if create account) email on summary (may explain comma on single)
   - check all routing
