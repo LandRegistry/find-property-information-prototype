@@ -31,7 +31,7 @@
 
       <p class="font-xsmall">The information provided in this summary is correct at <span id="today-time"></span>.</p>
 
-      <p class="font-xsmall">This information has been sent to your <a href="{{path}}/send/summary/summary_email?title_number={{data.title_number}}" style="text-decoration: inherit;color:inherit">email address ({{ data.email }})</a> along with a VAT receipt for your purchase.</p>
+      <p class="font-xsmall">This information has been sent to your <a href="{{path}}/send/summary/summary_email?title_number={{data.title_number}}" style="text-decoration: inherit;color:inherit">email address (<strong class="bold">{{ data.email | first }}</strong>)</a> along with a VAT receipt for your purchase.</p>
 
       <!-- print this page -->
       <div class="printhidden">
