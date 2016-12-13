@@ -8,14 +8,19 @@ changelog:
   - password reset.
   - search results limit - nicer
   - mobile - about this property - tenure bottom border
+  - email addr - summary - bold
   - todo..?
   - take it away (remove print button, you've been mailed this - clearer)
   - improve map (how?  extent earlier on?)
   - document in v11 what learnt, and include here what changes being made as a result.
   - help picking the right title - freehold / leasehold
+  - help - title - Need Help?
+  - help - helpline 0300 123 456 (carers allowance)
   - payment confirmation - (because not seen on last page / what if journey broke before summary delivered)
   - sign in / create account - better pattern (? and/or document prev patterns tried)
   - owner addresses - 14 Blanda Views, AA7 6FT - 2 addr runs into 1
+  - typical street - better search results page - if we do addresses > property desciptions
+  - tidy up / remove _copy _2 pages
   - caution titles
   - password reset - this account does not exist would you like to create an account
   - improve search / explain better
@@ -27,6 +32,7 @@ changelog:
   - Privacy policy - own page for service?
   - shame.css? head style + inline style in confirm(s)
   - password reset - someone mistyping / email we don't know
+  - feedback link - change to clone of gov.uk form
   - confirm your purchase - return to search results link (need to pass search term and page number about)
   - confirm your purchase - disabled button until terms of use checked
   - confirm page - price paid - examples of we don't have pp
@@ -35,5 +41,6 @@ changelog:
   - rename pages - make page urls closer to the h1 title
   - session object for all data needed to pass about
   - have a look at it on mobile / no style
-  - improve downloads - email, summmary + vat receipt
+  - improve downloads - email, summmary + vat receipt - mobile mail?
+  - search results page options + page per property?
   - Register / project history?
