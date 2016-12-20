@@ -21,12 +21,10 @@ changelog:
   - 2 dynamic list - what you'll get / wont get - about this property page
   - 3 create account / sign-in buttons
   - 4 last update date (remove)
-  - 5 - summary page - this information... this information shows (looser, less cprrect at this time)
+  - 5 - summary page - this information... this information shows (looser, less correct at this time)
   - fold in latest gov uk elements
   - passwords dont match error messgage - account/reset
-  - improve map (how?  extent earlier on?)
   - document in v11 what learnt, and include here what changes being made as a result.
-  - help picking the right title - freehold / leasehold
   - help - title - Need Help?
   - help - helpline 0300 123 456 (carers allowance)
   - payment confirmation - (because not seen on last page / what if journey broke before summary delivered)
