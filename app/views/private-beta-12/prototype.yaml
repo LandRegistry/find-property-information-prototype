@@ -13,6 +13,7 @@ changelog:
   - sign in - account unknown or email and pwd are incorrect - error message - see route /sign_in_unknown
   - sign in - password wrong too many times - route /locked_out
   - create account - error messages and inline password error messages
+  - summary - last updated date (4) removed.
   - todo..?
   - take it away (remove print button, you've been mailed this - clearer)
   - worldpay 3 confirmation
@@ -20,8 +21,7 @@ changelog:
   - 1 user pick correct title - freehold, leasehold (caution) explanations
   - 2 dynamic list - what you'll get / wont get - about this property page
   - 3 create account / sign-in buttons
-  - 4 last update date (remove)
-  - 5 - summary page - this information... this information shows (looser, less correct at this time)
+  - 5 - summary page - this information provided is correct... this information shows (looser wording, less correct at this time)
   - fold in latest gov uk elements
   - passwords dont match error messgage - account/reset
   - document in v11 what learnt, and include here what changes being made as a result.
