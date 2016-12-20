@@ -10,13 +10,24 @@
 {% block body %}
   <h1 class="heading-large">Sign in</h1>
 
-  <!--<p style="vertical-align:top">Don't have an account? <a class="button" style="margin-left:30px;line-height: inherit;vertical-align:middle;background-color: #333" href="create_account?title_number={{data.title_number}}" id="register-link">register to use this service</a></p>-->
 
   <div class="grid-row">
     <div class="column-two-thirds">
 
 
-      <form method="POST" action="{% if data.action %}{{data.action}}{% else %}confirm_your_purchase{% endif %}" id="login-form"  novalidate data-clientside-validation="login_form_validation">
+      <form method="POST" action="{% if data.action %}{{data.action}}{% else %}confirm_your_purchase{% endif %}" id="login-form"  novalidate data-clientside-validationx="login_form_validation">
+
+        <div class="error-summary" role="group" aria-labelledby="error-summary-heading" tabindex="-1">
+          <h2 class="heading-medium error-summary-heading" id="error-summary-heading">That email address or password isn't recognised</h2>
+
+          <ul class="error-summary-list">
+            <li class="spacing-bottom-half">If this is your first visit you will need to <a href="create_account?title_number={{data.title_number}}">create an account</a>.</li>
+            <li class="spacing-bottom-half">If not, please check your details and try again.  Or, <a href="{{path}}/reset/password/send_email?title_number={{data.title_number}}">request a new password</a>.</li>
+          </ul>
+
+        </div>
+
+
 
         <!-- <p class="lede">or <a href="create_account?title_number={{data.title_number}}" class="register-link">register to use this service</a></p> -->
 
@@ -44,20 +55,10 @@
             Password
           </label>
 
-          <!-- <p>If this is your first visit, you will need to <a href="create_account?title_number={{data.title_number}}" class="register-link">register to use this service</a></p> -->
 
           <input type="password" class="form-control" id="password" name="password">
 
         </div>
-
-
-        <!-- T&Cs -->
-<!--         <div class="form-group" id="terms_group">
-          <label class="block-label" for="terms">
-            <input id="terms" name="terms" type="checkbox" value="terms">
-            I have read and agree to the <a href="terms_and_conditions">terms &amp; conditions</a>
-          </label>
-        </div> -->
 
         <input type="submit" class="button" value="Continue to purchase">
 
