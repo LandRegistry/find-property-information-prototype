@@ -12,6 +12,7 @@ changelog:
   - sign in - missing email or password - error messages
   - sign in - account unknown or email and pwd are incorrect - error message - see route /sign_in_unknown
   - sign in - password wrong too many times - route /locked_out
+  - create account - error messages and inline password error messages
   - todo..?
   - take it away (remove print button, you've been mailed this - clearer)
   - worldpay 3 confirmation
