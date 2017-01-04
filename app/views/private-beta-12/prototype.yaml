@@ -23,6 +23,8 @@ changelog:
   - 3 create account / sign-in buttons
   - 5 - summary page - this information provided is correct... this information shows (looser wording, less correct at this time)
   - fold in latest gov uk elements
+  - phone no mandatory on account create (why?)
+  - B1 - owner addresses - (care of, BFPO, email etc)
   - passwords dont match error messgage - account/reset
   - document in v11 what learnt, and include here what changes being made as a result.
   - help - title - Need Help?
