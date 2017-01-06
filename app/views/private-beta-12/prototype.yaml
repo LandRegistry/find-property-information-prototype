@@ -13,6 +13,7 @@ changelog:
   - sign in - account unknown or email and pwd are incorrect - error message - see route /sign_in_unknown
   - sign in - password wrong too many times - route /locked_out
   - create account - error messages and inline password error messages
+  - create account - title in, phone num out - only mandatory fields needed by legacy tech
   - summary - last updated date (4) removed.
   - todo..?
   - take it away (remove print button, you've been mailed this - clearer)
@@ -28,7 +29,7 @@ changelog:
   - passwords dont match error messgage - account/reset
   - document in v11 what learnt, and include here what changes being made as a result.
   - help - title - Need Help?
-  - help - helpline 0300 123 456 (carers allowance)
+  - help - helpline (title) 0300 123 456 (carers allowance)
   - payment confirmation - (because not seen on last page / what if journey broke before summary delivered)
   - sign in / create account - better pattern (? and/or document prev patterns tried)
   - owner addresses - 14 Blanda Views, AA7 6FT - 2 addr runs into 1
