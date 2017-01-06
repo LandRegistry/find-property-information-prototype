@@ -15,6 +15,7 @@ changelog:
   - create account - error messages and inline password error messages
   - create account - title in, phone num out - only mandatory fields needed by legacy tech
   - summary - last updated date (4) removed.
+  - no javascript map message.
   - todo..?
   - take it away (remove print button, you've been mailed this - clearer)
   - worldpay 3 confirmation
