@@ -5,7 +5,7 @@ description: |
 
 changelog:
   - done...
-  - password reset.
+  - password reset (screens and email content).
   - search results limit - nicer
   - mobile - about this property - tenure bottom border
   - email addr - summary - bold
@@ -19,7 +19,7 @@ changelog:
   - worldpay 3 confirmation
   - extent on all maps
   - 1 user pick correct title - freehold, leasehold (caution) explanations
-  - 2 dynamic list - what you'll get / wont get - about this property page
+  - 2 dynamic list - + what you'll get / wont get - about this property page
   - 3 create account / sign-in buttons
   - 5 - summary page - this information provided is correct... this information shows (looser wording, less correct at this time)
   - fold in latest gov uk elements
