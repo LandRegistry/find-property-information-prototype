@@ -1,7 +1,7 @@
-name: v12 - assessment ready?
-date: 2016-12-01
+name: v12 - assessment journey ready
+date: 2017-01-12
 description: |
-  <p>V11 + things learnt; Things not included in 11 (find thing and select right title), password reset for build</p>
+  <p>Assessment candidate (before search and email summary and VAT).  combo of prod + v11</p>
 
 changelog:
   - done...
@@ -14,17 +14,26 @@ changelog:
   - sign in - password wrong too many times - route /locked_out
   - create account - error messages and inline password error messages
   - create account - title in, phone num out - only mandatory fields needed by legacy tech
+  - create account - password help
   - summary - last updated date (4) removed.
   - no javascript map message.
   - todo..?
-  - take it away (remove print button, you've been mailed this - clearer)
+  - As is - prod + move signin; clarity of service; error messages.  Leave search and take the tihing away for next protos - so we can take this to lab on 20th
+  - remove vat off landing page.
+  - cs12 breakout - different pages
+  - Cs2/11 - remove looking at a contact form
+  - look at expandable text in search results
+  - new story - can we tell them if we have price paid
+  - start page - gov.uk make hybrid between prod and v11
   - worldpay 3 confirmation
   - extent on all maps
   - 1 user pick correct title - freehold, leasehold (caution) explanations
   - 2 dynamic list - + what you'll get / wont get - about this property page
-  - 3 create account / sign-in buttons
+  - 3 create account / sign-in buttons (morph into a version of current)
   - 5 - summary page - this information provided is correct... this information shows (looser wording, less correct at this time)
+  - summary page - multiple B1 addresses + both for 1 owner (currently they run into each other); and multiple owners.
   - fold in latest gov uk elements
+  - take it away (remove print button, you've been mailed this - clearer)
   - phone no mandatory on account create (why?)
   - B1 - owner addresses - (care of, BFPO, email etc)
   - passwords dont match error messgage - account/reset
