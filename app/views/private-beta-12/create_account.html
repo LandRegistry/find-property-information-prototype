@@ -282,6 +282,17 @@
 
           <legend class="visuallyhidden">Your name</legend>
 
+          <div class="form-group">
+            <label class="form-label" for="title">Title</label>
+            <select style="width:auto;" class="form-control" id="title" name="title">
+              <option value="">Please select</option>
+              <option value="Mr">Mr</option>
+              <option value="Mrs">Mrs</option>
+              <option value="Miss">Miss</option>
+              <option value="Ms">Ms</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
 
           <div class="form-group">
             <label class="form-label" for="firstname">First name</label>
@@ -371,6 +382,11 @@
               "message": "Please make sure both passwords match"
             },
             "find_property_information_password": true
+          },
+          "title": {
+            "presence": {
+              "message": "You need to provide your Title"
+            }
           },
           "firstname": {
             "presence": {
