@@ -1,8 +1,8 @@
-name: v13 - public beate assessment ready - 1
+name: v13 - public beta assessment ready - 1
 date: 2017-01-20
 description: |
-  <p>halfway to public beta - prod plus enough changes 'see in one go'. V12 + prod - releasable.</p>
-
+  <p>halfway to public beta - prod plus enough changes to 'see in one go'. V12 + prod - releasable.</p>
+  <p>prod + move signin; clarity of service; error messages.</p>
 changelog:
   - done...
   - password reset (screens and email content).
@@ -17,6 +17,7 @@ changelog:
   - create account - password help
   - summary - last updated date (4) removed.
   - no javascript map message.
+  - confirm your order - bigger map
   - todo..?
   - As is - prod + move signin; clarity of service; error messages.  Leave search and take the tihing away for next protos - so we can take this to lab on 20th
   - remove vat off landing page.
