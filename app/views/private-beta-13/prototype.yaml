@@ -1,7 +1,7 @@
-name: v12 - user testing only - not a releaseable thing
-date: 2017-01-12
+name: v13 - public beate assessment ready - 1
+date: 2017-01-20
 description: |
-  <p>Assessment candidate (before search and email summary and VAT).  combo of prod + v11</p>
+  <p>halfway to public beta - prod plus enough changes 'see in one go'. V12 + prod - releasable.</p>
 
 changelog:
   - done...
