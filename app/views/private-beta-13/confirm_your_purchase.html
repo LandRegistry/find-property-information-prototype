@@ -28,6 +28,20 @@
 
       <dl class="definition-tabular definition-tabular-sectioned">
 
+          {% if title['is_caution_title'] %}
+          <dt class="bold-small">Caution</dt>
+          <dd>
+            <details class="font-xsmall">
+              <summary class="bold-small">What does Caution mean?</summary>
+              <div class="panel">
+                <p>This property hasn’t been registered yet. You can’t find out who owns it from this service.</p>
+                <p>Someone other than the owner (known as the ‘cautioner’) has registered a right or interest in the property. They will be told if anyone tries to register it, and can object to the registration going ahead until their claim has been looked at. You can get their name and address from this service.</p>
+                <p>Registration has only been compulsory since the 1990s. Property that hasn’t changed hands since then may not be registered.</p>
+              </div>
+            </details>
+          </dd>
+        {% endif %}
+
         {% if title.address %}
           <dt class="spacing-bottom-single">Address</dt>
           <dd class="bold-medium spacing-bottom-single">
@@ -50,9 +64,15 @@
         <dt class="spacing-bottom-single">You'll receive</dt>
         <dd class="spacing-bottom-single">
           <ul class="list-no-bullet">
+          {% if title['is_caution_title'] %}
+            <li>the cautioner's name and address <br/>(<strong class="bold">the owner isn't available from this service</strong>)</li>
+          {% else %}
             <li class="bold-small">Owners' names and addresses</li>
+            <li><span class="bold-small">Price paid (if available)</span></li>
             <li class="bold-small">Details of any mortgages</li>
-            <li><span class="bold-small">Price paid</span></li>
+          {% endif %}
+            
+            
             <!-- <li class="bold-small">Title number</li> -->
           </ul>
         </dd>

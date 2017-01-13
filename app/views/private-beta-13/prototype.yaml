@@ -21,6 +21,9 @@ changelog:
   - mobile layout - summary page - different order and position of information. map below address.
   - summary page - remove print button, make it clearer we've sent you an email copy; 
   - summary page 5 - summary page - this information provided is correct. (looser wording) - 'when this info was generated (5)'
+  - worldpay confirmation back
+  - caution titles - explanation of caution, and what you will get / not get (onwer/caution)
+  -
   -
   - todo..?
   - As is - prod + move signin; clarity of service; error messages.  Leave search and take the tihing away for next protos - so we can take this to lab on 20th
@@ -30,7 +33,7 @@ changelog:
   - look at expandable text in search results
   - new story - can we tell them if we have price paid
   - start page - gov.uk make hybrid between prod and v11
-  - worldpay 3 confirmation
+  - worldpay 3 confirmation - reskin
   - extent on all maps
   - list pages hard to get too (like error states) on index page
   - 1 user pick correct title - freehold, leasehold (caution) explanations

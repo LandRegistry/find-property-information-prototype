@@ -27,7 +27,7 @@
 
       <dl class="definition-tabular definition-tabular-sectioned">
 
-<!--         {% if title['is_caution_title'] %}
+        {% if title['is_caution_title'] %}
           <dt class="bold-small">Caution</dt>
           <dd>
             <details class="font-xsmall">
@@ -39,7 +39,7 @@
               </div>
             </details>
           </dd>
-        {% endif %} -->
+        {% endif %}
 
         {% if title.address %}
           <dt class="spacing-bottom-single">Address</dt>
@@ -120,10 +120,16 @@
         <h2 class="heading-medium spacing-top-single">Pay £3 to find out:</h2>
 
         <ul class="list-bullet">
-          <li>who owns this property (name and address)</li>
+          {% if title['is_caution_title'] %}
+            <li>the cautioner's name and address (<strong class="bold">the owner isn't available from this service</strong>)</li>
+          {% else %}
+            <li>who owns this property (name and address)</li>
+            <li>how much they paid (if available)</li>
+            <li>if there is a mortgage - the name and address of the lender</li>
+          {% endif %}
+          
           <!-- <li>how much they paid (if the Land Registry holds this information)</li> -->
-          <li>how much they paid</li>
-          <li>if there's a mortgage on it</li>
+          
           {% if not session.isLoggedIn %}
             <li>title number (the unique reference number)</li>
           {% endif %}
