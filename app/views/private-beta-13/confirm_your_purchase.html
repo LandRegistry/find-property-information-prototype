@@ -11,19 +11,9 @@
   <h1 class="heading-large">Confirm your purchase</h1>
 
   <!-- prop info row -->
-  <div class="grid-row column-flip spacing-top-single">
+  <div class="grid-row spacing-top-single">
 
-    <!-- map column -->
-    <div class="column-one-third tablet-column-one-third spacing-bottom-single">
-      {% if title['indexPolygon'] %}
-        <div class="map" id="map">
-          <p>Your browser must have JavaScript enabled in order to use the map.
-      <li><a href="/drv-18/terms">Terms &amp; Conditions</a></li></p>
-        </div>
-      {% endif %}
-    </div>
-
-    <!-- property information -->
+    <!-- property text -->
     <div class="column-two-thirds tablet-column-two-thirds">          
 
       <dl class="definition-tabular definition-tabular-sectioned">
@@ -70,9 +60,7 @@
             <li class="bold-small">Owners' names and addresses</li>
             <li><span class="bold-small">Price paid (if available)</span></li>
             <li class="bold-small">Details of any mortgages</li>
-          {% endif %}
-            
-            
+          {% endif %}          
             <!-- <li class="bold-small">Title number</li> -->
           </ul>
         </dd>
@@ -80,16 +68,25 @@
       </dl>
 
     </div>
+    <!-- map column -->
+    <div class="column-one-third tablet-column-one-third spacing-bottom-single">
+      {% if title['indexPolygon'] %}
+        <div class="map" id="map">
+          <p>Your browser must have JavaScript enabled in order to use the map.
+      <li><a href="/drv-18/terms">Terms &amp; Conditions</a></li></p>
+        </div>
+      {% endif %}
+    </div>
 
   </div> 
 
 
   <!-- pay + help row -->
-  <div class="grid-row">
+  <div class="grid-row spacing-top-single">
 
     <div class="column-two-thirds tablet-column-two-thirds">
 
-      <div class="panel panel-simple spacing-top-single">
+      <div class="panel panel-simple">
 
         <form action="{{path}}/worldpay_1?title_number={{data.title_number}}" method="POST" novalidate data-clientside-validation="pay_form_validation">
 

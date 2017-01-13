@@ -23,7 +23,10 @@ changelog:
   - summary page 5 - summary page - this information provided is correct. (looser wording) - 'when this info was generated (5)'
   - worldpay confirmation back
   - caution titles - explanation of caution, and what you will get / not get (onwer/caution)
-  -
+  - mobile layout - confirm your purchase - map below property info
+  - mobile layout - about this property - map below proerty info - before and after signed-in
+  - mobile layout - search / results - search button spacing from input box
+  - search results - explaining free and leasehold
   -
   - todo..?
   - As is - prod + move signin; clarity of service; error messages.  Leave search and take the tihing away for next protos - so we can take this to lab on 20th
