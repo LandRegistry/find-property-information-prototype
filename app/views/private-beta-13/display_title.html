@@ -84,7 +84,8 @@
 
             <h3 class="visuallyhidden">Addresses</h3>
             {% for address in proprietor.addresses %}
-              <div class="address">
+            <!-- for every address, after first, add top margin -->
+              <div class="address" {% if loop.index > 1 %}style="margin-top:15px;"{% endif %}>
                 {% for line in address %}
                   <span>{{ line|safe }}</span>
                 {% endfor %}

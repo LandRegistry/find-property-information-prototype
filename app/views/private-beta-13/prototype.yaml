@@ -27,6 +27,9 @@ changelog:
   - mobile layout - about this property - map below proerty info - before and after signed-in
   - mobile layout - search / results - search button spacing from input box
   - search results - explaining free and leasehold
+  - remove beta / prototype words from search/results
+  - owner addresses - 14 Blanda Views, AA7 6FT - mutli addr layout fix
+  - 
   -
   - todo..?
   - As is - prod + move signin; clarity of service; error messages.  Leave search and take the tihing away for next protos - so we can take this to lab on 20th
@@ -53,7 +56,6 @@ changelog:
   - help - helpline (title) 0300 123 456 (carers allowance)
   - payment confirmation - (because not seen on last page / what if journey broke before summary delivered)
   - sign in / create account - better pattern (? and/or document prev patterns tried)
-  - owner addresses - 14 Blanda Views, AA7 6FT - 2 addr runs into 1
   - typical street - better search results page - if we do addresses > property desciptions
   - tidy up / remove _copy _2 pages
   - caution titles
