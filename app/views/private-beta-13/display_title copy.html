@@ -18,8 +18,29 @@
 
   <p class="font-xsmall">Purchased on <span id="today"></span>. WorldPay transaction 3043404577</p>
 
-  <div class="grid-row spacing-top-single">
-    
+  <div class="grid-row column-flip spacing-top-single">
+    <div class="column-one-third tablet-column-one-third spacing-bottom-single">
+
+      {% if title.indexPolygon %}
+        <div class="map polygon " id="map">
+          <p>Your browser must have JavaScript enabled in order to use the map.
+      <li><a href="/drv-18/terms">Terms &amp; Conditions</a></li></p>
+        </div>
+
+        <p class="font-xsmall spacing-top-half">This map shows the property's rough extent and location, <strong class="bold">not legal boundaries.</strong></p>
+      {% endif %}
+
+      <p class="font-xsmall">The information provided in this summary is correct at <span id="today-time"></span>.</p>
+
+      <p class="font-xsmall">This information has been sent to your <a href="{{path}}/send/summary/summary_email?title_number={{data.title_number}}" style="text-decoration: inherit;color:inherit">email address (<strong class="bold">{{ data.email | first }}</strong>)</a> along with a VAT receipt for your purchase.</p>
+
+      <!-- print this page -->
+      <div class="printhidden">
+        <button data-print class="button button-light bold"><span class="icon icon-print"></span>Print this page</button>
+      </div>
+
+    </div>
+
     <div class="column-two-thirds tablet-column-two-thirds">
 
       <dl class="definition-tabular definition-tabular-sectioned">
@@ -127,60 +148,29 @@
         <dd class="bold-small"><time datetime="{{ title.last_changed_datetime }}">{{ title.last_changed_date }}</time></dd> -->
 
       </dl>
-      
-    </div>
-    <div class="column-one-third tablet-column-one-third spacing-bottom-single">
-
-      {% if title.indexPolygon %}
-        <div class="map polygon " id="map">
-          <p>Your browser must have JavaScript enabled in order to use the map.</p>
-        </div>
-
-        <p class="font-xsmall spacing-top-half">This map shows the property's rough extent and location, <strong class="bold">not legal boundaries.</strong></p>
-      {% endif %}
-
-
-      <!-- print this page -->
-<!--       <div class="printhidden">
-        <button data-print class="button button-light bold"><span class="icon icon-print"></span>Print this page</button>
-      </div> -->
-
-    </div>
-
-
-  </div> <!-- end property info row -->
-
-  <!-- info and what next -->
-  <div class="grid-row spacing-top-singlex">
-
-    <div class="column-two-thirds tablet-column-two-thirds">
-
 
 
       <div class="printhidden spacing-top-double">
-        <p class="">This information has been sent to your <a href="{{path}}/send/summary/summary_email?title_number={{data.title_number}}" style="text-decoration: inherit;color:inherit">email address (<strong class="bold">{{ data.email | first }}</strong>)</a> along with a VAT receipt for your purchase.</p>
+
+        <!-- <a class="button" href="search_results" role="button">Search for another property</a> -->
+
+      <div class="">
+        <h2 class="heading-medium">What next</h2>
+        <ul class="list list-bullet">
+          <li><a href="{{path}}/search">Search for another property</a></li>
+          <!-- <li><a href="{{path}}">Return to the start page</a></li> -->
+          <li><a href="{{path}}/sign_out">Sign out</a></li>
+        </ul>
       </div>
-
-      <p class="font-xsmall">The information here was retreived on <span id="today-time"></span>.</p>
-
-      <div class="printhidden spacing-top-double">
-
-        <div class="">
-          <h2 class="heading-medium">What next</h2>
-          <ul class="list list-bullet">
-            <li><a href="{{path}}/search">Search for another property</a></li>
-            <!-- <li><a href="{{path}}">Return to the start page</a></li> -->
-            <li><a href="{{path}}/sign_out">Sign out</a></li>
-          </ul>
-        </div>
 
       
         <p class="spacing-top-single"><a href="mailto:digital-register-feedback@digital.landregistry.gov.uk">What did you think of this service?</a> (takes 30 seconds)</p>
 
       </div>
 
+<!-- <a href="{{path}}/summary_email?title_number={{data.title_number}}">your email</a> -->
+      
     </div>
-
   </div>
 
 
@@ -196,7 +186,7 @@
   <script>
 
     var date = moment().format('DD MMMM YYYY'); // November 18th 2016
-    var dateTime = moment().format('DD MMMM YYYY [at] h:mm'); // November 18th 2016, 3:50:43 pm
+    var dateTime = moment().format('h:mm [on] DD MMMM YYYY'); // November 18th 2016, 3:50:43 pm
 
     span = document.getElementById('today');
     txt = document.createTextNode(date);

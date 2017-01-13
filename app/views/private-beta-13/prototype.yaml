@@ -18,6 +18,10 @@ changelog:
   - summary - last updated date (4) removed.
   - no javascript map message.
   - confirm your order - bigger map
+  - mobile layout - summary page - different order and position of information. map below address.
+  - summary page - remove print button, make it clearer we've sent you an email copy; 
+  - summary page 5 - summary page - this information provided is correct. (looser wording) - 'when this info was generated (5)'
+  -
   - todo..?
   - As is - prod + move signin; clarity of service; error messages.  Leave search and take the tihing away for next protos - so we can take this to lab on 20th
   - remove vat off landing page.
@@ -32,7 +36,6 @@ changelog:
   - 1 user pick correct title - freehold, leasehold (caution) explanations
   - 2 dynamic list - + what you'll get / wont get - about this property page
   - 3 create account / sign-in buttons (morph into a version of current)
-  - 5 - summary page - this information provided is correct... this information shows (looser wording, less correct at this time)
   - summary page - multiple B1 addresses + both for 1 owner (currently they run into each other); and multiple owners.
   - fold in latest gov uk elements
   - take it away (remove print button, you've been mailed this - clearer)
