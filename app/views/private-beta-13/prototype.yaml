@@ -32,6 +32,11 @@ changelog:
   - 
   -
   - todo..?
+  - put v13 on wall - and show what came out of testing
+  - different mechanism for sign in / creat acc - 2 buttons.
+  - can we do - ask for email, then look up if acc - then sign in or create.
+  - or do - have you been here before - y n dunno - y in, n dunno create
+  - make sure tidying up / changing sign in page and create account name change are reflected in trello cards
   - As is - prod + move signin; clarity of service; error messages.  Leave search and take the tihing away for next protos - so we can take this to lab on 20th
   - remove vat off landing page.
   - cs12 breakout - different pages
