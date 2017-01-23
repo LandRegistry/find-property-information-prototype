@@ -1,0 +1,14 @@
+<h2 class="heading-xlarge collapse-bottom">{% if is_caution_title %}Caution {% endif %}Title Number : {{ full_title_data.official_copy_data.title_number }} </h2>
+{% for sub_registers in full_title_data.official_copy_data.sub_registers %}
+  <h2 class="heading-medium">Register name : {{ sub_registers.sub_register_name }}</h2>
+  <div>
+    <ul class="list-plain">
+      {% for entries in sub_registers.entries %}
+        <li>
+          <p>{{ entries.sequence_number }}. {{ entries.entry_date|check_date_existence }} - {{ entries.full_text|strip_illegal_characters }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endfor %}
+
