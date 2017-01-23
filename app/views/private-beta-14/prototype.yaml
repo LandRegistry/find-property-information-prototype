@@ -1,36 +1,11 @@
 name: v14 - public beta assessment ready - 0.75
 date: 2017-01-23
 description: |
-  <p>halfway+ to public beta - prod plus enough changes to 'see in one go'. V12 + prod - releasable.</p>
+  <p>halfway+ to public beta - prod plus enough changes to 'see in one go'. V13 + prod - releasable.</p>
   <p>prod + move signin; clarity of service; error messages.</p>
-  <p></p>
+  <p>changes for search</p>
 changelog:
   - done...
-  - password reset (screens and email content).
-  - search results limit - nicer
-  - mobile - about this property - tenure bottom border
-  - email addr - summary - bold
-  - sign in - missing email or password - error messages
-  - sign in - account unknown or email and pwd are incorrect - error message - see route /sign_in_unknown
-  - sign in - password wrong too many times - route /locked_out
-  - create account - error messages and inline password error messages
-  - create account - title in, phone num out - only mandatory fields needed by legacy tech
-  - create account - password help
-  - summary - last updated date (4) removed.
-  - no javascript map message.
-  - confirm your order - bigger map
-  - mobile layout - summary page - different order and position of information. map below address.
-  - summary page - remove print button, make it clearer we've sent you an email copy; 
-  - summary page 5 - summary page - this information provided is correct. (looser wording) - 'when this info was generated (5)'
-  - worldpay confirmation back
-  - caution titles - explanation of caution, and what you will get / not get (onwer/caution)
-  - mobile layout - confirm your purchase - map below property info
-  - mobile layout - about this property - map below proerty info - before and after signed-in
-  - mobile layout - search / results - search button spacing from input box
-  - search results - explaining free and leasehold
-  - remove beta / prototype words from search/results
-  - owner addresses - 14 Blanda Views, AA7 6FT - mutli addr layout fix
-  - 
   -
   - todo..?
   - trello / show what design work / progress
@@ -87,4 +62,4 @@ changelog:
   - have a look at it on mobile / no style
   - take it away - improve downloads? - email, summmary + vat receipt - mobile mail?
   - search results page options + page per property?
-  - Register / project history?
+  - Register / project history? (not for all users - good for us / specialists)
