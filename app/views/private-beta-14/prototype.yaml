@@ -6,11 +6,25 @@ description: |
   <p>changes for search</p>
 changelog:
   - done...
+  - About / confirm - list spacing.
+  - Confirm - you'll receive styling - heading / list
+  - Confirm / About - you'll receive para width
+  -
   -
   - todo..?
+  - what do we want to learn next? / keep learning
   - trello / show what design work / progress
+  - document changes.
   - put v13 on wall - and show what came out of testing
   - different mechanism for sign in / creat acc - 2 buttons.
+  - signin page needs create account link/onward (as can be gotten to by user without seeing create)
+  - floaty/dock map island - mobile.
+  - about page not signed in - mobile - map under ownership type
+  - confirm / about signed in - mobile - map under title number
+  - improve address, ownership, title no on mobile.
+  - list class on about list
+  - about - signed in - maybe -> 'we will send a copy of the pdf to your email address'
+  - confirm - link back to search results
   - can we do - ask for email, then look up if acc - then sign in or create.
   - or do - have you been here before - y n dunno - y in, n dunno create
   - make sure tidying up / changing sign in page and create account name change are reflected in trello cards
