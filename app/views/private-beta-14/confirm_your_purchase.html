@@ -94,7 +94,7 @@
 
       <div class="panel panel-simple">
 
-        <form action="{{path}}/worldpay_1?title_number={{data.title_number}}" method="POST" novalidate data-clientside-validation="pay_form_validation">
+        <form action="{{path}}/worldpay_1?title_number={{data.title_number}}" method="POST" novalidate data-clientside-validation="pay_form_validation" data-clientside-validation-no-summary>
 
           <input name="title_number" value="{{data.title_number}}" type="hidden" />
           <input name="email" value="{{data.email}}" type="hidden" />
