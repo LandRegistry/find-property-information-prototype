@@ -189,6 +189,8 @@
 
                         {% if item == 'password' %}
 
+                          <p>Hi Andy Porter,</p>
+
                           <p>We received a request to reset your password for the 'Find property information' service.</p>
 
                           <p>Ignore this email if this wasn't you - your password won't be reset.</p> 
@@ -198,22 +200,6 @@
                           <p><a href="{{path}}/reset/{{item}}/do?71234897289456092390467540897520372734&amp;title_number={{data.title_number}}&amp;do_sign_in">https://www.gov.uk/search-property-information-land-registry/reset/do?71234897289456092390467540897520372734</a></p>
 
                           <p>You'll be asked to choose a new password.</p>
-
-                        {% else %}
-
-                          <p>You recently requested a username reminder for your Find property information account.</p>
-                          <p>You username is <strong>patsmith</strong></p>
-                          <!-- Action -->
-                          <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
-                            <tr>
-                              <td align="center">
-                                <div>
-                                  <a href="{{path}}/sign_in?username=patsmith&amp;action=sign_in_successful&amp;title_number={{data.title_number}}" class="button button--green">Sign in</a>
-                                </div>
-                              </td>
-                            </tr>
-                          </table>
-                          <p>If you did not request a username reminder, please ignore this email or <a href="http://landregistry.custhelp.com/app/contactus_general/">get in touch to let us know</a>.</p>
 
                         {% endif %}
 

@@ -10,6 +10,7 @@ changelog:
   - Confirm - you'll receive styling - heading / list
   - Confirm / About - you'll receive para width
   - visually hide form error message on pay island -> confirm
+  - password reset - email - their name and additional help
   -
   - todo..?
   - what do we want to learn next? / keep learning
@@ -22,6 +23,7 @@ changelog:
   - about page not signed in - mobile - map under ownership type
   - confirm / about signed in - mobile - map under title number
   - improve address, ownership, title no on mobile.
+  - confirm - < cancel and return to search results.
   - list class on about list
   - about - signed in - maybe -> 'we will send a copy of the pdf to your email address'
   - confirm - link back to search results
