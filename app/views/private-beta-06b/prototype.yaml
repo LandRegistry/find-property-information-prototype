@@ -1,5 +1,0 @@
-name: likely state of service at assessment
-date: 2016-07-29
-description: |
-  <p>As closely as possible matching what production will be like on the date of the assessments</p>
-  <p><strong>Don't spin up new prototypes from this - private-beta-06 should be used as the base</strong></p>
