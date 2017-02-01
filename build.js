@@ -9,10 +9,11 @@ landRegistryElements({
   'destination': path.join(__dirname, 'app/assets/.land-registry-elements'),
   'assetPath': '/public',
   'components': [
-    'pages/find-property-information/landing-form',
     'pages/find-property-information/search-form',
     'pages/find-property-information/search-results',
-    'pages/find-property-information/order-confirmation',
+    'pages/find-property-information/about-this-property',
+    'pages/find-property-information/about-this-property-signed-in',
+    'pages/find-property-information/confirm-your-purchase',
     'pages/find-property-information/summary',
     'pages/find-property-information/cookies',
     'pages/find-property-information/account/create',
