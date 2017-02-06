@@ -65,22 +65,23 @@
 
       </dl>
 
+      <div class="text">
+        <h2 class="heading-medium spacing-top-single">Pay £3 to find out:</h2>
 
-      <h2 class="heading-medium spacing-top-single">Pay £3 to find out:</h2>
-
-      <ul class="list-bullet">
-        {% if title['is_caution_title'] %}
-          <li>the cautioner's name and address (<strong class="bold">the owner isn't available from this service</strong>)</li>
-        {% else %}
-          <li>who owns this property (name and address)</li>
-          <li>how much they paid (if available)</li>
-          <li>if there is a mortgage - the name and address of the lender</li>
-        {% endif %}
-        
-        {% if not session.isLoggedIn %}
-          <li>title number (the unique reference number)</li>
-        {% endif %}
-      </ul>
+        <ul class="list list-bullet">
+          {% if title['is_caution_title'] %}
+            <li>the cautioner's name and address (<strong class="bold">the owner isn't available from this service</strong>)</li>
+          {% else %}
+            <li>who owns this property (name and address)</li>
+            <li>how much they paid (if available)</li>
+            <li>if there is a mortgage - the name and address of the lender</li>
+          {% endif %}
+          
+          {% if not session.isLoggedIn %}
+            <li>title number (the unique reference number)</li>
+          {% endif %}
+        </ul>
+      </div>
 
     </div> <!-- end property text column -->
 
@@ -126,7 +127,7 @@
             </div>
 
             <div class="form-group spacing-top-single">
-              <label class="block-label" for="terms">
+              <label class="block-label selection-button-checkbox" for="terms">
                 <input id="terms" name="terms" type="checkbox" value="terms">
                 I have read and agree to the <a href="terms_and_conditions">terms of use</a>
               </label>

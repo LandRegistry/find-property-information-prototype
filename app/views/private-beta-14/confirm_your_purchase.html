@@ -51,21 +51,27 @@
         <dt class="spacing-bottom-single">Title number</dt>
         <dd class="bold-small spacing-bottom-single">{{ title['data']['title_number'] }}</dd>
 
-        <dt class="spacing-bottom-single">You'll receive</dt>
-        <dd class="spacing-bottom-single">
-          <ul class="list-no-bullet">
-          {% if title['is_caution_title'] %}
-            <li>the cautioner's name and address <br/>(<strong class="bold">the owner isn't available from this service</strong>)</li>
-          {% else %}
-            <li class="bold-small">Owners' names and addresses</li>
-            <li><span class="bold-small">Price paid (if available)</span></li>
-            <li class="bold-small">Details of any mortgages</li>
-          {% endif %}          
-            <!-- <li class="bold-small">Title number</li> -->
-          </ul>
-        </dd>
+
 
       </dl>
+
+      <div class="text">
+        <h2 class="heading-medium spacing-top-single">You'll receive:</h2>
+
+        <ul class="list list-bullet">
+          {% if title['is_caution_title'] %}
+            <li>the cautioner's name and address (<strong class="bold">the owner isn't available from this service</strong>)</li>
+          {% else %}
+            <li>owners' names and addresses</li>
+            <li>price paid (if available)</li>
+            <li>details of any mortgage lenders</li>
+          {% endif %}
+          
+          {% if not session.isLoggedIn %}
+            <li>title number (the unique reference number)</li>
+          {% endif %}
+        </ul>
+      </div>
 
     </div>
     <!-- map column -->
@@ -88,7 +94,7 @@
 
       <div class="panel panel-simple">
 
-        <form action="{{path}}/worldpay_1?title_number={{data.title_number}}" method="POST" novalidate data-clientside-validation="pay_form_validation">
+        <form action="{{path}}/worldpay_1?title_number={{data.title_number}}" method="POST" novalidate data-clientside-validation="pay_form_validation" data-clientside-validation-no-summary>
 
           <input name="title_number" value="{{data.title_number}}" type="hidden" />
           <input name="email" value="{{data.email}}" type="hidden" />
@@ -112,7 +118,7 @@
           </div>
 
           <div class="form-group spacing-top-single">
-            <label class="block-label" for="terms">
+            <label class="block-label selection-button-checkbox" for="terms">
               <input id="terms" name="terms" type="checkbox" value="terms">
               I have read and agree to the <a href="terms_and_conditions#contract">terms of use</a>
             </label>
