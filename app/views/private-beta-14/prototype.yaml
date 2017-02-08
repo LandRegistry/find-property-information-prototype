@@ -2,15 +2,18 @@ name: v14 - public beta assessment ready - 0.75
 date: 2017-01-23
 description: |
   <p>halfway+ to public beta - prod plus enough changes to 'see in one go'. V13 + prod - releasable.</p>
+  <p>latest GOV.UK elements</p>
   <p>prod + move signin; clarity of service; error messages.</p>
   <p>changes for search</p>
 changelog:
   - done...
+  - GOV.UK elements - to latest
   - About / confirm - list spacing.
   - Confirm - you'll receive styling - heading / list
   - Confirm / About - you'll receive para width
   - visually hide form error message on pay island -> confirm
   - password reset - email - their name and additional help
+  - HM Land Registry
   -
   - todo..?
   - what do we want to learn next? / keep learning

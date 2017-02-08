@@ -68,7 +68,7 @@
               {% if title['tenure'] == 'Leasehold' %}
                 <p>You only own a leasehold property for a fixed period of time. You'll have a legal agreement with the landlord (sometimes known as the ‘freeholder’) called a ‘lease’. This tells you how many years you’ll own the property.</p>
                 <p>Most flats are leasehold. Houses can be leasehold too and usually are if they’re bought through a shared ownership scheme.</p>
-                <p>The leasehold and freehold are registered separately with the Land Registry. Each has its own title documents.</p>
+                <p>The leasehold and freehold are registered separately with HM Land Registry. Each has its own title documents.</p>
                 <p><b class="bold">You are buying a summary of the leasehold owner, not the freehold.</b></p>
 
                 <a href="https://www.gov.uk/leasehold-property/overview">More about Leasehold on GOV.UK</a>
@@ -97,7 +97,7 @@
       </dl>
 
 <!--       {% if title['is_caution_title'] %}
-        <h2 class="heading-medium collapse-top">Land Registry does not know the owner of this property</h2>
+        <h2 class="heading-medium collapse-top">HM Land Registry does not know the owner of this property</h2>
       {% else %}
         <h2 class="heading-medium collapse-top">The summary will tell you</h2>
       {% endif %} -->
@@ -113,7 +113,7 @@
             <li>current leaseholder's name and address</li>
           {% endif %}
 
-          <li>what was paid for the property – you won't get this if it was bought before April 2000, if they paid less than &pound;100, or if Land Registry have agreed not to record the price</li>
+          <li>what was paid for the property – you won't get this if it was bought before April 2000, if they paid less than &pound;100, or if HM Land Registry have agreed not to record the price</li>
           <li>if there is a mortgage on the property, the lender's name and address</li>
           <li>the Title Number (unique reference number)</li>
         {% endif %}
@@ -130,7 +130,7 @@
             <li>if there is a mortgage - the name and address of the lender</li>
           {% endif %}
           
-          <!-- <li>how much they paid (if the Land Registry holds this information)</li> -->
+          <!-- <li>how much they paid (if HM Land Registry holds this information)</li> -->
           
           {% if not session.isLoggedIn %}
             <li>title number (the unique reference number)</li>
@@ -212,7 +212,7 @@
           <input name="email" value="{{data.email}}" type="hidden" />
 
           <h2 class="heading-medium spacing-top-third">How to pay</h2>
-          <p>This information costs £3. Payment will be taken by WorldPay on the Land Registry's behalf.</p>
+          <p>This information costs £3. Payment will be taken by WorldPay on HM Land Registry's behalf.</p>
 
 
           <div class="notice">
@@ -253,7 +253,7 @@
 <!--     <div class="column-one-third tablet-column-one-third spacing-top-single">
       <aside class="supplementary-panel">
         <h2 class="heading-medium">Need help with this service?</h2>
-        <p>Call Land Registry on 0300 006 0411 to report a problem, or if you're stuck and need help.</p>
+        <p>Call HM Land Registry on 0300 006 0411 to report a problem, or if you're stuck and need help.</p>
       </aside>
     </div> -->
 
