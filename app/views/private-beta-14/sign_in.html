@@ -12,11 +12,12 @@
 
   <!--<p style="vertical-align:top">Don't have an account? <a class="button" style="margin-left:30px;line-height: inherit;vertical-align:middle;background-color: #333" href="create_account?title_number={{data.title_number}}" id="register-link">register to use this service</a></p>-->
 
+
   <div class="grid-row">
     <div class="column-two-thirds">
 
 
-      <form method="POST" action="{% if data.action %}{{data.action}}{% else %}confirm_your_purchase{% endif %}" id="login-form"  novalidate data-clientside-validation="login_form_validation">
+      <form class="" method="POST" action="{% if data.action %}{{data.action}}{% else %}confirm_your_purchase{% endif %}" id="login-form"  novalidate data-clientside-validation="login_form_validation">
 
         <!-- <p class="lede">or <a href="create_account?title_number={{data.title_number}}" class="register-link">register to use this service</a></p> -->
 
@@ -63,8 +64,13 @@
 
       </form>
 
+
       <div class="panel panel-border-narrow spacing-bottom-single spacing-top-double">
         <p>Forgotten your password? <a href="{{path}}/reset/password/send_email?title_number={{data.title_number}}">Reset your password</a></p>
+      </div>
+
+      <div class="panel panel-border-narrow spacing-bottom-single">
+        <p>Don't have an account? <a href="create_account?title_number={{data.title_number}}">Create an account</a></p>
       </div>
 
       <script>
