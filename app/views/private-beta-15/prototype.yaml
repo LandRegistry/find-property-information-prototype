@@ -1,21 +1,26 @@
-name: v14 - public beta assessment ready - 0.75
-date: 2017-01-23
+name: v15 - public beta assessment ready (ish) (85%)
+date: 2017-02-13
 description: |
-  <p>halfway+ to public beta - prod plus enough changes to 'see in one go'. V13 + prod - releasable.</p>
+  <p>building toward to public beta - releasable.</p>
+  <p>public beta proposition = "if you can have a letter delivered there, and who want to know who owns it*, you can get that from this service" <br>*owners, lenders, tenure, price, rough extent</p>
   <p>latest GOV.UK elements</p>
   <p>prod + move signin; clarity of service; error messages.</p>
-  <p>changes for search</p>
+
 changelog:
   - done...
   - GOV.UK elements - to latest
   - About / confirm - list spacing.
   - Confirm - you'll receive styling - heading / list
   - Confirm / About - you'll receive para width
-  - visually hide form error message on pay island -> confirm
+  - visually hide form error message on pay island -> confirm page
   - password reset - email - their name and additional help
   - HM Land Registry
+  - Sign-in page fwd journey to create account (because poss to get to sign in without previous pages)
   -
   - todo..?
+  - Terns of use - latest version.
+  - take the thing away - iteration 1 and 2
+  - changes for search
   - what do we want to learn next? / keep learning
   - trello / show what design work / progress
   - document changes.
