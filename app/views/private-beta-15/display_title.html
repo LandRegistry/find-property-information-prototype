@@ -16,7 +16,7 @@
   <h1 class="heading-large spacing-top-single">Summary for property {% if title['is_caution_title'] %} caution{% endif %} title {{ title['data']['title_number'] }}</h1>
 
 
-  <p class="font-xsmall">Purchased on <span id="today"></span>. WorldPay transaction 3043404577</p>
+  <p class="font-xsmall">Purchased on <span id="today"></span>. WorldPay transaction {{ receipt.trans_id }}</p>
 
   <div class="grid-row spacing-top-single">
     
@@ -128,6 +128,8 @@
         <dd class="bold-small"><time datetime="{{ title.last_changed_datetime }}">{{ title.last_changed_date }}</time></dd> -->
 
       </dl>
+
+      <p class="font-xsmall">The information here was retrieved from HM Land Registry on <span id="today-time"></span>.</p>
       
     </div>
     <div class="column-one-third tablet-column-one-third spacing-bottom-single">
@@ -152,17 +154,97 @@
   </div> <!-- end property info row -->
 
   <!-- info and what next -->
-  <div class="grid-row spacing-top-singlex">
+  <div class="grid-row spacing-top-single">
 
     <div class="column-two-thirds tablet-column-two-thirds">
 
+      <div class="printhidden">
+        <div class="govuk-box-highlightx panel-simple">
+    <!--       <p>
+            <strong class="bold">If you leave this page you will have to pay again the view the information.</strong>
+          </p> -->
+          <p>
+            To keep a copy of this property information you can print it out, or download a copy (PDF document)
+          </p>
+          <div style="vertical-align:middle;">
+            {% include './includes/download-button.html' %}
+            or 
+            {% include './includes/print-button.html' %}
+                       
+          </div>
+        </div>
 
-
-      <div class="printhidden spacing-top-double">
-        <p class="">This information has been sent to your <a href="{{path}}/send/summary/summary_email?title_number={{data.title_number}}" style="text-decoration: inherit;color:inherit">email address (<strong class="bold">{{ data.email }}</strong>)</a> along with a VAT receipt.</p>
       </div>
 
-      <p class="font-xsmall">The information here was retrieved from HM Land Registry on <span id="today-time"></span>.</p>
+
+        {% if receipt %}
+
+        <div class="vat-receipt page-break-before font-xsmall">
+          <h2 class="heading-medium">VAT receipt</h2>
+          <div class="grid-row">
+            <div class="column-two-thirds mobile-column-one-half">
+              <dl class="definition-tabular definition-tabular-1-2">
+
+                {% if receipt.date %}
+                  <dt class="bold">Date</dt>
+                  <dd>{{receipt.date}}</dd>
+                {% endif %}
+
+                {% if receipt.trans_id %}
+                  <dt class="bold">Transaction ID</dt>
+                  <dd>{{ receipt.trans_id }}</dd>
+                {% endif %}
+
+
+                {% if receipt.title_number %}
+                  <dt class="bold">Description</dt>
+                  <dd>Summary of title: {{ receipt.title_number }}</dd>
+                {% endif %}
+
+                {% if receipt.net %}
+                  <dt class="bold">Net amount</dt>
+                  <dd>&pound;{{receipt.net}}</dd>
+                {% endif %}
+
+                {% if receipt.vat %}
+                  <dt class="bold">VAT @ 20%</dt>
+                  <dd>&pound;{{ receipt.vat }}</dd>
+                {% endif %}
+
+                {% if receipt.total %}
+                  <dt class="bold">Total inc VAT</dt>
+                  <dd>&pound;{{ receipt.total }}</dd>
+                {% endif %}
+
+              </dl>
+            </div>
+            <div class="column-one-third mobile-column-one-half">
+              {% if receipt.address1 %}
+                <div itemscope="" itemtype="http://schema.org/Organization">
+                  <span itemprop="name" class="bold">{{ receipt.address1 }}</span>
+                  <div class="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+                    <span itemprop="streetAddress">{{ receipt.address2 }}<br>{{ receipt.address3 }}</span>
+                    <span itemprop="addressLocality">{{ receipt.address4 }}</span>
+                    <span itemprop="postalCode">{{ receipt.postcode }}</span>
+                  </div>
+                </div>
+
+                {% if receipt.reg_number %}
+                  <p class="spacing-top-single-third"><strong class="bold">VAT registration number:</strong><br> {{ receipt.reg_number }}</p>
+                {% endif %}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+      {% endif %}
+
+<!-- 
+      <div class="printhidden spacing-top-double">
+        <p class="">This information has been sent to your <a href="{{path}}/send/summary/summary_email?title_number={{data.title_number}}" style="text-decoration: inherit;color:inherit">email address (<strong class="bold">{{ data.email }}</strong>)</a> along with a VAT receipt.</p>
+      </div> -->
+
+      
 
       <div class="printhidden spacing-top-double">
 
