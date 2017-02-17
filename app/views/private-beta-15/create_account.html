@@ -227,6 +227,7 @@
         <!-- sign-ins work! It is a massive hack for prototyping only -->
         <input name="do_sign_in" value="true" type="hidden" />
 
+        <h2 class="heading-medium">Email address</h2>
         <fieldset>
 
           <legend class="visuallyhidden">Account details</legend>
@@ -260,11 +261,22 @@
 
         </fieldset>
 
-        <fieldset class="disabled-if-email-exists spacing-top-single">
+
+        <h2 class="heading-medium disabled-if-email-exists spacing-top-half">Create a password</h2>
+
+        <fieldset class="disabled-if-email-exists spacing-top-flush">
 
           <legend class="visuallyhidden">Create a password</legend>
 
           <div class="form-group">
+
+            <p class="form-hint spacing-bottom-flush">Your password must:</p>
+            <ul class="form-hint list list-bullet spacing-bottom-half">
+              <li>be between 8 and 20 characters</li>
+              <li>contain 2 numbers</li>
+              <li>not contain the symbols &pound; &#x20AC; &#x00AC; &#x00A6;</li>
+            </ul>
+
             <label class="form-label" for="pass">Create a password</label>
             <input class="form-control" type="password" id="pass" name="pass">
           </div>
@@ -273,12 +285,6 @@
             <label class="form-label" for="password_retype">Re-type your password</label>
             <input class="form-control" id="password_retype" name="password_retype" type="password" value="">
 
-            <p class="form-hint spacing-top-third spacing-bottom-flush">Your password must:</p>
-            <ul class="form-hint list list-bullet spacing-bottom-flush">
-              <li>be between 8 and 20 characters</li>
-              <li>contain 2 numbers</li>
-              <li>not contain the symbols &pound; &#x20AC; &#x00AC; &#x00A6;</li>
-            </ul>
           </div>
 
         </fieldset>

@@ -6,6 +6,7 @@ description: |
   <p>latest GOV.UK elements</p>
   <p>move signin; clarity of service; error messages.</p>
   <p>Mobile - layout improvements</p>
+  <p>create password rules - more obvious? - makes create account easier?</p>
 
 changelog:
   - done...
@@ -17,6 +18,7 @@ changelog:
   - password reset - email - their name and additional help
   - HM Land Registry
   - Sign-in page fwd journey to create account (because poss to get to sign in without previous pages)
+  - Make password rules clearer - create account
   -
   - todo..?
   - Terms of use - latest version.
