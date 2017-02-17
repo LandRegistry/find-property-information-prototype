@@ -2,9 +2,10 @@ name: v15 - public beta assessment ready (ish) (85%)
 date: 2017-02-13
 description: |
   <p>building toward to public beta - releasable.</p>
-  <p>public beta proposition = "if you can have a letter delivered there, and who want to know who owns it*, you can get that from this service" <br>*owners, lenders, tenure, price, rough extent</p>
+  <p>public beta proposition = "if you can have a letter delivered there, and want to know who owns it*, you can get that from this service" <br>*owners, lenders, tenure, price, rough extent</p>
   <p>latest GOV.UK elements</p>
-  <p>prod + move signin; clarity of service; error messages.</p>
+  <p>move signin; clarity of service; error messages.</p>
+  <p>Mobile - layout improvements</p>
 
 changelog:
   - done...
@@ -18,8 +19,9 @@ changelog:
   - Sign-in page fwd journey to create account (because poss to get to sign in without previous pages)
   -
   - todo..?
-  - Terns of use - latest version.
+  - Terms of use - latest version.
   - take the thing away - iteration 1 and 2
+  - take it away - improve downloads? - email, summmary + vat receipt - mobile mail?
   - changes for search
   - what do we want to learn next? / keep learning
   - trello / show what design work / progress
@@ -52,7 +54,6 @@ changelog:
   - 2 dynamic list - + what you'll get / wont get - about this property page
   - 3 create account / sign-in buttons (morph into a version of current)
   - summary page - multiple B1 addresses + both for 1 owner (currently they run into each other); and multiple owners.
-  - fold in latest gov uk elements
   - take it away (remove print button, you've been mailed this - clearer)
   - phone no mandatory on account create (why?)
   - B1 - owner addresses - (care of, BFPO, email etc)
@@ -84,6 +85,5 @@ changelog:
   - rename pages - make page urls closer to the h1 title
   - session object for all data needed to pass about
   - have a look at it on mobile / no style
-  - take it away - improve downloads? - email, summmary + vat receipt - mobile mail?
   - search results page options + page per property?
   - Register / project history? (not for all users - good for us / specialists)
