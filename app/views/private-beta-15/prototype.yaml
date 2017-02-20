@@ -7,7 +7,7 @@ description: |
   <p>move signin; clarity of service; error messages.</p>
   <p>Mobile - layout improvements</p>
   <p>create password rules - more obvious? - makes create account easier?</p>
-  <p>Take it away - (download or print)
+  <p>Take it away - (download or print)</p>
 
 changelog:
   - done...
@@ -26,6 +26,8 @@ changelog:
   - todo..?
   - format a pdf for the download
   - take the thing away - iteration 2
+  - summary - update proto to match the T&C para about when the title was last changes / pending application
+  - Terms of use - HM Land Registry
   - take it away - improve downloads? - email, summmary + vat receipt - mobile mail?
   - changes for search
   - what do we want to learn next? / keep learning
