@@ -1,0 +1,89 @@
+name: v16 - public beta assessment ready (ish) (90%)
+date: 2017-03-01
+description: |
+  <p>building toward to public beta - releasable.</p>
+  <p>public beta proposition = "if you can have a letter delivered there, and want to know who owns it*, you can get that from this service" <br>*owners, lenders, tenure, price, rough extent</p>
+  <p>V15 + incremental improvements to:</p>
+  <ul>
+  <li>take it away - download or print (summary)</li>
+  <li>take it away - VAT receipt - download or print / emailed a receipt</li>
+  <li>wordpay receipt</li>
+  </ul>
+  <br>
+
+changelog:
+  - done...
+  - Terms of use matching what we expect to deploy soon
+  -
+  -
+  - todo..?
+  - format a pdf for the download
+  - take the thing away - iteration 2
+  - summary - update proto to match the T&C para about when the title was last changes / pending application
+  - Terms of use - HM Land Registry
+  - take it away - improve downloads? - email, summmary + vat receipt - mobile mail?
+  - changes for search
+  - what do we want to learn next? / keep learning
+  - trello / show what design work / progress
+  - document changes.
+  - put v13 on wall - and show what came out of testing
+  - different mechanism for sign in / creat acc - 2 buttons.
+  - signin page needs create account link/onward (as can be gotten to by user without seeing create)
+  - floaty/dock map island - mobile.
+  - about page not signed in - mobile - map under ownership type
+  - confirm / about signed in - mobile - map under title number
+  - improve address, ownership, title no on mobile.
+  - confirm - < cancel and return to search results.
+  - list class on about list
+  - about - signed in - maybe -> 'we will send a copy of the pdf to your email address'
+  - confirm - link back to search results
+  - can we do - ask for email, then look up if acc - then sign in or create.
+  - or do - have you been here before - y n dunno - y in, n dunno create
+  - make sure tidying up / changing sign in page and create account name change are reflected in trello cards
+  - As is - prod + move signin; clarity of service; error messages.  Leave search and take the tihing away for next protos - so we can take this to lab on 20th
+  - remove vat off landing page.
+  - cs12 breakout - different pages
+  - Cs2/11 - remove looking at a contact form
+  - look at expandable text in search results
+  - new story - can we tell them if we have price paid
+  - start page - gov.uk make hybrid between prod and v11
+  - worldpay 3 confirmation - reskin
+  - extent on all maps
+  - list pages hard to get too (like error states) on index page
+  - 1 user pick correct title - freehold, leasehold (caution) explanations
+  - 2 dynamic list - + what you'll get / wont get - about this property page
+  - 3 create account / sign-in buttons (morph into a version of current)
+  - summary page - multiple B1 addresses + both for 1 owner (currently they run into each other); and multiple owners.
+  - take it away (remove print button, you've been mailed this - clearer)
+  - phone no mandatory on account create (why?)
+  - B1 - owner addresses - (care of, BFPO, email etc)
+  - passwords dont match error messgage - account/reset
+  - document in v11 what learnt, and include here what changes being made as a result.
+  - help - title - Need Help?
+  - help - helpline (title) 0300 123 456 (carers allowance)
+  - payment confirmation - (because not seen on last page / what if journey broke before summary delivered)
+  - sign in / create account - better pattern (? and/or document prev patterns tried)
+  - typical street - better search results page - if we do addresses > property desciptions
+  - tidy up / remove _copy _2 pages
+  - caution titles
+  - password reset - this account does not exist would you like to create an account
+  - improve search / explain better
+  - double (if create account) email on summary (may explain comma on single)
+  - check all routing
+  - check error messaging
+  - title number (display on search results after signed in?)
+  - title number under - pay £3 to find out - wrong
+  - Privacy policy - own page for service?
+  - shame.css? head style + inline style in confirm(s)
+  - password reset - someone mistyping / email we don't know
+  - feedback link - change to clone of gov.uk form
+  - confirm your purchase - return to search results link (need to pass search term and page number about)
+  - confirm your purchase - disabled button until terms of use checked
+  - confirm page - price paid - examples of we don't have pp
+  - confirm page - owner (y/n) - examples of no owner (eg caution)
+  - confirm page - lender (y/n) - examples of doesn't have a mortgage/lender
+  - rename pages - make page urls closer to the h1 title
+  - session object for all data needed to pass about
+  - have a look at it on mobile / no style
+  - search results page options + page per property?
+  - Register / project history? (not for all users - good for us / specialists)
