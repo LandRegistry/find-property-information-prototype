@@ -24,6 +24,7 @@ If you’re already registered with Land Registry’s Find a Property service, y
 If not, you’ll need to provide an email address and a password. Land Registry will notify you when your account has been created. You can’t change your details once you create an account – register a new account if you need to change your name or address details, or use a different email address.
 
 Important: you are solely responsible for:
+
 * keeping your username and password secure
 * all activity that occurs on or through your account
 
@@ -35,14 +36,15 @@ To protect you, if you don’t use your account it’ll be deleted 12 months aft
 
 ## Terms and conditions of use
 
-By registering an account, you agree that you will not:  
-* attempt to damage, impair or interrupt the service or access to it
-* use any automated software agents to search, copy, monitor, display, obtain links to or otherwise access this or any other Land Registry system
-* copy or display the information provided for display on another website
-* attempt to add, change or delete any information provided and held by Land Registry
-* allow any unauthorised person to access your account
-* use the information provided by the service to claim any arrangement or official partnership with Land Registry to supply or reuse data and/or information
-* use the data for any fraudulent or unlawful activity that breaches data protection law
+By registering an account, you agree that you will not:
+
+1. attempt to damage, impair or interrupt the service or access to it
+2. use any automated software agents to search, copy, monitor, display, obtain links to or otherwise access this or any other Land Registry system
+3. copy or display the information provided for display on another website
+4. attempt to add, change or delete any information provided and held by Land Registry
+5. allow any unauthorised person to access your account
+6. use the information provided by the service to claim any arrangement or official partnership with Land Registry to supply or reuse data and/or information
+7. use the data for any fraudulent or unlawful activity that breaches data protection law
 
 The Land Registry has the right to cancel your account at any time without notice if it suspects or has evidence you are not complying with these terms of use. If this happens you will have to pay any unpaid fees.
 
@@ -59,6 +61,7 @@ If Land Registry has to contact you, it’ll write to you at the email address y
 ## Using the service – your contract with Land Registry
 
 By using the Find property information service (‘the service’), you have the ability to:
+
 * search for a property by postcode
 * select a property from a list of property addresses that match your search
 * view and print ‘title summary’ information for a property for the fee stated
@@ -68,6 +71,7 @@ By using the service you agree to be bound by and pay for any purchase you make.
 Because the information is provided immediately, once you pay for it you lose the right of cancellation you would normally have under The Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013.
 
 This means that by making a request to view and print title summary information, you:
+
 * agree to pay the fee for the service by making an online transaction (through RBS Worldpay or a replacement online payment provider)
 * agree the summary will be provided as soon as you have paid
 * accept you lose your right to cancel once the summary is displayed
@@ -79,6 +83,7 @@ The online payment provider will confirm your purchase and provide a transaction
 Your contract with Land Registry ends when the title summary information is delivered.
 
 Land Registry is not liable to you or any third party for any losses arising from delays to the provision of services or the completion of your order, for example through:
+
 * interruptions to transmission of data over the internet
 * services provided by third parties
 * inaccuracies in the content of linked websites
@@ -86,6 +91,7 @@ Land Registry is not liable to you or any third party for any losses arising fro
 ## Information the Land Registry holds about you
 
 The Land Registry’s Find property information service will hold the following information about you:
+
 * your email address
 * your password
 * your postal address
@@ -102,6 +108,7 @@ It uses personal information you provide in accordance with its [personal inform
 3. record the purchase
 
 Land Registry will only share your personal information with other organisations if the law requires or allows it to do so. It will:
+
 * make sure nobody has access to it who shouldn’t
 * only keep the information for as long as it’s needed
 * not make it available for commercial use, such as marketing, without your permission
@@ -119,5 +126,6 @@ If you’re unhappy with the answer you receive, follow [the Land Registry’s i
 If you’re still unhappy with the answer or need any advice, contact the [Information Commissioner’s Office (ICO)](https://ico.org.uk/concerns/getting/). The ICO can investigate your complaint independently from the Land Registry.
 
 Important: Land Registry is not directly responsible for the security or privacy of information you provide when making a transaction through the service’s online payment provider. If you have an issue with this, you should:
+
 * contact the online payment provider directly
 * tell Land Registry about the outcome by calling 0300 006 0411
