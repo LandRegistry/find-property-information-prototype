@@ -15,9 +15,13 @@ changelog:
   - done...
   - Terms of use matching what we expect to deploy soon
   - summary PDF file size.
+  - summary - map printing fix (only print link, not browser print)
+  - summary - address, owner, lender, price paid - better looking print
+  - summary - when retreived, title last updated
   -
   - todo..?
   - format a pdf for the download
+  - fix map rendering on print - tricky
   - take the thing away - iteration 2
   - summary - update proto to match the T&C para about when the title was last changes / pending application
   - Terms of use - HM Land Registry
