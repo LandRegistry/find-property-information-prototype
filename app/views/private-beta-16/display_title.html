@@ -129,10 +129,10 @@
 
       </dl>
 
-      <p class="font-xsmall">The information here was retrieved from HM Land Registry on <span id="today-time"></span>.</p>
+      
       
     </div>
-    <div class="column-one-third tablet-column-one-third spacing-bottom-single">
+    <div class="print-collapse-column column-one-third tablet-column-one-third spacing-bottom-single">
 
       {% if title.indexPolygon %}
         <div class="map polygon " id="map">
@@ -142,12 +142,7 @@
         <p class="font-xsmall spacing-top-half">This map shows the property's rough extent and location, <strong class="bold">not legal boundaries.</strong></p>
       {% endif %}
 
-
-      <!-- print this page -->
-<!--       <div class="printhidden">
-        <button data-print class="button button-light bold"><span class="icon icon-print"></span>Print this page</button>
-      </div> -->
-
+        <p class="font-xsmall" style="border-top:1px solid black; padding-top:10px;">The summary information was retrieved on <span id="today-time"></span>, from a HM Land Registry property 'title register', last changed on 11 sept 2011.</p>
     </div>
 
 
@@ -164,7 +159,7 @@
             <strong class="bold">If you leave this page you will have to pay again the view the information.</strong>
           </p> -->
           <p>
-            To keep a copy of this property information you can print it out, or download a copy (PDF document)
+            To keep a copy of this property information you can print it out, or download a copy (PDF document, 267kb)
           </p>
           <div style="vertical-align:middle;">
             {% include './includes/download-button.html' %}
@@ -289,6 +284,19 @@
     txt = document.createTextNode(dateTime);
     span.innerText = txt.textContent;
 
+  </script>
+
+  <script>
+    // map needs renedering properly on print
+    // needs to set things back post print
+    // does browser print doesn't do what we want.  Print link does work.
+    var browserPrint = window.print
+    window.print = function(){
+      var map = document.getElementById('map')
+      map.style.width = map.clientWidth + 'px'
+      map.style.paddingBottom = map.clientHeight + 'px'
+      browserPrint()
+    }
   </script>
 
 {% endblock %}

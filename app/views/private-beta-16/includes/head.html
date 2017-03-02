@@ -27,9 +27,12 @@
 
 	@media (min-width: 641px) {
 		dl.definition-tabular-sectioned {
-		border:0;
+			border:0;
+		}
 	}
 </style>
+
+
 
 
 <style type="text/css">
@@ -42,8 +45,9 @@
 
 	@media (min-width: 641px) {
 		.mobile-spacing-top-hack {
-		border:none;
-		padding-top: 0px;
+			border:none;
+			padding-top: 0px;
+		}
 	}
 </style>
 
@@ -57,9 +61,63 @@
 
 	@media (min-width: 641px) {
 		#search_button {
-		margin-top:0px;
+			margin-top:0px;
+		}
 	}
 </style>
+
+
+<style type="text/css">
+/* summary - print */
+/* textual content and the map */
+	@media print {
+
+		.leaflet-control-container {
+	    	display: none;
+	  	}
+
+	dl.definition-tabular-sectioned {
+		border-bottom: none;
+	}
+
+	  	dl.definition-tabular dt {
+			border-top: none;
+			margin-top: 0px;
+			padding-top: 0px;
+			font-weight: 100;
+			float: left;
+    		clear: left;
+			width: 33.33333%;
+		}
+
+		dl.definition-tabular dd {
+			width: 66.66667%;
+			float:left;
+		}
+
+		.definition-tabular {
+			width:100%;
+		}
+
+
+		.print-collapse-column {
+			float: left;
+			width: auto;
+			width: 300px;
+			height: 300px;
+		}
+	}
+
+	@media screen {
+		#map {
+			padding-bottom: 100%!important;
+			width: auto!important;
+		}
+	}
+
+</style>
+
+
 
 
 
