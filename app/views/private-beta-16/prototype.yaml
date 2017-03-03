@@ -8,7 +8,10 @@ description: |
   <li>take it away - download or print (summary)</li>
   <li>take it away - VAT receipt - download or print / emailed a receipt</li>
   <li>wordpay receipt</li>
-  <li>summary print - layout, fix map print defect</li>
+  <br>
+  <li>summary print - layout; fix map print defect - if use print link</li>
+  <li>13, 14, 16, 32 Blanda Views AA7 6FT. - matching summary pdf. no VAT reciept</li>
+  <li>1, 10 Abigayle Orchard AA1 9BD - matching summary pdf. download or print for VAT</li> 
   </ul>
   <br>
 
@@ -20,6 +23,9 @@ changelog:
   - summary - address, owner, lender, price paid - better looking print
   - summary - when retreived, title last updated
   - summary - fix printing layout of multiple owners and lenders
+  - summary - 'or print' layout on mobile
+  - summary print - layout; fix map print defect - if use print link</li>
+  - summary pdfs for 13, 14, 16, 32 Blanda Views AA7 6FT.  And 1, 10 Abigayle Orchard AA1 9BD
   -
   - todo..?
   - format a pdf for the download
