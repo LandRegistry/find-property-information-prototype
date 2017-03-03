@@ -162,7 +162,23 @@
             To keep a copy of this property information you can print it out, or download a copy (PDF document, 267kb)
           </p>
           <div style="vertical-align:middle;">
-            {% include './includes/download-button.html' %}
+            
+    
+            {% if (
+              title['data']['title_number'] == 'DN1011948' or
+              title['data']['title_number'] == 'DN1011950' or
+              title['data']['title_number'] == 'DN1011967' or
+              title['data']['title_number'] == 'DN1011947' or
+              title['data']['title_number'] == 'DN1012381' or
+              title['data']['title_number'] == 'DN1012390'
+              ) 
+            %}
+              <a href="images/{{ title['data']['title_number'] }}.pdf" style="vertical-align: baseline;" class="button">Download</a>
+            {% else %}
+              <a href="images/summary.pdf" style="vertical-align: baseline;" class="button">Download</a>
+            {% endif %}
+
+
             <span class="mob-spacer">or 
               {% include './includes/print-button.html' %}
             </span>         
