@@ -155,12 +155,35 @@
 
       <div class="printhidden">
         <div class="panel-simple">
-    <!--       <p>
-            <strong class="bold">If you leave this page you will have to pay again the view the information.</strong>
-          </p> -->
-          <p>
-            To keep a copy of this property information you can print it out, or download a copy (PDF document, 267kb)
-          </p>
+          {% if (
+                title['data']['title_number'] == 'DN1011948' or
+                title['data']['title_number'] == 'DN1011950' or
+                title['data']['title_number'] == 'DN1011967' or
+                title['data']['title_number'] == 'DN1011947' 
+                ) 
+          %}
+            <p>
+              To keep a copy of this property information you can print it out, or download a copy (PDF document, 267kb)
+            </p>
+          {% elseif (
+                title['data']['title_number'] == 'DN1012381' or
+                title['data']['title_number'] == 'DN1012390'
+                ) 
+          %}
+            <p>
+              Download (PDF document, 267kb) or print a copy if you need:
+              <ul class="list list-bullet">
+                <li>a receipt for this purchase</li>
+                <li>to keep a copy of this property information</li>
+              </ul>
+            </p>
+          {% else %}         
+            <p>
+              To keep a copy of this property information you can print it out, or download a copy (PDF document, 267kb)
+            </p>
+          {% endif %}
+
+
           <div style="vertical-align:middle;">
             
     
@@ -179,7 +202,7 @@
             {% endif %}
 
 
-            <span class="mob-spacer">or 
+            <span class="mobile-spacer">or 
               {% include './includes/print-button.html' %}
             </span>         
           </div>
@@ -190,7 +213,25 @@
 
         {% if receipt %}
 
-        <div class="vat-receipt page-break-before font-xsmall printhiddenx">
+          {% if (
+                title['data']['title_number'] == 'DN1011948' or
+                title['data']['title_number'] == 'DN1011950' or
+                title['data']['title_number'] == 'DN1011967' or
+                title['data']['title_number'] == 'DN1011947' 
+                ) 
+          %}
+            <div class="vat-receipt page-break-before font-xsmall visuallyhidden">
+          {% elseif (
+                title['data']['title_number'] == 'DN1012381' or
+                title['data']['title_number'] == 'DN1012390'
+                ) 
+          %}
+            <div class="vat-receipt page-break-before font-xsmall printonly">
+          {% else %}
+            <div class="vat-receipt page-break-before font-xsmall">
+          {% endif %}
+
+        
           <h2 class="heading-medium">VAT receipt</h2>
           <div class="grid-row">
             <div class="column-two-thirds mobile-column-one-half">
