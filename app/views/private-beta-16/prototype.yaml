@@ -8,6 +8,7 @@ description: |
   <li>take it away - download or print (summary)</li>
   <li>take it away - VAT receipt - download or print / emailed a receipt</li>
   <li>wordpay receipt</li>
+  <li>summary print - layout, fix map print defect</li>
   </ul>
   <br>
 
@@ -18,6 +19,7 @@ changelog:
   - summary - map printing fix (only print link, not browser print)
   - summary - address, owner, lender, price paid - better looking print
   - summary - when retreived, title last updated
+  - summary - fix printing layout of multiple owners and lenders
   -
   - todo..?
   - format a pdf for the download
