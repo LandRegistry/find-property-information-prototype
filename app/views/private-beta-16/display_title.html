@@ -1,7 +1,7 @@
 {% extends "./layout/layout.html" %}
 {% from "./includes/back_link.html" import back_link %}
 
-{% block title %}Summary for title {{ title.number }}{% endblock %}
+{% block title %}Summary for property title {{ title['data']['title_number'] }}{% endblock %}
 
 {% block header_primary %}
   {{ back_link(title='Search again', url=path + '/search',historyBased=false) }}
