@@ -201,6 +201,9 @@
 
                         {% elseif item == 'receipt' %}
                           <td class="content-cellx"></td>
+                        {% elseif item == 'reaccess' %}
+                          <td class="content-cellx"></td>
+                          
                         {% else %}
                           <td class="content-cell"></td>
 
@@ -225,9 +228,25 @@
                         </table>
                       </td>
                     </tr>
-                    {% elseif item == 'receipt' %}
+                    {% elseif item == 'reaccess' %}
                     <tr>
                       <td class="content-cell" >
+
+                          <h2 class="heading-medium collapse-top">Reaccess property summary, for title {{data.title_number}}</h2>
+
+                          <p>Use the following link to reaccess the property summary you bought on {{receipt.date}}.</p>
+                          <p>You can reaccess any time in the next 7 days.</p>
+
+                          <p><a href="{{path}}/reset/{{item}}/do?71234897289456092390467540897520372734&amp;title_number={{data.title_number}}&amp;do_sign_in">https://www.gov.uk/property-summary/do?712348972894560</a></p>
+
+                      </td>
+                    </tr>
+
+
+                    {% elseif item == 'receipt'  %}
+                    <tr>
+                      <td class="content-cell" >
+
                         <h2 class="heading-medium collapse-top">Receipt for summary of property title {{data.title_number}}</h2>
                         <table id="receipt" align="center" width="100%" cellpadding="0" cellspacing="10">
                           <tr>

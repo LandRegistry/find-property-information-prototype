@@ -183,9 +183,26 @@
             <p>
               To keep a copy of this property information you can print it out, or download a copy <span class="font-xsmall" style="color: #6f777b;">(PDF document, 267kb)</span>
             </p>
+          {% elseif 
+                title['data']['title_number'] == 'DN1012017' or
+                title['data']['title_number'] == 'DN1012009' 
 
+          %}
+              <!-- <p>The reference for your purchase is {{ receipt.trans_id }}</p> -->
+              <p>
+                We've sent a link to {% if data.email %} 
+                    <a href="{{path}}/send/reaccess/summary_email?title_number={{data.title_number}}&transID={{receipt.trans_id}}" style="text-decoration: inherit;color:inherit"><strong class="boldx">{{ data.email }}</strong></a>
+                  {% else %}
+                    <a href="{{path}}/send/reaccess/summary_email?title_number={{data.title_number}}&transID={{receipt.trans_id}}" style="text-decoration: inherit;color:inherit"><strong class="boldx">your email</strong></a>
+                  {% endif %} so you can reaccess this page for 7 days
+              </p>
+              
+              <p style="margin-bottom:10px;">You can also <a target="_blank" href="" data-print >print this page out</a></p>
+<!--             <p>
+              To keep a copy of this property information you can print it out, or download a copy <span class="font-xsmall" style="color: #6f777b;">(PDF document, 267kb)</span>
+            </p> -->
           {% elseif (
-                title['data']['title_number'] == 'DN1012381' or
+                title['data']['title_number'] == 'DN1012402' or
                 title['data']['title_number'] == 'DN1012390'
                 ) 
           %}
@@ -211,19 +228,28 @@
               title['data']['title_number'] == 'DN1011947' or
               title['data']['title_number'] == 'DN1011967' or
               title['data']['title_number'] == 'DN1011950' or
-              title['data']['title_number'] == 'DN1012381' or
+              title['data']['title_number'] == 'DN1012402' or
               title['data']['title_number'] == 'DN1012390'
               ) 
             %}
               <a href="images/{{ title['data']['title_number'] }}.pdf" style="vertical-align: baseline;" class="button">Download</a>
+            {% elseif 
+                title['data']['title_number'] == 'DN1012017' or
+                title['data']['title_number'] == 'DN1012009' 
+            %} 
+            <!-- do nothing -->
             {% else %}
               <a href="images/summary.pdf" style="vertical-align: baseline;" class="button">Download</a>
             {% endif %}
 
-
-            <span class="mobile-spacer">or 
-              {% include './includes/print-button.html' %}
-            </span>         
+            {% if 
+                title['data']['title_number'] != 'DN1012017' and
+                title['data']['title_number'] != 'DN1012009' 
+            %} 
+              <span class="mobile-spacer">or 
+                {% include './includes/print-button.html' %}
+              </span> 
+            {% endif %}    
           </div>
         </div>
 
@@ -236,12 +262,14 @@
                 title['data']['title_number'] == 'DN1011948' or
                 title['data']['title_number'] == 'DN1011950' or
                 title['data']['title_number'] == 'DN1011967' or
-                title['data']['title_number'] == 'DN1011947' 
+                title['data']['title_number'] == 'DN1011947' or
+                title['data']['title_number'] == 'DN1012017' or
+                title['data']['title_number'] == 'DN1012009' 
                 ) 
           %}
             <div class="vat-receipt page-break-before font-xsmall visuallyhidden">
           {% elseif (
-                title['data']['title_number'] == 'DN1012381' or
+                title['data']['title_number'] == 'DN1012402' or
                 title['data']['title_number'] == 'DN1012390'
                 ) 
           %}
