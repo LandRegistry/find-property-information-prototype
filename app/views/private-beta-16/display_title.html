@@ -16,7 +16,8 @@
   <h1 class="heading-large spacing-top-single">Summary for property {% if title['is_caution_title'] %} caution{% endif %} title {{ title['data']['title_number'] }}</h1>
 
 
-  <p class="font-xsmall">Purchased on <span id="today"></span>. WorldPay transaction {{ receipt.trans_id }}</p>
+  <!-- <p class="font-xsmall">Purchased on <span id="today"></span>. WorldPay transaction {{ receipt.trans_id }}</p> -->
+  <p class="font-xsmall printonly">Purchased on <span id="today"></span>. Payment reference {{ receipt.trans_id }}</p>
 
   <div class="grid-row spacing-top-single">
     
@@ -156,15 +157,27 @@
       <div class="printhidden">
         <div class="panel-simple">
           {% if (
-                title['data']['title_number'] == 'DN1011948' or
-                title['data']['title_number'] == 'DN1011950' or
                 title['data']['title_number'] == 'DN1011967' or
                 title['data']['title_number'] == 'DN1011947' 
                 ) 
           %}
             <p>
-              To keep a copy of this property information you can print it out, or download a copy (PDF document, 267kb)
+              To keep a copy of this property information you can print it out, or download a copy <span class="font-xsmall" style="color: #6f777b;">(PDF document, 267kb)</span>
             </p>
+          {% elseif (
+                title['data']['title_number'] == 'DN1011948' or
+                title['data']['title_number'] == 'DN1011950'
+                ) 
+          %}
+            
+              <ul class="list list-bullet">
+                <li>The reference for your purchase is {{ receipt.trans_id }}</li>
+                <li>We have sent a receipt to <a href="{{path}}/send/receipt/summary_email?title_number={{data.title_number}}&transID={{receipt.trans_id}}" style="text-decoration: inherit;color:inherit"><strong class="boldx">{{ data.email }}</strong></a></li>
+              </ul>
+            <p>
+              To keep a copy of this property information you can print it out, or download a copy <span class="font-xsmall" style="color: #6f777b;">(PDF document, 267kb)</span>
+            </p>
+
           {% elseif (
                 title['data']['title_number'] == 'DN1012381' or
                 title['data']['title_number'] == 'DN1012390'
@@ -179,7 +192,7 @@
             </p>
           {% else %}         
             <p>
-              To keep a copy of this property information you can print it out, or download a copy (PDF document, 267kb)
+              To keep a copy of this property information you can print it out, or download a copy <span class="font-xsmall" style="color: #6f777b;">(PDF document, 267kb)</span>
             </p>
           {% endif %}
 
@@ -333,9 +346,9 @@
     var date = moment().format('DD MMMM YYYY'); // November 18th 2016
     var dateTime = moment().format('DD MMMM YYYY [at] h:mm'); // November 18th 2016, 3:50:43 pm
 
-    span = document.getElementById('today');
-    txt = document.createTextNode(date);
-    span.innerText = txt.textContent;
+    // span = document.getElementById('today');
+    // txt = document.createTextNode(date);
+    // span.innerText = txt.textContent;
 
     span = document.getElementById('today-time');
     txt = document.createTextNode(dateTime);

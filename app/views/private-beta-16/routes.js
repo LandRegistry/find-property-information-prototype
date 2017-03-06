@@ -216,12 +216,28 @@ router.all('/reset/:item/:section', function(req, res) {
 });
 
 /**
- * Send summay and vat recepits
+ * Send summary and vat recepits
  */
 router.all('/send/:item/:section', function(req, res) {
 
+  // VAT receipt data
+  var receipt = {
+    date: moment().format('D MMM YYYY'),
+    title_number: req.query.title_number,
+    net: '2.50',
+    vat: '0.50',
+    total: '3.00',
+    address1: 'HM Land Registry',
+    address2: 'Trafalgar house',
+    address3: '1 Bedford Park',
+    address4: 'Croydon',
+    postcode: 'CR0 2AQ',
+    reg_number: 'GB 8888 181 53'
+  }
+
   res.render(path.join(__dirname, 'send_' + req.params.section), {
     item: req.params.item,
+    receipt: receipt
   });
 
 });
