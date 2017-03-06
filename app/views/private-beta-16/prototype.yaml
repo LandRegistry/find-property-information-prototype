@@ -7,11 +7,12 @@ description: |
   <ul>
   <li>take it away - download or print (summary)</li>
   <li>take it away - VAT receipt - download or print / emailed a receipt</li>
-  <li>wordpay receipt</li>
+  <li>wordpay page 3 replaced with receipt</li>
   <br>
   <li>summary print - layout; fix map print defect - if use print link</li>
-  <li>13, 14, 16, 32 Blanda Views AA7 6FT. - matching summary pdf. no VAT reciept</li>
-  <li>1, 10 Abigayle Orchard AA1 9BD - matching summary pdf. download or print for VAT</li> 
+  <li>16, 32 Blanda Views AA7 6FT. - matching summary pdf. no VAT reciept on summary</li>
+  <li>14, 13 Blanda Views AA7 6FT. - matching summary pdf. no VAT reciept on summary - email receipt sent</li>
+  <li>12, 20 Bruen Island AA1 6LL. - matching summary pdf. no download button - 7 day reaccess</li> 
   </ul>
   <br>
 
@@ -25,7 +26,9 @@ changelog:
   - summary - fix printing layout of multiple owners and lenders
   - summary - 'or print' layout on mobile
   - summary print - layout; fix map print defect - if use print link</li>
-  - summary pdfs for 13, 14, 16, 32 Blanda Views AA7 6FT.  And 1, 10 Abigayle Orchard AA1 9BD
+  - 16, 32 Blanda Views AA7 6FT. - matching summary pdf. no VAT reciept on summary
+  - 14, 13 Blanda Views AA7 6FT. - matching summary pdf. no VAT reciept on summary - email receipt sent
+  - 12, 20 Bruen Island AA1 6LL. - matching summary pdf. no download button - 7 day reaccess
   -
   - todo..?
   - format a pdf for the download
