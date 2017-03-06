@@ -1,0 +1,44 @@
+{% extends "./layout/layout.html" %}
+{% from "./includes/back_link.html" import back_link %}
+
+{% block title %}Payment processing{% endblock %}
+
+{% block header_primary %}
+
+{% endblock %}
+
+{% block body %}
+  
+
+
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <div id="processing">
+        <h1 class="heading-xlarge">Processing payment</h1>
+        <img src="images/loader.gif">
+      </div>
+
+
+      <form action="display_title" method="get" id="worldpayForm">
+        <input type="hidden" name="title_number" value="{{data.title_number}}" />
+        <input name="email" value="{{data.email}}" type="hidden" />
+        <input type="hidden" name="transId" value="3043404577">
+        <input type="hidden" name="searchType" value="D">
+      </form>
+
+
+    </div>
+  </div>
+
+  <script type="text/javascript">
+  var timeoutID = window.setTimeout(move, 2000);
+  function move() {
+    // window.location.href = 'display_title';
+    document.getElementById("worldpayForm").submit();
+  }
+  </script>
+
+{% endblock %}

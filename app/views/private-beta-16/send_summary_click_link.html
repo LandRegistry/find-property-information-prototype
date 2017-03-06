@@ -125,7 +125,7 @@
     }
     p {
       margin-top: 0;
-      color: #74787E;
+      color: #2F3133;
       font-size: 16px;
       line-height: 1.5em;
       text-align: left;
@@ -135,6 +135,9 @@
     }
     p.center {
       text-align: center;
+    }
+    #receipt {
+      color: #2F3133;
     }
     /* Buttons ------------------------------ */
     .button {
@@ -185,25 +188,29 @@
                   <table class="email-body_inner" align="center" width="570" cellpadding="0" cellspacing="0">
                     <!-- Body content -->
                     <tr>
-                      <td class="content-cell">
-                        <h2>Hi,</h2>
-
+                      
                         {% if item == 'summary' %}
+                          <td class="content-cell">
+                          <h2>Hi,</h2>
                           <p>Attached are copies of:</p>
                           <ul>
                             <li>the summary information for property title: {{data.title_number}}</li>
                             <li>VAT recipt for your purchase</li>
                           </ul>
+                          </td>
 
+                        {% elseif item == 'receipt' %}
+                          <td class="content-cellx"></td>
                         {% else %}
-
+                          <td class="content-cell"></td>
 
                         {% endif %}
 
                       </td>
                     </tr>
+                    {% if item == 'summary' %}
                     <tr>
-                      <td class="content-cellx">
+                      <td class="content-cell">
                         <table align="center" width="100%" cellpadding="0" cellspacing="10">
                           <tr>
                             <td align="left">
@@ -218,6 +225,75 @@
                         </table>
                       </td>
                     </tr>
+                    {% elseif item == 'receipt' %}
+                    <tr>
+                      <td class="content-cell" >
+                        <h2 class="heading-medium collapse-top">Receipt for summary of property title {{data.title_number}}</h2>
+                        <table id="receipt" align="center" width="100%" cellpadding="0" cellspacing="10">
+                          <tr>
+                            <td align="left"><strong>Date:</strong>
+                            </td>
+                            <td align="left">{{receipt.date}}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align="left"><strong>Transaction ID:</strong>
+                            </td>
+                            <td align="left">{{ data.transID }}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align="left"><strong>Description:</strong>
+                            </td>
+                            <td align="left">Summary of title: {{ receipt.title_number }}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align="left"><strong>Net amount:</strong>
+                            </td>
+                            <td align="left">&pound;{{receipt.net}}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align="left"><strong>VAT @ 20%:</strong>
+                            </td>
+                            <td align="left">&pound;{{ receipt.vat }}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align="left"><strong>Total inc VAT:</strong>
+                            </td>
+                            <td align="left">&pound;{{ receipt.total }}
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align="left" colspan="2">
+                              <div itemscope="" itemtype="http://schema.org/Organization">
+                                <span itemprop="name"><strong>{{ receipt.address1 }}</strong></span>
+                                <div class="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+                                  <span itemprop="streetAddress">{{ receipt.address2 }}<br>{{ receipt.address3 }}<br></span>
+                                  <span itemprop="addressLocality">{{ receipt.address4 }}<br></span>
+                                  <span itemprop="postalCode">{{ receipt.postcode }}</span>
+                                </div>
+                              </div>
+                            </td>
+
+                          </tr>
+                          <tr>
+                            <td align="left" colspan="2">
+                              <strong>VAT registration number:</strong> {{ receipt.reg_number }}
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+
+
+
+                    {% else %}
+
+
+                    {% endif %}
                   </table>
                 </td>
               </tr>
