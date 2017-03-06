@@ -158,7 +158,7 @@
         <div class="panel-simple">
           {% if (
                 title['data']['title_number'] == 'DN1011967' or
-                title['data']['title_number'] == 'DN1011947' 
+                title['data']['title_number'] == 'DN1011950' 
                 ) 
           %}
             <p>
@@ -166,13 +166,19 @@
             </p>
           {% elseif (
                 title['data']['title_number'] == 'DN1011948' or
-                title['data']['title_number'] == 'DN1011950'
+                title['data']['title_number'] == 'DN1011947'
                 ) 
           %}
             
               <ul class="list list-bullet">
                 <li>The reference for your purchase is {{ receipt.trans_id }}</li>
-                <li>We have sent a receipt to <a href="{{path}}/send/receipt/summary_email?title_number={{data.title_number}}&transID={{receipt.trans_id}}" style="text-decoration: inherit;color:inherit"><strong class="boldx">{{ data.email }}</strong></a></li>
+                <li>We have sent a receipt to 
+                  {% if data.email %}
+                    <a href="{{path}}/send/receipt/summary_email?title_number={{data.title_number}}&transID={{receipt.trans_id}}" style="text-decoration: inherit;color:inherit"><strong class="boldx">{{ data.email }}</strong></a>
+                  {% else %}
+                    <a href="{{path}}/send/receipt/summary_email?title_number={{data.title_number}}&transID={{receipt.trans_id}}" style="text-decoration: inherit;color:inherit"><strong class="boldx">your email</strong></a>
+                  {% endif %}
+                </li>
               </ul>
             <p>
               To keep a copy of this property information you can print it out, or download a copy <span class="font-xsmall" style="color: #6f777b;">(PDF document, 267kb)</span>
@@ -184,7 +190,7 @@
                 ) 
           %}
             <p>
-              Download (PDF document, 267kb) or print a copy if you need:
+              Download <span class="font-xsmall" style="color: #6f777b;">(PDF document, 267kb)</span> or print a copy if you need:
               <ul class="list list-bullet">
                 <li>a receipt for this purchase</li>
                 <li>to keep a copy of this property information</li>
@@ -202,9 +208,9 @@
     
             {% if (
               title['data']['title_number'] == 'DN1011948' or
-              title['data']['title_number'] == 'DN1011950' or
-              title['data']['title_number'] == 'DN1011967' or
               title['data']['title_number'] == 'DN1011947' or
+              title['data']['title_number'] == 'DN1011967' or
+              title['data']['title_number'] == 'DN1011950' or
               title['data']['title_number'] == 'DN1012381' or
               title['data']['title_number'] == 'DN1012390'
               ) 
@@ -346,9 +352,9 @@
     var date = moment().format('DD MMMM YYYY'); // November 18th 2016
     var dateTime = moment().format('DD MMMM YYYY [at] h:mm'); // November 18th 2016, 3:50:43 pm
 
-    // span = document.getElementById('today');
-    // txt = document.createTextNode(date);
-    // span.innerText = txt.textContent;
+    span = document.getElementById('today');
+    txt = document.createTextNode(date);
+    span.innerText = txt.textContent;
 
     span = document.getElementById('today-time');
     txt = document.createTextNode(dateTime);
