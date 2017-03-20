@@ -12,10 +12,13 @@ description: |
 
 changelog:
   - done...
-  - if you want to keep this information or need a VAT receipt, you'll need to download or print
+  - if you want to keep this information or need a VAT receipt, you'll need to download or print.
+  - page break for VAT receipt if it will be split over 2 pages.
+  - specific summary PDF's made for DN1011947, 8, 50, 67, 2009, 2017, 2402, 2390 - all others, generic PDF.
+  -
   -
   - todo..?
-  - format specific pdfs for the download
+  - decide which take it aways words?
   - search results - options
   - fix map rendering on print - tricky
   - summary - update proto to match the T&C para about when the title was last changes / pending application
