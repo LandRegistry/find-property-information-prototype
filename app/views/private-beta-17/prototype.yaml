@@ -1,37 +1,22 @@
-name: v16 - public beta assessment ready (ish) (90%) (lab tested March 10/2017)
-date: 2017-03-01
+name: v17 - IN PROGRESS - public beta assessment ready (ish) (90%)
+date: 2017-03-20
 description: |
   <p>building toward to public beta - releasable.</p>
   <p>public beta proposition = "if you can have a letter delivered there, and want to know who owns it*, you can get that from this service" <br>*owners, lenders, tenure, price, rough extent</p>
-  <p>V15 + incremental improvements to:</p>
+  <p>MVP of 'take it away' and VAT receipt:</p>
   <ul>
-  <li>take it away - download or print (summary)</li>
-  <li>take it away - VAT receipt - download or print / emailed a receipt</li>
+  <li>- most people do not need a VAT receipt - if needed have to download or print</li>
+  <li>- if you want to keep the information you bought - download or print</li>
   <li>wordpay page 3 replaced with receipt</li>
-  <br>
-  <li>summary print - layout; fix map print defect - if use print link</li>
-  <li>16, 32 Blanda Views AA7 6FT. - matching summary pdf. no VAT reciept on summary</li>
-  <li>14, 13 Blanda Views AA7 6FT. - matching summary pdf. no VAT reciept on summary - email receipt sent</li>
-  <li>12, 20 Bruen Island AA1 6LL. - matching summary pdf. no download button - 7 day reaccess</li> 
-  <li>10, 22 Abigayle Orchard AA1 9BD. - matching summary pdf. no VAT on screen - download ro print for VAT receipt</li>
   </ul>
   <br>
 
 changelog:
   - done...
-  - Terms of use matching what we expect to deploy soon
-  - summary PDF file size.
-  - summary - map printing fix (only print link, not browser print)
-  - summary - address, owner, lender, price paid - better looking print
-  - summary - when retreived, title last updated
-  - summary - fix printing layout of multiple owners and lenders
-  - summary - 'or print' layout on mobile
-  - summary print - layout; fix map print defect - if use print link</li>
-  - 16, 32 Blanda Views AA7 6FT. - matching summary pdf. no VAT reciept on summary
-  - 14, 13 Blanda Views AA7 6FT. - matching summary pdf. no VAT reciept on summary - email receipt sent
-  - 12, 20 Bruen Island AA1 6LL. - matching summary pdf. no download button - 7 day reaccess
+  - if you want to keep this information or need a VAT receipt, you'll need to download or print
   -
   - todo..?
+  - update v16 with the fact it has been lab tested
   - format a pdf for the download
   - fix map rendering on print - tricky
   - take the thing away - iteration 2
