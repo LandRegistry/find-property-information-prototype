@@ -5,9 +5,8 @@ description: |
   <p>public beta proposition = "if you can have a letter delivered there, and want to know who owns it*, you can get that from this service" <br>*owners, lenders, tenure, price, rough extent</p>
   <p>MVP of 'take it away' and VAT receipt:</p>
   <ul>
-  <li>- most people do not need a VAT receipt - if needed have to download or print</li>
+  <li>- most people do not need a VAT receipt (citizens, many orgs) - if needed, have to download or print</li>
   <li>- if you want to keep the information you bought - download or print</li>
-  <li>wordpay page 3 replaced with receipt</li>
   </ul>
   <br>
 
@@ -16,18 +15,16 @@ changelog:
   - if you want to keep this information or need a VAT receipt, you'll need to download or print
   -
   - todo..?
-  - update v16 with the fact it has been lab tested
-  - format a pdf for the download
+  - format specific pdfs for the download
+  - search results - options
   - fix map rendering on print - tricky
-  - take the thing away - iteration 2
   - summary - update proto to match the T&C para about when the title was last changes / pending application
   - Terms of use - HM Land Registry
   - take it away - improve downloads? - email, summmary + vat receipt - mobile mail?
-  - changes for search
   - what do we want to learn next? / keep learning
   - trello / show what design work / progress
   - document changes.
-  - put v13 on wall - and show what came out of testing
+  - put v15 / 16 on wall - and show what came out of testing
   - different mechanism for sign in / creat acc - 2 buttons.
   - signin page needs create account link/onward (as can be gotten to by user without seeing create)
   - floaty/dock map island - mobile.
