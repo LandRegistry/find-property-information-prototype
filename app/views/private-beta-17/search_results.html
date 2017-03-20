@@ -1,0 +1,51 @@
+{% extends "./layout/layout.html" %}
+{% from "./includes/search_form.html" import search_form %}
+{% from "./includes/register_teaser.html" import register_teaser %}
+{% from "./includes/pagination.html" import pagination %}
+
+{% block title %}Search results{% endblock %}
+
+{% block body %}
+
+  {% if data.page %}
+    {% set page = data.page %}
+  {% else %}
+    {% set page = 1 %}
+  {% endif %}
+
+  <div class="grid-row spacing-top-single">
+    <div class="column-two-thirds tablet-column-two-thirds spacing-bottom-single">
+      {{ search_form(h1=true,autofocus=false,label='Search results for',value=data.search_term) }}
+
+      <h2 class="font-xsmall expand-bottom-half">{{ results['number_results'] }} result{% if results['number_results'] > 1 %}s{% endif %} found</h2>
+      <ol class="search-results-listing">
+        {% for title in results['titles'] %}
+          <li>
+            {{ register_teaser(title=title,display_page_number=page,search_term=data.search_term) }}
+          </li>
+        {% endfor %}
+      </ol>
+
+      {% if results['number_pages'] %}
+        {{ pagination(page, results['number_pages'],search_term=data.search_term) }}
+      {% endif %}
+    </div>
+
+    <div class="column-one-third tablet-column-one-third">
+      <aside class="supplementary-panel">
+        <h2 class="heading-medium">Help with this service</h2>
+        <p>Call 0300 006 0411 to report a problem or if you're stuck and need help.</p>
+
+        <h2 class="heading-medium spacing-top-single">Other ways to find a property</h2>
+        <p><a href="https://eservices.landregistry.gov.uk/wps/portal/Property_Search">Search by street address or on a map</a></p>
+
+        <h2 class="heading-medium spacing-top-single">Owning and renting a property</h2>
+        <ul>
+          <li class="spacing-bottom-half"><a href="https://www.gov.uk/leasehold-property">Freehold properties</a></li>
+          <li class="spacing-bottom-half"><a href="https://www.gov.uk/leasehold-property">Leasehold properties</a></li>
+          <li><a class="bold" href="https://www.gov.uk/browse/housing-local-services/owning-renting-property">More</a></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+{% endblock %}
