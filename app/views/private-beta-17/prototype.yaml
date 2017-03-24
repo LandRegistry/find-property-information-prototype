@@ -13,17 +13,19 @@ description: |
 changelog:
   - done...
   - if you want to keep this information or need a VAT receipt, you'll need to download or print.
-  - page break for VAT receipt if it will be split over 2 pages.
+  - stop receipt splitting over 2 pages when printing.
   - specific summary PDF's made for DN1011947, 8, 50, 67, 2009, 2017, 2402, 2390 - all others, generic PDF.
+  - download button - tells browser to download file (browser may not - may open pdf)
   -
-  -
+  - 
   - todo..?
+  - extra route / header to make file download?
   - decide which take it aways words?
   - search results - options
   - fix map rendering on print - tricky
   - summary - update proto to match the T&C para about when the title was last changes / pending application
   - Terms of use - HM Land Registry
-  - take it away - improve downloads? - email, summmary + vat receipt - mobile mail?
+  - take it away - improve downloads? - email, summmary + vat receipt - mobile mail - reaccess in v16?
   - what do we want to learn next? / keep learning
   - trello / show what design work / progress
   - document changes.
