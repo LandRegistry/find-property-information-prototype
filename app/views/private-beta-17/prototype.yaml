@@ -19,7 +19,10 @@ changelog:
   - download button - tells browser to download file (browser may not - may open pdf)
   - improve accessibility (things learnt from DM Digital Accessibility Centre report) - file type and size on PDF download
   - 
+  - 
   - todo..?
+  - accessibility - remove terms of use link form checkbox labels
+  - consider including a link to PDF reader on pages with PDFs
   - extra route / header to make file download?
   - decide which take it aways words?
   - search results - options
