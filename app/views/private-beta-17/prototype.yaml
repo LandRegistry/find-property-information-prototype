@@ -8,6 +8,7 @@ description: |
   <li>- most people do not need a VAT receipt (citizens, many orgs) - if needed, have to download or print</li>
   <li>- if you want to keep the information you bought - download or print</li>
   </ul>
+  <p>Improved accessibility (things learnt from Digital Accessibility Centre report)
   <br>
 
 changelog:
@@ -16,7 +17,7 @@ changelog:
   - stop receipt splitting over 2 pages when printing.
   - specific summary PDF's made for DN1011947, 8, 50, 67, 2009, 2017, 2402, 2390 - all others, generic PDF.
   - download button - tells browser to download file (browser may not - may open pdf)
-  -
+  - improve accessibility (things learnt from DM Digital Accessibility Centre report) - file type and size on PDF download
   - 
   - todo..?
   - extra route / header to make file download?
