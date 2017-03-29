@@ -155,7 +155,7 @@
     <div class="column-two-thirds tablet-column-two-thirds">
 
       <div class="printhidden">
-        <div class="panel-simple">
+        <div class="panel panel-simple">
           {% if (
                 title['data']['title_number'] == 'DN1012402' or
                 title['data']['title_number'] == 'DN1012390'
@@ -168,10 +168,16 @@
                 <li>a receipt for this purchase</li>              
               </ul>
             </p>
+            <div style="vertical-align:middle;">
+              <a href="images/{{ title['data']['title_number'] }}.pdf" download="Summary-{{ title['data']['title_number'] }}.pdf" style="vertical-align: baseline;" class="button">Download<span class="visuallyhidden"> a copy of this property information - PDF document 267kb</span></a>
+              <span class="mobile-spacer">or 
+                {% include './includes/print-button.html' %}
+              </span>
+            </div>
           {% elseif (
-            title['data']['title_number'] == 'DN1012017' or
-            title['data']['title_number'] == 'DN1012009' 
-            ) 
+                    title['data']['title_number'] == 'DN1012017' or
+                    title['data']['title_number'] == 'DN1012009' 
+                    ) 
           %}
              <p>
               <a href="images/{{ title['data']['title_number'] }}.pdf" download="Summary-{{ title['data']['title_number'] }}.pdf">Download<span class="visuallyhidden"> a copy of this property information - PDF document 267kb</span></a> <span class="font-xsmall" style="color: #6f777b;">(PDF document, 267kb)</span> or {% include './includes/print-button.html' %} if you need:
@@ -179,8 +185,14 @@
                 <li>to keep a copy of this property information</li>
                 <li>a receipt for this purchase</li>              
               </ul>
-            </p>         
-          {% else %}  
+            </p>
+          {% elseif (
+                    title['data']['title_number'] == 'DN1011948' or
+                    title['data']['title_number'] == 'DN1011947' or
+                    title['data']['title_number'] == 'DN1011967' or
+                    title['data']['title_number'] == 'DN1011950' 
+                    ) 
+          %}     
             <p>       
               <!-- If you want: -->
               <ul class="list list-bullet">
@@ -188,47 +200,32 @@
                 <li>get a VAT receipt</li>               
               </ul>
             </p>
+            <div style="vertical-align:middle;">
+              <a href="images/{{ title['data']['title_number'] }}.pdf" download="Summary-{{ title['data']['title_number'] }}.pdf" style="vertical-align: baseline;" class="button">Download<span class="visuallyhidden"> a copy of this property information - PDF document 267kb</span></a>
+              <span class="mobile-spacer">or 
+                {% include './includes/print-button.html' %}
+              </span> 
+            </div>
+          {% else %} 
+            <h2 class="heading-medium spacing-top-third">Download or print</h2>
+            <p>If you want to keep this information or need a receipt            
+              <ul class="list list-bullet" style="margin-bottom: 10px;">
+                {% if (
+                    title['data']['title_number'] == 'DN1011954' or
+                    title['data']['title_number'] == 'DN1011976' 
+                    ) 
+                %} 
+                  <li><a href="images/{{ title['data']['title_number'] }}.pdf" download="Summary-{{ title['data']['title_number'] }}.pdf">download a copy<span class="visuallyhidden"> of this property information</span></a> (PDF, 267kb)</span></a></li>
+                  <li><a target="_blank" href="" data-print >print a copy</a></li>  
+                {% else %}
+                  <li><a href="images/summary.pdf" download="Summary-{{ title['data']['title_number'] }}.pdf">Download a copy<span class="visuallyhidden"> of this property information</span></a> (PDF, 267kb)</span></a></li>
+                  <li><a target="_blank" href="" data-print >print a copy</a></li> 
+                {% endif %}          
+              </ul>
+            </p>
 
-<!-- download (PDF 267kb) or print this page out -->
           {% endif %}
 
-          <!-- download or print this page links -->
-          <div style="vertical-align:middle;">
-                
-            {% if (
-              title['data']['title_number'] == 'DN1011948' or
-              title['data']['title_number'] == 'DN1011947' or
-              title['data']['title_number'] == 'DN1011967' or
-              title['data']['title_number'] == 'DN1011950' 
-              ) 
-            %}
-              <a href="images/{{ title['data']['title_number'] }}.pdf" download="Summary-{{ title['data']['title_number'] }}.pdf" style="vertical-align: baseline;" class="button">Download<span class="visuallyhidden"> a copy of this property information - PDF document 267kb</span></a>
-              <span class="mobile-spacer">or 
-                {% include './includes/print-button.html' %}
-              </span> 
-            {% elseif (
-              title['data']['title_number'] == 'DN1012402' or
-              title['data']['title_number'] == 'DN1012390' 
-              ) 
-            %}
-              <a href="images/{{ title['data']['title_number'] }}.pdf" download="Summary-{{ title['data']['title_number'] }}.pdf" style="vertical-align: baseline;" class="button">Download<span class="visuallyhidden"> a copy of this property information - PDF document 267kb</span></a>
-              <span class="mobile-spacer">or 
-                {% include './includes/print-button.html' %}
-              </span>
-              <!-- <br><span class="font-xsmall" style="color: #6f777b;">(PDF document, 267kb)</span> -->
-            {% elseif (
-              title['data']['title_number'] == 'DN1012017' or
-              title['data']['title_number'] == 'DN1012009' 
-              ) 
-            %}
-            <!-- nothing -->
-            {% else %}
-              <a href="images/summary.pdf" style="vertical-align: baseline;" class="button">Download<span class="visuallyhidden"> a copy of this property information - PDF document 267kb</span></a>
-              <span class="mobile-spacer">or 
-                {% include './includes/print-button.html' %}
-              </span> 
-            {% endif %}   
-          </div>
         </div>
 
       </div>
