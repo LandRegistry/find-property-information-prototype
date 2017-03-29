@@ -354,10 +354,12 @@
         </fieldset>
 
         <div class="form-group spacing-top-double disabled-if-email-exists">
-          <label class="block-label selection-button-checkbox" for="terms">
+          <div class="multiple-choice">
             <input id="terms" name="terms" type="checkbox" value="terms">
-            I have read and agree to the <a href="terms_and_conditions">terms of use</a>
-          </label>
+            <label for="terms">
+              I have read and agree to the <a href="terms_and_conditions">terms of use</a>
+            </label>
+          </div>
         </div>
 
         <input type="submit" id="continueToPay" class="button spacing-top-single disabled-if-email-exists" value="Continue to purchase" disabled-x>
