@@ -60,7 +60,7 @@
           <dt class="spacing-bottom-single">Title number</dt>
           <dd class="spacing-bottom-single">
           <strong class="bold">{{ title['data']['title_number'] }}</strong></dd>
-          
+
           {% endif %}
 
       </dl>
@@ -76,7 +76,7 @@
             <li>how much they paid (if available)</li>
             <li>if there is a mortgage - the name and address of the lender</li>
           {% endif %}
-          
+
           {% if not session.isLoggedIn %}
             <li>title number (the unique reference number)</li>
           {% endif %}
@@ -122,15 +122,17 @@
                   <p style="display:block; padding-left: 65px;margin-left: -15px;"">
                     <span class="bold-small">Important: make sure this is the property you want.</span><br>You can't cancel once you've paid and the information is displayed.
                   </p>
-              </div> 
-             
+              </div>
+
             </div>
 
             <div class="form-group spacing-top-single">
-              <label class="block-label selection-button-checkbox" for="terms">
+              <div class="multiple-choice">
                 <input id="terms" name="terms" type="checkbox" value="terms">
-                I have read and agree to the <a href="terms_and_conditions">terms of use</a>
-              </label>
+                <label for="terms">
+                  I have read and agree to the <a href="terms_and_conditions">terms of use</a>
+                </label>
+              </div>
             </div>
 
             <input type="submit" id="payNow" class="button" value="Pay now">
@@ -167,7 +169,7 @@
 
           <li><span class="circle circle-step-large spacing-right-half">1</span><strong class="bold">create an account</strong></li>
 
-          <li><span class="circle circle-step-large spacing-right-half">2</span><strong class="bold">pay online</strong> by debit or credit card</li> 
+          <li><span class="circle circle-step-large spacing-right-half">2</span><strong class="bold">pay online</strong> by debit or credit card</li>
 
         </ol>
 
@@ -175,7 +177,7 @@
 
         <div class="panel panel-border-narrow">
           If you've already used this service and created an account, sign in with the email address you used before.
-        </div> 
+        </div>
 
         <div class="spacing-top-double"> <!-- sign-in / creat account -->
           <p>
