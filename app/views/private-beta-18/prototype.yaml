@@ -1,21 +1,31 @@
-name: IN-PROGRESS - public beta assessment candidate - stage 1 stories (V18)
+name: IN-PROGRESS- public beta assessment candidate - minus search improvements (V18)
 date: 2017-05-23
 description: |
-  <p>public beta assessment candidate (minus address improvements)</p>
+  <p>public beta assessment candidate (minus search improvements)</p>
   <p>Spreadsheet (name of?)</p>
   <ul>
     <li>Move sign-in (2 stories)</li>
     <li>Clarity of service (7 stories)</li>
     <li>Download summary and receipt (6 stories)</li>
   </ul>
+  <br>
 
 changelog:
   - done...
   - list what is in this proto - user store title / friendly (user centric title) and link to trello card
   - e.g. if you want to keep this information or need a VAT receipt, you'll need to download or print.
-
-  - 
+  - MS1 Move Sign In (sign-in/create account moved after about this 'property' (title record))
+  - MS2/MS3 Remember the user journey (after sign-in/create account the journey just continues)
+  - (Q) CS12 Improve help wording on search-results page (signpost to Find a property and phone no)
+  - (Q x 2) CS11 Make contact us consistent (contact us panel on - create account, search results, confirm purchase - 1st time round)
+  - CS4 Convey limits of searching (message when pagination limit reached)
+  - CS9 Summary Page Improvements - Sign out button at bottom of Summary Page (sign out as option for 'What next')
+  - (Q) CS6 Summary Page improvements - application can change the summary
+  - US305 Change Land Registry to HM Land Registry
+  -
   - todo..?
+  - (Q) CS8 - Summary page Improvements - this title was last changed
+  - 
   - just have one version of download or print....
   - stop receipt splitting over 2 pages when printing.
   - specific summary PDF's made for DN1011947, 8, 50, 67, 2009, 2017, 2402, 2390 - all others, generic PDF.

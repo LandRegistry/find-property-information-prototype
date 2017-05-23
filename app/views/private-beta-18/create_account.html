@@ -216,7 +216,7 @@
 
       <h1 class="heading-large" style="margin-top:0px;">Create an account</h1>
 
-      <p>By creating an account, you accept and agree HM Land Registry's <a href="">terms of use</a> for this service. HM Land Registry won't share this information without your permission, as set out in its <a href="https://www.gov.uk/government/organisations/land-registry/about/personal-information-charter">privacy policy</a>.</p>
+      <p>By creating an account, you accept and agree HM Land Registry's <a href="terms_and_conditions">terms of use</a> for this service. HM Land Registry won't share this information without your permission, as set out in its <a href="https://www.gov.uk/government/organisations/land-registry/about/personal-information-charter">privacy policy</a>.</p>
 
 
       <form class="spacing-top-double" action="confirm_your_purchase" method="POST" novalidate data-clientside-validation="create_account_form_validation">
@@ -270,12 +270,12 @@
 
           <div class="form-group">
 
-            <p class="form-hint spacing-bottom-flush">Your password must:</p>
+<!--             <p class="form-hint spacing-bottom-flush">Your password must:</p>
             <ul class="form-hint list list-bullet spacing-bottom-half">
               <li>be between 8 and 20 characters</li>
               <li>contain 2 numbers</li>
               <li>not contain the symbols &pound; &#x20AC; &#x00AC; &#x00A6;</li>
-            </ul>
+            </ul> -->
 
             <label class="form-label" for="pass">Create a password</label>
             <input class="form-control" type="password" id="pass" name="pass">
@@ -284,6 +284,13 @@
           <div class="form-group">
             <label class="form-label" for="password_retype">Re-type your password</label>
             <input class="form-control" id="password_retype" name="password_retype" type="password" value="">
+
+            <p class="form-hint spacing-top-half">Your password must:</p>
+            <ul class="form-hint list list-bullet spacing-bottom-flush">
+              <li>be between 8 and 20 characters</li>
+              <li>contain 2 numbers</li>
+              <li>not contain the symbols &pound; &#x20AC; &#x00AC; &#x00A6;</li>
+            </ul>
 
           </div>
 
@@ -316,6 +323,11 @@
           <div class="form-group">
             <label class="form-label" for="lastname">Last name</label>
             <input class="form-control" type="text" id="lastname" name="lastname">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone number (optional)</label>
+            <input class="form-control" type="text" id="phone" name="phone">
           </div>
 
 
