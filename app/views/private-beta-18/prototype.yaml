@@ -1,0 +1,25 @@
+name: IN-PROGRESS - public beta assessment candidate - stage 1 stories (V18)
+date: 2017-05-23
+description: |
+  <p>public beta assessment candidate (minus address improvements)</p>
+  <p>Spreadsheet (name of?)</p>
+  <ul>
+    <li>Move sign-in (2 stories)</li>
+    <li>Clarity of service (7 stories)</li>
+    <li>Download summary and receipt (6 stories)</li>
+  </ul>
+
+changelog:
+  - done...
+  - list what is in this proto - user store title / friendly (user centric title) and link to trello card
+  - e.g. if you want to keep this information or need a VAT receipt, you'll need to download or print.
+
+  - 
+  - todo..?
+  - just have one version of download or print....
+  - stop receipt splitting over 2 pages when printing.
+  - specific summary PDF's made for DN1011947, 8, 50, 67, 2009, 2017, 2402, 2390 - all others, generic PDF.
+  - download button - tells browser to download file (browser may not - may open pdf)
+  - 
+  - improve accessibility (things learnt from DM Digital Accessibility Centre report) - file type and size on PDF download
+  - 
