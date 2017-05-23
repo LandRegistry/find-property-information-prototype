@@ -1,12 +1,17 @@
-name: IN-PROGRESS- public beta assessment candidate - minus search improvements (V18)
+name: IN-PROGRESS- public beta assessment candidate - move sign in + clarity of service (V18)
 date: 2017-05-23
 description: |
-  <p>public beta assessment candidate (minus search improvements)</p>
-  <p>Spreadsheet (name of?)</p>
-  <ul>
+  <p>public beta assessment candidate :</p>
+  <p>based on Spreadsheet (MVP for Oct Spreadsheet)</p>
+
+  <ul>Includes:
     <li>Move sign-in (2 stories)</li>
     <li>Clarity of service (7 stories)</li>
-    <li>Download summary and receipt (6 stories)</li>
+  </ul>
+  <br>
+  <ul>Excludes:
+    <li>download summary and receipt</li>
+    <li>search improvements</li>
   </ul>
   <br>
 
@@ -16,15 +21,17 @@ changelog:
   - e.g. if you want to keep this information or need a VAT receipt, you'll need to download or print.
   - MS1 Move Sign In (sign-in/create account moved after about this 'property' (title record))
   - MS2/MS3 Remember the user journey (after sign-in/create account the journey just continues)
-  - (Q) CS12 Improve help wording on search-results page (signpost to Find a property and phone no)
-  - (Q x 2) CS11 Make contact us consistent (contact us panel on - create account, search results, confirm purchase - 1st time round)
+  - CS12 Improve help wording on search-results page (signpost to Find a property and phone no)
+  - CS11 Make contact us consistent (contact us panel on - sign-in create account, search results)
   - CS4 Convey limits of searching (message when pagination limit reached)
   - CS9 Summary Page Improvements - Sign out button at bottom of Summary Page (sign out as option for 'What next')
-  - (Q) CS6 Summary Page improvements - application can change the summary
+  - CS6 Summary Page improvements - application can change the summary
+  - CS8 - Summary page Improvements - this title was last changed
   - US305 Change Land Registry to HM Land Registry
-  -
+  - Note - includes latest gov.uk patterns and elements - but that may not be delivered until US330
+  - 
   - todo..?
-  - (Q) CS8 - Summary page Improvements - this title was last changed
+  - remove anything not needed
   - 
   - just have one version of download or print....
   - stop receipt splitting over 2 pages when printing.
