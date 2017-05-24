@@ -1,4 +1,4 @@
-name: IN-PROGRESS- public beta assessment candidate - everything except search (V19)
+name: INCOMPLETE - public beta assessment candidate - everything except search (V19)
 date: 2017-05-24
 description: |
   <p>public beta assessment candidate :</p>
@@ -18,8 +18,6 @@ description: |
 
 changelog:
   - done...
-  - list what is in this proto - user store title / friendly (user centric title) and link to trello card
-  - e.g. if you want to keep this information or need a VAT receipt, you'll need to download or print.
   - MS1 Move Sign In (sign-in/create account moved after about this 'property' (title record))
   - MS2/MS3 Remember the user journey (after sign-in/create account the journey just continues)
   - CS12 Improve help wording on search-results page (signpost to Find a property and phone no)
@@ -39,3 +37,5 @@ changelog:
   - specific summary PDF's made for DN1011947, 8, 50, 67, 2009, 2017, 2402, 2390 - all others, generic PDF.
   - download button - tells browser to download file (browser may not - may open pdf)
   - improve accessibility (things learnt from DM Digital Accessibility Centre report) - file type and size on PDF download
+  - list what is in this proto - user story title / friendly (user centric title) and link to trello card
+  - e.g. if you want to keep this information or need a VAT receipt, you'll need to download or print.

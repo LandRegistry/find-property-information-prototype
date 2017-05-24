@@ -1,4 +1,4 @@
-name: IN-PROGRESS- public beta assessment candidate - move sign in + clarity of service (V18)
+name: INCOMPLETE - public beta assessment candidate - move sign in + clarity of service (V18)
 date: 2017-05-23
 description: |
   <p>public beta assessment candidate :</p>
@@ -17,8 +17,6 @@ description: |
 
 changelog:
   - done...
-  - list what is in this proto - user store title / friendly (user centric title) and link to trello card
-  - e.g. if you want to keep this information or need a VAT receipt, you'll need to download or print.
   - MS1 Move Sign In (sign-in/create account moved after about this 'property' (title record))
   - MS2/MS3 Remember the user journey (after sign-in/create account the journey just continues)
   - CS12 Improve help wording on search-results page (signpost to Find a property and phone no)
