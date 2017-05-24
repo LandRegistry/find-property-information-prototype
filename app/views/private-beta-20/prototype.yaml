@@ -1,0 +1,23 @@
+name: IN-PROGRESS - HACKED - PROD + clarity of service stories
+date: 2017-05-25
+description: |
+  <p>public beta assessment candidate :</p>
+  <p>based on Spreadsheet (MVP for Oct Spreadsheet)</p>
+  <p>PROD like + clarity of service + latest gov.uk elements</p>
+
+  <ul>Includes:    
+    <li>Clarity of service (7 stories)</li>
+  </ul>
+  <br>
+  <ul>Excludes:
+    <li>Move sign-in (2 stories)</li>
+    <li>download summary and receipt (6 stories)</li>
+    <li>search improvements</li>
+  </ul>
+  <br>
+changelog:
+  - done...
+  - 
+
+
+
