@@ -176,7 +176,7 @@ router.get('/display_title', function (req, res) {
     net: '2.50',
     vat: '0.50',
     total: '3.00',
-    address1: 'Land Registry',
+    address1: 'HM Land Registry',
     address2: 'Trafalgar house',
     address3: '1 Bedford Park',
     address4: 'Croydon',

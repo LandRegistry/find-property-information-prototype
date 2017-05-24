@@ -209,11 +209,13 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-  <h1 class="heading-large">Register</h1>
+  
 
-  <div class="grid-row">
+  <div class="grid-row spacing-top-double">
 
     <div class="column-two-thirds tablet-column-two-thirds">
+
+      <h1 class="heading-large" style="margin-top:0px;">Register</h1>
 
       <p class="lede">Due to the information this service reveals, we ask people to register with us.</p>
 
@@ -366,17 +368,23 @@
         </fieldset>
 
         <div class="form-group spacing-top-double disabled-if-email-exists">
-          <label class="block-label" for="terms">
+<!--           <label class="block-label" for="terms">
             <input id="terms" name="terms" type="checkbox" value="terms">
             I have read and agree to the <a href="terms_and_conditions">terms &amp; conditions</a>
-          </label>
+          </label> -->
+          <div class="multiple-choice">
+            <input id="terms" name="terms" type="checkbox" value="terms">
+            <label for="terms">
+              I have read and agree to the <a href="terms_and_conditions">terms of use</a>
+            </label>
+          </div>
         </div>
 
         <input type="submit" class="button spacing-top-single disabled-if-email-exists" value="Register">
       </form>
 
       <div class="panel panel-border-narrow spacing-top-double">
-        <p>If you have any problems registering, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact Land Registry</a>.</p>
+        <p>If you have any problems registering, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact HM Land Registry</a>.</p>
       </div>
 
       <script type="application/json" id="create_account_form_validation">
@@ -514,6 +522,12 @@
         })();
       </script>
 
+    </div>
+    <div class="column-one-third tablet-column-one-third">
+      <aside class="supplementary-panel">
+        <h2 class="heading-medium">Need help with this service?</h2>
+        <p>Call HM Land Registry on 0300 006 0411 to report a problem, or if you're stuck and need help.</p>
+      </aside>
     </div>
   </div>
 {% endblock %}

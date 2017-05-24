@@ -3,12 +3,13 @@
 {% block title %}Sign in{% endblock %}
 
 {% block body %}
-  <h1 class="heading-large">Sign in</h1>
+  
 
   <!--<p style="vertical-align:top">Don't have an account? <a class="button" style="margin-left:30px;line-height: inherit;vertical-align:middle;background-color: #333" href="create_account?title_number={{data.title_number}}" id="register-link">register to use this service</a></p>-->
 
-  <div class="grid-row">
+  <div class="grid-row spacing-top-double">
     <div class="column-two-thirds">
+      <h1 class="heading-large" style="margin-top:0px;">Sign in</h1>
 
       <!-- <form method="POST" action="{% if data.action %}{{data.action}}{% else %}worldpay_1{% endif %}" id="login-form"  novalidate data-clientside-validation="login_form_validation"> -->
       <form method="GET" action="{{path}}/search" id="login-form"  novalidate data-clientside-validation="login_form_validation">
@@ -50,20 +51,28 @@
 
         <!-- T&Cs -->
         <div class="form-group" id="terms_group">
-          <label class="block-label" for="terms">
+<!--           <label class="block-label" for="terms">
             <input id="terms" name="terms" type="checkbox" value="terms">
             I have read and agree to the <a href="terms_and_conditions">terms &amp; conditions</a>
-          </label>
+          </label> -->
+          <div class="multiple-choice">
+            <input id="terms" name="terms" type="checkbox" value="terms">
+            <label for="terms">
+              I have read and agree to the <a href="terms_and_conditions">terms of use</a>
+            </label>
+          </div>
         </div>
+
+          
 
         <input type="submit" class="button" value="Sign in">
 
       </form>
 
       <div class="panel panel-border-narrow spacing-bottom-single spacing-top-double">
-        <p>If you have forgotten your password you can <a href="{{path}}/reset/password/send_email?title_number={{data.title_number}}">request a new password here</a></p>
+        <p>Forgotten your password? <a href="{{path}}/reset/password/send_email?title_number={{data.title_number}}">request a new password here</a></p>
         <p>You can also <a href="https://www.gov.uk/government/publications/official-copies-of-register-or-plan-registration-oc1">order information in paper format</a>.</p>
-        <p class="spacing-top-double">If you are having problems signing in, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact Land Registry</a>.</p>
+        <!-- <p class="spacing-top-double">If you have any problems signing in, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact HM Land Registry</a>.</p> -->
       </div>
 
       <script>
@@ -103,6 +112,12 @@
       </script>
 
 
+    </div>
+    <div class="column-one-third tablet-column-one-third">
+      <aside class="supplementary-panel">
+        <h2 class="heading-medium">Need help with this service?</h2>
+        <p>Call HM Land Registry on 0300 006 0411 to report a problem, or if you're stuck and need help.</p>
+      </aside>
     </div>
   </div>
 
