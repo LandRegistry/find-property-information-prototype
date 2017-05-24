@@ -17,9 +17,32 @@ description: |
   <br>
 changelog:
   - done...
+  - CS12 Improve help wording on search-results page (signpost to Find a property and phone no)
+  - CS11 Make contact us consistent (contact us panel on - sign-in create account, search results)
+  - CS4 Convey limits of searching (message when pagination limit reached)
+  - CS9 Summary Page Improvements - Sign out button at bottom of Summary Page (sign out as option for 'What next')
+  - US305 Change Land Registry to HM Land Registry
+  - US330 & US329 - bits that are appropiate to proto - latest patterns and elements...
+    - Blue beta banner label
+    - large checkboxes and radio buttons (with no grey background)
+    - increased visual focus on input boxes
+    - icons showing external links removed
+    - tabindex="-1" added to main#content element
+    - Add script block to bottom of body to remove js-enabled class if js hasn't loaded well
+    - Add single space before GOV.UK in logo
+    - IEMobile script block removed from head
+    - meta charset element in head tweaked
+    - mask-icon added to head for safari
+    - telephone format-detection metatag removed from head
+    - spacing classes added to form hints since the paragraph margins were changed upstream (In particular, on the Find property information registration form)
+    - phase banner and phase tag markup changed
+    - selection-button-checkbox and selection-button-radio added to block-label radio and checkbox elements (Removed again! See below)
+    - Radio buttons and checkboxes have new markup that doesn’t need JavaScript (And remove selection button js)
+    - Breaking changes to form validation
   - 
   - todo...
   - external link icons - remove.
+  - Terms and conditions markdown file and repo.
 
 
 
