@@ -1,5 +1,5 @@
-name: IN-PROGRESS - HACKED - PROD + clarity of service stories
-date: 2017-05-25
+name: PROD + clarity of service stories
+date: 2017-05-26
 description: |
   <p>public beta assessment candidate :</p>
   <p>based on Spreadsheet (MVP for Oct Spreadsheet)</p>
@@ -40,12 +40,6 @@ changelog:
     - Radio buttons and checkboxes have new markup that doesn’t need JavaScript (And remove selection button js)
     - Breaking changes to form validation
   - Start page same as 26 May GOV.UK page
-  - 
-  - todo...
-  - Terms and conditions markdown file
-  - terms and conditions repo. (add summary of changes file?)
-  - check pwd reset flows - for contact information.
-  - check contact info around rest of proto - and in prod
 
 
 
