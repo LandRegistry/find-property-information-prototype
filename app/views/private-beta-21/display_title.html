@@ -1,7 +1,7 @@
 {% extends "./layout/layout.html" %}
 {% from "./includes/back_link.html" import back_link %}
 
-{% block title %}Summary of title {{ title.number }}{% endblock %}
+{% block title %}Summary for property title {{ title.number }}{% endblock %}
 
 {% block header_primary %}
   {{ back_link(title='Search again', url=path + '/search',historyBased=false) }}
@@ -140,7 +140,30 @@
 
       <p class="spacing-top-single">This information can change if we receive an application. This service is unable to tell you whether or not there is an application pending with the HM Land Registry.</p>
 
+
       <div class="printhidden">
+        <div class="panel panel-simple">
+            <h2 class="heading-medium spacing-top-third">Download or print</h2>
+            <p>If you want to keep this information or need a receipt            
+              <ul class="list list-bullet" style="margin-bottom: 10px;">
+                {% if (
+                    title['data']['title_number'] == 'DN1011954' or
+                    title['data']['title_number'] == 'DN1011976' 
+                    ) 
+                %} 
+                  <li><a href="images/{{ title['data']['title_number'] }}.pdf" download="Summary-{{ title['data']['title_number'] }}.pdf">download a copy<span class="visuallyhidden"> of this property summary (PDF, 267kb)</span></a> (PDF, 267kb)</li>
+                  <li><a target="_blank" href="" data-print >print a copy</a></li>  
+                {% else %}
+                  <li><a href="images/summary.pdf" download="Summary-{{ title['data']['title_number'] }}.pdf">download a copy<span class="visuallyhidden"> of this property summary (PDF, 267kb)</span></a> (PDF, 267kb)</li>
+                  <li><a target="_blank" href="" data-print >print a copy</a></li> 
+                {% endif %}          
+              </ul>
+            </p>
+
+        </div>
+      </div>
+
+<!--       <div class="printhidden">
         <div class="govuk-box-highlight">
           <p>
             <strong class="bold">You'll only be able to view this information once</strong>
@@ -153,13 +176,13 @@
         <h2 class="heading-medium collapse-top">What did you think of this service?</h2>
         <p><a rel="external" href="mailto:digital-register-feedback@digital.landregistry.gov.uk">Please give us your feedback</a> (takes 30 seconds). <br>This is a new service and your feedback will help us improve it.</p>
 
-      </div>
+      </div> -->
 
-      <hr>
 
       {% if receipt %}
 
-        <div class="vat-receipt page-break-before font-xsmall">
+        <div class="vat-receipt page-break-block font-xsmall printonly">
+
           <h2 class="heading-medium">VAT receipt</h2>
           <div class="grid-row">
             <div class="column-two-thirds mobile-column-one-half">
@@ -231,7 +254,15 @@
         
       </div>
 
-      <hr>
+      <!-- <hr> -->
+
+      <div class="printhidden">
+
+        <h2 class="heading-medium collapse-top">What did you think of this service?</h2>
+        <p><a rel="external" href="mailto:digital-register-feedback@digital.landregistry.gov.uk">Please give us your feedback</a> (takes 30 seconds). <br>This is a new service and your feedback will help us improve it.</p>
+
+      </div>
+
 
       <div class="printhidden">
         <h2 class="heading-medium">What next</h2>
