@@ -39,10 +39,13 @@ changelog:
     - selection-button-checkbox and selection-button-radio added to block-label radio and checkbox elements (Removed again! See below)
     - Radio buttons and checkboxes have new markup that doesn’t need JavaScript (And remove selection button js)
     - Breaking changes to form validation
+  - Start page same as 26 May GOV.UK page
   - 
   - todo...
-  - external link icons - remove.
-  - Terms and conditions markdown file and repo.
+  - Terms and conditions markdown file
+  - terms and conditions repo. (add summary of changes file?)
+  - check pwd reset flows - for contact information.
+  - check contact info around rest of proto - and in prod
 
 
 
