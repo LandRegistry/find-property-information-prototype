@@ -16,7 +16,7 @@ npm start
 ## Issues
 
 If you've used `brew` to install Node before:
-* Uninstall Node: `brew uninstall node`
+* Uninstall Node: `brew uninstall --force node`
 * Remove NPM cache: `sudo rm -rf .npm`
 * Install NVM: https://github.com/creationix/nvm/blob/master/README.md#installation
 * Install Node 6: `nvm install 6`
