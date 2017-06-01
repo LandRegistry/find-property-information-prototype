@@ -179,6 +179,7 @@
       </div> -->
 
 
+
       {% if receipt %}
 
         <div class="vat-receipt page-break-block font-xsmall printonly">
@@ -283,4 +284,34 @@
     </script>
     <script defer src="{{ asset_path }}app/javascripts/map.js"></script>
   {% endif %}
+
+  <script src="{{ asset_path }}app/javascripts/moment.js"></script>
+  <script>
+
+    var date = moment().format('DD MMMM YYYY'); // November 18th 2016
+    var dateTime = moment().format('DD MMMM YYYY [at] h:mm'); // November 18th 2016, 3:50:43 pm
+
+    span = document.getElementById('today');
+    txt = document.createTextNode(date);
+    span.innerText = txt.textContent;
+
+    span = document.getElementById('today-time');
+    txt = document.createTextNode(dateTime);
+    span.innerText = txt.textContent;
+
+  </script>
+
+  <script>
+    // map needs renedering properly on print
+    // needs to set things back post print
+    // does browser print do what we want?  Print link does work.
+    var browserPrint = window.print
+    window.print = function(){
+      var map = document.getElementById('map')
+      map.style.width = map.clientWidth + 'px'
+      map.style.paddingBottom = map.clientHeight + 'px'
+      browserPrint()
+    }
+  </script>
+  
 {% endblock %}
