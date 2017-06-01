@@ -1,13 +1,15 @@
 name: IN-PROGRESS - download summary and receipt
-date: 2017-05-30
+date: 2017-06-01
 description: |
   <p>public beta assessment candidate :</p>
   <p>based on Spreadsheet (MVP for Oct Spreadsheet)</p>
   <p>PROD like + clarity of service + download + latest gov.uk elements (v20 plus download)</p>
-
+ 
   <ul>Includes:    
     <li>Clarity of service (7 stories)</li>
-    <li>download summary and receipt (x no of stories)</li>
+    <li>download summary and receipt (3 no of stories) 
+      <a href="https://docs.google.com/document/d/1OTg0GY4jTjX83MBqPoLNc2oSHK9RkD4GsFz3fXSj4JI/edit">download assumptions</a> (team google doc)
+    </li>
   </ul>
   <br>
   <ul>Excludes:
@@ -18,16 +20,17 @@ description: |
 changelog:
   - done...
   - Download or Print 'box' on summary
-  - example postcode
+  - example postcode for search - SW1A 2AA
+  - download stories - US317, 318, 319
   - 
   - todo...
   - download stories
-  - make pdf's for examples (use v20 example titles?)
+  - make pdf's for examples (use v20 example titles?) - DN1011954 done (20 Blanda Views AA7 6FT)
   - update take_away_examples page - leave v17 history - make new page? list of example titles
-  - Terms of use markdown file
-  - terms of use repo. (add summary of changes file?)
+  - Terms of use markdown file - donwload? US 387
+  - terms of use repo. (add summary of changes file?) US 3987
   - check pwd reset flows - for contact information.
-  - check contact info around rest of proto - and in prod
+  - take CS11 - contact out of proto?
 
 
 
