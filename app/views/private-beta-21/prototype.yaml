@@ -7,11 +7,9 @@ description: |
  
   <ul>Includes:    
     <li>Clarity of service (7 stories)</li>
-    <li>download summary and receipt (3 no of stories) 
+    <li>download summary and receipt (adding download and print + VAT receipt moves survey para lower - more logical order of information) 
       <a href="https://docs.google.com/document/d/1OTg0GY4jTjX83MBqPoLNc2oSHK9RkD4GsFz3fXSj4JI/edit">download assumptions</a> (team google doc)
     </li>
-    <li>removed onward link to gov.uk on summary (CS9 update)</li>
-    <li>change search again wording on summary (CS9 Update)</li>
   </ul>
   <br>
   <ul>Excludes:
@@ -25,6 +23,7 @@ changelog:
   - Download or Print 'box' on summary
   - example postcode for search - SW1A 2AA
   - download stories - US317, 318, 319
+  - removed title number as seperate item on summary
   - 
   - todo...
   - Terms of use - download US 387
