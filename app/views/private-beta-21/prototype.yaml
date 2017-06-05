@@ -1,5 +1,5 @@
 name: IN-PROGRESS - download summary and receipt
-date: 2017-06-01
+date: 2017-06-05
 description: |
   <p>public beta assessment candidate :</p>
   <p>based on Spreadsheet (MVP for Oct Spreadsheet)</p>
@@ -24,9 +24,9 @@ changelog:
   - example postcode for search - SW1A 2AA
   - download stories - US317, 318, 319
   - removed title number as separate item on summary
+  - Terms of use - download US 387
   - 
   - todo...
-  - Terms of use - download US 387
   - update download trello cards
   - make more pdf examples (use v20 example titles?) - DN1011954 done (20 Blanda Views AA7 6FT)
   - update take_away_examples page
