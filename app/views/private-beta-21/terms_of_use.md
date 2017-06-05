@@ -1,3 +1,5 @@
+# Find property information: terms of use
+
 ## About this Service
 
 Use this service to get a summary of who owns or leases a property, including:
@@ -9,7 +11,7 @@ Use this service to get a summary of who owns or leases a property, including:
 
 The summary tells you when the title was last changed and can change if HM Land Registry receives an application. This service cannot tell you if a change is being processed.
 
-You can only view your purchased information once but you can print a copy.
+You can only view your purchased information once and print a copy. Copies of the summary and VAT receipt can be downloaded.
 
 Use [HM Land Registry’s Find a Property service](https://eservices.landregistry.gov.uk/wps/portal/Property_Search) instead if you need more detailed information, such as the official title plan, full legal register entry or details of any access rights and restrictions.
 
@@ -22,7 +24,6 @@ If you’re already registered with HM Land Registry’s Find a Property service
 If not, you’ll need to provide an email address and a password. HM Land Registry will notify you when your account has been created. You can’t change your details once you create an account – register a new account if you need to change your name or address details, or use a different email address.
 
 Important: you are solely responsible for:
-
 * keeping your username and password secure
 * all activity that occurs on or through your account
 
@@ -50,7 +51,7 @@ HM Land Registry has the right to cancel your account at any time without notice
 
 This service is for domestic and private use only. HM Land Registry is not responsible for any losses that may result if you use the service for commercial business or re-sale purposes.
 
-You can access the service from any [suitable internet-connected device and browser](https://www.gov.uk/service-manual/technology/designing-for-different-browsers-and-devices#browsers-to-test-in). You can print a copy of your purchased information and VAT receipts.
+You can access the service from any [suitable internet-connected device and browser](https://www.gov.uk/service-manual/technology/designing-for-different-browsers-and-devices#browsers-to-test-in). You can print a copy of your purchased information and VAT receipts. Copies can be downloaded.
 
 The service is available every day but may be taken down for updates and maintenance. If you are logged in when this happens, you’ll receive notification on-screen.
 
@@ -61,13 +62,13 @@ If HM Land Registry has to contact you, it’ll write to you at the email addres
 By using the Find property information service (‘the service’), you have the ability to:
 * search for a property by postcode
 * select a property from a list of property addresses that match your search
-* view and print ‘title summary’ information for a property for the fee stated
+* view, print or download title summary information for a property for the fee stated
 
 By using the service you agree to be bound by and pay for any purchase you make.
 
 Because the information is provided immediately, once you pay for it you lose the right of cancellation you would normally have under The Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013.
 
-This means that by making a request to view and print title summary information, you:
+This means that by making a request to view, print or download title summary information, you:
 
 * agree to pay the fee for the service by making an online transaction (through RBS Worldpay or a replacement online payment provider)
 * agree the summary will be provided as soon as you have paid
