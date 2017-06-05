@@ -13,6 +13,7 @@ description: |
   </ul>
   <br>
   <ul>Excludes:
+    <li>CS11 - contact us - phone no on sign-in, create account, search results</li> 
     <li>Move sign-in (2 stories)</li>   
     <li>search improvements</li>
   </ul>
@@ -24,10 +25,10 @@ changelog:
   - download stories - US317, 318, 319
   - 
   - todo...
-  - download stories
+  - download stories (plus updage trello cards)
   - make pdf's for examples (use v20 example titles?) - DN1011954 done (20 Blanda Views AA7 6FT)
-  - update take_away_examples page - leave v17 history - make new page? list of example titles
-  - Terms of use markdown file - donwload? US 387
+  - update take_away_examples page
+  - Terms of use - download US 387
   - terms of use repo. (add summary of changes file?) US 3987
   - check pwd reset flows - for contact information.
   - take CS11 - contact out of proto?
