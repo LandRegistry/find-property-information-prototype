@@ -1,4 +1,4 @@
-name: IN-PROGRESS - download summary and receipt
+name: Download summary and receipt
 date: 2017-06-05
 description: |
   <p>public beta assessment candidate :</p>
@@ -25,12 +25,13 @@ changelog:
   - download stories - US317, 318, 319
   - removed title number as separate item on summary
   - Terms of use - download US 387
+  - terms of use repo - updated
   - 
-  - todo...
+  - todo (not essential)...
   - update download trello cards
   - make more pdf examples (use v20 example titles?) - DN1011954 done (20 Blanda Views AA7 6FT)
   - update take_away_examples page
-  - terms of use repo. (add summary of changes file?) US 387
+
 
 
 

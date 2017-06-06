@@ -24,6 +24,7 @@ If you’re already registered with HM Land Registry’s Find a Property service
 If not, you’ll need to provide an email address and a password. HM Land Registry will notify you when your account has been created. You can’t change your details once you create an account – register a new account if you need to change your name or address details, or use a different email address.
 
 Important: you are solely responsible for:
+
 * keeping your username and password secure
 * all activity that occurs on or through your account
 
