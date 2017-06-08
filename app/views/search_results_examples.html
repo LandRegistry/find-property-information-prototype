@@ -182,7 +182,7 @@
       <h2 class="heading-medium">notes</h2>
       <ul class="list-bullet font-small">
         <li>page per title record link (not page per property/address)</li>
-
+        <li>every leashold is associated with a freehold</li>
       </ul>
     </div>
   </div>
@@ -237,7 +237,7 @@
       <h2 class="heading-medium">notes</h2>
       <ul class="list-bullet font-small">
         <li>page per title record link (not page per property/address)</li>
-
+        <li>every leasehold is associated with a freehold</li>
       </ul>
     </div>
   </div>
@@ -303,6 +303,7 @@
       <h2 class="heading-medium">notes</h2>
       <ul class="list-bullet font-small">
         <li>page per title record link (not page per property/address)</li>
+        <li>every leasehold is associated with a freehold</li>
         <li>multiple leases - e.g. head and sub leases?</li>
         <li>multiple leases - e.g. management company and individual leasholder?</li>
       </ul>
@@ -349,6 +350,15 @@
             </h2>
             <div class="font-xsmall">
               <a href="#">Freehold title, HP726948</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              "Church house", Mandela Way, Southampton, (SO15 5RZ)
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP726348</a>
             </div>
           </li>
 
@@ -432,6 +442,7 @@
       <ul class="list-bullet font-small">
         <li>page per title record link (not page per property/address)</li>
         <li>SE18 6JH = real world example</li>
+        <li>shouldnt every leasehold be also associated with a freehold</li>
       </ul>
     </div>
   </div>
@@ -511,14 +522,12 @@
         <li>Not migrated to SOR yet</li>
         <li>property not registered</li>
         <li>Mistake: Address exists on Royal Mail DB, but not in real world</li>
-        <li>Mistake: Duplicate UPRN's - 1 address 2 UPRN's</li>
-        <li>Mistake: Duplicate UPRN's - 2 address(es) 2 UPRN's, but actually one property</li>
       </ul>
     </div>
   </div>
 
 
-  <h2 class="heading-large">when we have a record, but there is no Royal Mail address (or we can't associate one)</h2>
+  <h2 class="heading-large">when we have a records, but weird (user will think)</h2>
   <div class="grid-row">
     <div class="column-two-thirds">
       <h2 class="heading-medium">example 1</h2>
@@ -532,7 +541,7 @@
               <a href="#">Freehold title, HP726948</a>
             </div>
             <div class="font-xsmall">
-              This property is newly built - this postcode is not yet registered with the Royal Mail
+              This property is newly built - this address might not be in common use yet
             </div>
           </li>
           
@@ -543,7 +552,13 @@
 
     <div class="column-one-third">
       <h2 class="heading-medium">notes</h2>
-
+      <ul class="list-bullet font-small">
+        <li>new build - we have given the title an address, but LA / RM not updated records</li>
+        <li>new build, we have given address, address exists in realworld, but AddressBase/Our systems not yet updated (synchonisation lag)</li>
+        <li>multiple addresses for same title record (not showing how to deal with this)</li>
+        <li>Mistake: Duplicate UPRN's - 1 address 2 UPRN's</li>
+        <li>Mistake: Duplicate UPRN's - 2 address(es) 2 UPRN's, but actually one property</li>
+      </ul>
     </div>
   </div>
 
