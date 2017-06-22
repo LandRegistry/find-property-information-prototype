@@ -1,0 +1,92 @@
+{% extends "./private-beta-15/layout/layout.html" %}
+
+{% from "./private-beta-21/includes/search_form.html" import search_form %}
+
+{% block page_title %}
+  Search results examples
+{% endblock %}
+
+{% block head_additionals %}
+
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+  
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Addressbase search examples/ideas</h1>
+      <h2 class="heading-medium">Search</h2>
+      <p>Search by postcode.  Only postcode, only a complete postcode.  invalid postcodes = message to user</p>
+      <!-- <p>build what we have in FPI now <a href="private-beta-21/search">Version 21 Search</a></p> -->
+    </div>
+  </div>
+  <hr>
+
+
+  <p>what we have in FPI now</p>
+  <h1 class="heading-large">Search for land or property</h1>
+
+  <div class="grid-row spacing-top-single">
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+      <!-- <p class="spacing-bottom-single">You can get a summary of information about registered property or land in England and Wales, even if you don’t own it.</p> -->
+
+      {{ search_form() }}
+
+      <div class="panel panel-border-narrow">
+        <p>This service needs a postcode. If you don't know the postcode, <a href="https://eservices.landregistry.gov.uk/wps/portal/Property_Search">use the Find a Property service</a> instead to search by street address, title number or by using a map.</p>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <hr>
+
+  <p>making it better - if we are only doing addresses (not land), and only postcode</p>
+  <h1 class="heading-large">Search for property</h1>
+
+  <div class="grid-row spacing-top-single">
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+      <!-- <p class="spacing-bottom-single">You can get a summary of information about registered property or land in England and Wales, even if you don’t own it.</p> -->
+
+      {{ search_form() }}
+
+      <div class="panel panel-border-narrow">
+
+        <p>This service needs a postcode: 
+          <a target="_blank" id="postcode-finder-link" rel="external" href="http://www.royalmail.com/find-a-postcode">Find a postcode on Royal Mail's postcode finder</a>
+        </p>
+
+
+        <p>If you don't have a postcode, or are looking for information about land, 
+
+        <a href="https://eservices.landregistry.gov.uk/wps/portal/Property_Search">use the Find a Property service</a> instead to search by street address, title number or by using a map.</p>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <hr>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <p class="spacing-top-double"><a href="address_base_search_intro">&lt; addressbase search introduction</a></p>
+      <p><a href="/">&lt; prototype start page</a></p>
+
+    </div>
+  </div>
+
+
+
+</main>
+
+{% endblock %}
+
+
