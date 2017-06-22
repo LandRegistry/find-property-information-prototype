@@ -1,0 +1,471 @@
+{% extends "./private-beta-15/layout/layout.html" %}
+
+
+{% block page_title %}
+  Search results examples
+{% endblock %}
+
+{% block head_additionals %}
+
+<style type="text/css">
+
+  .example1 .children--address-list {
+    border-left: 1px solid #bfc1c3;
+  }
+
+  .example1 .children--address-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 5px;
+  }
+
+
+  .example1 .children--address-list li:before {
+    content: '';
+    left: 0;
+    top: 50%;
+    position: absolute;
+    border-top: 1px solid #bfc1c3;
+    width: 15px;
+  }
+
+  .example1 .children--address-list li:last-child:after {
+    content: '';
+    left: -1px;
+    top: 50%;
+    bottom: 0;
+    position: absolute;
+    border-left: 1px solid #fff;
+  }
+
+  ol li div {
+    margin-left: 15px;
+  }
+
+  .children--address-list li div {
+    margin-left: 0px;
+  }
+
+  .children--address-list {
+    margin-left: 15px;
+  }
+
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+  
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Addressbase search examples/ideas</h1>
+      <h2 class="heading-medium">Results</h2>
+      <p>FPI was a result per tenure, showing the A1 Property desription - and the property description is the link.</p>
+      <p>Moving to a results per address, with all the tenures for that address grouped to that result, and displaying the postal address not the property description</p>
+      <!-- <p>build what we have in FPI now <a href="private-beta-21/search">Version 21 Search</a></p> -->
+
+    </div>
+  </div>
+  <hr>
+
+  <h2 class="heading-large">example set of results</h2>
+  <p>No hyperlinks, and not sure if all these titles would be related to a postal address</p>
+  <P>Shows things/complexity about the order - is in alpha-numeric order (assuming that 6 Mandela can be identified numerically between 5 and 7)</P>
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <!-- <h2 class="heading-medium">example 1</h2> -->
+        <div class="example1">
+          <ol>
+            <li>
+              <h2 class="heading-small collapse-bottom">
+                5 Mandela Way, Southampton, SO15 5RZ
+              </h2>
+              <div class="font-xsmall">
+                Freehold
+              </div>
+            </li>
+            
+              <li>
+                <h2 class="heading-small collapse-bottom">
+                  Flat 1, 6 Mandela Way, Southampton, SO15 5RZ
+                </h2>
+                <ol class="children--address-list">
+                  <li>
+                    <div class="font-xsmall">
+                      Freehold
+                    </div>
+                  </li>
+                  <li>
+                    <div class="font-xsmall">
+                      Leasehold
+                    </div>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <h2 class="heading-small collapse-bottom">
+                  Flat 2, 6 Mandela Way, Southampton, SO15 5RZ
+                </h2>
+                <ol class="children--address-list">
+                  <li>
+                    <div class="font-xsmall">
+                      Freehold
+                    </div>
+                  </li>
+                  <li>
+                    <div class="font-xsmall">
+                      Leasehold
+                    </div>
+                  </li>
+                </ol>
+              </li>
+
+            <li>
+              <h2 class="heading-small collapse-bottom">
+                7 Mandela Way, Southampton, SO15 5RZ
+              </h2>
+              <div class="font-xsmall">
+                Freehold
+              </div>
+            </li>
+
+            <li>
+                <h2 class="heading-small collapse-bottom">
+                  8 Mandela Way, Southampton, SO15 5RZ
+                </h2>
+                <ol class="children--address-list">
+                  <li>
+                    <div class="font-xsmall">
+                      Freehold
+                    </div>
+                  </li>
+                  <li>
+                    <div class="font-xsmall">
+                      Leasehold
+                    </div>
+                  </li>
+                  <li>
+                    <div class="font-xsmall">
+                      Leasehold
+                    </div>
+                  </li>
+                  <li>
+                    <div class="font-xsmall">
+                      Leasehold
+                    </div>
+                  </li>
+                </ol>
+              </li>
+
+            <li>
+              <h2 class="heading-small collapse-bottom">
+                "Church house", Mandela Way, Southampton, (SO15 5RZ)
+              </h2>
+              <div class="font-xsmall">
+                Freehold
+              </div>
+            </li>
+
+            <li>
+              <h2 class="heading-small collapse-bottom">
+                blair court, Mandela Way, Southampton, (SO15 5RZ)
+              </h2>
+              <div class="font-xsmall">
+                Freehold
+              </div>
+            </li>
+
+            <li>
+              <h2 class="heading-small collapse-bottom">
+                the former sites of 24-44 Mandela Way, Southampton, (SO15 5RZ)
+              </h2>
+              <div class="font-xsmall">
+                Freehold
+              </div>
+            </li>
+
+            <li>
+              <h2 class="heading-small collapse-bottom">
+                Blair gardens, blair court, Mandela Way, Southampton, (SO15 5RZ)
+              </h2>
+              <div class="font-xsmall">
+                Freehold
+              </div>
+            </li>
+
+          </ol>
+        </div>
+
+      </div>
+    </div>
+
+  <hr>
+
+<h2 class="heading-large">linking onward to page per tenure</h2>
+<p>Keeping existing page per tenure - means the link must be on the tenure</p>
+<P>User problems - what are freehold and leasehold? which link do i need? Why does 'page per property (tenure)' show a different address?</P>
+<p>Try No 6, Flats 1 and 2, Freehold</p>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <!-- <h2 class="heading-medium">example 1</h2> -->
+      <div class="example1">
+        <ol>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              5 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              6 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="page_per_tenure">Freehold</a>
+            </div>
+          </li>
+          
+            <li>
+              <h2 class="heading-small collapse-bottom">
+                Flat 1, 6 Mandela Way, Southampton, SO15 5RZ
+              </h2>
+              <ol class="children--address-list">
+                <li>
+                  <div class="font-xsmall">
+                    <a href="page_per_tenure">Freehold</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="font-xsmall">
+                    <a href="#">Leasehold</a>
+                  </div>
+                </li>
+              </ol>
+            </li>
+            <li>
+              <h2 class="heading-small collapse-bottom">
+                Flat 2, 6 Mandela Way, Southampton, SO15 5RZ
+              </h2>
+              <ol class="children--address-list">
+                <li>
+                  <div class="font-xsmall">
+                    <a href="page_per_tenure">Freehold</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="font-xsmall">
+                    <a href="#">Leasehold</a>
+                  </div>
+                </li>
+              </ol>
+            </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              7 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold</a>
+            </div>
+          </li>
+
+          <li>
+              <h2 class="heading-small collapse-bottom">
+                8 Mandela Way, Southampton, SO15 5RZ
+              </h2>
+              <ol class="children--address-list">
+                <li>
+                  <div class="font-xsmall">
+                    <a href="#">Freehold</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="font-xsmall">
+                    <a href="#">Leasehold</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="font-xsmall">
+                    <a href="#">Leasehold</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="font-xsmall">
+                    <a href="#">Leasehold</a>
+                  </div>
+                </li>
+              </ol>
+            </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              "Church house", Mandela Way, Southampton, (SO15 5RZ)
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              babbage court, Mandela Way, Southampton, (SO15 5RZ)
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold</a>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+
+    </div>
+  </div>
+
+  <hr>
+
+<h2 class="heading-large">linking onward to page per property</h2>
+<p>New Page - page per property which helps the user to pick the right tenure - so links onwrd to page per tenure</p>
+<p>Try Flat 1, 6 Mandela Way</p>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <!-- <h2 class="heading-medium">example 1</h2> -->
+      <div class="example1">
+        <ol>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">5 Mandela Way, Southampton, SO15 5RZ</a>
+            </h2>
+            <div class="font-xsmall">
+              1 freehold property record
+            </div>
+          </li>
+
+<!--           <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="page_per_tenure">6 Mandela Way, Southampton, SO15 5RZ</a>
+            </h2>
+            <div class="font-xsmall">
+              1 freehold property record
+            </div>
+          </li> -->
+          
+            <li>
+              <h2 class="heading-small collapse-bottom">
+                <a href="page_per_property">Flat 1, 6 Mandela Way, Southampton, SO15 5RZ</a>
+              </h2>
+              <ol class="children--address-listx">
+                <li>
+                  <div class="font-xsmall">
+                    1 Freehold and 1 leasehold property records
+                  </div>
+                </li>
+<!--                 <li>
+                  <div class="font-xsmall">
+                    Leasehold
+                  </div>
+                </li> -->
+              </ol>
+            </li>
+            <li>
+              <h2 class="heading-small collapse-bottom">
+                <a href="#">Flat 2, 6 Mandela Way, Southampton, SO15 5RZ</a>
+              </h2>
+              <ol class="children--address-listx">
+                <li>
+                  <div class="font-xsmall">
+                    1 freehold and 1 leashold property records
+                  </div>
+                </li>
+<!--                 <li>
+                  <div class="font-xsmall">
+                    <a href="#">Leasehold</a>
+                  </div>
+                </li> -->
+              </ol>
+            </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">7 Mandela Way, Southampton, SO15 5RZ</a>
+            </h2>
+            <div class="font-xsmall">
+              1 freehold property record
+            </div>
+          </li>
+
+          <li>
+              <h2 class="heading-small collapse-bottom">
+                <a href="#">8 Mandela Way, Southampton, SO15 5RZ</a>
+              </h2>
+              <ol class="children--address-listx">
+                <li>
+                  <div class="font-xsmall">
+                    1 freehold and 3 leasehold property records
+                  </div>
+                </li>
+<!--                 <li>
+                  <div class="font-xsmall">
+                    <a href="#">Leasehold</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="font-xsmall">
+                    <a href="#">Leasehold</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="font-xsmall">
+                    <a href="#">Leasehold</a>
+                  </div>
+                </li> -->
+              </ol>
+            </li>
+
+<!--           <li>
+            <h2 class="heading-small collapse-bottom">
+              "Church house", Mandela Way, Southampton, (SO15 5RZ)
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              babbage court, Mandela Way, Southampton, (SO15 5RZ)
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold</a>
+            </div>
+          </li> -->
+
+        </ol>
+      </div>
+
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <p class="spacing-top-double"><a href="address_base_search_intro">&lt; addressbase search introduction</a></p>
+      <p><a href="/">&lt; prototype start page</a></p>
+
+    </div>
+  </div>
+
+
+
+</main>
+
+{% endblock %}
+
+

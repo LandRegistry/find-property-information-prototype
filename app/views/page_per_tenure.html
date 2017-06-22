@@ -1,0 +1,162 @@
+{% extends "./private-beta-21/layout/layout.html" %}
+
+
+{% block page_title %}
+  Search results examples
+{% endblock %}
+
+{% block head_additionals %}
+
+{% endblock %}
+
+{% block body %}
+<h1 class="heading-large spacing-top-single">Confirm your order</h1>
+
+  <p>You'll get a summary of the information HM Land Registry holds for this property title.</p>
+  <div class="grid-row column-flip spacing-top-single">
+
+    <div class="column-one-third tablet-column-one-third spacing-bottom-single">
+
+        <div class="map" id="map">
+          <p>The map relies on JavaScript being enabled in your browser.</p>
+        </div>
+
+    </div>
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <dl class="definition-tabular definition-tabular-sectioned">
+
+          <dt>Address</dt>
+          <dd class="bold-medium">
+            <div class="address">
+                <span>blair court</span>
+                <span>6 Mandela Way</span>
+              
+                <span>Southampton</span>
+              
+                <span>SO15 5RZ</span>
+            </div>
+          </dd>
+
+<!--         <dt>Title number</dt>
+        <dd class="bold-small">{{ title['data']['title_number'] }}</dd> -->
+
+        <dt>Tenure type</dt>
+        <dd>
+          <strong class="bold">Freehold</strong>
+          <a class="split-detail-trigger font-xsmall" href="#what-is-tenure">What does this mean?</a>
+
+          <div class="split-detail-contents" id="what-is-tenure">
+            <div class="panel panel-border-narrow font-xsmall">
+
+                <p>You own a freehold building and land outright. It is yours until you sell it or give it away.</p>
+                <p>Most houses are freehold. Most flats are leasehold. That means someone else owns the freehold for the building the flat is in.</p>
+                <p><b class="bold">If you want to know who owns a particular flat, you probably need the leasehold instead.</b></p>
+                <p>Houses can also be leasehold and usually are if they’re bought through a shared ownership scheme.</p>
+
+            </div>
+          </div>
+
+          <p class="font-xsmall">A property can have both a freehold and a leasehold title. To get a different tenure for this address, <a href="/search_results" data-back-link>go back</a> and select the one you need.</p>
+        </dd>
+
+      </dl>
+
+        <h2 class="heading-medium collapse-top">The summary will tell you</h2>
+
+      <ul class="list-bullet">
+
+
+          <li>current owner's name and address</li>
+          <li>what was paid for the property – you won't get this if it was bought before April 2000, if they paid less than &pound;100, or if HM Land Registry have agreed not to record the price</li>
+          <li>if there is a mortgage on the property, the lender's name and address</li>
+          <!-- <li>the Title Number (unique reference number)</li> -->
+
+      </ul>
+
+      <p class="spacing-top-single">This information can change if we receive an application. This service is unable to tell you whether or not there is an application pending with HM Land Registry.</p>
+
+      <div class="warning media">
+        <div class="media-item">
+          <i class="icon icon-important">
+            <span class="visuallyhidden">Warning</span>
+          </i>
+        </div>
+
+        <div class="media-body">
+          <h2 class="heading-small spacing-bottom-flush">You'll only be able to view the information once</h2>
+          <p class="spacing-top-flush">If you want to keep a copy you can download it or print it out</p>
+        </div>
+      </div>
+
+
+      <h2 class="heading-medium">The summary costs {{ price_text | safe }} <span class="font-small">(&pound;2.50+VAT)</span></h2>
+
+
+      <p>You can pay by credit or debit card.</p>
+
+      <!-- <p>You can pay by credit or debit card.</p> -->
+
+
+      <form method="GET" class="spacing-bottom-double" action="{% if session.isLoggedIn %}worldpay_1{% else %}sign_in{% endif %}" data-clientside-validation="cra_form_validation" data-clientside-validation-no-summary>
+        <p>You need to accept the following terms to continue.</p>
+
+        <input type="hidden" name="title_number" id="title_number" value="{{title['data']['title_number']}}"/>
+
+        <div class="form-group">
+<!--           <label class="block-label" for="right_to_cancel">
+            <input id="right_to_cancel" name="right_to_cancel" type="checkbox" value="agree">
+            I agree that you will provide the summary as soon as I’ve paid.<br>
+            I accept that I will lose my right to cancel the contract once the summary is displayed.<br>
+          </label> -->
+          <div class="multiple-choice">
+            <input id="right_to_cancel" name="right_to_cancel" type="checkbox" value="terms">
+            <label for="right_to_cancel">
+              I agree that you will provide the summary as soon as I’ve paid.<br>
+              I accept that I will lose my right to cancel the contract once the summary is displayed.
+            </label>
+          </div>
+        </div>
+
+        {% if session.isLoggedIn %}
+          <input type="submit" class="button" value="Buy title summary">
+          <p class="font-xsmall spacing-top-third">for £3 inc VAT</p>
+        {% else %}
+          <!-- <p class="form-hint">You will need to sign in or create an account to continue </p> -->
+          <input type="submit" class="button" value="Continue to sign in page">
+        {% endif %}
+
+      </form>
+
+      <script type="application/json" id="cra_form_validation">
+        {
+          "right_to_cancel": {
+            "presence": {
+              "message": "You need to agree to receive the summary right away and that you’ll lose your right to cancel"
+            }
+          }
+        }
+      </script>
+
+    </div>
+  </div>
+
+    <script>
+      var indexData = {"properties":{"feature_id":4019,"width":0,"graphic_type":"Bordered Polygon","render_attributes":{"exterior_edge_thickness":2,"border_width":0,"border_colour":25,"fill_style":9,"render_level":"0","exterior_edge_colour":1,"fill_colour":25},"colour":25},"geometry":{"coordinates":[[[369196.879,308997.034],[369196.1,308992.6],[369193.093,308940.454],[369190.55,308896.35],[369190.413,308892.01],[369190.3,308888.45],[369190.25,308887.4],[369191.4,308887.6],[369192.4,308887.85],[369204.05,308889.6],[369204.75,308889.69],[369211.75,308890.6],[369227.85,308892.25],[369229.22,308892.63],[369229.65,308892.75],[369232.9,308893.1],[369248.35,308894.8],[369254.75,308895.75],[369257.95,308896.1],[369264.9,308897.4],[369268.55,308898.3],[369272.6,308899.6],[369274.602,308900.281],[369277.45,308901.25],[369281.8,308902.95],[369284.11,308903.98],[369286.05,308904.85],[369287.55,308905.55],[369291.7,308907.7],[369295.7,308910.1],[369298.35,308911.85],[369307.9,308918.4],[369311,308920.55],[369316.55,308924.4],[369320.05,308926.75],[369327.1,308931.6],[369329.95,308933.45],[369332.65,308935.3],[369335.35,308937.3],[369337.95,308939.3],[369339.95,308941.4],[369341.85,308943.75],[369343.55,308946.25],[369343.85,308946.7],[369344.962,308948.591],[369345.35,308949.25],[369346.8,308951.95],[369347.55,308953.7],[369348.88,308957.105],[369350.85,308962.15],[369358.2,308980.2],[369364.15,308994.65],[369368.941,309006.029],[369374.901,309019.226],[369378.407,309025.285],[369382.1,309031.668],[369383.087,309033.373],[369383.602,309034.264],[369373.559,309040.014],[369332.205,309063.693],[369334.455,309067.001],[369332.35,309068.35],[369329.8,309069.7],[369325.95,309071.65],[369318.15,309075.65],[369314.8,309077.35],[369312.05,309078.65],[369309.25,309079.9],[369305.2,309081.55],[369302.35,309082.65],[369299.45,309083.6],[369295.2,309084.85],[369292.7,309085.45],[369290.25,309086],[369287.75,309086.45],[369283.7,309087],[369281.35,309087.25],[369279,309087.45],[369273.05,309087.85],[369269.3,309088],[369246.2,309089.05],[369243.25,309089.15],[369240.9,309089.25],[369236.2,309089.75],[369232.8,309090.25],[369230.5,309090.7],[369228.2,309091.2],[369225.9,309091.8],[369224.05,309092.35],[369222.25,309093],[369220.5,309093.7],[369218.4,309094.7],[369217.15,309095.4],[369215.85,309096.1],[369214.65,309096.9],[369197.4,309000],[369196.879,308997.034]]],"type":"Polygon"},"crs":{"properties":{"name":"urn:ogc:def:crs:EPSG::27700"},"type":"name"},"type":"Feature"};
+    </script>
+    <script defer src="/public/app/javascripts/map.js"></script>
+
+
+    <div class="grid-row">
+    <div class="column-two-thirds">
+      <p class="spacing-top-double"><a href="address_base_results">&lt; addressbase search introduction</a></p>
+      <p><a href="/">&lt; prototype start page</a></p>
+
+    </div>
+  </div>
+{% endblock %}
+  
+
+
+
