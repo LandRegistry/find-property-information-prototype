@@ -1,4 +1,4 @@
-{% extends "./private-beta-15/layout/layout.html" %}
+{% extends "./layout/layout.html" %}
 
 
 {% block page_title %}
@@ -244,7 +244,7 @@
               6 Mandela Way, Southampton, SO15 5RZ
             </h2>
             <div class="font-xsmall">
-              <a href="page_per_tenure">Freehold</a>
+              <a href="page_per_title">Freehold</a>
             </div>
           </li>
           
@@ -255,7 +255,7 @@
               <ol class="children--address-list">
                 <li>
                   <div class="font-xsmall">
-                    <a href="page_per_tenure">Freehold</a>
+                    <a href="page_per_title">Freehold</a>
                   </div>
                 </li>
                 <li>
@@ -272,7 +272,7 @@
               <ol class="children--address-list">
                 <li>
                   <div class="font-xsmall">
-                    <a href="page_per_tenure">Freehold</a>
+                    <a href="page_per_title">Freehold</a>
                   </div>
                 </li>
                 <li>
@@ -484,7 +484,8 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <p class="spacing-top-double"><a href="address_base_search_intro">&lt; addressbase search introduction</a></p>
+      <p class="spacing-top-double"><a href="{{path}}/address_base_search">&lt; search</a></p>
+      <p><a href="{{path}}/address_base_search_intro">&lt; addressbase search introduction</a></p>
       <p><a href="/">&lt; prototype start page</a></p>
 
     </div>
