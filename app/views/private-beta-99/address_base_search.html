@@ -1,6 +1,7 @@
-{% extends "./private-beta-15/layout/layout.html" %}
+{% extends "./layout/layout.html" %}
 
-{% from "./private-beta-21/includes/search_form.html" import search_form %}
+{% from "./includes/search_form.html" import search_form %}
+{% from "./includes/search_form2.html" import search_form2 %}
 
 {% block page_title %}
   Search results examples
@@ -55,7 +56,7 @@
     <div class="column-two-thirds tablet-column-two-thirds">
       <!-- <p class="spacing-bottom-single">You can get a summary of information about registered property or land in England and Wales, even if you don’t own it.</p> -->
 
-      {{ search_form() }}
+      {{ search_form2() }}
 
       <div class="panel panel-border-narrow">
 
@@ -77,7 +78,7 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <p class="spacing-top-double"><a href="address_base_search_intro">&lt; addressbase search introduction</a></p>
+      <p class="spacing-top-double"><a href="{{path}}/address_base_search_intro">&lt; addressbase search introduction</a></p>
       <p><a href="/">&lt; prototype start page</a></p>
 
     </div>

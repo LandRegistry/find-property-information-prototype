@@ -1,4 +1,4 @@
-{% extends "./private-beta-15/layout/layout.html" %}
+{% extends "./layout/layout.html" %}
 
 {% block page_title %}
   Search results examples
@@ -787,8 +787,12 @@
   <div class="grid-row spacing-top-double">
     <div class="column-two-thirds">
       <ul class="list-bullet">
-        <li><a href="search_results_examples_2">search results - address is hyperlink</a></li>
+        <li><a href="{{path}}/search_results_examples_2">search results - address is hyperlink</a></li>
+        <li><a href="{{path}}/search_results_examples_3">search results - when we don't have a record</a></li>
+        <li><a href="{{path}}/address_base_search">search</a></li>
+        <li><a href="{{path}}/address_base_search_intro">addressbase search introduction</a></li>
         <li><a href="/">prototype start page</a></li>
+      </ul>
 
     </div>
   </div>
