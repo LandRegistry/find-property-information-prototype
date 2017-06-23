@@ -62,11 +62,27 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">Addressbase search examples/ideas</h1>
+      <h1 class="heading-large">Address based search examples/ideas/issues</h1>
       <h2 class="heading-medium">Results</h2>
-      <p>FPI was a result per tenure, showing the A1 Property desription - and the property description is the link.</p>
+      <p>FPI currently a result per title<sup class="font-xsmall">1</sup> (tenure), showing the A1 Property description - and the property description is the link.</p> 
       <p>Moving to a results per address, with all the tenures for that address grouped to that result, and displaying the postal address not the property description</p>
+      <p class="font-xsmall">1: So is Find a Property - in both services people pick/buy the wrong record becasue of this</p>
       <!-- <p>build what we have in FPI now <a href="private-beta-21/search">Version 21 Search</a></p> -->
+      <p style="margin-top:45px;">A result per title (tenure), showing the A1 address, (current FPI), means for the user: 
+        <ul class="list-bullet">
+          <li>the address does not match their mental model of postcodes and addresses</li>
+          <li>more results for the user to deal with</li>
+          <li>people pick / buy the wrong document</li>
+          <li>less properties/titles can be found - hits the license limit more frequently.</li>
+        </ul>
+      </p>
+      <p style="margin-top:45px;">A result per postal address, showing the postal address, means for the user: 
+        <ul class="list-bullet">
+          <li>matches the postcode model</li>
+          <li>help people understand that it's not one title record per property - that they will have to make a further choice</li>
+          <li>more properties and titles can be found - in total, and - found first time</li>
+        </ul>
+      </p>
 
     </div>
   </div>
@@ -205,9 +221,9 @@
 
   <hr>
 
-<h2 class="heading-large">linking onward to page per tenure</h2>
-<p>Keeping existing page per tenure - means the link must be on the tenure</p>
-<P>User problems - what are freehold and leasehold? which link do i need? Why does 'page per property (tenure)' show a different address?</P>
+<h2 class="heading-large">linking to page per title (tenure) - What FPI and FaP do</h2>
+<p>Keeping existing page per title (tenure) - means the link must be on the tenure</p>
+<P>User problems - what are freehold and leasehold? which link do i need? Why does 'page per title' show a different address?</P>
 <p>Try No 6, Flats 1 and 2, Freehold</p>
   <div class="grid-row">
     <div class="column-two-thirds">
@@ -330,9 +346,12 @@
 
   <hr>
 
-<h2 class="heading-large">linking onward to page per property</h2>
-<p>New Page - page per property which helps the user to pick the right tenure - so links onwrd to page per tenure</p>
+<h2 class="heading-large">linking to page per property</h2>
+<p>matches user mental model - how they are searching / the results...</p>
+<p>New Page - page per property which helps the user to pick the right title (tenure) - which breaks the problem down for the user, and then links onward to page per title</p>
 <p>Try Flat 1, 6 Mandela Way</p>
+<p>Or - page per property replaces page per title - which breaks the problem down for the user, and then links onward buy it</p>
+<p>Try Flat 2, 6 Mandela Way</p>
   <div class="grid-row">
     <div class="column-two-thirds">
       <!-- <h2 class="heading-medium">example 1</h2> -->
@@ -375,7 +394,7 @@
             </li>
             <li>
               <h2 class="heading-small collapse-bottom">
-                <a href="#">Flat 2, 6 Mandela Way, Southampton, SO15 5RZ</a>
+                <a href="page_per_property2">Flat 2, 6 Mandela Way, Southampton, SO15 5RZ</a>
               </h2>
               <ol class="children--address-listx">
                 <li>
@@ -445,6 +464,15 @@
               <a href="#">Freehold</a>
             </div>
           </li> -->
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">Plaza Hotel, Mandela Way, Southampton, (SO15 5RZ)</a>
+            </h2>
+            <div class="font-xsmall">
+              1 freehold and 499 leasehold property records
+            </div>
+          </li>
 
         </ol>
       </div>
