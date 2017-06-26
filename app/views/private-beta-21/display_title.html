@@ -34,6 +34,7 @@
       <dl class="definition-tabular definition-tabular-sectioned">
 
         {% if title['is_caution_title'] %}
+          <div class="printhidden">
           <dt class="bold-small">Caution</dt>
           <dd>
             <details class="font-xsmall">
@@ -45,6 +46,7 @@
               </div>
             </details>
           </dd>
+          </div>
         {% endif %}
 
         {% if title.address %}
@@ -249,9 +251,15 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <div class="panel panel-border-narrow spacing-top-single">
+      <div class="panel panel-border-narrow spacing-top-single printhidden">
        <!--  <p>If you have any problems with your purchase, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact HM Land Registry</a>.</p> -->
-        <p>If you have any problems with your purchase, you can contact HM Land Registry using the <a href="http://landregistry.custhelp.com/app/contactus_general/">general enquiry contact form</a> call <b class="bold">0300 006 0411</b>.</p>
+        <p>If you have any problems with your purchase, you can contact HM Land Registry using the <a href="http://landregistry.custhelp.com/app/contactus_general/">general enquiry contact form</a> or call <b class="bold">0300 006 0411</b>.</p>
+        
+      </div>
+
+      <div class="panel panel-border-narrow spacing-top-single printonly text">
+       <!--  <p>If you have any problems with your purchase, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact HM Land Registry</a>.</p> -->
+        <p>If you have any problems with your purchase, you can contact HM Land Registry on <b class="bold">0300 006 0411</b>.</p>
         
       </div>
 

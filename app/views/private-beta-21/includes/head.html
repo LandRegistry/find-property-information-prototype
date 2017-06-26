@@ -86,13 +86,18 @@
 			font-weight: 100;
 			float: left;
     		clear: left;
-			width: 33.33333%;
+		/*	width: 33.33333%; */
+			width:50%;
+			font-weight:800;
 		}
 
 		dl.definition-tabular dd {
-			width: 66.66667%;
+		/*	width: 66.66667%;
 			float:left;
-			margin-left: 33.33333%;
+			margin-left: 33.33333%; */
+			width: 50%;
+			float:left;
+			margin-left: 50%;
 		}
 
 		dl.definition-tabular dt + dd {
@@ -149,6 +154,12 @@
 /* summary - print */
 /* hide from screen, but not print */
 	@media print {
+		.header-logo {
+			margin-left: 15px;
+		}
+		#proposition-name {
+			margin-left: 15px;
+		}
 
 	}
     
