@@ -1,0 +1,56 @@
+{% extends "./layout/layout.html" %}
+{% from "./includes/search_form2.html" import search_form2 %}
+{% from "./includes/register_teaser.html" import register_teaser %}
+{% from "./includes/pagination.html" import pagination %}
+{% from "./includes/resultsx.html" import resultsx %}
+
+{% block title %}Search results{% endblock %}
+
+{% block head_additionals %}
+
+<style type="text/css">
+
+  .example1 ol li div {
+    margin-left: 15px;
+  }
+
+</style>
+
+{% endblock %}
+
+{% block body %}
+
+  {% if data.page %}
+    {% set page = data.page %}
+  {% else %}
+    {% set page = 1 %}
+  {% endif %}
+
+  <div class="grid-row spacing-top-single">
+    <div class="column-two-thirds tablet-column-two-thirds spacing-bottom-single">
+      {{ search_form2(h1=true,autofocus=false,label='Search results for',value='SO15 5RZ') }}
+
+      <!-- <h2 class="font-xsmall expand-bottom-half">{{ results['number_results'] }} result{% if results['number_results'] > 1 %}s{% endif %} found</h2> -->
+      <h2>&nbsp;</h2>
+      {{ resultsx() }}
+
+      
+<!--       {% if results['number_pages'] %}
+        {{ pagination(page, results['number_pages'],search_term=data.search_term) }}
+      {% endif %} -->
+      {{ pagination(1, 3, 'SO15 5RZ"') }}
+    </div>
+
+    <div class="column-one-third tablet-column-one-third">
+      <aside class="supplementary-panel">
+        <h2 class="heading-medium">Need help?</h2>
+<!--         <p>If the property you want isn't listed, use the <a rel="external" href="https://eservices.landregistry.gov.uk/wps/portal/Property_Search">Find a Property service</a> instead to search by street address, title number or by using a map.</p> -->
+        <!-- <p>Call HM Land Registry on 0300 006 0411 to report a problem or if you're stuck and need help.</p> -->
+
+        <p>If you are looking for information about places that don't have a postal address, eg land</p>
+        <p>
+        <a href="https://eservices.landregistry.gov.uk/wps/portal/Property_Search">use the Find a Property service</a> instead to search by street address, title number or by using a map.</p>
+      </aside>
+    </div>
+  </div>
+{% endblock %}

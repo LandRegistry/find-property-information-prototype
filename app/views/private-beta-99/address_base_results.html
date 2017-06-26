@@ -50,6 +50,14 @@
     margin-left: 15px;
   }
 
+  .deboldh2 h2 {
+    font-weight:normal;
+  }
+
+  .deboldh2 h2 a {
+    font-weight:800;
+  }
+
 </style>
 
 {% endblock %}
@@ -346,7 +354,7 @@
 
   <hr>
 
-<h2 class="heading-large">linking to page per property</h2>
+<h2 class="heading-large">linking to page per property - option 1</h2>
 <p>matches user mental model - how they are searching / the results...</p>
 <p>New Page - page per property which helps the user to pick the right title (tenure) - which breaks the problem down for the user, and then links onward to page per title</p>
 <p>Try Flat 1, 6 Mandela Way</p>
@@ -482,10 +490,70 @@
 
   <hr>
 
+<h2 class="heading-large">linking to page per property - option 2</h2>
+<p>matches user mental model - how they are searching / the results...</p>
+<p>New Page - page per property which helps the user to pick the right title (tenure) - which breaks the problem down for the user, and then links onward to page per title</p>
+<p>Try Flat 1, 6 Mandela Way</p>
+<p>Or - page per property replaces page per title - which breaks the problem down for the user, and then links onward buy it</p>
+<p>Try Flat 2, 6 Mandela Way</p>
   <div class="grid-row">
     <div class="column-two-thirds">
-      <p class="spacing-top-double"><a href="{{path}}/address_base_search">&lt; search</a></p>
-      <p><a href="{{path}}/address_base_search_intro">&lt; addressbase search introduction</a></p>
+      <!-- <h2 class="heading-medium">example 1</h2> -->
+      <div class="example1 deboldh2">
+        <ol>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">5 Mandela Way</a>, Southampton, SO15 5RZ
+            </h2>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">6 Mandela Way</a>, Southampton, SO15 5RZ
+            </h2>
+
+            <ol class="children--address-list">
+              <li>
+                <h2 class="heading-small collapse-bottom">
+                  <a href="page_per_property">Flat 1, 6 Mandela Way</a>, Southampton, SO15 5RZ
+                </h2>
+              </li>
+              <li>
+                <h2 class="heading-small collapse-bottom">
+                  <a href="page_per_property2">Flat 2, 6 Mandela Way</a>, Southampton, SO15 5RZ
+                </h2>
+              </li>
+            </ol>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">7 Mandela Way</a>, Southampton, SO15 5RZ
+            </h2>
+          </li>
+
+          <li>
+              <h2 class="heading-small collapse-bottom">
+                <a href="#">8 Mandela Way</a>, Southampton, SO15 5RZ
+              </h2>
+            </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">Plaza Hotel, Mandela Way</a>, Southampton, (SO15 5RZ)
+            </h2>
+          </li>
+
+        </ol>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds spacing-top-double">
+      <!-- <p class="spacing-top-double"><a href="{{path}}/address_base_search">&lt; search</a></p> -->
+      <p><a href="{{path}}/start">&lt; addressbase search introduction</a></p>
       <p><a href="/">&lt; prototype start page</a></p>
 
     </div>

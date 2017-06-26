@@ -16,15 +16,24 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">Addressbase search examples/ideas</h1>
-      <p class="lede"><strong class="bold">Warning</strong> - many of the pages below are tailored around a secific solution/MVP.</p>
-      <p class="lede">The problem (user task) is find the right title record.  Building a search based on AddressBase is one potential way of solving the problem.  See the <a href="https://docs.google.com/document/d/1y8FSWxM4gFNWwc6nYH4hDOZ93fMK4FrA0RE7xsPJcDQ/edit#heading=h.7w83h6u3pzic">'MVP Candidate' document (google drive)</a> for technology agnostic solutions to the user problem in FPI service</p>
+      <h1 class="heading-large">pick the property i'm interested in</h1>
+      <p class="lede"><strong class="bold">Warning</strong> - some of the examples below are tailored around a secific solution/MVP.</p>
+      <p class="lede">The problem (user task) is find the right property (pick the right title record).  Building a search based on AddressBase is one potential way of solving the problem.  See the <a href="https://docs.google.com/document/d/1y8FSWxM4gFNWwc6nYH4hDOZ93fMK4FrA0RE7xsPJcDQ/edit#heading=h.7w83h6u3pzic">'MVP Candidate' document (google drive)</a> for technology agnostic solutions to the user problem in FPI service</p>
+      <P>In the MVP Candidate document, we recommend two candidates:
+      <ol class="list list-number">
+        <li>everything HMLR has in a postcode (all titles)</li>
+        <li>every title HMLR has for the postal addresses in a postcode (not land)</li>
+      </ol>
+      the pages/examples below are primarily focused on candidate 2.</P>
 
+      <p>If we're building the 'LLC Address component' tech solution - these pages explore/show things that need considering for the Find Property Information service - what to do for the user.  Problems the user will have, and based on what we've learnt, suggested solutions in Find property information (FPI).</p>
 
-      <p>If we're building the 'LLC Address component' tech solution - these pages explore/show things that need considering for the Find Property Information service - what to do for the user.  Problems the user will have, and based on what we've learnt suggested solutions in Find property information (FPI).</p>
+      <h2 class="heading-medium">Things that have to be considered/changed</h2>
 
-      <h2 class="heading-medium">Things that are needed</h2>
+      <p class="lede">I don't want to look at a lot of pages :) <br><br><a href="{{path}}/startx">show me the best version</a>: use Flat 1 &amp; Flat 2, 6 Mandela way</p>
+      <br>
 
+      <h3 class="heading-small">variations of each of the pieces</h3>
       <ul class="list-bullet">
         <li><a href="{{path}}/address_base_search">Search page</a></li>
         <li><a href="{{path}}/address_base_results">Results page(s)</a> including page per title, and page per property (new)<p>becasue we now have a result per address/not property description<br>page per title will need to change<br>page per property is a way to help people pick the right title</p></li>
@@ -34,8 +43,8 @@
           <li><a href="{{path}}/search_results_examples_2">search results - address is hyperlink</a></li>
         </ul>
         </p>
-        <li><a href="">Pagination</a></li>
-        <li><a href="">What to do when more than 100 results</a></li>
+        <li>Pagination - do what we've done before</li>
+        <li><a href="{{path}}/search_results100x">What to do when more than 100 results</a></li>
         <li>when things go wrong - errors, what to do instead, help, etc
           <ul class="list-bullet">
             <li><a href="{{path}}/search_results_examples_3">search results - no results / exceptions</a></li>
