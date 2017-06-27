@@ -1,0 +1,42 @@
+{% extends "./private-beta-15/layout/layout.html" %}
+
+{% block page_title %}
+  Take summary away examples
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+  
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+    <h1 class="heading-large">Re-issue an FPI summary</h1>
+      <p>Enter the user's email address to see when they used FPI and FaP, and what they bought</p>
+
+      <form action="re-issue_summary_results" method="get" class="search-form">
+
+        <div class="form-group spacing-bottom-half">
+
+
+          <label class="form-label bold-medium spacing-bottom-half" for="search_term">
+            email address
+          </label>
+
+          <input class="form-control" id="search_term" name="search_term" type="text" value="" autofocus="autofocus">
+
+          <input class="button" type="submit" name="search-button" value="Search" id="search_button">
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+
+
+</main>
+
+{% endblock %}
+
+
