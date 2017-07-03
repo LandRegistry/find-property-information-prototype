@@ -1,0 +1,32 @@
+{% macro search_form3(h1=false, autofocus=true, label='Enter a postcode, eg SW1A 2AA',value='') %}
+  <form action="search_resultsx" method="get" class="search-form spacing-top-single" data-clientside-validation="search_form3_validation" data-clientside-validation-no-summary>
+
+    <div class="form-group">
+
+      <label class="form-label" for="postcode">Postcode</label>
+      <input class="form-control" id="postcode" name="postcode" type="text" value="{{value}}">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="house_no">Property number or name
+        <span class="form-hint">Any other part of the address <br>For example, 43, flat, Cumbrian house</span>
+      </label>
+      <input class="form-control" type="text" id="house_no" name="house_no" autofocus="autofocus">
+    </div>
+
+    <div class="form-group">
+      <input class="button" type="submit" name="search-button" value="Search" id="search_button">
+    </div>
+
+  </form>
+
+  <script type="application/json" id="search_form3_validation">
+    {
+      "search_term3": {
+        "presence": {
+          "message": "Please enter a postcode"
+        }
+      }
+    }
+  </script>
+{% endmacro %}

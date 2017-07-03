@@ -1,0 +1,99 @@
+{% extends "./layout/layout.html" %}
+{% from "./includes/search_form2.html" import search_form2 %}
+{% from "./includes/search_form3.html" import search_form3 %}
+{% from "./includes/register_teaser.html" import register_teaser %}
+{% from "./includes/pagination.html" import pagination %}
+
+{% block title %}Search results{% endblock %}
+
+{% block body %}
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">more than 100 results examples/ideas</h1>
+      <h2 class="heading-medium">Addressbase licensing constraint - max 100 addresses per query</h2>
+      <p>Approx 250 postcodes contain more than 100 titles.  Howevere we don't know how many postcodes contain more than 100 delivery points - According to the internet no postcdoe has more than 100 delivery points (addresses).</p>
+      <p>If we need to do this (perhaps OS don't care if one postcode contains over 100, and we were to display them all.</p>
+      <p>Postcodes are restircted to 100 delivry points.  on average they contain 15.  1.7 million postcodes. Total no addressable properties around 25million.   If there were to be a few postcodes over 100 addresses - would OS care?  Such a tiny percentage, and barely an issue for screenscraping of data.</p>
+      <p>If we have to - only explain/force the user to do something additional when more than 100 exist, following a postcode only search</p>
+      <!-- <p>build what we have in FPI now <a href="private-beta-21/search">Version 21 Search</a></p> -->
+    </div>
+  </div>
+  <hr>
+
+
+  <p class="spacing-bottom-double">1: let user choose which set of results they want - explain what is in each set, so they can make an informed choice</p>
+  <div class="grid-row spacing-top-single">
+    <div class="column-two-thirds tablet-column-two-thirds spacing-bottom-single">
+      {{ search_form2(h1=true,autofocus=false,label='Search results for',value='SO15 5RZ') }}
+
+      <h2 class="collapse-top heading-medium" style="margin-top:145px;">136 addresses found</h2>
+      <p>Sorry, this service cannot show you more than 100 addresses.</p>
+      <p>Would you like to see
+      <ul class="list list-bullet">
+        <li><a href="">the first 100 addresses</a> (numbered 1 to 99 Mandella Way)</li>
+        <li><a href="">the last 36 addresses</a> (numbered 101 Mandella Way to 'the old Mill' Mandella Way)</li>
+      </ul>
+      </p>
+
+    </div>
+
+    <div class="column-one-third tablet-column-one-third">
+      <aside class="supplementary-panel">
+        <h2 class="heading-medium">Need help?</h2>
+
+
+        <p>If you are looking for information about places that don't have a postcode, eg land</p>
+        <p>
+        <a href="https://eservices.landregistry.gov.uk/wps/portal/Property_Search">use the Find a Property service</a> instead to search by street address, title number or by using a map.</p>
+      </aside>
+    </div>
+  </div>
+
+
+  <hr>
+
+
+  <p>2: user has to supply more information - to make the set smaller than 100. Help them with a more detailed query.</p>  
+  <p>The postcode and the 'house no/name' field/information will have to be present on every results page (upto 5 pages)</p>
+  <p class="spacing-bottom-double">If we analyse the addresses in the large postcodes we can improve this search form</p>
+  <div class="grid-row spacing-top-single">
+    <div class="column-two-thirds tablet-column-two-thirds spacing-bottom-single">  
+    <h1 class="heading-large" style="margin-top:0;">Too many addresses found</h1>
+
+    <P class="lede">136 addresses exist in postcode SO15 5RZ</p>
+    <p>This service can only show 100 addresses at a time</p>
+    <p>You will need provide more information about the address</p>
+
+
+      {{ search_form3(h1=true,autofocus=false,label='Search results for',value='SO15 5RZ') }}
+
+
+    </div>
+
+    <div class="column-one-third tablet-column-one-third">
+      <aside class="supplementary-panel">
+        <h2 class="heading-medium">Need help?</h2>
+
+
+        <p>If you are looking for information about places that don't have a postcode, eg land</p>
+        <p>
+        <a href="https://eservices.landregistry.gov.uk/wps/portal/Property_Search">use the Find a Property service</a> instead to search by street address, title number or by using a map.</p>
+      </aside>
+    </div>
+  </div>
+
+
+  <hr>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <p class="spacing-top-double"><a href="{{path}}/address_base_search_intro">&lt; addressbase search introduction</a></p>
+      <p><a href="/">&lt; prototype start page</a></p>
+
+    </div>
+  </div>
+
+
+{% endblock %}
