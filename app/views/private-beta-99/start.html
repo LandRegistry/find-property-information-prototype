@@ -16,7 +16,7 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">pick the property i'm interested in</h1>
+      <h1 class="heading-xlarge">pick the property i'm interested in</h1>
       <p class="lede"><strong class="bold">Warning</strong> - some of the examples below are tailored around a secific solution/MVP.</p>
       <p class="lede">The problem (user task) is find the right property (pick the right title record).  Building a search based on AddressBase is one potential way of solving the problem.  See the <a href="https://docs.google.com/document/d/1y8FSWxM4gFNWwc6nYH4hDOZ93fMK4FrA0RE7xsPJcDQ/edit#heading=h.7w83h6u3pzic">'MVP Candidate' document (google drive)</a> for technology agnostic solutions to the user problem in FPI service</p>
       <P>In the MVP Candidate document, we recommend two candidates:
@@ -28,7 +28,7 @@
 
       <p>If we're building the 'LLC Address component' tech solution - these pages explore/show things that need considering for the Find Property Information service - what to do for the user.  Problems the user will have, and based on what we've learnt, suggested solutions in Find property information (FPI).</p>
 
-      <h2 class="heading-medium">Things that have to be considered/changed</h2>
+      <h2 class="heading-large">Things that have to be considered/changed</h2>
 
       <p class="lede">Show me a journey with 'the best'<sup style="font-size:16px;">*</sup> of the pieces we've considered
       <br><span style="font-size: 16px; color: grey;">* not user tested yet - so probably not the best ;)</span>
@@ -36,17 +36,26 @@
       <p><strong class="bold">NOTE:</strong> these don't show signin/create account, or the final summary screen.  This is to help concentrate on the new stuff, so it's easier to see and feel</p>
       <p>
         <ul class="list list-bullet">
-          <li><a href="{{path}}/startx">latest (July 3, 2017)</a>: use 6 Mandela Way, Flat 1 &amp; Flat 2, 6 Mandela way</li>
-          <li><a href="{{path}}/startx-v1">v1 - first version (June 30, 2017)</a>: use Flat 1 &amp; Flat 2, 6 Mandela way</li>         
+          <h3 class='heading-small'>current thinking</h3>
+          <li><a href="{{path}}/cv11fe/start">in progress (changing daily - 12/07/17) - Addresses with multiple titles</a><br>use Apartment 3, ribbon Factory</li> 
+          <li><a href="{{path}}/startx">1 title per address scenarios</a>: use 6 Mandela Way, Flat 1 &amp; Flat 2, 6 Mandela way
+          <br>Note: these addresses only have one title each associated with them
+          </li>
+          <h3 class='heading-small'>previous thinking</h3>
+          <li><a href="{{path}}/startx-v1">v1 - first version (June 30, 2017) more than one title per address</a>: use Flat 1 &amp; Flat 2, 6 Mandela way</li>         
         </ul>
       </p>
 
 
+      <h3 class="heading-medium spacing-top-double">variations of each of the pieces</h3>
 
-
-      <h3 class="heading-small spacing-top-double">variations of each of the pieces</h3>
+      <h4 class="heading-small">Search page</h4>
       <ul class="list-bullet">
         <li><a href="{{path}}/address_base_search">Search page</a><br>Best option for search is: <a href="{{path}}/address_base_search#preferred">second example</a></li>
+      </ul>
+
+      <h4 class="heading-small">Results page</h4>
+      <ul class="list-bullet">
         <li><a href="{{path}}/address_base_results">Results page(s)</a> including page per title, and page per property (new)<p>because we now have a result per address/not property description<br>page per title will need to change<br>page per property is a way to help people pick the right title</p> Best option for display of results is: <a href="{{path}}/address_base_results#preferred">linking to page per property - option 2</a></li>
         <p>Organising/ordering results - further examples
         <ul class="list-bullet">
@@ -54,15 +63,39 @@
           <li><a href="{{path}}/search_results_examples_2">search results - address is hyperlink</a></li>
         </ul>
         </p>
-        <li>Pagination - do what we've done before (back and next 'buttons' at bottom of each page.  Stick with 20 results per page.</li>
-        <li><a href="{{path}}/search_results_100plus">What to do when more than 100 results</a> (probably not needed - postcodes dont have more than 100 delivery addresses</li>
-        <li>when things go wrong - errors, what to do instead, help, etc
-          <ul class="list-bullet">
-            <li><a href="{{path}}/search_results_examples_3">search results - no results / exceptions</a></li>
-          </ul>
-        </li>
       </ul>
 
+      <h4 class="heading-small">Pagination</h4>
+      <ul class="list-bullet">
+        <li>Pagination - do what we've done before (back and next 'buttons' at bottom of each page.  Stick with 20 results per page.</li>
+      </ul>
+
+      <h4 class="heading-small">More than 100 results - license constraint?</h4>
+      <ul class="list-bullet">
+        <li><a href="{{path}}/search_results_100plus">What to do when more than 100 results</a> (probably not needed - according to OS on the internet - postcodes dont have more than 100 delivery addresses)</li>
+      </ul>
+        
+
+      <h4 class="heading-small">When we don't have a title for an address / exceptions</h4>
+      <ul class="list-bullet">
+        <li><a href="{{path}}/search_results_examples_3">search results - no results / exceptions</a></li>
+      </ul>
+
+      <h4 class="heading-small">Property / title pages</h4>
+      <p>Changing search results to postal addresses is a significant change.</p>
+      <ul class="list-bullet">
+        <li>postal address is the result, but title has property description (A1)<br>
+        If the two match great, but if they don't we'll need to help the user get from postal to property desc</li>
+        <li>many postal addresses are covered by more than one title<br>
+        We need to help the user pick the right title</li>
+      </ul>
+      <h5 class="heading-small">property/title page examples:</h5>
+        <ul class="list list-bullet">
+          <li><a href="{{path}}/startx">Addresses with only one title; Postal address doesn't match property description</a><br>use 6 Mandela Way, Flat 1 &amp; Flat 2, 6 Mandela way
+          </li>
+          <li><a href="{{path}}/cv11fe/start">Addresses with multiple titles</a><br>use Apartment 3, ribbon Factory</li>         
+        </ul>
+      </p>
     </div>
   </div>
 

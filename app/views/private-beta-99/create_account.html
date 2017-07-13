@@ -236,7 +236,7 @@
           <legend class="visuallyhidden">Account details</legend>
 
             <div class="form-group">
-              <label class="form-label" for="email">Email address
+              <label class="form-label bold" for="email">Email address
               <a href="#why-do-we-need-email" class="font-xsmall split-detail-trigger spacing-left-single">Our email usage policy</a></label>
 
 
@@ -269,22 +269,31 @@
               <p id="email-hint-value" class="bold"></p>
             </div>
 
-          <div class="form-group disabled-if-email-exists">
-            <label class="form-label" for="pass">Create a password</label>
+          <div class="form-group spacing-top-single disabled-if-email-exists">
+
+            <label class="form-label bold" for="pass">Create a password
+              <span class="form-hint">
+                  <ul class="list list-bullet spacing-bottom-flush">
+              <li>between 8 and 20 characters</li>
+              <li>containing 2 numbers</li>
+              <!-- <li>not contain the symbols &pound; &#x20AC; &#x00AC; &#x00A6;</li> -->
+            </ul>
+                </span>
+            </label>           
             <input class="form-control" type="password" id="pass" name="pass">
 
           </div>
 
           <div class="form-group">
-            <label class="form-label " for="password_retype">Re-type your password</label>
+            <label class="form-label bold" for="password_retype">Re-type your password</label>
             <input class="form-control" id="password_retype" name="password_retype" type="password" value="">
 
-            <p class="form-hint">Your password must:</p>
+            <!-- <p class="form-hint">Your password must:</p>
             <ul class="form-hint list list-bullet spacing-bottom-flush">
               <li>be between 8 and 20 characters</li>
               <li>contain 2 numbers</li>
               <li>not contain the symbols &pound; &#x20AC; &#x00AC; &#x00A6;</li>
-            </ul>
+            </ul> -->
           </div>
 
 
