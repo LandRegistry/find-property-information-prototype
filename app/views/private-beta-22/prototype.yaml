@@ -1,0 +1,29 @@
+name: Download summary + hidden summary map
+date: 2017-07-27
+description: |
+  <p>V21 + prod changes since</p>
+  <ul>
+    <li>- don't show map on summary (temporarily befind feature flag)</li>
+    <li>- download changes - Purchased date; This title can change para to top of page</li>
+    <li>- this title last changed down sentence down the page</li>
+    <li>- what did you think of this service, back up the page</li>
+    <li>- prod visual furniture - hr's
+  </ul>
+  <br>
+
+changelog:
+  - done...
+  - Download or Print 'box' on summary
+  - Terms of use
+  - map hidden - as per prod testing
+  - new PDF (slightly different form real system - proposition name size, crown alignment, call us left border)
+  - 
+  - done... (changes decided in designer abscence - reconsider later)
+  - Purchased date, format, style, position
+  - We can't tell you if... to top of summary
+  - This title last changed - moved down + text made larger
+  - Don't show PDF size, as we don't know it before we've made it (maing it on demand)
+
+
+
+
