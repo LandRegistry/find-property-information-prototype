@@ -31,9 +31,10 @@
           <dt>Property description</dt>
           <dd class="bold-medium">
             <div class="address">
-              <span>1 to 6 The Ribbon Factory</span>             
-              <span>New Buildings</span>
-              <span>Coventry</span>
+              <span>3 The Ribbon Factory</span>
+              <span>New Buildings</span> 
+              <span>Coventry</span> 
+              <span>CV1 1FE</span>
             </div>
           </dd>
 
@@ -42,7 +43,7 @@
 
         <dt class="spacing-top-single">Tenure type</dt>
         <dd class="spacing-top-single">
-          <strong class="bold">Freehold</strong>
+          <strong class="bold">Leasehold</strong>
           <a class="split-detail-trigger font-xsmall" href="#what-is-tenure">What does this mean?</a>
 
           <div class="split-detail-contents" id="what-is-tenure">
@@ -116,10 +117,50 @@
     </div>
   </div>
 
-    <!-- freehold - 1 to 6 -->
-    <script>
+    <!-- leasehold - 3 The Ribbon Factory -->
+<!--     <script>
       var indexData = {"crs": {"properties": {"name": "urn:ogc:def:crs:EPSG::27700"}, "type": "name"}, "geometry": {"coordinates": [[[433512.12, 279144.92], [433512.932, 279144.708], [433514.903, 279144.193], [433515.075, 279144.147], [433521.36, 279142.51], [433521.85, 279144.35], [433522.16, 279145.51], [433522.47, 279146.66], [433522.78, 279147.82], [433522.816, 279147.955], [433523.937, 279152.164], [433524.17, 279153.04], [433525.588, 279154.0], [433526.0, 279154.28], [433523.32, 279158.26], [433521.84, 279159.56], [433520.092, 279160.82], [433515.13, 279164.4], [433500.0, 279154.58], [433486.04, 279145.13], [433491.374, 279137.157], [433491.6, 279136.82], [433500.0, 279142.43], [433501.58, 279143.49], [433504.24, 279139.5], [433504.779, 279139.871], [433512.12, 279144.92]]], "type": "Polygon"}, "properties": {"colour": 1, "feature_id": 4019, "graphic_type": "Bordered Polygon", "render_attributes": {"border_colour": 1, "border_width": 0, "exterior_edge_colour": 1, "exterior_edge_thickness": 2.0, "fill_colour": 25, "fill_style": 9, "render_level": "0"}, "width": 0}, "type": "Feature"};
-    </script>
+    </script>   --> 
+<script>
+      var indexData = 
+        {
+          "crs": {
+            "properties": {
+              "name": "urn:ogc:def:crs:EPSG::27700"
+            },
+            "type": "name"
+          },
+          "geometry": {
+            "coordinates": [
+              [
+                [433512.12, 279144.92],
+                [433503.7, 279157],
+                [433496.5, 279152],
+                [433504.779, 279139.871],
+                [433512.12, 279144.92]
+              ]
+            ],
+            "type": "Polygon"
+          },
+          "properties": {
+            "colour": 1,
+            "feature_id": 4019,
+            "graphic_type": "Bordered Polygon",
+            "render_attributes": {
+              "border_colour": 1,
+              "border_width": 0,
+              "exterior_edge_colour": 1,
+              "exterior_edge_thickness": 2.0,
+              "fill_colour": 25,
+              "fill_style": 9,
+              "render_level": "0"
+            },
+            "width": 0
+          },
+          "type": "Feature"
+        }
+        ;
+    </script> 
     <script defer src="/public/app/javascripts/map.js"></script>
 
 
