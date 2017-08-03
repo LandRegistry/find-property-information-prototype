@@ -1,0 +1,84 @@
+{% set suppressSignOutLink = true %}
+
+{% extends "./layout/layout.html" %}
+
+{% block title %}Reset your {{item}}{% endblock %}
+
+{% block body %}
+
+  <h1 class="heading-large">Create a new {{item}}</h1>
+
+  <div class="grid-row spacing-top-single">
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <form action="{{path}}/reset/{{item}}/confirm" method="POST" novalidate data-clientside-validation="create_account_form_validation">
+        <input name="title_number" value="{{data.title_number}}" type="hidden" />
+
+        <!-- <p>To reset your {{item}}, enter a new one in the box below.</p> -->
+
+        <fieldset>
+
+          <legend class="visuallyhidden">Create a new {{item}}</legend>
+
+          {% if item == 'password' %}
+            <div class="form-group">            
+              <label class="form-label" for="password">Create a password</label>
+              <input class="form-control" type="password" id="password" name="password">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label " for="password_retype">Re-type your password</label>
+              <input class="form-control" id="password_retype" name="password_retype" type="password" value="">
+            </div>
+
+<!--               <p class="form-hint  spacing-top-third spacing-bottom-flush">Your password must:</p>
+            <ul class="form-hint list list-bullet spacing-bottom-flush">
+              <li>be between 8 and 20 characters</li>
+              <li>contain 2 numbers</li>
+              <li>not contain the symbols &pound; &#x20AC; &#x00AC; &#x00A6;</li>
+            </ul> -->
+            
+          {% else %}
+            <div class="form-group">
+              <label class="form-label" for="{{item}}">Continue</label>
+              <input class="form-control" type="text" id="{{item}}" name="{{item}}">
+            </div>
+          {% endif %}
+
+        </fieldset>
+
+        <div class="form-group spacing-top-single">
+          <input type="submit" class="button" value="Continue">
+        </div>
+      </form>
+
+      <script type="application/json" id="create_account_form_validation">
+        {
+            "password": {
+              "presence": {
+                "message": "Password is required"
+              },
+              "length": {
+                "minimum": 8,
+                "maximum": 20,
+                "message": "Password should be between 8 and 20 characters long. Characters can include letters, number and symbols."
+              },
+              "find_property_information_password": true
+            },
+            "password_retype": {
+              "presence": {
+                "message": "Please repeat your password"
+              },
+              "length": {
+                "minimum": 8,
+                "maximum": 20,
+                "message": "Please ensure both passwords match"
+              },
+              "find_property_information_password": true
+            }
+        }
+      </script>
+    </div>
+  </div>
+{% endblock %}

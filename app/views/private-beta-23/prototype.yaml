@@ -1,4 +1,4 @@
-name: Move Sign In - X
+name: Move Sign In - X - Not planning to ship this
 date: 2017-08-02
 description: |
   <p>V23: Prod service with Sign in moved under the covers, but not for the user</p>

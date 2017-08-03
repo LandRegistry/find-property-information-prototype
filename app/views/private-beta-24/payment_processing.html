@@ -1,0 +1,129 @@
+{% extends "./layout/layout.html" %}
+{% from "./includes/back_link.html" import back_link %}
+
+{% block title %}Payment processed{% endblock %}
+
+{% block header_primary %}
+
+{% endblock %}
+
+{% block body %}
+  
+
+  <style type="text/css">
+    .phase-banner-beta {
+      display:none;
+    }
+/*    .header-global {
+      display:none;
+    }
+    .header-proposition {
+      display:none;
+    }
+    .footer-meta {
+      display:none;
+    }*/
+  </style>
+
+
+  <h1 class="heading-large printhidden">Your payment has been authorised</h1>
+  <!-- <h1 class="heading-large printonly">Receipt</h1> -->
+
+  <div class="grid-row">
+    <div class="column-two-thirds spacing-bottom-single">
+
+<!--       <div id="processing">
+        <h1 class="heading-xlarge">Processing payment</h1>
+        <img src="images/loader.gif">
+      </div> -->
+      <form action="display_title" method="get" id="worldpayForm">
+        <input type="hidden" name="title_number" value="{{data.title_number}}" />
+        <input name="email" value="{{data.email}}" type="hidden" />
+        <input type="hidden" name="transId" value="3043404577">
+        <input type="hidden" name="searchType" value="D">
+        <input type="submit" id="continueToSummary" class="button spacing-top-single printhidden" value="Continue to your purchase" disabled-x>
+      </form>
+
+
+      <details class="font-small spacing-top-double">
+        <summary class="bold-small">Receipt</summary>
+           <div class="panel"> 
+        <!-- <h2 class="heading-medium ">Receipt</h2> -->
+          <div class="grid-row">
+            <div class="column-two-thirds mobile-column-one-half">
+              <dl class="definition-tabular dl-wide definition-tabular-1-2">
+
+                  <dt class="bold">Date</dt>
+                  <dd><span id="today-time"></span></dd>
+
+                  <dt class="bold">Transaction ID</dt>
+                  <dd>3043404577</dd>
+
+                  <dt class="bold">Description</dt>
+                  <dd>Summary of title: {{data.title_number}} </dd>
+
+                  <dt class="bold">Net amount</dt>
+                  <dd>&pound;2.50</dd>
+
+                  <dt class="bold">VAT @ 20%</dt>
+                  <dd>&pound;0.50</dd>
+
+                  <dt class="bold">Total inc VAT</dt>
+                  <dd>&pound;3.00</dd>
+
+
+              </dl>
+            </div>
+            <div class="column-one-third mobile-column-one-half">
+                <div itemscope="" itemtype="http://schema.org/Organization">
+                  <span itemprop="name" class="bold">HM Land Registry</span>
+                  <div class="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+                    <span itemprop="streetAddress">Trafalgar house<br>1 Bedford Park</span>
+                    <span itemprop="addressLocality">Croydon</span>
+                    <span itemprop="postalCode">CR0 2AQ</span>
+                  </div>
+                </div>
+
+                  <p class="spacing-top-single-third"><strong class="bold">VAT registration number:</strong><br> GB 8888 181 53</p>
+            </div>
+          </div>
+
+
+          <p class="spacing-top-single printhidden">
+            To keep a copy of this receipt you can print it out, or download a copy 
+            <span class="font-xsmall" style="color: #6f777b;">(PDF document, 109kb)</span><br>
+            <a href="images/receipt.pdf" style="vertical-align: baseline;" class="button">Download</a>
+            <span class="mobile-spacer">or 
+                {% include './includes/print-button.html' %}
+              </span> 
+          </p>
+          </div>
+        </details>
+    </div>
+  </div>
+
+  <script src="{{ asset_path }}app/javascripts/moment.js"></script>
+  <script>
+
+    var date = moment().format('DD MMMM YYYY'); // November 18th 2016
+    var dateTime = moment().format('DD MMMM YYYY [at] h:mm'); // November 18th 2016, 3:50:43 pm
+
+    // span = document.getElementById('today');
+    // txt = document.createTextNode(date);
+    // span.innerText = txt.textContent;
+
+    span = document.getElementById('today-time');
+    txt = document.createTextNode(dateTime);
+    span.innerText = txt.textContent;
+
+  </script>
+
+<!--   <script type="text/javascript">
+  var timeoutID = window.setTimeout(move, 2000);
+  function move() {
+    // window.location.href = 'display_title';
+    document.getElementById("worldpayForm").submit();
+  }
+  </script> -->
+
+{% endblock %}

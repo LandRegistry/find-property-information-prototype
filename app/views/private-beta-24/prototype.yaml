@@ -1,0 +1,12 @@
+name: Move Sign In - Y - Shipping this
+date: 2017-08-03
+description: |
+  <p>V24: Prod service with Sign in moved</p>
+  <ul>
+    <li>- V22 plus move signin</li>
+  </ul>
+  <br>
+
+changelog:
+  - done...
+  - 
