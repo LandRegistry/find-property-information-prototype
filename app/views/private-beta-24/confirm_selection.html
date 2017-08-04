@@ -30,7 +30,6 @@
                 <p>Registration has only been compulsory since the 1990s. Property that hasn’t changed hands since then may not be registered.</p>
               </div>
             </details>
-            <p class="font-xsmall">A property can have both a freehold and a leasehold title. To get a different tenure for this address, <a href="/search_results" data-back-link>go back</a> and select the one you need.</p>
           </dd>
         {% endif %}
 
@@ -73,6 +72,7 @@
               {% endif %}
             </div>
           </div>
+          <p class="font-xsmall">A property can have both a freehold and a leasehold title. To get a different tenure for this address, <a href="/search_results" data-back-link>go back</a> and select the one you need.</p>
         </dd>
 
           {% if session.isLoggedIn %}
@@ -193,7 +193,7 @@
 
         </ol>
 
-        <p>This information will be displayed on-screen and a copy available to be downloaded (PDF).</p>
+
 
         <div class="panel panel-border-narrow">
           If you've already used this service and created an account, sign in with the email address you used before.
@@ -211,7 +211,7 @@
           </p>
         </div>
 
-        <p class="spacing-top-single">{{ back_link(title='Cancel and return to search results', prefix='Back to', url=path + '/search_results') }}
+        <p class="spacing-top-single">{{ back_link(title='Search results', prefix='Back to', url=path + '/search_results?page=' + data.page + '&search_term=' + data.search_term) }}
         </p>
 
 
