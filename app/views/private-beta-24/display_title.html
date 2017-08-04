@@ -1,7 +1,7 @@
 {% extends "./layout/layout.html" %}
 {% from "./includes/back_link.html" import back_link %}
 
-{% block title %}Summary for property title {{ title['data']['title_number'] }}{% endblock %}
+{% block title %}Summary for property title {{ title.number }}{% endblock %}
 
 {% block header_primary %}
   {{ back_link(title='Search again', url=path + '/search',historyBased=false) }}
@@ -13,21 +13,33 @@
 
 {% block body %}
 
-  <h1 class="heading-large spacing-top-single">Summary for property {% if title['is_caution_title'] %} caution{% endif %} title {{ title['data']['title_number'] }}</h1>
+  <h1 class="heading-large spacing-top-single">Summary of{% if title['is_caution_title'] %} caution{% endif %} title {{ title['data']['title_number'] }}</h1>
+
+    <!-- <p class="font-xsmall">This title was last changed on <time datetime="{{ title.last_changed_datetime }}">{{ title.last_changed_date }} at {{ title.last_changed_time }}</time></p> -->
+    <p class="text">Purchased on <span id="today-time"></span></p>
+    <p class="text">This information can change if we receive an application. This service is unable to tell you whether or not there is an application pending with HM Land Registry.</p>
 
 
-  <!-- <p class="font-xsmall">Purchased on <span id="today"></span>. WorldPay transaction {{ receipt.trans_id }}</p> -->
-  <!-- <p class="font-xsmall printonly">Purchased on <span id="today"></span>. Payment reference {{ receipt.trans_id }}</p> -->
-  <p class="font-xsmall">This title was last changed on 03 August 2016 at 17:18:12</p>
 
-  <div class="grid-row spacing-top-single">
-    
+  <div class="grid-row column-flip spacing-top-single">
+    <div class="column-one-third tablet-column-one-third spacing-bottom-single">
+
+<!--       {% if title.indexPolygon %}
+        <div class="map polygon" id="map">
+          <p>The map relies on JavaScript being enabled in your browser.</p>
+        </div>
+
+        <p class="font-xsmall">This map shows the property's rough extent and location, <strong class="bold">not legal boundaries.</strong></p>
+      {% endif %} -->
+    </div>
+
     <div class="column-two-thirds tablet-column-two-thirds">
 
       <dl class="definition-tabular definition-tabular-sectioned">
 
         {% if title['is_caution_title'] %}
-<!--           <dt class="bold-small">Caution</dt>
+          <div class="printhidden">
+          <dt class="bold-small">Caution</dt>
           <dd>
             <details class="font-xsmall">
               <summary class="bold-small">What does Caution mean?</summary>
@@ -37,12 +49,13 @@
                 <p>Registration has only been compulsory since the 1990s. Property that hasn’t changed hands since then may not be registered.</p>
               </div>
             </details>
-          </dd> -->
+          </dd>
+          </div>
         {% endif %}
 
         {% if title.address %}
-          <dt class="spacing-bottom-single">Address</dt>
-          <dd class="spacing-bottom-single">
+          <dt>Address</dt>
+          <dd>
             <div class="address bold-medium">
               {% for line in title.address %}
                 <span>{{line}}</span>
@@ -59,20 +72,18 @@
           </dd>
         {% endif %}
 
-        <dt class="spacing-bottom-single">Ownership type</dt>
-        <dd class="bold-small spacing-bottom-single">{{ title.tenure }}</dd>
-
-        <dt class="spacing-bottom-single">Title number</dt>
-        <dd class="bold-small spacing-bottom-single">{{ title['data']['title_number'] }}</dd>
-        
-
-        <dt class="spacing-bottom-single">
+        <dt>
           {% if title['is_caution_title'] %}
             Cautioner{% if title.proprietors.length > 1 %}s{% endif %}
-          {% else %}Owned by{% endif %}</dt>
+          {% elif title.tenure == 'Leasehold' %}
+            Leaseholder{% if title.proprietors.length > 1 %}s{% endif %}
+          {% else %}
+            Owner{% if title.proprietors.length > 1 %}s{% endif %}
+          {% endif %}
+        </dt>
 
         {% for proprietor in title.proprietors %}
-          <dd class="spacing-bottom-single">
+          <dd>
             <h2 class="bold">{{ proprietor.name }} {{ proprietor.name_extra_info }}</h2>
             {% if proprietor.co_reg_no %}
               <h3 class="visuallyhidden">Company registration number</h3>
@@ -86,8 +97,7 @@
 
             <h3 class="visuallyhidden">Addresses</h3>
             {% for address in proprietor.addresses %}
-            <!-- for every address, after first, add top margin -->
-              <div class="address" {% if loop.index > 1 %}style="margin-top:15px;"{% endif %}>
+              <div class="address spacing-top-half">
                 {% for line in address %}
                   <span>{{ line|safe }}</span>
                 {% endfor %}
@@ -97,9 +107,9 @@
         {% endfor %}
 
         {% if title.lenders.length > 0 %}
-          <dt class="spacing-bottom-single">Mortgaged to</dt>
+          <dt>Lender{% if title.lenders.length > 1 %}s{% endif %}</dt>
           {% for lender in title.lenders %}
-            <dd class="spacing-bottom-single">
+            <dd>
               <h2 class="bold">{{ lender.name }} {{ lender.name_extra_info }}</h2>
 
               {% if lender.co_reg_no %}
@@ -121,154 +131,107 @@
           {% endfor %}
         {% endif %}
 
-        {% if title.ppi_data %}
-          <dt class="spacing-bottom-single">Price paid</dt>
-          <dd class="bold-small spacing-bottom-single">{{ title.ppi_data }}</dd>
-        {% endif %}
+        <dt>Tenure type</dt>
+        <dd class="bold-small">{{ title.tenure }}</dd>
 
-<!--         <dt>Last updated</dt>
-        <dd class="bold-small"><time datetime="{{ title.last_changed_datetime }}">{{ title.last_changed_date }}</time></dd> -->
+<!--         <dt>Title number</dt>
+        <dd class="bold-small">{{ title['data']['title_number'] }}</dd> -->
+
+        {% if title.ppi_data %}
+          <dt>Price paid</dt>
+          <dd class="bold-small">{{ title.ppi_data }}</dd>
+        {% endif %}
 
       </dl>
 
-      <p class="spacing-top-single">This information can change if we receive an application. This service is unable to tell you whether or not there is an application pending with HM Land Registry.</p>
+      <!-- <p class="font-xsmall">This title was last changed on <time datetime="{{ title.last_changed_datetime }}">{{ title.last_changed_date }} at {{ title.last_changed_time }}</time></p> -->
+      <p class="spacing-top-single">This title was last changed on <time datetime="{{ title.last_changed_datetime }}">{{ title.last_changed_date }} at {{ title.last_changed_time }}</time></p>
       
-    </div>
-    <div class="print-collapse-column column-one-third tablet-column-one-third spacing-bottom-single">
 
-      {% if title.indexPolygon %}
-        <div class="map polygon " id="map">
-          <p>Your browser must have JavaScript enabled in order to use the map.</p>
-        </div>
-
-        <p class="font-xsmall spacing-top-half">This map shows the property's rough extent and location, <strong class="bold">not legal boundaries.</strong></p>
-      {% endif %}
-
-<!--         <p class="font-xsmall" style="border-top:1px solid #bfc1c3; padding-top:15px;">The summary information was retrieved on <span id="today-time"></span>, from a HM Land Registry property 'title register', last changed on 11 sept 2011.</p> -->
-    </div>
-
-
-  </div> <!-- end property info row -->
-
-  <!-- info and what next -->
-  <div class="grid-row spacing-top-single">
-
-    <div class="column-two-thirds tablet-column-two-thirds">
 
       <div class="printhidden">
         <div class="panel panel-simple">
-          {% if (
-                title['data']['title_number'] == 'DN1012402' or
-                title['data']['title_number'] == 'DN1012390'
-                ) 
-          %}
-            <p>
-              Download <span class="font-xsmall" style="color: #6f777b;">(PDF document, 267kb)</span> or print a copy if you need:
-              <ul class="list list-bullet">
-                <li>to keep a copy of this property information</li>
-                <li>a receipt for this purchase</li>              
-              </ul>
-            </p>
-            <div style="vertical-align:middle;">
-              <a href="images/{{ title['data']['title_number'] }}.pdf" download="Summary-{{ title['data']['title_number'] }}.pdf" style="vertical-align: baseline;" class="button">Download<span class="visuallyhidden"> a copy of this property information - PDF document 267kb</span></a>
-              <span class="mobile-spacer">or 
-                {% include './includes/print-button.html' %}
-              </span>
-            </div>
-          {% elseif (
-                    title['data']['title_number'] == 'DN1012017' or
-                    title['data']['title_number'] == 'DN1012009' 
-                    ) 
-          %}
-             <p>
-              <a href="images/{{ title['data']['title_number'] }}.pdf" download="Summary-{{ title['data']['title_number'] }}.pdf">Download<span class="visuallyhidden"> a copy of this property information - PDF document 267kb</span></a> <span class="font-xsmall" style="color: #6f777b;">(PDF document, 267kb)</span> or {% include './includes/print-button.html' %} if you need:
-              <ul class="list list-bullet">
-                <li>to keep a copy of this property information</li>
-                <li>a receipt for this purchase</li>              
-              </ul>
-            </p>
-          {% elseif (
-                    title['data']['title_number'] == 'DN1011948' or
-                    title['data']['title_number'] == 'DN1011947' or
-                    title['data']['title_number'] == 'DN1011967' or
-                    title['data']['title_number'] == 'DN1011950' 
-                    ) 
-          %}     
-            <p>       
-              <!-- If you want: -->
-              <ul class="list list-bullet">
-                <li>to keep a copy of this information, or</li>
-                <li>get a VAT receipt</li>               
-              </ul>
-            </p>
-            <div style="vertical-align:middle;">
-              <a href="images/{{ title['data']['title_number'] }}.pdf" download="Summary-{{ title['data']['title_number'] }}.pdf" style="vertical-align: baseline;" class="button">Download<span class="visuallyhidden"> a copy of this property information - PDF document 267kb</span></a>
-              <span class="mobile-spacer">or 
-                {% include './includes/print-button.html' %}
-              </span> 
-            </div>
-          {% else %} 
             <h2 class="heading-medium spacing-top-third">Download or print</h2>
-            <p>If you want to keep this information or need a receipt            
+            <p>If you want to keep this information or need a VAT receipt            
               <ul class="list list-bullet" style="margin-bottom: 10px;">
                 {% if (
                     title['data']['title_number'] == 'DN1011954' or
                     title['data']['title_number'] == 'DN1011976' 
                     ) 
                 %} 
-                  <li><a href="images/{{ title['data']['title_number'] }}.pdf" download="Summary-{{ title['data']['title_number'] }}.pdf">download a copy<span class="visuallyhidden"> of this property summary (PDF, 267kb)</span></a> (PDF, 267kb)</li>
-                  <li><a target="_blank" href="" data-print >print a copy</a></li>  
+                  <li><a href="images/{{ title['data']['title_number'] }}.pdf" download="Summary-of-title-{{ title['data']['title_number'] }}.pdf">download a copy<span class="visuallyhidden"> of this property summary</span></a></li>
+                  <li><a href="#" data-print >print a copy</a></li>  
                 {% else %}
-                  <li><a href="images/summary.pdf" download="Summary-{{ title['data']['title_number'] }}.pdf">download a copy<span class="visuallyhidden"> of this property summary (PDF, 267kb)</span></a> (PDF, 267kb)</li>
-                  <li><a target="_blank" href="" data-print >print a copy</a></li> 
+                  <li><a href="images/summary.pdf" download="Summary-of-title-{{ title['data']['title_number'] }}.pdf">download a copy<span class="visuallyhidden"> of this property summary</span></a></li>
+                  <li><a href="#" data-print >print a copy</a></li> 
                 {% endif %}          
               </ul>
             </p>
 
-          {% endif %}
-
         </div>
+      </div>
+
+<!--       <div class="printhidden">
+        <div class="govuk-box-highlight">
+          <p>
+            <strong class="bold">You'll only be able to view this information once</strong>
+            <br>If you want to keep a copy you can print it out
+          </p>
+
+          {% include './includes/print-button.html' %}
+        </div>
+
+        <h2 class="heading-medium collapse-top">What did you think of this service?</h2>
+        <p><a rel="external" href="mailto:digital-register-feedback@digital.landregistry.gov.uk">Please give us your feedback</a> (takes 30 seconds). <br>This is a new service and your feedback will help us improve it.</p>
+
+      </div> -->
+
+      <div class="printhidden">
+
+        <h2 class="heading-medium collapse-top">What did you think of this service?</h2>
+        <p><a rel="external" href="mailto:digital-register-feedback@digital.landregistry.gov.uk">Please give us your feedback</a> (takes 30 seconds). <br>This is a new service and your feedback will help us improve it.</p>
 
       </div>
 
-
       {% if receipt %}
 
-        <div class="vat-receipt page-break-block font-xsmall printonly">
-        
+        <hr>
+
+        <div class="vat-receipt page-break-block font-xsmall">
+
           <h2 class="heading-medium">VAT receipt</h2>
           <div class="grid-row">
             <div class="column-two-thirds mobile-column-one-half">
-              <dl class="definition-tabular dl-wide definition-tabular-1-2">
+              <dl class="definition-tabular definition-tabular-1-2">
 
                 {% if receipt.date %}
-                  <dt class="bold">Date</dt>
-                  <dd>{{receipt.date}}</dd>
+                  <dt>Date</dt>
+                  <dd><span id="today-time2"></span></dd>
                 {% endif %}
 
                 {% if receipt.trans_id %}
-                  <dt class="bold">Transaction ID</dt>
+                  <dt>Transaction ID</dt>
                   <dd>{{ receipt.trans_id }}</dd>
                 {% endif %}
 
 
                 {% if receipt.title_number %}
-                  <dt class="bold">Description</dt>
+                  <dt>Description</dt>
                   <dd>Summary of title: {{ receipt.title_number }}</dd>
                 {% endif %}
 
                 {% if receipt.net %}
-                  <dt class="bold">Net amount</dt>
+                  <dt>Net amount</dt>
                   <dd>&pound;{{receipt.net}}</dd>
                 {% endif %}
 
                 {% if receipt.vat %}
-                  <dt class="bold">VAT @ 20%</dt>
+                  <dt>VAT @ 20%</dt>
                   <dd>&pound;{{ receipt.vat }}</dd>
                 {% endif %}
 
                 {% if receipt.total %}
-                  <dt class="bold">Total inc VAT</dt>
+                  <dt>Total inc VAT</dt>
                   <dd>&pound;{{ receipt.total }}</dd>
                 {% endif %}
 
@@ -295,69 +258,70 @@
 
       {% endif %}
 
-<!-- 
-      <div class="printhidden spacing-top-double">
-        <p class="">This information has been sent to your <a href="{{path}}/send/summary/summary_email?title_number={{data.title_number}}" style="text-decoration: inherit;color:inherit">email address (<strong class="bold">{{ data.email }}</strong>)</a> along with a VAT receipt.</p>
-      </div> -->
+    </div>
+  </div>
 
-      
+  <div class="grid-row">
+    <div class="column-two-thirds">
 
-      <div class="printhidden spacing-top-double">
+      <div class="panel panel-border-narrow spacing-top-single printhidden">
+       <!--  <p>If you have any problems with your purchase, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact HM Land Registry</a>.</p> -->
+        <p>If you have any problems with your purchase, you can contact HM Land Registry using the <a href="http://landregistry.custhelp.com/app/contactus_general/">general enquiry contact form</a> or call <b class="bold">0300 006 0411</b>.</p>
+        
+      </div>
 
-        <div class="">
-          <h2 class="heading-medium">What next</h2>
-          <ul class="list list-bullet">
-            <li><a href="{{path}}/search">Search for another property</a></li>
-            <!-- <li><a href="{{path}}">Return to the start page</a></li> -->
-            <li><a href="{{path}}/sign_out">Sign out</a></li>
-          </ul>
-        </div>
+      <div class="panel panel-border-narrow spacing-top-single printonly text">
+       <!--  <p>If you have any problems with your purchase, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact HM Land Registry</a>.</p> -->
+        <p>If you have any problems with your purchase, you can contact HM Land Registry on <b class="bold">0300 006 0411</b>.</p>
+        
+      </div>
 
-      
-        <p class="spacing-top-single"><a href="mailto:digital-register-feedback@digital.landregistry.gov.uk">What did you think of this service?</a> (takes 30 seconds)</p>
+      <hr>
 
+
+
+
+      <div class="printhidden">
+        <h2 class="heading-medium">What next</h2>
+        <ul class="list list-bullet">
+          <li><a href="{{path}}/search">Search again</a></li>
+          <li><a href="https://gov.uk">Return to GOV.UK</a></li>
+          <li><a href="{{path}}/sign_out">Sign out</a></li>
+        </ul>
       </div>
 
     </div>
 
   </div>
 
-
   {% if title.indexPolygon %}
-    <script>
+<!--     <script>
       var indexData = {{ title['indexPolygon'] | json | safe }};
-    </script>
-    <script defer src="{{ asset_path }}app/javascripts/map.js"></script>
+    </script> -->
+    <!-- <script defer src="{{ asset_path }}app/javascripts/map.js"></script> -->
   {% endif %}
-
 
   <script src="{{ asset_path }}app/javascripts/moment.js"></script>
   <script>
-
     var date = moment().format('DD MMMM YYYY'); // November 18th 2016
-    var dateTime = moment().format('DD MMMM YYYY [at] h:mm'); // November 18th 2016, 3:50:43 pm
 
     span = document.getElementById('today');
     txt = document.createTextNode(date);
     span.innerText = txt.textContent;
-
-    span = document.getElementById('today-time');
-    txt = document.createTextNode(dateTime);
-    span.innerText = txt.textContent;
-
   </script>
 
   <script>
-    // map needs renedering properly on print
-    // needs to set things back post print
-    // does browser print do what we want?  Print link does work.
-    var browserPrint = window.print
-    window.print = function(){
-      var map = document.getElementById('map')
-      map.style.width = map.clientWidth + 'px'
-      map.style.paddingBottom = map.clientHeight + 'px'
-      browserPrint()
-    }
+    var dateTime = moment().format('DD MMMM YYYY [at] h:mm:s'); // November 18th 2016, 3:50:43 pm
+
+    span1 = document.getElementById('today-time');
+    txt1 = document.createTextNode(dateTime);
+    span1.innerText = txt1.textContent;
+
+    span2 = document.getElementById('today-time2');
+    span2.innerText = txt1.textContent;
+
   </script>
 
+
+  
 {% endblock %}

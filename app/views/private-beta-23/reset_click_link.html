@@ -3,7 +3,7 @@
     <style type="text/css">
       .gmail {
         width: 1134px;
-        height: 800px;
+        height: 1024px;
         background-repeat: no-repeat;
         margin: 0 auto;
         padding-left: 208px;
@@ -174,7 +174,7 @@
   </style>
   </head>
   <body>
-    <div class="gmail" style="background-image:url({{path}}/images/password-reset-email.jpg)">
+    <div class="gmail" style="background-image:url({{path}}/images/password-reset-email.png)">
       <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0">
         <tr>
           <td align="center">
@@ -186,47 +186,25 @@
                     <!-- Body content -->
                     <tr>
                       <td class="content-cell">
-                        <h1>Hi,</h1>
 
                         {% if item == 'password' %}
-                          <p>You've asked to reset the {{item}} for the Find property information service. Click the button below to reset it.</p>
-                          <p>You will be taken to the Find property information service and asked to create a new password.</p>
-                          <!-- Action -->
-                          <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
-                            <tr>
-                              <td align="center">
-                                <div>
-                                  <a href="{{path}}/reset/{{item}}/do?71234897289456092390467540897520372734&amp;title_number={{data.title_number}}&amp;do_sign_in" class="button button--green">Reset your {{item}}</a>
-                                </div>
-                              </td>
-                            </tr>
-                          </table>
-                          <p>If you did not request a {{item}} reset, please ignore this email or <a href="http://landregistry.custhelp.com/app/contactus_general/">get in touch to let us know</a>.</p>
 
-                          <!-- Sub copy -->
-                          <table class="body-sub">
-                            <tr>
-                              <td>
-                                <p class="sub">If you're having trouble clicking the {{item}} reset button, copy and paste the link below into your web browser.</p>
-                                <p class="sub"><a href="{{path}}/reset/{{item}}/do?71234897289456092390467540897520372734&amp;title_number={{data.title_number}}&amp;do_sign_in">{{path}}/reset/{{item}}/do?71234897289456092390467540897520372734&amp;title_number={{data.title_number}}&amp;do_sign_in</a></p>
-                              </td>
-                            </tr>
-                          </table>
-                        {% else %}
+                          <p>Dear Mr Andy Porter,</p>
 
-                          <p>You recently requested a username reminder for your Find property information account.</p>
-                          <p>You username is <strong>patsmith</strong></p>
-                          <!-- Action -->
-                          <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0">
-                            <tr>
-                              <td align="center">
-                                <div>
-                                  <a href="{{path}}/sign_in?username=patsmith&amp;action=sign_in_successful&amp;title_number={{data.title_number}}" class="button button--green">Sign in</a>
-                                </div>
-                              </td>
-                            </tr>
-                          </table>
-                          <p>If you did not request a username reminder, please ignore this email or <a href="http://landregistry.custhelp.com/app/contactus_general/">get in touch to let us know</a>.</p>
+                          <p>We received a request to reset your password for the 'Find property information' service.</p>
+
+                          <p>Ignore this email if this wasn't you - your password won't be reset.</p> 
+
+                          <p>If it was you, click on or copy this link into a web browser:</p>
+
+                          <p><a href="{{path}}/reset/{{item}}/do?71234897289456092390467540897520372734&amp;title_number={{data.title_number}}&amp;do_sign_in">https://www.gov.uk/search-property-information-land-registry/change-password/Wy71234897Aq946wth2390IY754089sB2Kl734</a></p>
+
+                          <p>You'll be asked to choose a new password.</p>
+
+                          <br>
+                          <p>Your land and property rights: guaranteed and protected. HM Land Registry has given assurance and confidence to the property market in England and Wales since 1862. Find out more at <a href="www.gov.uk/land-registry">www.gov.uk/land-registry</a></p>
+
+                          <p>If you have received this email and it was not intended for you, please let us know, and then delete it. Please treat our communications in confidence, as you would expect us to treat yours. HM Land Registry checks all mail and attachments for known viruses, however, you are advised that you open any attachments at your own risk.</p>
 
                         {% endif %}
 

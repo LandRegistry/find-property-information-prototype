@@ -4,7 +4,7 @@
 {% block title %}Sign in{% endblock %}
 
 {% block header_primary %}
-  {{ back_link(title='', prefix='Back', url=path + '/confirm_selection?title_number=' + data.title_number) }}
+
 {% endblock %}
 
 {% block body %}
@@ -18,13 +18,10 @@
 
       <h1 class="heading-large" style="margin-top:0px;">Sign in</h1>
 
-      <form class="" method="POST" action="{% if data.action %}{{data.action}}{% else %}confirm_your_purchase{% endif %}" id="login-form"  novalidate data-clientside-validation="login_form_validation">
+      <form class="" method="GET" action="{{path}}/search" id="login-form"  novalidate data-clientside-validation="login_form_validation">
 
         <!-- <p class="lede">or <a href="create_account?title_number={{data.title_number}}" class="register-link">register to use this service</a></p> -->
 
-        {% if data.title_number %}
-          <input name="title_number" value="{{data.title_number}}" type="hidden" />
-        {% endif %}
 
         <!-- If this field is present in the GET or POST data sent to the server -->
         <!-- it will instantly log the user in. This is obviously not how "real" -->
@@ -61,7 +58,7 @@
           </label>
         </div> -->
 
-        <input type="submit" class="button" value="Continue to purchase">
+        <input type="submit" class="button" value="Sign in">
 
       </form>
 
