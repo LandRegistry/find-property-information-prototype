@@ -43,7 +43,7 @@
           </dd>
         {% endif %}
 
-        <dt class="spacing-bottom-single">Ownership type</dt>
+        <dt class="spacing-bottom-single">Tenure type</dt>
         <dd class="spacing-bottom-single">
           <strong class="bold">{{ title['tenure'] }}</strong>
           <a class="split-detail-trigger font-xsmall" href="#what-is-tenure">What does this mean?</a>
@@ -78,7 +78,7 @@
 
       </dl>
 
-      <div class="text">
+<!--       <div class="text">
         <h2 class="heading-medium spacing-top-single">You'll receive:</h2>
 
         <ul class="list list-bullet">
@@ -94,6 +94,27 @@
             <li>title number (the unique reference number)</li>
           {% endif %}
         </ul>
+      </div> -->
+
+      <div class="text">
+        <h2 class="heading-medium spacing-top-single">The summary will tell you</h2>
+
+        <ul class="list list-bullet">
+          {% if title['is_caution_title'] %}
+            <li>the cautioner's name and address (<strong class="bold">the owner isn't available from this service</strong>)</li>
+          {% else %}
+            {% if title['tenure'] == 'Leasehold' %}
+              <li>current leaseholder's name and address</li>
+            {% else %}
+              <li>current owner's name and address</li>
+            {% endif %}
+
+            <li>what was paid for the property – you won't get this if it was bought before April 2000, if they paid less than £100, or if HM Land Registry have agreed not to record the price</li>
+            <li>if there is a mortgage on the property, the lender's name and address</li>
+          {% endif %}
+        </ul>
+
+        <p class="spacing-top-single">This information can change if we receive an application. This service is unable to tell you whether or not there is an application pending with the Land Registry.</p>
       </div>
 
     </div>
@@ -160,12 +181,12 @@
 
     </div>
 
-    <div class="column-one-third tablet-column-one-third">
+<!--     <div class="column-one-third tablet-column-one-third">
       <aside class="supplementary-panel">
         <h2 class="heading-medium">Need help with this service?</h2>
         <p>Call HM Land Registry on 0300 006 0411 to report a problem, or if you're stuck and need help.</p>
       </aside>
-    </div>
+    </div> -->
 
   </div>
 
