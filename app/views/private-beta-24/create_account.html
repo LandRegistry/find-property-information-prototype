@@ -233,16 +233,25 @@
         <!-- sign-ins work! It is a massive hack for prototyping only -->
         <input name="do_sign_in" value="true" type="hidden" />
 
-        <h2 class="heading-medium">Email address</h2>
+        <!-- <h2 class="heading-medium">Email address</h2> -->
         <fieldset>
 
-          <legend class="visuallyhidden">Account details</legend>
+          <legend class="visuallyhidden">email address</legend>
 
             <div class="form-group">
 
-              <label class="form-label" for="email">Your email address</label>
+              <label class="form-label" for="email">Your email address
+<a href="#why-do-we-need-email" class="font-xsmall split-detail-trigger spacing-left-single">Our email usage policy</a>
+              </label>
 
               <input class="form-control" type="email" id="email" name="email" data-email-hint value="{{data.email}}">
+              <div class="split-detail-contents font-xsmall" id="why-do-we-need-email">
+                <div class="panel panel-border-narrow spacing-bottom-single">
+                  <p>Your email address will be used to log into the service in future. If you forget your password we will use your email address to help you reset it.</p>
+                  <p>We won't use your email address for any purposes other than access to this service.</p>
+                  <p>We won't share your email with third parties.</p>
+                </div>
+              </div>
 
               <div id="circularG"><div id="circularG_1" class="circularG"></div><div id="circularG_2" class="circularG"></div><div id="circularG_3" class="circularG"></div><div id="circularG_4" class="circularG"></div><div id="circularG_5" class="circularG"></div><div id="circularG_6" class="circularG"></div><div id="circularG_7" class="circularG"></div><div id="circularG_8" class="circularG"></div></div>
             </div>
@@ -268,7 +277,7 @@
         </fieldset>
 
 
-        <h2 class="heading-medium disabled-if-email-exists spacing-top-half">Create a password</h2>
+        <!-- <h2 class="heading-medium disabled-if-email-exists spacing-top-half">Create a password</h2> -->
 
         <fieldset class="disabled-if-email-exists spacing-top-flush">
 
@@ -303,11 +312,11 @@
         </fieldset>
 
 
-        <h2 class="heading-medium disabled-if-email-exists">Your name</h2>
+        <h2 class="heading-medium disabled-if-email-exists">Your details</h2>
 
         <fieldset class="disabled-if-email-exists">
 
-          <legend class="visuallyhidden">Your name</legend>
+          <legend class="visuallyhidden">Your details</legend>
 
           <div class="form-group">
             <label class="form-label" for="title">Title</label>
@@ -380,12 +389,12 @@
           </div>
         </div>
 
-        <input type="submit" id="continueToPay" class="button spacing-top-single disabled-if-email-exists" value="Continue to purchase" disabled-x>
+        <input type="submit" id="continueToPay" class="button spacing-top-single disabled-if-email-exists" value="Create account" disabled-x>
       </form>
 
-<!--       <div class="panel panel-border-narrow spacing-top-double">
-        <p>If you have any problems registering, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact HM Land Registry</a>.</p>
-      </div> -->
+      <div class="panel panel-border-narrow spacing-top-double">
+        <p>If you have any problems creating an account, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact HM Land Registry</a>.</p>
+      </div>
 
       <script type="application/json" id="create_account_form_validation">
         {
