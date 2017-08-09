@@ -1,0 +1,65 @@
+{% extends "./private-beta-15/layout/layout.html" %}
+
+{% block page_title %}
+  Rate limiting search
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+  
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+    <h1 class="heading-large">Rate limiting the search</h1>
+
+      <h2 class="heading-medium">Need: License Obligations - Ordnance Survey</h2>
+      <p>In order to protect Ordnance Survey intellecutal property / comply with their license terms we'll rate limiting the number of addresses that can be consumed</p>
+      <p>This page prototype does not explain or mimic the implemented rate limiting rules</p>
+      <p>Aims:
+      <ul class="list list-bullet">
+        <li>a person should not be affected by the rate limits</li>
+        <li>prevent automated harvesting of addresses</li>
+        <li>monitor the behaviour of searches to improve the system</li>
+        <li>If a person does hit one of the limits - give them a forward journey - help them complete their task - whilst we are improving the rules</li>
+        <li>We have thought of scenarios where humans could hit the limit - <a href="https://trello.com/c/VVFruP0d/712-us415-rate-limit-the-searching-functionality-m">see the trello card (authorised access needed)</a>
+      </ul>
+      </p>
+
+      <h2 class="heading-medium">Initial ideas for messages/forward journeys for people</h2>
+      <p>Thoughts:
+      <ul>
+        <li>design for everyone - non javascript &amp; javascript enabled</li>
+        <li>keep it as simple as possible for now - MVP</li>
+        <li>tell them/help them do the 'obvious thing' - what you would tell someone - 'refresh the page in x seconds'
+        <li>clear, actionable content</li>
+        <ul>
+          <li>don't explain the rules, or 'rate limiting'</li>
+          <li>solve the problem automatically and/or</li>
+          <li>help them do what we need them to do - refresh the page</li>
+          <li>don't cause unintentional negative behaviour / worry</li>
+        </ul>
+      </p>
+      <p>
+        <ul>
+          <li><a href="/rate-limit/search_results">no - javascript - help people refresh the page - Scenario 1 (easy tiger)</a></li>
+          <li>no - javascript - help people refresh the page - Scenario 2 (thats just too many)</li>
+          <li>javascript - help people refresh the page - Scenario 1 (easy tiger)</li>
+          <li>javascript - help people refresh the page - Scenario 2 (thats just too many)</li>
+        </ul>
+      </p>
+
+
+      <p class="spacing-top-double"><a href="/">prototype start page</a></p>
+
+    </div>
+  </div>
+
+
+
+</main>
+
+{% endblock %}
+
+

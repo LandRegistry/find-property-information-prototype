@@ -1,6 +1,16 @@
 {% extends "./layout/layout.html" %}
 {% from "./includes/back_link.html" import back_link %}
 
+{% block head_additionals %}
+
+  <style type="text/css">
+  .font-xxsmall {
+    font-size:14px;
+  }
+  </style>
+
+{% endblock %}
+
 {% from "./includes/register_teaser.html" import register_teaser %}
 
 {% block title %}Confirm your purchase{% endblock %}
@@ -124,6 +134,7 @@
         <div class="map" id="map">
           <p>Your browser must have JavaScript enabled in order to use the map.</p>
         </div>
+        <p class="font-xxsmall">Use of the pin marker on the map is subject to <a href="">Ordnance Survey licence terms and conditions</a></p>
       {% endif %}
     </div>
 
