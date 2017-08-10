@@ -15,10 +15,16 @@
 
 {% block title %}Confirm your purchase{% endblock %}
 
+{% block header_primary %}
+  {{ back_link(title='Search results', prefix='Back to', url=path + '/search_results?page=' + data.page + '&search_term=' + data.search_term) }}
+{% endblock %}
 
 {% block body %}
 
   <h1 class="heading-large">Confirm your purchase</h1>
+
+  <p>You'll get a summary of the information HM Land Registry holds for this property title.</p>
+
 
   <!-- prop info row -->
   <div class="grid-row spacing-top-single">
@@ -154,7 +160,7 @@
           <input name="email" value="{{data.email}}" type="hidden" />
 
           <h2 class="heading-medium spacing-top-third">How to pay</h2>
-          <p>This information costs £3. Payment will be taken by WorldPay on HM Land Registry's behalf.</p>
+          <p>This information costs £3 inc VAT. Payment will be taken by WorldPay on HM Land Registry's behalf.</p>
 
 
           <div class="notice">
