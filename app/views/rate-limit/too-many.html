@@ -1,0 +1,51 @@
+{% extends "./layout/layout.html" %}
+
+
+{% block page_title %}
+  Finding properties
+{% endblock %}
+
+{% block head_additionals %}
+
+{% endblock %}
+
+{% block body %}
+
+<main id="content" role="main" tabindex="-1">
+  
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge spacing-top-double">Searching limit reached</h1>
+
+      <div class="text">
+        <p class="lede">We limit the number of searches to comply with Ordnance Survey licensing terms and conditions</p>
+
+        <p>You can search again in <span class="countdown">20</span> minutes</p>
+        <script>document.write('<a class="button disabled" href="">Search again</a>')</script>
+        
+      </div>
+
+      
+      <noscript>
+
+        <p><a class="button" href="">Search again (please wait 20 minutes)</a></p>
+      </noscript>
+
+
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    //  var timeoutID = window.setTimeout(move, 3000);
+    // function move() {
+    //   window.location.href = 'search_results';
+    // }
+  </script>
+
+</main>
+
+{% endblock %}
+
+
