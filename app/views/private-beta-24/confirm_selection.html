@@ -21,6 +21,8 @@
 
   <h1 class="heading-large">About this property</h1>
 
+  <p>You'll get a summary of the information HM Land Registry holds for this property title.</p>
+
   <div class="grid-row spacing-top-single">
 
 
@@ -114,11 +116,16 @@
       </div> -->
 
       <div class="text">
-        <h2 class="heading-medium spacing-top-single">The summary will tell you</h2>
-
+        {% if title['is_caution_title'] %}
+          <h2 class="heading-medium collapse-top">HM Land Registry does not know the owner of this property</h2>
+        {% else %}
+          <h2 class="heading-medium spacing-top-single">The summary will tell you</h2>
+        {% endif %}
+        
         <ul class="list list-bullet">
           {% if title['is_caution_title'] %}
-            <li>the cautioner's name and address (<strong class="bold">the owner isn't available from this service</strong>)</li>
+            <li>Someone other than the owner (known as the 'cautioner') has registered a right or interest in the property.</li>
+            <li><strong class="bold">The summary will give you the cautioner's name and address.</strong></li>
           {% else %}
             {% if title['tenure'] == 'Leasehold' %}
               <li>current leaseholder's name and address</li>
