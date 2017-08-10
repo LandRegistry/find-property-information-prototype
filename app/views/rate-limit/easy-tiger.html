@@ -1,0 +1,46 @@
+{% extends "./layout/layout.html" %}
+
+
+{% block page_title %}
+  Finding properties
+{% endblock %}
+
+{% block head_additionals %}
+
+{% endblock %}
+
+{% block body %}
+
+<main id="content" role="main" tabindex="-1">
+  
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge spacing-top-double"><span><img style="height: 36px;" src="/private-beta-24/images/ajax-loader.gif"></span> Finding properties</h1>
+
+      <noscript>
+
+        <div class="text">
+          <p class="lede">Wait 3 seconds before continuing</p>
+          <p> <a class="button" href="search_results">Continue</a></p>
+        </div>
+
+      </noscript>
+
+
+    </div>
+  </div>
+
+  <script type="text/javascript">
+     var timeoutID = window.setTimeout(move, 3000);
+    function move() {
+      window.location.href = 'search_results';
+    }
+  </script>
+
+</main>
+
+{% endblock %}
+
+
