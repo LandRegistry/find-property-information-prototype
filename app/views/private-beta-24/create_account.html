@@ -225,13 +225,8 @@
       <p class="lede">Due to the information this service reveals, we ask people to create an account with us.</p>
 
 
-      <form class="spacing-top-double" action="confirm_your_purchase" method="POST" novalidate data-clientside-validation="create_account_form_validation">
+      <form class="spacing-top-double" action="registration_successful" method="POST" novalidate data-clientside-validation="create_account_form_validation">
         <input name="title_number" value="{{data.title_number}}" type="hidden" />
-
-        <!-- If this field is present in the GET or POST data sent to the server -->
-        <!-- it will instantly log the user in. This is obviously not how "real" -->
-        <!-- sign-ins work! It is a massive hack for prototyping only -->
-        <input name="do_sign_in" value="true" type="hidden" />
 
         <!-- <h2 class="heading-medium">Email address</h2> -->
         <fieldset>
@@ -244,7 +239,6 @@
 <a href="#why-do-we-need-email" class="font-xsmall split-detail-trigger spacing-left-single">Our email usage policy</a>
               </label>
 
-              <input class="form-control" type="email" id="email" name="email" data-email-hint value="{{data.email}}">
               <div class="split-detail-contents font-xsmall" id="why-do-we-need-email">
                 <div class="panel panel-border-narrow spacing-bottom-single">
                   <p>Your email address will be used to log into the service in future. If you forget your password we will use your email address to help you reset it.</p>
@@ -252,6 +246,7 @@
                   <p>We won't share your email with third parties.</p>
                 </div>
               </div>
+              <input class="form-control" type="email" id="email" name="email" data-email-hint value="{{data.email}}">
 
               <div id="circularG"><div id="circularG_1" class="circularG"></div><div id="circularG_2" class="circularG"></div><div id="circularG_3" class="circularG"></div><div id="circularG_4" class="circularG"></div><div id="circularG_5" class="circularG"></div><div id="circularG_6" class="circularG"></div><div id="circularG_7" class="circularG"></div><div id="circularG_8" class="circularG"></div></div>
             </div>
