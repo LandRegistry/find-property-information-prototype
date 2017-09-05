@@ -86,7 +86,7 @@
       {{ search_form(h1=true,autofocus=false,label='Search results for',value='PE1 2RE') }}
 
       <!-- <h2 class="font-xsmall expand-bottom-half">{{ results['number_results'] }} result{% if results['number_results'] > 1 %}s{% endif %} found</h2> -->
-      <p>26 addresses found</p>
+      <p>46 addresses found</p>
       <!-- <h2>&nbsp;</h2> -->
       {{ results(page) }}
 
@@ -94,7 +94,7 @@
       {% if results['number_pages'] %}
         {{ pagination(page, results['number_pages'],search_term=data.search_term) }}
       {% endif %}
-      {{ pagination(page, 2, 'PE1 2RE') }}
+      {{ pagination(page, 3, 'PE1 2RE') }}
     </div>
 
     <div class="column-one-third tablet-column-one-third">

@@ -33,6 +33,12 @@
 {% endblock %}
 
 {% block body %}
+
+<script>
+  let params = (new URL(document.location)).searchParams;
+  let addr = params.get("addr");
+</script>
+
 <h1 class="heading-large spacing-top-single visually-hidden">About this property</h1>
 
   <!-- <p>You'll get a summary of the information HM Land Registry holds for this property title.</p> -->
@@ -50,7 +56,9 @@
 
       <h2 class="visuallyhidden">Postal address</h2>
       <div class="address heading-large spacing-top-flush">
-        <span class="heading-xlarge spacing-top-flush spacing-bottom-third">71 Lincoln Gate</span>
+      
+        <span class="heading-xlarge spacing-top-flush spacing-bottom-third">
+        <script>document.write(addr);</script> Lincoln Gate</span>
         <span>Lincoln Road</span>
         <span>Peterborough</span>
         <span>PE1 2RE</span>
@@ -66,7 +74,7 @@
 
       <h2 class="heading-large">2 property titles at this address</h2>
 
-      <a class="split-detail-trigger" href="#what-is-a-title">Which property title do i need?</a>
+      <a class="split-detail-trigger" href="#what-is-a-title">Which property title do I need?</a>
       <div class="split-detail-contents" id="what-is-a-title">
         <div class="panel panel-border-narrow font-xsmall">
             <ul class="list-bullet spacing-bottom-single">
@@ -104,9 +112,12 @@
         <li>
           <h3 class="heading-medium">Leasehold <span class="lede">title, described as:</span></h3>
             <dd class="bold-medium spacing-bottom-single">
-              <a href="71-leasehold">
+            <script>
+              document.write('<a href="leasehold?addr=' + addr + '">');
+            </script>
+       
                 <div class="address">
-                  <span>71 Lincoln Gate</span> 
+                  <span><script>document.write(addr);</script> Lincoln Gate</span> 
                   <span>Lincoln Road</span>
                   <span>Peterborough</span>
                   <span>PE1 2RE</span>
@@ -115,6 +126,7 @@
             </dd>
             <p>This leasehold title is for just this address</p>
         </li>
+
       </ol>
 
     </div>

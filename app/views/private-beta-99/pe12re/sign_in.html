@@ -1,49 +1,53 @@
 {% extends "../layout/layout.html" %}
+{% from "../includes/back_link.html" import back_link %}
 
 {% block title %}Sign in{% endblock %}
+
+{% block header_primary %}
+  {{ back_link(title='Back', prefix='Back') }}
+{% endblock %}
 
 {% block body %}
   
 
   <!--<p style="vertical-align:top">Don't have an account? <a class="button" style="margin-left:30px;line-height: inherit;vertical-align:middle;background-color: #333" href="create_account?title_number={{data.title_number}}" id="register-link">register to use this service</a></p>-->
 
+
   <div class="grid-row spacing-top-double">
     <div class="column-two-thirds">
+
       <h1 class="heading-large" style="margin-top:0px;">Sign in</h1>
 
-      <!-- <form method="POST" action="{% if data.action %}{{data.action}}{% else %}worldpay_1{% endif %}" id="login-form"  novalidate data-clientside-validation="login_form_validation"> -->
       <form method="GET" action="{{path}}/pe12re/confirm_your_purchase" id="login-form"  novalidate data-clientside-validation="login_form_validation">
-        {# Due to the information this service reveals, we ask people to register with us so we can monitor access. #}
 
         <!-- <p class="lede">or <a href="create_account?title_number={{data.title_number}}" class="register-link">register to use this service</a></p> -->
 
         {% if data.title_number %}
           <input name="title_number" value="{{data.title_number}}" type="hidden" />
-          <input name="addr" value="71 Lincoln Gate" type="hidden" />
         {% endif %}
 
         <!-- If this field is present in the GET or POST data sent to the server -->
         <!-- it will instantly log the user in. This is obviously not how "real" -->
         <!-- sign-ins work! It is a massive hack for prototyping only -->
         <input name="do_sign_in" value="true" type="hidden" />
+        <input name="addr" value="42 Lincoln Gate" type="hidden" />
 
         <!-- Email -->
         <div class="form-group">
           <label class="form-label-bold" for="email">Email address</label>
-          <input type="email" class="form-control" name="email" id="email"{% if data.email %} value="{{data.email}}"{% endif %}{% if data.username %} value="{{data.username}}"{% endif %}>
+          <input type="email" class="form-control" name="email" id="email" data-session-storage-set="find-property-information-email" data-session-storage-get="find-property-information-email" {% if data.email %} value="{{data.email}}"{% endif %}{% if data.username %} value="{{data.username}}"{% endif %}>
         </div>
 
 
         <!-- Password -->
         <div class="form-group">
 
-          {# <p class="form-hint spacing-bottom-flush">If you already have an account, please enter your password.</p> #}
 
           <label class="form-label-bold" for="password">
             Password
           </label>
 
-          <p>If this is your first visit, you will need to <a href="create_account?title_number={{data.title_number}}" class="register-link">register to use this service</a></p>
+          <!-- <p>If this is your first visit, you will need to <a href="create_account?title_number={{data.title_number}}" class="register-link">register to use this service</a></p> -->
 
           <input type="password" class="form-control" id="password" name="password">
 
@@ -51,25 +55,24 @@
 
 
         <!-- T&Cs -->
-        <div class="form-group" id="terms_group">
-          <div class="multiple-choice">
+<!--         <div class="form-group" id="terms_group">
+          <label class="block-label selection-button-checkbox" for="terms">
             <input id="terms" name="terms" type="checkbox" value="terms">
-            <label for="terms">
-              I have read and agree to the <a href="terms_of_use">terms of use</a>
-            </label>
-          </div>
-        </div>
+            I have read and agree to the <a href="terms_and_conditions">terms &amp; conditions</a>
+          </label>
+        </div> -->
 
-          
-
-        <input type="submit" class="button" value="Sign in">
+        <input type="submit" class="button" value="Continue to purchase">
 
       </form>
 
+
       <div class="panel panel-border-narrow spacing-bottom-single spacing-top-double">
-        <p>Forgotten your password? <a href="{{path}}/reset/password/send_email?title_number={{data.title_number}}">request a new password here</a></p>
-        <p>You can also <a href="https://www.gov.uk/government/publications/official-copies-of-register-or-plan-registration-oc1">order information in paper format</a>.</p>
-        <!-- <p class="spacing-top-double">If you have any problems signing in, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact HM Land Registry</a>.</p> -->
+        <p>Forgotten your password? <a href="{{path}}/reset/password/send_email?title_number={{data.title_number}}">Reset your password</a></p>
+      </div>
+
+      <div class="panel panel-border-narrow spacing-bottom-single">
+        <p>Don't have an account? <a href="create_account?title_number={{data.title_number}}">Create an account</a></p>
       </div>
 
       <script>
@@ -92,17 +95,12 @@
         {
           "email": {
             "presence": {
-              "message": "Email address is required"
+              "message": "You need to provide an email address"
             }
           },
           "password": {
             "presence": {
-              "message": "Password is required"
-            }
-          },
-          "terms": {
-            "presence": {
-              "message": "You must agree to our terms and conditions before continuing"
+              "message": "You need to provide a password"
             }
           }
         }
@@ -110,12 +108,13 @@
 
 
     </div>
-    <div class="column-one-third tablet-column-one-third">
-<!--       <aside class="supplementary-panel">
+
+<!--     <div class="column-one-third tablet-column-one-third">
+      <aside class="supplementary-panel">
         <h2 class="heading-medium">Need help with this service?</h2>
         <p>Call HM Land Registry on 0300 006 0411 to report a problem, or if you're stuck and need help.</p>
-      </aside> -->
-    </div>
+      </aside>
+    </div> -->
   </div>
 
 {% endblock %}
