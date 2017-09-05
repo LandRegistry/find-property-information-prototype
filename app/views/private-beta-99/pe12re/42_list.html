@@ -2,7 +2,7 @@
 
 
 {% block page_title %}
-  71 Lincoln Gate, Lincoln Road, PE1 2RE
+  42 Lincoln Gate, Lincoln Road, PE1 2RE
 {% endblock %}
 
 {% block head_additionals %}
@@ -33,12 +33,6 @@
 {% endblock %}
 
 {% block body %}
-
-<script>
-  let params = (new URL(document.location)).searchParams;
-  let addr = params.get("addr");
-</script>
-
 <h1 class="heading-large spacing-top-single visually-hidden">About this property</h1>
 
   <!-- <p>You'll get a summary of the information HM Land Registry holds for this property title.</p> -->
@@ -56,9 +50,7 @@
 
       <h2 class="visuallyhidden">Postal address</h2>
       <div class="address heading-large spacing-top-flush">
-      
-        <span class="heading-xlarge spacing-top-flush spacing-bottom-third">
-        <script>document.write(addr);</script> Lincoln Gate</span>
+        <span class="heading-xlarge spacing-top-flush spacing-bottom-third">42 Lincoln Gate</span>
         <span>Lincoln Road</span>
         <span>Peterborough</span>
         <span>PE1 2RE</span>
@@ -74,7 +66,7 @@
 
       <h2 class="heading-large">2 property titles at this address</h2>
 
-      <a class="split-detail-trigger" href="#what-is-a-title">Which property title do i need?</a>
+      <a class="split-detail-trigger" href="#what-is-a-title">Which property title do I need?</a>
       <div class="split-detail-contents" id="what-is-a-title">
         <div class="panel panel-border-narrow font-xsmall">
             <ul class="list-bullet spacing-bottom-single">
@@ -107,17 +99,14 @@
                 </div>
               </a>
             </dd>
-            <p>This freehold title covers all 26 addresses in this postcode</p>
+            <p>This freehold title covers all 46 addresses in this postcode</p>
         </li>
         <li>
           <h3 class="heading-medium">Leasehold <span class="lede">title, described as:</span></h3>
             <dd class="bold-medium spacing-bottom-single">
-            <script>
-              document.write('<a href="leasehold?addr=' + addr + '"');
-            </script>
-       
+              <a href="42_leasehold">
                 <div class="address">
-                  <span><script>document.write(addr);</script> Lincoln Gate</span> 
+                  <span>42 Lincoln Gate</span> 
                   <span>Lincoln Road</span>
                   <span>Peterborough</span>
                   <span>PE1 2RE</span>
