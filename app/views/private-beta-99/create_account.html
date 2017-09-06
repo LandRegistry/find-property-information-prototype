@@ -1,4 +1,5 @@
-{% extends "./layout/layout.html" %}
+{% extends "../layout/layout.html" %}
+{% from "../includes/back_link.html" import back_link %}
 
 {% block head_additionals %}
 
@@ -206,41 +207,38 @@
 
 {% endblock %}
 
-{% block title %}Register{% endblock %}
+{% block title %}Create an account{% endblock %}
+
+{% block header_primary %}
+  {{ back_link(title='Back', prefix='Back')}}
+{% endblock %}
 
 {% block body %}
-  
 
   <div class="grid-row spacing-top-double">
 
     <div class="column-two-thirds tablet-column-two-thirds">
 
-      <h1 class="heading-large" style="margin-top:0px;">Register</h1>
+      <h1 class="heading-large" style="margin-top:0px;">Create an account</h1>
 
-      <p class="lede">Due to the information this service reveals, we ask people to register with us.</p>
+<!--       <p>HM Land Registry won't share this information without your permission, as set out in its <a href="https://www.gov.uk/government/organisations/land-registry/about/personal-information-charter">privacy policy</a>.</p> -->
+      <p class="lede">Due to the information this service reveals, we ask people to create an account with us.</p>
 
-<!--
-      Customer registration has been introduced so that our Find A Property service conforms to standard industry practice and is brought in line with other online service providers who ask users to register in order to gain access to information. This change also makes our service more secure.
--->
 
-      <form class="spacing-top-double" action="account_created_continue" method="POST" novalidate data-clientside-validation="create_account_form_validation">
+      <form class="spacing-top-double" action="registration_successful" method="POST" novalidate data-clientside-validation="create_account_form_validation">
         <input name="title_number" value="{{data.title_number}}" type="hidden" />
 
-        <!-- If this field is present in the GET or POST data sent to the server -->
-        <!-- it will instantly log the user in. This is obviously not how "real" -->
-        <!-- sign-ins work! It is a massive hack for prototyping only -->
-        <input name="do_sign_in" value="true" type="hidden" />
-
+        <!-- <h2 class="heading-medium">Email address</h2> -->
         <fieldset>
 
-          <legend class="visuallyhidden">Account details</legend>
+          <legend class="visuallyhidden">email address</legend>
 
             <div class="form-group">
+
               <label class="form-label" for="email">Email address
-              <a href="#why-do-we-need-email" class="font-xsmall split-detail-trigger spacing-left-single">Our email usage policy</a></label>
+<a href="#why-do-we-need-email" class="font-xsmall split-detail-trigger spacing-left-single">Our email usage policy</a>
+              </label>
 
-
-              <input class="form-control" type="email" id="email" name="email" data-email-hint value="{{data.email}}">
               <div class="split-detail-contents font-xsmall" id="why-do-we-need-email">
                 <div class="panel panel-border-narrow spacing-bottom-single">
                   <p>Your email address will be used to log into the service in future. If you forget your password we will use your email address to help you reset it.</p>
@@ -248,6 +246,8 @@
                   <p>We won't share your email with third parties.</p>
                 </div>
               </div>
+              <input class="form-control" type="email" id="email" name="email" data-email-hint value="{{data.email}}">
+
               <div id="circularG"><div id="circularG_1" class="circularG"></div><div id="circularG_2" class="circularG"></div><div id="circularG_3" class="circularG"></div><div id="circularG_4" class="circularG"></div><div id="circularG_5" class="circularG"></div><div id="circularG_6" class="circularG"></div><div id="circularG_7" class="circularG"></div><div id="circularG_8" class="circularG"></div></div>
             </div>
 
@@ -269,33 +269,43 @@
               <p id="email-hint-value" class="bold"></p>
             </div>
 
-          <div class="form-group disabled-if-email-exists">
+        </fieldset>
 
-            <label class="form-label" for="pass">Create a password</label>
-            <!-- <p class="form-hint">Your password must:</p> -->
-            <ul class="form-hint list list-bullet spacing-bottom-flush">
-              <li>between 8 and 20 characters</li>
-              <li>containing 2 numbers</li>
-              <li>not contain the symbols &pound; &#x20AC; &#x00AC; &#x00A6;</li>
-            </ul>
-            <input class="form-control" type="password" id="pass" name="pass">
 
-          </div>
+        <!-- <h2 class="heading-medium disabled-if-email-exists spacing-top-half">Create a password</h2> -->
+
+        <fieldset class="disabled-if-email-exists spacing-top-flush">
+
+          <legend class="visuallyhidden">Create a password</legend>
 
           <div class="form-group">
-            <label class="form-label " for="password_retype">Re-type your password</label>
-            <input class="form-control" id="password_retype" name="password_retype" type="password" value="">
 
-            <!-- <p class="form-hint">Your password must:</p>
-            <ul class="form-hint list list-bullet spacing-bottom-flush">
+<!--             <p class="form-hint spacing-bottom-flush">Your password must:</p>
+            <ul class="form-hint list list-bullet spacing-bottom-half">
               <li>be between 8 and 20 characters</li>
               <li>contain 2 numbers</li>
               <li>not contain the symbols &pound; &#x20AC; &#x00AC; &#x00A6;</li>
             </ul> -->
+
+            <label class="form-label" for="pass">Create a password</label>
+            <input class="form-control" type="password" id="pass" name="pass">
           </div>
 
+          <div class="form-group">
+            <label class="form-label" for="password_retype">Re-type your password</label>
+            <input class="form-control" id="password_retype" name="password_retype" type="password" value="">
+
+            <p class="form-hint spacing-top-half">Your password must:</p>
+            <ul class="form-hint list list-bullet spacing-bottom-flush">
+              <li>be between 8 and 20 characters</li>
+              <li>contain 2 numbers</li>
+              <li>not contain the symbols &pound; &#x20AC; &#x00AC; &#x00A6;</li>
+            </ul>
+
+          </div>
 
         </fieldset>
+
 
         <h2 class="heading-medium disabled-if-email-exists">Your details</h2>
 
@@ -306,7 +316,7 @@
           <div class="form-group">
             <label class="form-label" for="title">Title</label>
             <select class="form-control" id="title" name="title">
-              <option value="">Please select</option>
+              <option value="">Please select a title</option>
               <option value="Mr">Mr</option>
               <option value="Mrs">Mrs</option>
               <option value="Miss">Miss</option>
@@ -326,19 +336,10 @@
           </div>
 
           <div class="form-group">
-          <label class="form-label" for="phone">Phone number (optional)
-              <!-- <a href="#why-do-we-need-phone" class="font-xsmall split-detail-trigger spacing-left-single">Why we ask for phone number</a> -->
-              </label>
-
-
-              <input size="20" class="form-control" type="phone" id="phone" name="phone" data-phone-hint>
-<!--               <div class="split-detail-contents font-xsmall" id="why-do-we-need-phone">
-                <div class="panel panel-border-narrow spacing-bottom-single">
-                  <p>We won't contact you by phone.</p>
-                  <p>We won't share your phone number with third parties.</p>
-                </div>
-              </div> -->
+            <label class="form-label" for="phone">Phone number (optional)</label>
+            <input class="form-control" type="text" id="phone" name="phone">
           </div>
+
 
         </fieldset>
 
@@ -346,7 +347,7 @@
 
         <fieldset class="disabled-if-email-exists">
 
-          <legend class="visuallyhidden">Address</legend>
+          <legend class="visuallyhidden">Your address</legend>
 
           <div class="form-group">
             <label class="form-label" for="address">First line of your address</label>
@@ -378,16 +379,16 @@
           <div class="multiple-choice">
             <input id="terms" name="terms" type="checkbox" value="terms">
             <label for="terms">
-              I have read and agree to the <a href="terms_of_use">terms of use</a>
+              I have read and agree to the <a href="terms_and_conditions">terms of use</a>
             </label>
           </div>
         </div>
 
-        <input type="submit" class="button spacing-top-single disabled-if-email-exists" value="Register">
+        <input type="submit" id="continueToPay" class="button spacing-top-single disabled-if-email-exists" value="Create account" disabled-x>
       </form>
 
       <div class="panel panel-border-narrow spacing-top-double">
-        <p>If you have any problems registering, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact HM Land Registry</a>.</p>
+        <p>If you have any problems creating an account, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact HM Land Registry</a>.</p>
       </div>
 
       <script type="application/json" id="create_account_form_validation">
@@ -395,79 +396,79 @@
           "email": {
             "email": true,
             "presence": {
-              "message": "Email address is required"
+              "message": "You need to provide an email address"
             }
           },
           "pass": {
             "presence": {
-              "message": "Password is required"
+              "message": "You need to provide a password"
             },
             "length": {
               "minimum": 8,
               "maximum": 20,
-              "message": "Password should be between 8 and 20 characters long. Characters can include letters, number and symbols."
+              "message": "Your Password must be between 8 and 20 characters long. Characters can include letters, number and symbols."
             },
             "find_property_information_password": true
           },
           "password_retype": {
             "presence": {
-              "message": "Please repeat your password"
+              "message": "You need to re-type your password"
             },
             "length": {
               "minimum": 8,
               "maximum": 20,
-              "message": "Please ensure both passwords match"
+              "message": "Please make sure both passwords match"
             },
             "find_property_information_password": true
           },
           "title": {
             "presence": {
-              "message": "Title is required"
+              "message": "You need to provide your Title"
             }
           },
           "firstname": {
             "presence": {
-              "message": "First name is required"
+              "message": "You need to provide a First name"
             }
           },
           "lastname": {
             "presence": {
-              "message": "Last name is required"
+              "message": "You need to provide a Last name"
             }
           },
           "address": {
             "presence": {
-              "message": "Address is required"
+              "message": "You need to provide the First line of your Address"
             }
           },
           "town": {
             "presence": {
-              "message": "Town or City is required"
+              "message": "You need to provide a Town or City"
             }
           },
           "country": {
             "presence": {
-              "message": "Country is required"
+              "message": "You need to provide a Country"
             }
           },
           "postcode": {
             "presence": {
-              "message": "Postcode is required"
+              "message": "You need to provide a Postcode"
             }
           },
           "terms": {
             "presence": {
-              "message": "You must agree to our terms and conditions before continuing"
+              "message": "You need to agree the terms of use for this service"
             }
           }
         }
       </script>
 
-      <script>
+      <!-- <script>
         (function() {
           var emailInput = document.getElementById('email');
 
-          var fields = document.querySelectorAll('input[type="text"], input[type="password"], input[type="checkbox"], input[type="submit"], select');
+          var fields = document.querySelectorAll('input[type="text"], input[type="password"], input[type="submit"], select');
           var disabledIfEmailExists = document.querySelectorAll('.disabled-if-email-exists');
 
           var emailDebounceTimeout;
@@ -498,6 +499,7 @@
 
                   [].forEach.call(fields, function(field) {
                     field.disabled = false;
+                    // document.getElementById('continueToPay').disabled = true;
 
                     [].forEach.call(disabledIfEmailExists, function(item) {
                       item.style.opacity = 1;
@@ -523,14 +525,35 @@
           emailInput.addEventListener('keyup', change);
           emailInput.addEventListener('change', change);
         })();
-      </script>
+      </script> -->
+
+<!--       <script>
+        (function() {
+          var terms = document.getElementById('terms');
+
+          var payButton = document.getElementById('continueToPay');
+
+          function change(e) {
+
+                if((terms.checked) == true) {
+                    payButton.disabled = false;
+                } else {
+                    payButton.disabled = true;
+                };
+
+          }
+          terms.addEventListener('change', change);
+        })();
+      </script> -->
+
 
     </div>
-    <div class="column-one-third tablet-column-one-third">
-<!--       <aside class="supplementary-panel">
+
+<!--     <div class="column-one-third tablet-column-one-third">
+      <aside class="supplementary-panel">
         <h2 class="heading-medium">Need help with this service?</h2>
         <p>Call HM Land Registry on 0300 006 0411 to report a problem, or if you're stuck and need help.</p>
-      </aside> -->
-    </div>
+      </aside>
+    </div> -->
   </div>
 {% endblock %}
