@@ -1,0 +1,30 @@
+{% extends "../layout/layout.html" %}
+{% from "./search_form.html" import search_form %}
+
+{% block title %}Search{% endblock %}
+
+{% block body %}
+  <h1 class="heading-large">Search for property</h1>
+
+  <div class="grid-row spacing-top-single">
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+      <!-- <p class="spacing-bottom-single">You can get a summary of information about registered property or land in England and Wales, even if you don’t own it.</p> -->
+
+      {{ search_form() }}
+
+      <div class="panel panel-border-narrow">
+
+<!--         <p>Don't know the postcode? Find it on the  
+          <a target="_blank" id="postcode-finder-link" rel="external" href="http://www.royalmail.com/find-a-postcode">Royal Mail postcode finder.</a>
+        </p> -->
+
+
+        <p>If you don't have a postcode, or are looking for information about land, 
+
+        <a href="https://eservices.landregistry.gov.uk/wps/portal/Property_Search">use the Find a Property service</a> instead to search by street address, title number or by using a map.</p>
+      </div>
+      
+    </div>
+  </div>
+{% endblock %}

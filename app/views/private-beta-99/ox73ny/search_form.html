@@ -1,0 +1,47 @@
+{% macro search_form(h1=false, autofocus=true, label='Enter a postcode, eg SW1A 2AA',value='') %}
+  <form action="search_results" method="get" class="search-form" data-clientside-validation="search_form_validation" data-clientside-validation-no-summary>
+
+    <div class="form-group spacing-bottom-half {% if form.search_term.errors %}error{% endif %}">
+
+      {% if h1 %}<h1>{% endif %}
+
+        <label class="form-label bold-medium spacing-bottom-half" for="search_term">
+          {{label}}
+
+          {% if search_term %}
+            <span class="visuallyhidden">{{search_term}}</span>
+          {% endif %}
+        </label>
+
+      {% if h1 %}</h1>{% endif %}
+
+      {%if autofocus %}
+        <input class="form-control" id="search_term2" name="search_term" type="text" value="{{value}}" autofocus="autofocus">
+      {% else %}
+        <input class="form-control" id="search_term2" name="search_term" type="text" value="{{value}}">
+      {% endif %}
+
+      <input class="button" type="submit" name="search-button" value="Search" id="search_button">
+    </div>
+  </form>
+
+<!--   <script type="application/json" id="search_form_validation">
+    {
+      "search_term": {
+        "presence": {
+          "message": "Please enter a postcode"
+        }
+      }
+    }
+  </script> -->
+  <script type="application/json" id="search_form_validation">
+    {
+      "search_term": {
+        "find_property_information_postcode": {
+          "message": "Please enter a postcode"
+        }
+      }
+    }
+  </script>
+
+{% endmacro %}
