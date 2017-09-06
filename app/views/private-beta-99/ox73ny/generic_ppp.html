@@ -2,7 +2,7 @@
 
 
 {% block page_title %}
-  71 Lincoln Gate, Lincoln Road, PE1 2RE
+  property page
 {% endblock %}
 
 {% block head_additionals %}
@@ -58,10 +58,11 @@
       <div class="address heading-large spacing-top-flush">
       
         <span class="heading-xlarge spacing-top-flush spacing-bottom-third">
-        <script>document.write(addr);</script> Lincoln Gate</span>
-        <span>Lincoln Road</span>
-        <span>Peterborough</span>
-        <span>PE1 2RE</span>
+        <script>document.write(addr);</script></span>
+        <span>Mill End</span>
+        <span>Chadlington</span>
+        <span>Chipping Norton</span>
+        <span>OX7 3NY</span>
       </div> 
 
     </div>
@@ -72,7 +73,7 @@
   <div class="grid-row spacing-top-flush">
     <div class="column-two-thirds tablet-column-two-thirds">
 
-      <h2 class="heading-large">2 property titles at this address</h2>
+      <h2 class="heading-large">property titles at this address</h2>
 
       <a class="split-detail-trigger" href="#what-is-a-title">Which property title do I need?</a>
       <div class="split-detail-contents" id="what-is-a-title">
@@ -100,16 +101,22 @@
         <li>
           <h3 class="heading-medium">Freehold <span class="lede">title, described as:</span></h3>
             <dd class="bold-medium spacing-bottom-single">
-              <a href="freehold">
-                <div class="address">           
-                  <span>land and buildings on the south side of Cobden Avenue and the west side of Lincoln Road</span>             
-                  <span>Peterborough</span>
-                </div>
+              <script>
+                document.write('<a href="freehold?addr=' + addr + '">');
+              </script>
+              <div class="address">           
+                <script>document.write(addr);</script></span>
+                <span>Mill End</span>
+                <span>Chadlington</span>
+                <span>Chipping Norton</span>
+                <span>OX7 3NY</span>
+              </div>
+
               </a>
             </dd>
-            <p>This freehold title covers all 26 addresses in this postcode</p>
+            <p>This freehold title is for just this address</p>
         </li>
-        <li>
+<!--         <li>
           <h3 class="heading-medium">Leasehold <span class="lede">title, described as:</span></h3>
             <dd class="bold-medium spacing-bottom-single">
             <script>
@@ -125,7 +132,7 @@
               </a>
             </dd>
             <p>This leasehold title is for just this address</p>
-        </li>
+        </li> -->
 
       </ol>
 
@@ -146,13 +153,11 @@
     </p>
   </div>
 
-    <!-- 71 - freehold -->
     <script>
-      var indexData = {"crs": {"properties": {"name": "urn:ogc:def:crs:EPSG::27700"}, "type": "name"}, "geometry": {"coordinates": [[[519034.468, 299525.035], [519034.15, 299525.05], [519033.9, 299519.5], [519033.2, 299519.52], [519031.7, 299516.15], [519019.8, 299514.7], [519019.534, 299511.903], [519019.3, 299509.45], [519019.1, 299509.05], [519018.9, 299508.7], [519018.8, 299508.5], [519018.6, 299508.2], [519018.35, 299507.9], [519018.1, 299507.65], [519017.85, 299507.35], [519017.35, 299506.95], [519016.45, 299506.5], [519016.0, 299506.35], [519015.75, 299506.3], [519015.15, 299506.2], [519014.9, 299506.2], [519014.35, 299506.3], [519014.2, 299506.31], [519014.75, 299502.85], [519014.85, 299500.0], [519015.14, 299494.83], [519015.63, 299486.35], [519015.75, 299484.2], [519015.99, 299481.5], [519016.32, 299477.79], [519017.14, 299468.53], [519035.1, 299470.44], [519035.65, 299470.5], [519036.25, 299466.5], [519096.95, 299474.55], [519100.86, 299475.053], [519100.15, 299481.05], [519099.45, 299486.5], [519097.53, 299500.0], [519096.9, 299504.2], [519096.3, 299509.35], [519093.05, 299534.1], [519070.488, 299535.141], [519059.7, 299535.64], [519055.15, 299535.87], [519048.0, 299536.23], [519044.5, 299536.4], [519037.3, 299536.75], [519035.1, 299536.95], [519032.996, 299536.992], [519033.1, 299536.15], [519034.468, 299525.035]], [[519048.866, 299508.94], [519049.118, 299506.439], [519045.895, 299506.02], [519045.6, 299508.45]]], "type": "Polygon"}, "properties": {"colour": 1, "feature_id": 4019, "graphic_type": "Bordered Polygon", "render_attributes": {"border_colour": 1, "border_width": 0, "exterior_edge_colour": 1, "exterior_edge_thickness": 2.0, "fill_colour": 25, "fill_style": 9, "render_level": "0"}, "width": 0}, "type": "Feature"};
+
+      var indexData = {"crs": {"properties": {"name": "urn:ogc:def:crs:EPSG::27700"}, "type": "name"}, "geometry": {"coordinates": [[[432451.004, 222513.426], [432451.684, 222510.506], [432452.654, 222510.736], [432454.639, 222500.989], [432456.119, 222501.199], [432457.079, 222497.893], [432459.761, 222499.008], [432460.053, 222498.859], [432461.037, 222498.389], [432462.47, 222493.34], [432463.286, 222490.458], [432463.916, 222490.798], [432467.693, 222493.01], [432468.709, 222493.556], [432469.299, 222493.909], [432470.222, 222494.439], [432466.828, 222501.107], [432466.547, 222501.759], [432460.763, 222499.354], [432460.58, 222500.0], [432460.28, 222501.04], [432459.73, 222502.99], [432459.68, 222503.18], [432457.31, 222512.89], [432456.848, 222514.807], [432451.004, 222513.426]]], "type": "Polygon"}, "properties": {"colour": 0, "feature_id": 4019, "graphic_type": "Bordered Polygon", "render_attributes": {"border_colour": 0, "border_width": 0, "exterior_edge_colour": 1, "exterior_edge_thickness": 2.0, "fill_colour": 25, "fill_style": 9, "render_level": "0"}, "width": 0}, "type": "Feature"};
+    
     </script>
-
-
-
 
     <script defer src="/public/app/javascripts/map.js"></script>
 

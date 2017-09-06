@@ -215,7 +215,7 @@ router.all('/create_account:variant?', function(req, res) {
 /**
  * Password reset forms
  */
-router.all('/reset/:item/:section', function(req, res) {
+router.all('*/reset/:item/:section', function(req, res) {
 
   res.render(path.join(__dirname, 'reset_' + req.params.section), {
     item: req.params.item,
