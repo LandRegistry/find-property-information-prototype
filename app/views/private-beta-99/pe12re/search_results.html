@@ -110,3 +110,47 @@
     </div>
   </div>
 {% endblock %}
+
+{% block js_bottom %}
+  <script>
+window.validate.validators.find_property_information_postcode_search_form = function(value, options, key, attributes) {
+
+
+  var parts = {
+    '{fst}': 'ABCDEFGHIJKLMNOPRSTUWYZ',
+    '{sec}': 'ABCDEFGHKLMNOPQRSTUVWXY',
+    '{thd}': 'ABCDEFGHJKMNPRSTUVWXY',
+    '{fth}': 'ABEHMNPRVWXY',
+    '{inward}': 'ABDEFGHJLNPQRSTUWXYZ'
+  }
+
+  var rules = [
+    '^[{fst}][1-9]\\d[{inward}][{inward}]$',
+    '^[{fst}][1-9]\\d\\d[{inward}][{inward}]$',
+    '^[{fst}][{sec}]\\d\\d[{inward}][{inward}]$',
+    '^[{fst}][{sec}][1-9]\\d\\d[{inward}][{inward}]$',
+    '^[{fst}][1-9][{thd}]\\d[{inward}][{inward}]$',
+    '^[{fst}][{sec}][1-9][{fth}]\\d[{inward}][{inward}]$'
+  ];
+
+  var postcode_regexp = rules.join('|');
+
+  for(var i in parts) {
+    if(parts.hasOwnProperty(i)) {
+      postcode_regexp = postcode_regexp.replace(new RegExp(i, 'g'), parts[i])
+    }
+  }
+
+  postcode_regexp = new RegExp(postcode_regexp);
+
+  if(!value) {
+    return 'a postcode is needed';
+  }
+
+  if(!postcode_regexp.test(value.toUpperCase().replace(/\s/, ''))) {
+    return 'not a valid postcode';
+  }
+
+};
+  </script>
+{% endblock %}
