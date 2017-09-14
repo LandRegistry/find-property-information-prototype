@@ -1,0 +1,220 @@
+{% extends "../layout/layout.html" %}
+{% from "../includes/back_link.html" import back_link %}
+
+{% block title %}Summary for property title {{ title.number }}{% endblock %}
+
+{% block header_primary %}
+  {{ back_link(title='Search again', url=path + '/search',historyBased=false) }}
+{% endblock %}
+
+{% block header_secondary %}
+  {% include '../includes/language_switcher.html' %}
+{% endblock %}
+
+{% block body %}
+
+  <h1 class="heading-large spacing-top-single">Summary of title PB1056338</h1>
+
+    <!-- <p class="font-xsmall">This title was last changed on <time datetime="{{ title.last_changed_datetime }}">{{ title.last_changed_date }} at {{ title.last_changed_time }}</time></p> -->
+    <p class="text">Purchased on <span id="today-time"></span></p>
+    <p class="text">This information can change if we receive an application. This service is unable to tell you whether or not there is an application pending with HM Land Registry.</p>
+
+
+
+  <div class="grid-row column-flip spacing-top-single">
+    <div class="column-one-third tablet-column-one-third spacing-bottom-single">
+
+<!--       {% if title.indexPolygon %}
+        <div class="map polygon" id="map">
+          <p>The map relies on JavaScript being enabled in your browser.</p>
+        </div>
+
+        <p class="font-xsmall">This map shows the property's rough extent and location, <strong class="bold">not legal boundaries.</strong></p>
+      {% endif %} -->
+    </div>
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <dl class="definition-tabular definition-tabular-sectioned">
+
+        <dt>Property description</dt>
+        <dd class="bold-medium">
+          <div class="address">
+            <span>{{ data.addr }}</span>
+            <span>Peterborough</span>
+            <span>PE1 2RE</span>
+          </div>
+          <p class="spacing-top-doublex font-xsmall">Use of this address data is subject to <a href="os_terms">Ordnance Survey licence terms and conditions</a></p>
+        </dd>
+
+
+        </dt>
+
+
+        <dt>Owner</dt>
+          <dd>
+            <h2 class="bold">Green Crown Housing Services</h2>
+
+            <h3 class="visuallyhidden">Addresses</h3>
+              <div class="address spacing-top-half">
+                <span>17a West Park Road</span> 
+                <span>Peterborough</span>
+                <span>PE2 7EE</span>
+              </div>
+          </dd>
+
+
+<!-- no lender for this property -->
+
+        <dt>Tenure type</dt>
+        <dd class="bold-small">Freehold</dd>
+
+<!--         <dt>Title number</dt>
+        <dd class="bold-small">{{ title['data']['title_number'] }}</dd> -->
+
+<!--         <dt>Price paid</dt>
+        <dd class="bold-small">£135,000</dd>
+ -->
+      </dl>
+
+      <!-- <p class="font-xsmall">This title was last changed on <time datetime="{{ title.last_changed_datetime }}">{{ title.last_changed_date }} at {{ title.last_changed_time }}</time></p> -->
+      <p class="spacing-top-single">This title was last changed on 11 August 1988 at 15:34:23</p>
+      
+
+
+      <div class="printhidden">
+        <div class="panel panel-simple">
+            <h2 class="heading-medium spacing-top-third">Download or print</h2>
+            <p>If you want to keep this information or need a VAT receipt            
+              <ul class="list list-bullet" style="margin-bottom: 10px;">
+                  <li><a href="../images/PB1056338.pdf" download="Summary-of-title-PB1056338.pdf">download a copy<span class="visuallyhidden"> of this property summary</span></a></li>
+                  <li><a href="#" data-print >print a copy</a></li>        
+              </ul>
+            </p>
+
+        </div>
+      </div>
+
+
+      <div class="printhidden">
+
+        <h2 class="heading-medium collapse-top">What did you think of this service?</h2>
+        <p><a rel="external" href="mailto:digital-register-feedback@digital.landregistry.gov.uk">Please give us your feedback</a> (takes 30 seconds). <br>This is a new service and your feedback will help us improve it.</p>
+
+      </div>
+
+        <hr>
+
+        <div class="vat-receipt page-break-block font-xsmall">
+
+          <h2 class="heading-medium">VAT receipt</h2>
+          <div class="grid-row">
+            <div class="column-two-thirds mobile-column-one-half">
+              <dl class="definition-tabular definition-tabular-1-2">
+                
+                <dt>Date</dt>
+                <dd><span id="today-time2"></span></dd>
+          
+                <dt>Transaction ID</dt>
+                <dd>4303813508</dd>
+            
+                <dt>Description</dt>
+                <dd>Summary of title: PB1056338</dd>
+              
+                <dt>Net amount</dt>
+                <dd>£2.50</dd>
+              
+                <dt>VAT @ 20%</dt>
+                <dd>£0.50</dd>
+                            
+                <dt>Total inc VAT</dt>
+                <dd>£3.00</dd>
+              
+              </dl>
+            </div>
+            <div class="column-one-third mobile-column-one-half">
+              
+                <div itemscope="" itemtype="http://schema.org/Organization">
+                  <span itemprop="name" class="bold">HM Land Registry</span>
+                  <div class="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+                    <span itemprop="streetAddress">Trafalgar house<br>1 Bedford Park</span>
+                    <span itemprop="addressLocality">Croydon</span>
+                    <span itemprop="postalCode">CR0 2AQ</span>
+                  </div>
+                </div>
+
+                
+                  <p class="spacing-top-single-third"><strong class="bold">VAT registration number:</strong><br> GB 8888 181 53</p>
+                
+              
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <div class="panel panel-border-narrow spacing-top-single printhidden">
+       <!--  <p>If you have any problems with your purchase, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact HM Land Registry</a>.</p> -->
+        <p>If you have any problems with your purchase, you can contact HM Land Registry using the <a href="http://landregistry.custhelp.com/app/contactus_general/">general enquiry contact form</a> or call <b class="bold">0300 006 0411</b>.</p>
+        
+      </div>
+
+      <div class="panel panel-border-narrow spacing-top-single printonly text">
+       <!--  <p>If you have any problems with your purchase, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact HM Land Registry</a>.</p> -->
+        <p>If you have any problems with your purchase, you can contact HM Land Registry on <b class="bold">0300 006 0411</b>.</p>
+        
+      </div>
+
+      <hr>
+
+
+
+
+      <div class="printhidden">
+        <h2 class="heading-medium">What next</h2>
+        <ul class="list list-bullet">
+          <li><a href="{{path}}/pe12re/search">Search again</a></li>
+          <li><a href="https://gov.uk">Return to GOV.UK</a></li>
+          <li><a href="{{path}}/pe12re/sign_out">Sign out</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+  {% if title.indexPolygon %}
+<!--     <script>
+      var indexData = {{ title['indexPolygon'] | json | safe }};
+    </script> -->
+    <!-- <script defer src="{{ asset_path }}app/javascripts/map.js"></script> -->
+  {% endif %}
+
+  <script src="{{ asset_path }}app/javascripts/moment.js"></script>
+  <script>
+    var date = moment().format('DD MMMM YYYY'); // November 18th 2016
+
+    span = document.getElementById('today');
+    txt = document.createTextNode(date);
+    span.innerText = txt.textContent;
+  </script>
+
+  <script>
+    var dateTime = moment().format('DD MMMM YYYY [at] H:mm:ss'); // November 18th 2016, 14:50:43
+
+    span1 = document.getElementById('today-time');
+    txt1 = document.createTextNode(dateTime);
+    span1.innerText = txt1.textContent;
+
+    span2 = document.getElementById('today-time2');
+    span2.innerText = txt1.textContent;
+
+  </script>
+
+
+  
+{% endblock %}
