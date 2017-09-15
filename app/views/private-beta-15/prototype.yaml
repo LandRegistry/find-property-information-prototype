@@ -1,14 +1,14 @@
 name: v15 - public beta assessment ready (ish) (85%)
 date: 2017-02-13
-description: |
-  <p>Lab tested - Mon 27 Feb.</p>
-  <p>building toward to public beta - releasable.</p>
-  <p>public beta proposition = "if you can have a letter delivered there, and want to know who owns it*, you can get that from this service" <br>*owners, lenders, tenure, price, rough extent</p>
-  <p>latest GOV.UK elements</p>
-  <p>move signin; clarity of service; error messages.</p>
-  <p>Mobile - layout improvements</p>
-  <p>create password rules - more obvious? - makes create account easier?</p>
-  <p>Take it away - (download or print)</p>
+description:
+  - Lab tested - Mon 27 Feb.
+  - building toward to public beta - releasable.
+  - public beta proposition = "if you can have a letter delivered there, and want to know who owns it*, you can get that from this service" <br>*owners, lenders, tenure, price, rough extent
+  - latest GOV.UK elements
+  - move signin; clarity of service; error messages.
+  - Mobile - layout improvements
+  - create password rules - more obvious? - makes create account easier?
+  - Take it away - (download or print)
 
 changelog:
   - done...

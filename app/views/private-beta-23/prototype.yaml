@@ -1,17 +1,11 @@
 name: Move Sign In - X - Not planning to ship this
 date: 2017-08-02
-description: |
-  <p>V23: Prod service with Sign in moved under the covers, but not for the user</p>
-  <ul>
-    <li>- V22 plus move signin (but same position in flow)</li>
-    <li>- this is the step before Move Sign In - Y (position ion flow changes)</li>
-    <li>- some minor word changes from what version Y will be</li>
-  </ul>
-  <br>
+description: 
+  - Prod service with Sign in moved under the covers, but not for the user
+  - V22 plus move signin (but same position in flow)
+  - this is the step before Move Sign In - Y (position ion flow changes)
+  - some minor word changes from what version Y will be
 
-changelog:
-  - done...
-  - 
 
 
 

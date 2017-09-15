@@ -1,15 +1,12 @@
 name: v17 - IN PROGRESS - public beta assessment ready (ish) (90%)
 date: 2017-03-20
-description: |
-  <p>building toward to public beta - releasable.</p>
-  <p>public beta proposition = "if you can have a letter delivered there, and want to know who owns it*, you can get that from this service" <br>*owners, lenders, tenure, price, rough extent</p>
-  <p>MVP of 'take it away' and VAT receipt:</p>
-  <ul>
-  <li>- most people do not need a VAT receipt (citizens, many orgs) - if needed, have to download or print</li>
-  <li>- if you want to keep the information you bought - download or print</li>
-  </ul>
-  <p>Improved accessibility (things learnt from Digital Accessibility Centre report)
-  <br>
+description: 
+  - building toward to public beta - releasable.
+  - public beta proposition = "if you can have a letter delivered there, and want to know who owns it*, you can get that from this service" <br>*owners, lenders, tenure, price, rough extent
+  - MVP of 'take it away' and VAT receipt
+  - most people do not need a VAT receipt (citizens, many orgs) - if needed, have to download or print</li>
+  - if you want to keep the information you bought - download or print
+  - Improved accessibility (things learnt from Digital Accessibility Centre report)
 
 changelog:
   - done...
@@ -18,7 +15,6 @@ changelog:
   - specific summary PDF's made for DN1011947, 8, 50, 67, 2009, 2017, 2402, 2390 - all others, generic PDF.
   - download button - tells browser to download file (browser may not - may open pdf)
   - improve accessibility (things learnt from DM Digital Accessibility Centre report) - file type and size on PDF download
-  - 
   - 
   - todo..?
   - accessibility - remove terms of use link form checkbox labels

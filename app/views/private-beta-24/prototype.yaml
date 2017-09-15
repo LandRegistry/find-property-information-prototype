@@ -1,20 +1,19 @@
-name: Move Sign In - Shipping this
+name: Move Sign In
 date: 2017-08-04
-description: |
-  <p>V24: Prod service (at Aug 02) with Sign in moved</p>
-  <ul>
-    <li>- V22 plus move signin</li>
-    <li>- option Y (move sign in planning on Aug 2nd)</li>
-    <li>- updated terms of use - no longer archiving your account</li>
-    <li>- OS terms of use, results and pin on map (version 1.0 - 10th August)</li>
-    <li>- OS terms page (although we don;t know who'll host yet)</li>
-    <li>- doesn't include new search</li>
-    <li>- use AA7 6FT, No 43 for Caution title example</li>
-  </ul>
-  <br>
+
+stickers: 
+  status: shipping this
+
+
+description:
+  - Production service (at Aug 2nd, 2017) with account moved - Sign in, Create account and password reset moved to later. 
+  - As a user i want to find the property i'm interested in first.
 
 changelog:
-  - done...
-  - 
-  - todo...
-  - get final OS terms of use - who hosting, links - mail to and FPI landing page (links and content missing)
+  - option Y (move sign in planning on Aug 2nd)
+  - updated terms of use - no longer archiving your account
+  - OS terms of use, results and pin on map (version 1.0 - 10th August)
+  - OS terms page (although we don't know who'll host yet)
+  - doesn't include new search
+  - use AA7 6FT, No 43 for Caution title example
+  - TODO: get final OS terms of use - who hosting, links - mail to and FPI landing page (links and content missing)

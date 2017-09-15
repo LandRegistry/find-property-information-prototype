@@ -1,19 +1,10 @@
 name: INCOMPLETE - public beta assessment candidate - move sign in + clarity of service (V18)
 date: 2017-05-23
-description: |
-  <p>public beta assessment candidate :</p>
-  <p>based on Spreadsheet (MVP for Oct Spreadsheet)</p>
-
-  <ul>Includes:
-    <li>Move sign-in (2 stories)</li>
-    <li>Clarity of service (7 stories)</li>
-  </ul>
-  <br>
-  <ul>Excludes:
-    <li>download summary and receipt</li>
-    <li>search improvements</li>
-  </ul>
-  <br>
+description:
+  - public beta assessment candidate
+  - based on Spreadsheet (MVP for Oct Spreadsheet)
+  - Includes - Move sign-in (2 stories); Clarity of service (7 stories)
+  - Excludes - download summary and receipt; search improvements
 
 changelog:
   - done...
