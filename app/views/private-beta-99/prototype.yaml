@@ -1,9 +1,28 @@
 name: User task - pick the property i'm interested in
 date: 2017-07-30
-description: |
-  <p>User task: pick the property i'm interested in (pick title record i need) - address search (not the same as a user goal)</p>
-  <p>This is not a fully working flow, and we have not decided to build exactly this</p>
-  <p>These prototyped pages may need explanation of why they exist / what they illustrate</p>
+
+stickers: 
+  status: experimental
+  tested: 
+    - 08 Sept 2017
+
+hypothesis:
+  - Can a relative find out if the mortgage on their Mum's flat has been paid off?
+  - If looking to find out about land, will people understand (and go to) Find a property?
+  - Is search/results more successful if postcode -> postal address -> titles at place -> title?
+  - <a href="https://docs.google.com/a/digital.landregistry.gov.uk/document/d/1bObkPDgwfNh95A-_AX4qi5sz5NH1tCWp02QRzLRvJkY/edit?usp=sharing">google doc</a>
+
+learnt:
+  - people often pick the wrong title (freehold instead of leasehold) - because they don't know which one, or confidently make the wrong choice. 
+  - many people don't expect there to be more than one owner / property title at an address
+  - people don't know what 'title' is / means
+  - many people think 'purchase date' is the date the property was purchased (rather than date buying this 'document')
+  - <a href="https://docs.google.com/document/d/1fhSMvXWrGrHezg_X5ZzcirIwIvGGbq37Xuu7Ys_PwGM/edit">initial findings (update this link)</a>
+
+description: 
+  - User task pick the property i'm interested in (pick title record i need) - address search (not the same as a user goal)
+  - This is not a fully working flow, and we have not decided to build exactly this
+  - These prototyped pages may need explanation of why they exist / what they illustrate
 changelog:
   - done...
   - 

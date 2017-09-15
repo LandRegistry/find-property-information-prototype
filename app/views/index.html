@@ -4,6 +4,45 @@
   GOV.UK prototype kit
 {% endblock %}
 
+{% block head_additionals %}
+<style type="text/css">
+  .sticker-book {
+    margin: 0 0.25em 1em 0;
+    padding: 0 0.25em 0 0;
+  }
+
+  .sticker {
+    padding: 0.25em 0.5em 0.25em 0.5em;
+    margin-right: 0.5em;
+    border-radius: 5px;  
+  }
+
+  .status {
+    color: white;
+    font-weight: 800;
+    border: 2px solid #b22a69;  
+    background: #D53880; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#b22a69, #D53880); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#b22a69, #D53880); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#b22a69, #D53880); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#b22a69, #D53880); /* Standard syntax */ 
+  }
+
+  .tested {
+    color: white;
+    font-weight: 800;
+    border: 2px solid #004f2a; 
+    background: #004f2a; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#004f2a, #006435); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#004f2a, #006435); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#004f2a, #006435); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#004f2a, #006435); /* Standard syntax */ 
+  }
+
+
+</style>
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main" tabindex="-1">
@@ -11,6 +50,9 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
+      <p class="lede">Prototypes are experiments - tools for learning and thinking about how to make a better service / break new ground. <strong class="bold">Not</strong> documentation of what will be made, or we have made - the real service is that ;)</p>
+      <p>Often though, a prototype does show a feature we will make, so where we can we'll indicate that</p>
+
 
       <hr class="spacing-top-flush">
 
@@ -21,12 +63,81 @@
             <span style="color:#444;font-size:50%;font-family: Monospace">{{prototype.version}}</span><br> <a href="{{ prototype.version }}">{{prototype.name}}</a>
           </h2>
 
+          {% if prototype.type %}
+            <div class="sticker-book">
+              <span class="sticker">
+              {{ prototype.type }}
+              </span>
+            </div>
+          {% endif %}
 
-          {{prototype.description | safe}}
+
+<!-- stickers: 
+  type:
+    - experimental
+  tested: 
+    - 2017-09-08 -->
+
+          {% if prototype.stickers %}
+            <div class="sticker-book">
+              {% if prototype.stickers.status %}
+                <span class="sticker status">
+                  {{ prototype.stickers.status | safe }}
+                </span>
+              {% endif %}
+              {% if prototype.stickers.tested %}
+                <span class="sticker tested">
+                  &#x1F44D; tested: 
+                  {% for date in prototype.stickers.tested %}
+                    {% if not loop.first%}
+                      ,
+                    {% endif %}
+                    {{ date | safe}}
+                  {% endfor %}
+                </span>
+              {% endif %}
+            </div>
+          {% endif %}
+
+
+          {% if prototype.description %}
+            <ul class="list list-bullet">
+              {% for item in prototype.description %}
+                <li>{{item | safe}}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+          {% if prototype.examples %}
+            <h3 class="heading-small">examples</h3>
+            <ul class="list list-bullet">
+              {% for item in prototype.examples %}
+                <li>{{item | safe}}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+          {% if prototype.hypothesis %}
+            <h3 class="heading-small">What problem solving / trying to learn / get answer to?</h3>
+            <ul class="list list-bullet">
+              {% for point in prototype.hypothesis %}
+                <li>{{point | safe}}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+          {% if prototype.learnt %}
+            <h3 class="heading-small">What we learnt</h3>
+            <ul class="list list-bullet">
+              {% for point in prototype.learnt %}
+                <li>{{point | safe}}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
 
           {% if prototype.changelog %}
             <details>
-              <summary>Changelog</summary>
+              <summary>more detailed change log</summary>
               <div class="panel panel-border-narrow">
                 <ul class="list list-bullet">
                   {% for log in prototype.changelog %}

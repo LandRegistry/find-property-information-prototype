@@ -1,23 +1,15 @@
 name: Download summary and receipt
 date: 2017-06-05
-description: |
-  <p>public beta assessment candidate :</p>
-  <p>based on Spreadsheet (MVP for Oct Spreadsheet)</p>
-  <p>PROD like + clarity of service + download + latest gov.uk elements (v20 plus download)</p>
-  <p>PDF example <a href="private-beta-21/display_title?title_number=DN1011954&email=asdf%40df.vmv&transId=3043404577&searchType=D">20 Blanda Views, freehold</a></p>
-  <ul>Includes:    
-    <li>Clarity of service (7 stories)</li>
-    <li>download summary and receipt (adding download and print + VAT receipt moves survey para lower - more logical order of information) 
-      <a href="https://docs.google.com/document/d/1OTg0GY4jTjX83MBqPoLNc2oSHK9RkD4GsFz3fXSj4JI/edit">download assumptions</a> (team google doc)
-    </li>
-  </ul>
-  <br>
-  <ul>Excludes:
-    <li>CS11 - contact us - phone no on sign-in, create account, search results</li> 
-    <li>Move sign-in (2 stories)</li>   
-    <li>search improvements</li>
-  </ul>
-  <br>
+description:
+  - public beta assessment candidate...
+  - based on Spreadsheet (MVP for Oct Spreadsheet)
+  - PROD like + clarity of service + download + latest gov.uk elements (v20 plus download)
+  - PDF example <a href="private-beta-21/display_title?title_number=DN1011954&email=asdf%40df.vmv&transId=3043404577&searchType=D">20 Blanda Views, freehold</a>
+  - Clarity of service (7 stories)...
+  - download summary and receipt (adding download and print + VAT receipt moves survey para lower 
+  - more logical order of information) 
+  - <a href="https://docs.google.com/document/d/1OTg0GY4jTjX83MBqPoLNc2oSHK9RkD4GsFz3fXSj4JI/edit">download assumptions</a> (team google doc)
+
 changelog:
   - done...
   - Download or Print 'box' on summary
