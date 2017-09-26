@@ -1,12 +1,13 @@
 name: Move Sign In
-date: 2017-08-04
+date: 2017-09-20
 
 stickers: 
-  status: shipping this
+  status: shipped, 21-Sept-17
 
 
 description:
-  - Production service (at Aug 2nd, 2017) with account moved - Sign in, Create account and password reset moved to later. 
+  - This is clone of the production service deployed on 21st Sept 17
+  - the production service (at Aug 2nd, 2017) with account moved - Sign in, Create account and password reset moved to later. 
   - As a user i want to find the property i'm interested in first.
 
 changelog:

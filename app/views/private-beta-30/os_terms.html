@@ -1,0 +1,48 @@
+{% extends "./layout/layout.html" %}
+{% from "./includes/back_link.html" import back_link %}
+
+{% block title %}Terms &amp; conditions{% endblock %}
+
+{% block header_primary %}
+  {{ back_link(title='Back', prefix='', url=path + '', historyBased=true) }}
+{% endblock %}
+
+{% block body %}
+
+    <h1 class="heading-large">Ordnance Survey: terms of use</h1>
+
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+    <!-- <p class="lede">This is a temporary page. final wording/layout to be agreed</p> -->
+
+    <article>
+        <!-- <h2 class="heading-large">terms</h2> -->
+
+        <p>Conditions of use of address data and the associated pin marker on the map (including the associated coordinates and the link between the address and its location) in HM Land Registry’s Find Property Information service:</p>
+        <p>HM Land Registry provides the Find Property Information service available via the following pages [link to FPI landing page].  The Find Property Information service refers to Ordnance Survey licence terms and conditions which are as follows: </p>
+        <p>Ordnance Survey © Crown copyright and database rights 2017. Use of this data is subject to the following licence terms and conditions: 
+        <ol class="list list-number" style="list-style-type: upper-roman;">
+            <li>You are granted a non-exclusive, royalty free, revocable licence solely to view the licensed addressing data and the associated pin marker (including the associated coordinates and the link between the address and its location) provided via the Find Property Information service as a source of information for
+            <ol class="list list-number" style="list-style-type: lower-alpha;"> 
+                <li>personal, non-commercial use; </li>
+                <li>use in the conveyancing process and for making property enquiries (for instance, to see if a property is registered, and to view details of the title, in each case as part of a property transaction or prospective transaction, or for litigation or enforcement purposes or for property management’); </li>
+            </ol>
+            </li>
+            <li>You are not permitted to copy, sub-license, distribute, sell or otherwise make available such data to third parties in any form, save for the making and provision of hard copy prints, pdf’s or single screen shots of Find Property Information results, in each case for the purpose described in (I) above; and</li>
+            <li>You are not permitted to use the licensed addressing data and the associated pin marker (including the associated coordinates and the link between the address and its location) for the purpose of creating or developing any product or service intended for sub-licensing, distribution or sale to third parties (notwithstanding that the addressing data or associated pin marker (including the associated coordinates and the link between the address and its location) themselves may not actually be supplied as part of such product or service). Therefore if you create any data which has benefited from, relied on or made use of the addressing data and the associated pin marker (including the associated coordinates and the link between the address and its location), you are not permitted to sub-license, distribute or sell such data to third parties under the above terms.
+            </li>
+        </ol>
+        </p> 
+        <p>If you wish to use the licensed addressing data and the associated pin marker (including the associated coordinates and the link between the address and its location) provided via the Find Property Information service outside the above licence terms and conditions, please contact Ordnance Survey <a href="mailto:customerservices@os.uk">customerservices@os.uk</a>.</p>
+    </article>
+
+    {{ back_link(title='Back', prefix='', url=path + '', historyBased=true) }}
+
+    </div>
+
+  </div>
+
+{% endblock %}

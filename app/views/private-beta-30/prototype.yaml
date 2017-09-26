@@ -1,0 +1,22 @@
+name: Mortgaged?
+date: 2017-09-00
+
+stickers: 
+  status: experimental
+  tested: 
+
+hypothesis:
+  - can we, more successfully, answer the question - has my mortgage been paid off? (people are looking for confirmation / that 'official' records are up to date?)
+  - we've been making users work out that no mortgage information (on the last page) means there's no mortgage.  
+  - we've been confusing people by saying different things at different points in the journey
+
+learnt:
+
+description: 
+  - tell people if there is/isn't a mortgage
+  - be clearer about the actual information they are getting
+  - show when the morgtage information was last updated (added, deleted, updated)
+  - be clearer about updates pending in the background
+
+changelog:
+  - done...
