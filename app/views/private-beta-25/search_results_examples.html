@@ -1,0 +1,215 @@
+{% extends "./layout/layout.html" %}
+
+{% block page_title %}
+  Search results examples
+{% endblock %}
+
+{% block head_additionals %}
+
+<style type="text/css">
+
+  .example1 .children--address-list {
+    border-left: 1px solid #bfc1c3;
+  }
+
+  .example1 .children--address-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 5px;
+  }
+
+
+  .example1 .children--address-list li:before {
+    content: '';
+    left: 0;
+    top: 50%;
+    position: absolute;
+    border-top: 1px solid #bfc1c3;
+    width: 15px;
+  }
+
+  .example1 .children--address-list li:last-child:after {
+    content: '';
+    left: -1px;
+    top: 50%;
+    bottom: 0;
+    position: absolute;
+    border-left: 1px solid #fff;
+  }
+
+  ol li div {
+    margin-left: 15px;
+  }
+
+  .children--address-list li div {
+    margin-left: 0px;
+  }
+
+  .children--address-list {
+    margin-left: 15px;
+  }
+
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+  
+  <h1 class="heading-xlarge">Results list examples - current thinking</h1>
+
+
+
+  <h2 class="heading-large">Result list - perfect world</h2>
+  <p>Lst of results - for a perfect set of addresses in a postcode, where:
+  <br>every address exists
+  <br>every address has title records
+  <br>all of the title records are available for each address</p>
+  <p ><strong class="bold">Warning: </strong>We can only do this once we know all titles are available for every address?  We cant do this yet (nor can FaP)</p>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-medium">result list</h2>
+      <div class="example1">
+        <ol>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="nothing_to_see">50 Lincoln Gate, Lincoln Road, Peterborough, PE1 2RE</a>
+            </h2>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="nothing_to_see">51 Lincoln Gate, Lincoln Road, Peterborough, PE1 2RE</a>
+            </h2>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="nothing_to_see">52 Lincoln Gate, Lincoln Road, Peterborough, PE1 2RE</a>
+            </h2>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="nothing_to_see">53 Lincoln Gate, Lincoln Road, Peterborough, PE1 2RE</a>
+            </h2>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="nothing_to_see">54 Lincoln Gate, Lincoln Road, Peterborough, PE1 2RE</a>
+            </h2>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="nothing_to_see">55 Lincoln Gate, Lincoln Road, Peterborough, PE1 2RE</a>
+            </h2>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="nothing_to_see">56 Lincoln Gate, Lincoln Road, Peterborough, PE1 2RE</a>
+            </h2>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="nothing_to_see">57 Lincoln Gate, Lincoln Road, Peterborough, PE1 2RE</a>
+            </h2>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="nothing_to_see">58 Lincoln Gate, Lincoln Road, Peterborough, PE1 2RE</a>
+            </h2>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="nothing_to_see">59 Lincoln Gate, Lincoln Road, Peterborough, PE1 2RE</a>
+            </h2>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="nothing_to_see">60 Lincoln Gate, Lincoln Road, Peterborough, PE1 2RE</a>
+            </h2>
+          </li>
+          
+        </ol>
+      </div>
+
+    </div>
+
+    <div class="column-one-third">
+      <h2 class="heading-medium">notes</h2>
+      <ul class="list-bullet font-small">
+        <li></li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="heading-large">Duplicate postal addresses</h2>
+  <p>Where two postal addresses link to the same title(s) - we could call this is a postal db error.</p>
+  <p ><strong class="bold">Warning:</strong> We can only do this once we know all titles are available for every address? - We cant do this yet (nor can FaP).</p>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-medium">Example duplicates?</h2>
+      <div class="example1">
+        <ol>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="nothing_to_see">Managers Office, Lincoln Gate, Lincoln Road, Peterborough, PE1 2RE</a>
+            </h2>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="nothing_to_see">Sheltered Housing, Managers Office, Lincoln Gate, Lincoln Road, Peterborough, PE1 2RE</a>
+            </h2>
+          </li>
+        </ol>
+      </div>
+
+    </div>
+
+    <div class="column-one-third">
+      <h2 class="heading-medium">notes</h2>
+      <ul class="list-bullet font-small">
+        <li>collapse these two results into one result</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <h2 class="heading-large">To Do</h2>
+  <p>show current thinking for other scenarios</p>
+  <p>results when not all addresses have titles.
+  <br>results where we know titles are missing.</p>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-medium">heading</h2>
+      <div class="example1">
+        <ol>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="nothing_to_see">result</a>
+            </h2>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="nothing_to_see">result</a>
+            </h2>
+          </li>
+        </ol>
+      </div>
+
+    </div>
+
+    <div class="column-one-third">
+      <h2 class="heading-medium">notes</h2>
+      <ul class="list-bullet font-small">
+        <li>notes</li>
+      </ul>
+    </div>
+  </div>  
+
+
+
+</main>
+
+{% endblock %}
+
+

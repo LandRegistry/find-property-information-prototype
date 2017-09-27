@@ -1,0 +1,146 @@
+{% extends "./layout/layout.html" %}
+
+{% block page_title %}
+  Better search
+{% endblock %}
+
+{% block head_additionals %}
+
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+  
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">Improve search</h1>
+
+
+      <p>
+        <ul class="list-bullet">
+          <li>show every address in a postcode (whether we have something or not)</li>
+          <li>a search result for every address in the postcode</li>
+          <li>a new - 'page per property address' (pppa) if address has >1 title record</li>
+          <li>'page per property address' - link for each title at that address</li>
+          <li>if address = 1 title, address link goes to 'about this title' page </li>
+          <li>if not postcode search - results per title?</li>
+          <li>page per title back link returns to page per property (if that was the route)</li>
+          <li>improved content on 'page per property address'</li>
+          <li>show examples of ordering results? - or document the ordering rules we are going to initially implement</li>
+          <li>words (as per now?) - for when a result has no pppa/title available here</li>
+        </ul>
+      </p>
+      
+     
+      <h3 class='heading-medium'>example pages</h3>
+      <p>
+        <ul class="list list-bullet">         
+          <li><a href="{{path}}/pe12re/start">'perfect' address list</a> <br>
+          All addresses share a F and have individual L's</a><br>use no 42 Lincoln Gate, PE1 2RE (all addresses work - but 42 works best)
+          <br>Custom Built flats (sheltered housing) - this postcode is unusual in that all the addresses are v similar, and all titles are available for them.
+           <!-- - &amp; a perfect postcode (unusual) - all titles for postcode are available from us -->
+          </li>   
+<!--           <li><a href="{{path}}/ox73ny/start">Lab test 2 - village - looking for land, village green - we don't have land - journey to FaP</a><br>Village Green, OX7 3NY
+
+          </li>   -->       
+        </ul>
+      </p>
+     
+<!--       <h3 class='heading-medium'>Current thinking</h3>
+      <p><strong class="bold">NOTE:</strong> examples below don't show signin/create account, or the final summary screen.  This is to help concentrate on the new stuff, so it's easier to see and feel</p>
+      <p>
+        <ul class="list list-bullet">         
+          <li><a href="{{path}}/cv11fe/start">in progress (changing daily - 28/07/17) - Addresses with multiple titles</a><br>use Apartment 3, Ribbon Factory</li> 
+          <li><a href="{{path}}/startx">1 title per address scenarios</a>: use 6 Mandela Way, Flat 1 &amp; Flat 2, 6 Mandela way
+          <br>Note: these addresses only have one title each associated with them
+          </li>
+        </ul> -->
+
+<!--       <h3 class='heading-medium'>Previous thinking</h3>
+      <p>
+        <ul class="list list-bullet">            
+          <li><a href="{{path}}/startx-v1">v1 - first version (June 30, 2017) more than one title per address</a>: use Flat 1 &amp; Flat 2, 6 Mandela way</li>         
+        </ul>
+      </p> -->
+
+
+<!--       <h3 class="heading-medium spacing-top-double">variations of each of the pieces</h3>
+
+      <h4 class="heading-small">Search page</h4>
+      <ul class="list-bullet">
+        <li><a href="{{path}}/address_base_search">Search page</a><br>Best option for search is: <a href="{{path}}/address_base_search#preferred">second example</a></li>
+      </ul> -->
+
+<!--       <h4 class="heading-small">Results page</h4>
+      <ul class="list-bullet">
+        <li><a href="{{path}}/search_results_examples">Search result examples - current thinking</a>
+        <br>add some more results examples here
+        <br>duplicate addresses - add example for two addresses that link to the same title(s)</li>
+      </ul> -->
+
+<!--       <h5 class='heading-small'>previous thinking about results lists</h5>
+      <ul class="list-bullet">
+        <li><a href="{{path}}/address_base_results">Results page(s)</a> including page per title, and page per property (new)<p>because we now have a result per address/not property description<br>page per title will need to change<br>page per property is a way to help people pick the right title</p> Best option for display of results is: <a href="{{path}}/address_base_results#preferred">linking to page per property - option 2</a></li>
+        <p>Organising/ordering results - further examples
+        <ul class="list-bullet">
+          <li><a href="{{path}}/search_results_examples_1">search results - tenure is hyperlink</a></li>
+          <li><a href="{{path}}/search_results_examples_2">search results - address is hyperlink</a></li>
+        </ul>
+        </p>
+      </ul> -->
+
+<!--       <h4 class="heading-small">Pagination</h4>
+      <ul class="list-bullet">
+        <li>Pagination - do what we've done before (back and next 'buttons' at bottom of each page.  Stick with 20 results per page.</li>
+      </ul> -->
+
+<!--       <h4 class="heading-small">More than 100 results - license constraint?</h4>
+      <ul class="list-bullet">
+        <li><a href="{{path}}/search_results_100plus">What to do when more than 100 results</a> (probably not needed - according to OS on the internet - postcodes dont have more than 100 delivery addresses)</li>
+      </ul> -->
+        
+
+<!--       <h4 class="heading-small">When we don't have a title for an address / exceptions</h4>
+      <ul class="list-bullet">
+        <li><a href="{{path}}/search_results_examples_3">search results - no results / exceptions</a></li>
+      </ul> -->
+
+<!--       <h4 class="heading-small">Property / title pages</h4>
+      <p>Changing search results to postal addresses is a significant change.</p>
+      <ul class="list-bullet">
+        <li>postal address is the result, but title has property description (A1)<br>
+        If the two match great, but if they don't we'll need to help the user get from postal to property desc</li>
+        <li>many postal addresses are covered by more than one title<br>
+        We need to help the user pick the right title</li>
+      </ul>
+      <h5 class="heading-small">property/title page examples:</h5>
+        <ul class="list list-bullet">
+          <li><a href="{{path}}/startx">Addresses with only one title; Postal address doesn't match property description</a><br>use 6 Mandela Way, Flat 1 &amp; Flat 2, 6 Mandela way
+          </li>
+          <li><a href="{{path}}/cv11fe/start">Addresses with multiple titles</a><br>use Apartment 3, ribbon Factory</li>         
+        </ul>
+      </p> -->
+
+    </div>
+
+  </div>
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <p class="spacing-top-double"><a href="/">&lt; prototype start page</a></p>
+
+    </div>
+  </div>
+
+
+
+</main>
+
+{% endblock %}
+
+

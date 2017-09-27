@@ -1,0 +1,170 @@
+{% extends "./layout/layout.html" %}
+
+
+{% block page_title %}
+  Search results examples
+{% endblock %}
+
+{% block head_additionals %}
+
+{% endblock %}
+
+{% block body %}
+<h1 class="heading-large spacing-top-single">About this property title</h1>
+
+  <p>You'll get a summary of the information HM Land Registry holds for this property title.</p>
+  <div class="grid-row column-flip spacing-top-single">
+
+    <div class="column-one-third tablet-column-one-third spacing-bottom-single">
+
+        <div class="map polygon" id="map">
+          <p>The map relies on JavaScript being enabled in your browser.</p>
+        </div>
+
+    </div>
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <dl class="definition-tabular definition-tabular-sectioned">
+
+          <dt>Postal address</dt>
+          <dd class="bold-medium spacing-bottom-single">
+            <div class="address">
+                <span>Flat 2</span>
+                <span>6 Mandela Way</span>             
+                <span>Southampton</span>             
+                <span>SO15 5RZ</span>
+            </div>
+          </dd>
+
+          <dt>Property described as</dt>
+          <dd class="bold-medium spacing-bottom-single">
+            <div class="address">
+                <!-- <span>Basement flat</span> -->
+                  <span>Flat 2, 6 Mandela Way</span>             
+                  <span>Southampton</span>             
+                  <span>SO15 5RZ</span>
+            </div>
+          </dd>
+
+<!--         <dt>Title number</dt>
+        <dd class="bold-small">{{ title['data']['title_number'] }}</dd> -->
+
+        <dt>Tenure type</dt>
+        <dd>
+          <strong class="bold">Leasehold</strong>
+          <a class="split-detail-trigger font-xsmall" href="#what-is-tenure">What does this mean?</a>
+
+          <div class="split-detail-contents" id="what-is-tenure">
+            <div class="panel panel-border-narrow font-xsmall">
+
+                <p>You own a freehold building and land outright. It is yours until you sell it or give it away.</p>
+                <p>Most houses are freehold. Most flats are leasehold. That means someone else owns the freehold for the building the flat is in.</p>
+                <p><b class="bold">If you want to know who owns a particular flat, you probably need the leasehold instead.</b></p>
+                <p>Houses can also be leasehold and usually are if they’re bought through a shared ownership scheme.</p>
+
+            </div>
+          </div>
+
+          <p class="font-xsmall">A property can have both a freehold and a leasehold title. To get a different tenure for this address, <a href="/search_results" data-back-link>go back</a> and select the one you need.</p>
+        </dd>
+
+      </dl>
+
+        <h2 class="heading-medium collapse-top">The summary will tell you</h2>
+
+      <ul class="list-bullet">
+
+
+          <li>current owner's name and address</li>
+          <li>what was paid for the property – you won't get this if it was bought before April 2000, if they paid less than &pound;100, or if HM Land Registry have agreed not to record the price</li>
+          <li>if there is a mortgage on the property, the lender's name and address</li>
+          <!-- <li>the Title Number (unique reference number)</li> -->
+
+      </ul>
+
+      <p class="spacing-top-single">This information can change if we receive an application. This service is unable to tell you whether or not there is an application pending with HM Land Registry.</p>
+
+      <div class="warning media">
+        <div class="media-item">
+          <i class="icon icon-important">
+            <span class="visuallyhidden">Warning</span>
+          </i>
+        </div>
+
+        <div class="media-body">
+          <h2 class="heading-small spacing-bottom-flush">You'll only be able to view the information once</h2>
+          <p class="spacing-top-flush">If you want to keep a copy you can download it or print it out</p>
+        </div>
+      </div>
+
+
+      <h2 class="heading-medium">The summary costs {{ price_text | safe }} <span class="font-small">(&pound;2.50+VAT)</span></h2>
+
+
+      <p>You can pay by credit or debit card.</p>
+
+      <!-- <p>You can pay by credit or debit card.</p> -->
+
+
+      <form method="GET" class="spacing-bottom-double" action="worldpay_1" data-clientside-validation="cra_form_validation" data-clientside-validation-no-summary>
+        <p>You need to accept the following terms to continue.</p>
+
+        <input type="hidden" name="title_number" id="title_number" value="{{title['data']['title_number']}}"/>
+
+        <div class="form-group">
+<!--           <label class="block-label" for="right_to_cancel">
+            <input id="right_to_cancel" name="right_to_cancel" type="checkbox" value="agree">
+            I agree that you will provide the summary as soon as I’ve paid.<br>
+            I accept that I will lose my right to cancel the contract once the summary is displayed.<br>
+          </label> -->
+          <div class="multiple-choice">
+            <input id="right_to_cancel" name="right_to_cancel" type="checkbox" value="terms">
+            <label for="right_to_cancel">
+              I agree that you will provide the summary as soon as I’ve paid.<br>
+              I accept that I will lose my right to cancel the contract once the summary is displayed.
+            </label>
+          </div>
+        </div>
+
+
+          <input type="submit" class="button" value="Buy title summary">
+          <p class="font-xsmall spacing-top-third">for £3 inc VAT</p>
+
+
+      </form>
+
+      <script type="application/json" id="cra_form_validation">
+        {
+          "right_to_cancel": {
+            "presence": {
+              "message": "You need to agree to receive the summary right away and that you’ll lose your right to cancel"
+            }
+          }
+        }
+      </script>
+
+      <a class="back-link js-only" href="search_resultsx" data-back-link="">
+        <span class="back-link-destination">Search results</span>
+      </a>
+
+    </div>
+  </div>
+
+    <script>
+      var indexData = {"crs": {"properties": {"name": "urn:ogc:def:crs:EPSG::27700"}, "type": "name"}, "geometry": {"coordinates": [[[441170.8, 112388.05], [441162.35, 112382.55], [441157.65, 112379.5], [441153.52, 112376.82], [441155.1, 112374.4], [441157.95, 112370.1], [441160.3, 112371.6], [441166.8, 112375.7], [441175.5, 112381.2], [441170.8, 112388.05]]], "type": "Polygon"}, "properties": {"colour": 1, "feature_id": 4019, "graphic_type": "Bordered Polygon", "render_attributes": {"border_colour": 1, "border_width": 0, "exterior_edge_colour": 1, "exterior_edge_thickness": 2.0, "fill_colour": 25, "fill_style": 9, "render_level": "0"}, "width": 0}, "type": "Feature"};
+    </script>
+    <script defer src="/public/app/javascripts/map.js"></script>
+
+
+<!--   <div class="grid-row">
+    <div class="column-two-thirds spacing-top-double">
+      <p><a href="/">&lt; prototype start page</a></p>
+
+    </div>
+  </div> -->
+{% endblock %}
+  
+
+
+
