@@ -39,8 +39,8 @@
     background: linear-gradient(#004f2a, #006435); /* Standard syntax */ 
   }
 
-
 </style>
+
 {% endblock %}
 
 {% block content %}
@@ -71,13 +71,6 @@
             </div>
           {% endif %}
 
-
-<!-- stickers: 
-  type:
-    - experimental
-  tested: 
-    - 2017-09-08 -->
-
           {% if prototype.stickers %}
             <div class="sticker-book">
               {% if prototype.stickers.status %}
@@ -99,8 +92,17 @@
             </div>
           {% endif %}
 
+          {% if prototype.hypothesis %}
+            <h3 class="heading-small">What problem we're solving / trying to learn / get answer to?</h3>
+            <ul class="list list-bullet">
+              {% for point in prototype.hypothesis %}
+                <li>{{point | safe}}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
 
           {% if prototype.description %}
+          <h3 class="heading-small">What this is / what we're trying to do</h3>
             <ul class="list list-bullet">
               {% for item in prototype.description %}
                 <li>{{item | safe}}</li>
@@ -117,17 +119,8 @@
             </ul>
           {% endif %}
 
-          {% if prototype.hypothesis %}
-            <h3 class="heading-small">What problem solving / trying to learn / get answer to?</h3>
-            <ul class="list list-bullet">
-              {% for point in prototype.hypothesis %}
-                <li>{{point | safe}}</li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-
           {% if prototype.learnt %}
-            <h3 class="heading-small">What we learnt</h3>
+            <h3 class="heading-small">What we learnt more about from this proto</h3>
             <ul class="list list-bullet">
               {% for point in prototype.learnt %}
                 <li>{{point | safe}}</li>
