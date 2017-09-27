@@ -18,11 +18,12 @@
     <div class="column-two-thirds">
       <h1 class="heading-xlarge">Improve search</h1>
 
-
+      <p>this proto is currently being assembled - things being done / addressed</p>
       <p>
         <ul class="list-bullet">
           <li>show every address in a postcode (whether we have something or not)</li>
           <li>a search result for every address in the postcode</li>
+          <li>search result is the 'postal address' (addressbase delivery point address)</li>
           <li>a new - 'page per property address' (pppa) if address has >1 title record</li>
           <li>'page per property address' - link for each title at that address</li>
           <li>if address = 1 title, address link goes to 'about this title' page </li>
@@ -31,6 +32,9 @@
           <li>improved content on 'page per property address'</li>
           <li>show examples of ordering results? - or document the ordering rules we are going to initially implement</li>
           <li>words (as per now?) - for when a result has no pppa/title available here</li>
+          <li>caution titles (needs info on the pppa?)</li>
+          <li>out of scope? if only 1 title for the address and the address and A1 adddress differ - help user resolve that (result is postal, page per title addr is A1 prope desc)</li>
+          <li>Q: what to do - we don't know for an address if all the titles we show is a true picture. Do we explain that on the pppa page?  Should we always have a pppa page to help explain?  e.g what if we've pulled back one title result for a property - and it's the leasehold? (there must be a freehold). A: similar issue as current solution - do nothing for now.</li>
         </ul>
       </p>
       
@@ -38,10 +42,15 @@
       <h3 class='heading-medium'>example pages</h3>
       <p>
         <ul class="list list-bullet">         
-          <li><a href="{{path}}/pe12re/start">'perfect' address list</a> <br>
-          All addresses share a F and have individual L's</a><br>use no 42 Lincoln Gate, PE1 2RE (all addresses work - but 42 works best)
-          <br>Custom Built flats (sheltered housing) - this postcode is unusual in that all the addresses are v similar, and all titles are available for them.
-           <!-- - &amp; a perfect postcode (unusual) - all titles for postcode are available from us -->
+          <li><a href="{{path}}/pe12re/start">Search PE1 2RE</a>  
+            <p>PE1 2RE is a 'perfect' postcode in real world - perfectly registered + all titles returned. We've removed personal details, and shifted the property numbers, and tweaked to demonstrate variances in data</p>
+            <ul class="list list-bullet">
+              <li>Postcode only search, all addresses share a Freehold.  Each has an individual Leashold</li>
+              <li>multi title - 42 Lincoln Gate, PE1 2RE (all addresses work - but 42 works best)</li>
+              <li>single title - 43 Lincoln Gate, PE1 2RE</li>
+              <li>single title - where postal address doesn't match A1 desc - 44 Lincoln Gate, PE1 2RE</li>
+              <li>no information available - 46 Lincoln Gate, PE1 2RE</li>
+            </ul>
           </li>   
 <!--           <li><a href="{{path}}/ox73ny/start">Lab test 2 - village - looking for land, village green - we don't have land - journey to FaP</a><br>Village Green, OX7 3NY
 
