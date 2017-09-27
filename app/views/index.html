@@ -28,6 +28,17 @@
     background: linear-gradient(#b22a69, #D53880); /* Standard syntax */ 
   }
 
+  .construction {
+    color: black;
+    font-weight: 800;
+    border: 2px solid #ceca00;  
+    background: #ceca00; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#ceca00, #fffa02); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#ceca00, #fffa02); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#ceca00, #fffa02); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#ceca00, #fffa02); /* Standard syntax */ 
+  }
+
   .tested {
     color: white;
     font-weight: 800;
@@ -73,6 +84,11 @@
 
           {% if prototype.stickers %}
             <div class="sticker-book">
+              {% if prototype.stickers.construction %}
+                <span class="sticker construction">
+                  {{ prototype.stickers.construction | safe }}
+                </span>
+              {% endif %}
               {% if prototype.stickers.status %}
                 <span class="sticker status">
                   {{ prototype.stickers.status | safe }}

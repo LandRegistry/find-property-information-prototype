@@ -1,0 +1,220 @@
+{% extends "../layout/layout.html" %}
+{% from "../includes/back_link.html" import back_link %}
+
+{% block head_additionals %}
+
+  <style type="text/css">
+  .font-xxsmall {
+    font-size:12px;
+  }
+  </style>
+
+{% endblock %}
+
+{% block title %}Confirm your purchase{% endblock %}
+
+{% block header_primary %}
+  <!-- {{ back_link(title='Search results', prefix='Back to', url=path + '/search_results?page=' + data.page + '&search_term=' + data.search_term) }} -->
+{% endblock %}
+
+{% block body %}
+
+  <h1 class="heading-large">Confirm your purchase</h1>
+
+  <p>You'll get a summary of the information HM Land Registry holds for this property title.</p>
+
+
+  <!-- prop info row -->
+  <div class="grid-row spacing-top-single">
+
+    <!-- property text -->
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <dl class="definition-tabular definition-tabular-sectioned">
+
+        {% if title['is_caution_title'] %}
+          <dt class="bold-small">Caution</dt>
+          <dd>
+            <details class="font-xsmall">
+              <summary class="bold-small">What does Caution mean?</summary>
+              <div class="panel">
+                <p>This property hasn’t been registered yet. You can’t find out who owns it from this service.</p>
+                <p>Someone other than the owner (known as the ‘cautioner’) has registered a right or interest in the property. They will be told if anyone tries to register it, and can object to the registration going ahead until their claim has been looked at. You can get their name and address from this service.</p>
+                <p>Registration has only been compulsory since the 1990s. Property that hasn’t changed hands since then may not be registered.</p>
+              </div>
+            </details>
+          </dd>
+        {% endif %}
+
+        <dt class="spacing-bottom-single">Address</dt>
+        <dd class="bold-medium spacing-bottom-single">
+          <div class="address">
+            <span>{{ data.addr }}</span>
+            <span>Peterborough</span>
+            <span>PE1 2RE</span>
+          </div>
+        </dd>
+
+
+        <dt class="spacing-bottom-single">Tenure type</dt>
+        <dd class="spacing-bottom-single">
+          <strong class="bold">Leasehold</strong>
+          <a class="split-detail-trigger font-xsmall" href="#what-is-tenure">What does this mean?</a>
+
+          <div class="split-detail-contents" id="what-is-tenure">
+            <div class="panel panel-border-narrow font-xsmall">
+
+                <p>You only own a leasehold property for a fixed period of time. You'll have a legal agreement with the landlord (sometimes known as the ‘freeholder’) called a ‘lease’. This tells you how many years you’ll own the property.</p>
+                <p>Most flats are leasehold. Houses can be leasehold too and usually are if they’re bought through a shared ownership scheme.</p>
+                <p>The leasehold and freehold are registered separately with HM Land Registry. Each has its own title documents.</p>
+                <p><b class="bold">You are buying a summary of the leasehold owner, not the freehold.</b></p>
+
+                <a rel="external" href="https://www.gov.uk/leasehold-property/overview">More about Leasehold on GOV.UK</a>
+
+            </div>
+          </div>
+          <p class="font-xsmall">A property can have both a freehold and a leasehold title. To get a different tenure for this address, <a href="javascript:window.history.go(-3);">go back</a> and select the one you need.</p>
+        </dd>
+
+        <dt class="spacing-bottom-single">Title number</dt>
+        <dd class="bold-small spacing-bottom-single">PB472033</dd>
+
+      </dl>
+
+<!--       <div class="text">
+        <h2 class="heading-medium spacing-top-single">You'll receive:</h2>
+
+        <ul class="list list-bullet">
+          {% if title['is_caution_title'] %}
+            <li>the cautioner's name and address (<strong class="bold">the owner isn't available from this service</strong>)</li>
+          {% else %}
+            <li>owners' names and addresses</li>
+            <li>price paid (if available)</li>
+            <li>details of any mortgage lenders</li>
+          {% endif %}
+
+          {% if not session.isLoggedIn %}
+            <li>title number (the unique reference number)</li>
+          {% endif %}
+        </ul>
+      </div> -->
+
+      <div class="text">
+        <h2 class="heading-medium spacing-top-single">The summary will tell you</h2>
+
+        <ul class="list list-bullet">
+          <li>current leaseholder's name and address</li><li>what was paid for the property – you won't get this if it was bought before April 2000, if they paid less than £100, or if HM Land Registry have agreed not to record the price</li>
+          <li>if there is a mortgage on the property, the lender's name and address</li>
+        </ul>
+
+        <p class="spacing-top-single">This information can change if we receive an application. This service is unable to tell you whether or not there is an application pending with the Land Registry.</p>
+      </div>
+
+    </div>
+    <!-- map column -->
+    <div class="column-one-third tablet-column-one-third spacing-bottom-single">
+        <div class="map polygon" id="map">
+          <p>Your browser must have JavaScript enabled in order to use the map.</p>
+        </div>
+        <p class="font-xxsmall">Use of the pin marker on the map (including the associated coordinates and the link between the address and its location) is subject to <a href="os_terms">Ordnance Survey licence terms and conditions</a></p>
+    </div>
+
+  </div>
+
+
+  <!-- pay + help row -->
+  <div class="grid-row spacing-top-single">
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <div class="panel panel-simple">
+
+        <form action="{{path}}/pe12re/worldpay_1_f?title_number={{data.title_number}}" method="POST" novalidate data-clientside-validation="pay_form_validation" data-clientside-validation-no-summary>
+
+          <input name="title_number" value="{{data.title_number}}" type="hidden" />
+          <input name="email" value="{{data.email}}" type="hidden" />
+          <input name="addr" value="{{data.addr}}" type="hidden" />
+
+          <h2 class="heading-medium spacing-top-third">How to pay</h2>
+          <p>This information costs £3 inc VAT. Payment will be taken by WorldPay on HM Land Registry's behalf.</p>
+
+
+          <div class="notice">
+            <div>
+            <i class="icon icon-important">
+              <span class="visually-hidden">Warning</span>
+            </i>
+            </div>
+            <div>
+                <p style="display:block; padding-left: 65px;margin-left: -15px;"">
+                  <span class="bold-small">Important: make sure this is the property you want.</span><br>You can't cancel once you've paid and the information is displayed.
+                </p>
+            </div>
+
+          </div>
+
+          <div class="form-group spacing-top-single">
+            <div class="multiple-choice">
+              <input id="terms" name="terms" type="checkbox" value="terms">
+              <label for="terms">
+                I have read and agree to the <a href="terms_and_conditions">terms of use</a>
+              </label>
+            </div>
+          </div>
+
+          <input type="submit" class="button" value="Pay now">
+          <!-- <input type="submit" id="payNow" class="button" value="Pay now" disabled> -->
+
+        </form>
+
+        <p class="spacing-top-single">{{ back_link(title='Cancel and return to search results', url=path + '/search_results') }}
+        </p>
+
+      </div>
+
+    </div>
+
+<!--     <div class="column-one-third tablet-column-one-third">
+      <aside class="supplementary-panel">
+        <h2 class="heading-medium">Need help with this service?</h2>
+        <p>Call HM Land Registry on 0300 006 0411 to report a problem, or if you're stuck and need help.</p>
+      </aside>
+    </div> -->
+
+  </div>
+
+        <script type="application/json" id="pay_form_validation">
+        {
+          "terms": {
+            "presence": {
+              "message": "You must agree to the terms of use before continuing"
+            }
+          }
+        }
+      </script>
+
+
+<!--   <script>
+    (function() {
+      var terms = document.getElementById('terms');
+
+      var payButton = document.getElementById('payNow');
+
+      function change(e) {
+
+            if((terms.checked) == true) {
+                payButton.disabled = false;
+            } else {
+                payButton.disabled = true;
+            };
+
+      }
+      terms.addEventListener('change', change);
+    })();
+  </script> -->
+
+    <script>
+      var indexData = {"crs": {"properties": {"name": "urn:ogc:def:crs:EPSG::27700"}, "type": "name"}, "geometry": {"coordinates": [[[519072, 299525.05], [519072.8, 299518.15], [519078.5, 299519], [519077.5, 299526], [519072, 299525.05]]], "type": "Polygon"}, "properties": {"colour": 1, "feature_id": 4019, "graphic_type": "Bordered Polygon", "render_attributes": {"border_colour": 1, "border_width": 0, "exterior_edge_colour": 1, "exterior_edge_thickness": 2.0, "fill_colour": 25, "fill_style": 9, "render_level": "0"}, "width": 0}, "type": "Feature"};
+    </script>
+    <script defer src="{{ asset_path }}app/javascripts/map.js"></script>
+{% endblock %}

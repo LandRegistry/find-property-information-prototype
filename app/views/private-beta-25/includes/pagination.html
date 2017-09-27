@@ -1,0 +1,30 @@
+{% macro pagination(display_page_number,number_pages,search_term) %}
+  {% if display_page_number > 1 or display_page_number < number_pages %}
+    <nav class="pager-simple" role="navigation" aria-label="Pagination">
+      <ul>
+        {% if display_page_number > 1 %}
+          <li class="previous-page" >
+            <a style="padding-left: 2em;" href="search_results?search_term={{search_term}}&amp;page={{display_page_number|int - 1 }}" rel="prev">
+              <span class="pagination-part-title">Previous page</span>
+              <span class="pagination-label">{{display_page_number|int - 1}} of {{ number_pages }}</span>
+            </a>
+          </li>
+        {% endif %}
+        {% if display_page_number < number_pages %}
+          <li class="next-page">
+            <a href="search_results?search_term={{search_term}}&amp;page={{display_page_number|int + 1 }}" rel="next">
+              <span class="pagination-part-title">Next page</span>
+              <span class="pagination-label">{{display_page_number|int + 1}} of {{ number_pages }}</span>
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+
+    </nav>
+<!-- this doesnt work it need to count if there have been more than 50 found, not display just in the last page -->
+<!--     {% if display_page_number == number_pages %}
+      <h3 class="heading-small">This service is limited to 50 results</h3>
+      If the property isn't listed, use the <a href="https://eservices.landregistry.gov.uk/wps/portal/Property_Search">Find a Property service</a> instead to search by street address, title number or by using a map</p>
+    {% endif %} -->
+  {% endif %}
+{% endmacro %}

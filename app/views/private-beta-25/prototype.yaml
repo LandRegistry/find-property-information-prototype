@@ -1,0 +1,33 @@
+name: search results - addresses not titles
+date: 2017-09-27
+
+stickers: 
+  status: plan to ship this
+  construction: under construction
+  tested: 
+
+
+
+description: 
+  - search results are are a list of addresses in that postcode
+  - new 'page per property address'
+
+changelog:
+  - done...
+  - 
+  - todo...
+  - every address in a postcode
+  - result per address
+  - page per property if address has >1 title record
+  - page per property - link to each about this title page
+  - if address = 1 title, address link goes to about this title
+  - font weight normal for addresses
+  - spacing of addresses on results
+  - content (remember error states)
+  - if not postcode search - results per title?
+  - page per title back link returns to page per property (if that was the route)
+
+
+
+
+

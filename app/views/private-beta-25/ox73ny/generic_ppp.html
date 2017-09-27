@@ -1,0 +1,169 @@
+{% extends "../layout/layout.html" %}
+
+
+{% block page_title %}
+  property page
+{% endblock %}
+
+{% block head_additionals %}
+
+<style type="text/css">
+
+  .tenure-panel {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-top:1em;
+    margin-bottom: 1em;
+    background-color: #F0F0F0;
+    border-style: none;
+  }
+
+  .property-list li {
+    font-size: 24px;
+    margin-left: 5px;
+    padding-left: 15px;
+  }
+
+  .property-list li p {
+    font-size: 18px;
+  }
+
+</style>
+
+{% endblock %}
+
+{% block body %}
+
+<script>
+  let params = (new URL(document.location)).searchParams;
+  let addr = params.get("addr");
+</script>
+
+<h1 class="heading-large spacing-top-single visually-hidden">About this property</h1>
+
+  <!-- <p>You'll get a summary of the information HM Land Registry holds for this property title.</p> -->
+  <div class="grid-row column-flip spacing-top-single">
+
+    <div class="column-one-third tablet-column-one-third spacing-bottom-single">
+
+        <div class="map polygonx" id="map">
+          <p>The map relies on JavaScript being enabled in your browser.</p>
+        </div>
+
+    </div>
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <h2 class="visuallyhidden">Postal address</h2>
+      <div class="address heading-large spacing-top-flush">
+      
+        <span class="heading-xlarge spacing-top-flush spacing-bottom-third">
+        <script>document.write(addr);</script></span>
+        <span>Mill End</span>
+        <span>Chadlington</span>
+        <span>Chipping Norton</span>
+        <span>OX7 3NY</span>
+      </div> 
+
+    </div>
+
+  </div> <!-- end row -->
+
+
+  <div class="grid-row spacing-top-flush">
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <h2 class="heading-large">property titles at this address</h2>
+
+      <a class="split-detail-trigger" href="#what-is-a-title">Which property title do I need?</a>
+      <div class="split-detail-contents" id="what-is-a-title">
+        <div class="panel panel-border-narrow font-xsmall">
+            <ul class="list-bullet spacing-bottom-single">
+              <li>Property records are called titles</li>
+              <li>freeholds and leaseholds are the most common types of title</li>
+            </ul>
+            <p>You own a freehold building and land outright. It is yours until you sell it or give it away.</p>
+            <p>Most houses are freehold. Most flats are leasehold. That means someone else owns the freehold for the building the flat is in.</p>
+            <p>Houses can also be leasehold and usually are if they’re bought through a shared ownership scheme.</p>
+        </div>
+      </div>
+
+
+    </div>
+  </div> <!-- end row -->
+
+
+  <div class="grid-row spacing-top-single">
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <ol class="property-list list-number">
+        <li>
+          <h3 class="heading-medium">Freehold <span class="lede">title, described as:</span></h3>
+            <dd class="bold-medium spacing-bottom-single">
+              <script>
+                document.write('<a href="freehold?addr=' + addr + '">');
+              </script>
+              <div class="address">           
+                <script>document.write(addr);</script></span>
+                <span>Mill End</span>
+                <span>Chadlington</span>
+                <span>Chipping Norton</span>
+                <span>OX7 3NY</span>
+              </div>
+
+              </a>
+            </dd>
+            <p>This freehold title is for just this address</p>
+        </li>
+<!--         <li>
+          <h3 class="heading-medium">Leasehold <span class="lede">title, described as:</span></h3>
+            <dd class="bold-medium spacing-bottom-single">
+            <script>
+              document.write('<a href="leasehold?addr=' + addr + '">');
+            </script>
+       
+                <div class="address">
+                  <span><script>document.write(addr);</script> Lincoln Gate</span> 
+                  <span>Lincoln Road</span>
+                  <span>Peterborough</span>
+                  <span>PE1 2RE</span>
+                </div>
+              </a>
+            </dd>
+            <p>This leasehold title is for just this address</p>
+        </li> -->
+
+      </ol>
+
+    </div>
+
+  </div> <!-- end row -->
+
+
+
+
+  <div class="row">
+  <p class="spacing-top-single spacing-bottom-double">
+
+      <a class="back-link" href="{{path}}/ox73ny/search_results">
+    
+      <span class="back-link-destination">Search results</span>
+      </a>
+    </p>
+  </div>
+
+    <script>
+
+      var indexData = {"crs": {"properties": {"name": "urn:ogc:def:crs:EPSG::27700"}, "type": "name"}, "geometry": {"coordinates": [[[432451.004, 222513.426], [432451.684, 222510.506], [432452.654, 222510.736], [432454.639, 222500.989], [432456.119, 222501.199], [432457.079, 222497.893], [432459.761, 222499.008], [432460.053, 222498.859], [432461.037, 222498.389], [432462.47, 222493.34], [432463.286, 222490.458], [432463.916, 222490.798], [432467.693, 222493.01], [432468.709, 222493.556], [432469.299, 222493.909], [432470.222, 222494.439], [432466.828, 222501.107], [432466.547, 222501.759], [432460.763, 222499.354], [432460.58, 222500.0], [432460.28, 222501.04], [432459.73, 222502.99], [432459.68, 222503.18], [432457.31, 222512.89], [432456.848, 222514.807], [432451.004, 222513.426]]], "type": "Polygon"}, "properties": {"colour": 0, "feature_id": 4019, "graphic_type": "Bordered Polygon", "render_attributes": {"border_colour": 0, "border_width": 0, "exterior_edge_colour": 1, "exterior_edge_thickness": 2.0, "fill_colour": 25, "fill_style": 9, "render_level": "0"}, "width": 0}, "type": "Feature"};
+    
+    </script>
+
+    <script defer src="/public/app/javascripts/map.js"></script>
+
+  </div>
+{% endblock %}
+  
+
+
+
