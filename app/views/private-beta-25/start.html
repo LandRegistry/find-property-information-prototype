@@ -27,8 +27,11 @@
           <li>a new - 'page per property address' (pppa) if address has >1 title record</li>
           <li>'page per property address' - link for each title at that address</li>
           <li>if address = 1 title, address link goes to 'about this title' page </li>
-          <li>if not postcode search - results per title?</li>
-          <li>page per title back link returns to page per property (if that was the route)</li>
+          <li>if not postcode search - results per title (as per prod / proto v24)</li>
+          <li>'about this property' page per title back link returns to page per property (if that was the route)</li>
+          <li>'confirm your order' page return to search results link in pay box to return to pppa (if that was the route)</li>
+          <br>...<br>
+          <br>
           <li>improved content on 'page per property address'</li>
           <li>show examples of ordering results? - or document the ordering rules we are going to initially implement</li>
           <li>words (as per now?) - for when a result has no pppa/title available here</li>
@@ -40,6 +43,7 @@
       
      
       <h3 class='heading-medium'>example pages</h3>
+      <h4 class='heading-small'>if user searches with a postcode (what we encourage)</h4>
       <p>
         <ul class="list list-bullet">         
           <li><a href="{{path}}/pe12re/start">Search PE1 2RE</a>  
@@ -47,14 +51,18 @@
             <ul class="list list-bullet">
               <li>Postcode only search, all addresses share a Freehold.  Each has an individual Leashold</li>
               <li>multi title - 42 Lincoln Gate, PE1 2RE (all addresses work - but 42 works best)</li>
-              <li>single title - 43 Lincoln Gate, PE1 2RE</li>
-              <li>single title - where postal address doesn't match A1 desc - 44 Lincoln Gate, PE1 2RE</li>
-              <li>no information available - 46 Lincoln Gate, PE1 2RE</li>
+              <li>single title - where postal address doesn't match A1 desc - 43 Lincoln Gate, PE1 2RE</li>
+              <li>single title - where postal address does match (leasehold) - 44 Lincoln Gate, PE1 2RE</li>
+              <li>no information available - 37 and 45 Lincoln Gate, PE1 2RE</li>
             </ul>
-          </li>   
-<!--           <li><a href="{{path}}/ox73ny/start">Lab test 2 - village - looking for land, village green - we don't have land - journey to FaP</a><br>Village Green, OX7 3NY
-
-          </li>   -->       
+          </li>        
+        </ul>
+      </p>
+      <h4 class='heading-small'>if user doesn't search with a postcode</h4>
+      <p>
+        stays say as currently in prod - proto V24 shows this - results are titles.
+        <ul class="list list-bullet">         
+          <li><a href="/private-beta-24/">proto v24</a></li>
         </ul>
       </p>
      
