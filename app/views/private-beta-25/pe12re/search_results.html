@@ -159,7 +159,14 @@ window.validate.validators.find_property_information_postcode_search_form = func
   }
 
   if(!postcode_regexp.test(value.toUpperCase().replace(/\s/, ''))) {
-    return 'not a valid postcode';
+    // redirect to v25 
+    // form action = ../search_results ie..
+    // http://localhost:3000/private-beta-25/search_results?search_term=AA&search-button=Search#
+    document.getElementById('search-form').action = "../search_results";
+  //  return 'not a valid postcode';
+  }
+  else {
+    document.getElementById('search-form').action = "../pe12re/search_results";
   }
 
 };
