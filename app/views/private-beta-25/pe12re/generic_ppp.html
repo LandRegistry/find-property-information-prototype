@@ -2,7 +2,7 @@
 
 
 {% block page_title %}
-  71 Lincoln Gate, Lincoln Road, PE1 2RE
+  Information available to buy for xx Lincoln Gate, Lincoln Road, PE1 2RE
 {% endblock %}
 
 {% block head_additionals %}
@@ -36,6 +36,12 @@
 
 {% endblock %}
 
+{% block header_primary %}
+  <a class="back-link" href="" data-back-link>
+    <span class="back-link-destination">Back to search results</span>
+  </a>
+{% endblock %}
+
 {% block body %}
 
 <script>
@@ -43,7 +49,7 @@
   let addr = params.get("addr");
 </script>
 
-<h1 class="heading-large spacing-top-single visually-hidden">About this property</h1>
+<h1 class="heading-xlarge">Information available to buy</h1>
 
   <!-- <p>You'll get a summary of the information HM Land Registry holds for this property title.</p> -->
   <div class="grid-row column-flip spacing-top-single">
@@ -61,8 +67,7 @@
       <h2 class="visuallyhidden">Postal address</h2>
       <div class="address heading-large spacing-top-flush">
       
-        <span class="heading-xlarge spacing-top-flush spacing-bottom-third">
-        <script>document.write(addr);</script> Lincoln Gate</span>
+        <span><script>document.write(addr);</script> Lincoln Gate</span>
         <span>Lincoln Road</span>
         <span>Peterborough</span>
         <span>PE1 2RE</span>
@@ -76,33 +81,27 @@
   <div class="grid-row spacing-top-flush">
     <div class="column-two-thirds tablet-column-two-thirds">
 
-      <h2 class="heading-large">2 property titles at this address</h2>
+      <h2 class="heading-large">There are 2 records (&lsquo;property titles&rsquo;) for this address</h2>
 
-      <a class="split-detail-trigger" href="#what-is-a-title">Which property title do I need?</a>
-      <div class="split-detail-contents" id="what-is-a-title">
+      <a class="split-detail-trigger" href="#what-is-the-difference">What&apos;s the difference between freehold and leasehold? </a>
+      <div class="split-detail-contents" id="what-is-the-difference">
         <div class="panel panel-border-narrow font-xsmall">
-            <ul class="list-bullet spacing-bottom-single">
-              <li>Property records are called titles</li>
-              <li>freeholds and leaseholds are the most common types of title</li>
-            </ul>
-            <p>You own a freehold building and land outright. It is yours until you sell it or give it away.</p>
-            <p>Most houses are freehold. Most flats are leasehold. That means someone else owns the freehold for the building the flat is in.</p>
-            <p>Houses can also be leasehold and usually are if they’re bought through a shared ownership scheme.</p>
+            <p>If you own the freehold for land or a building you own it outright - it&apos;s yours until you sell it or give it away. Most houses are freehold.</p>
+            <p>If you own the leasehold for land or a building you own it for a fixed period of time. Most flats are leasehold - the blocks they&apos;re in are usually freehold. All leasehold properties will have a freehold title.</p>
         </div>
       </div>
-
 
     </div>
   </div> <!-- end row -->
 
 
-  <div class="grid-row spacing-top-single">
+  <div class="grid-row spacing-top-flush">
 
     <div class="column-two-thirds tablet-column-two-thirds">
 
       <ol class="property-list list-number">
         <li>
-          <h3 class="heading-medium">Freehold <span class="lede">title, described as:</span></h3>
+          <h3 class="heading-medium">Freehold<span class="lede">, described as:</span></h3>
             <dd class="bold-medium spacing-bottom-single">
               <a href="freehold">
                 <div class="address">           
@@ -111,10 +110,10 @@
                 </div>
               </a>
             </dd>
-            <p>This freehold title covers all 27 addresses in this postcode</p>
+            <p>This covers all 27 addresses in this postcode</p>
         </li>
         <li>
-          <h3 class="heading-medium">Leasehold <span class="lede">title, described as:</span></h3>
+          <h3 class="heading-medium">Leasehold<span class="lede">, described as:</span></h3>
             <dd class="bold-medium spacing-bottom-single">
             <script>
               document.write('<a href="leasehold?addr=' + addr + '">');
@@ -128,7 +127,7 @@
                 </div>
               </a>
             </dd>
-            <p>This leasehold title is for just this address</p>
+            <p>This is for just this address</p>
         </li>
 
       </ol>
@@ -139,7 +138,7 @@
 
 
 
-
+<!-- 
   <div class="row">
   <p class="spacing-top-single spacing-bottom-double">
 
@@ -148,7 +147,7 @@
       <span class="back-link-destination">Search results</span>
       </a>
     </p>
-  </div>
+  </div> -->
 
     <!-- 71 - freehold -->
     <script>

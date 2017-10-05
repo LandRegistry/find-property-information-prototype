@@ -3,7 +3,7 @@ date: 2017-09-27
 
 stickers: 
   status: plan to ship this
-  construction: under construction
+  construction: almost complete
   tested: 
 
 
@@ -14,8 +14,6 @@ description:
 
 changelog:
   - done...
-  - 
-  - todo...
   - every address in a postcode
   - result per address
   - page per property if address has >1 title record
