@@ -18,7 +18,7 @@
     <div class="column-two-thirds">
       <h1 class="heading-xlarge">Improve search</h1>
 
-      <p class="lede">this proto is mostly complete</p>
+      <p class="lede">this proto/documentation is almost complete</p>
 
       <h2 class="heading-large">Description of expected / built behaviour</h2>
       <p>Not all these 'rules' / described behaviour are shown, or obvious, in the prototype examples - so for clarity they are listed below</p> 
@@ -48,7 +48,8 @@
       <h2 class="heading-large">Still working through</h2>
       <p>
         <ul class="list-bullet">     
-          <li>further content/desgin to discuss - re different situations; accessibility - for non-visual users; non obvious stuff</li>    
+          <li>further content/desgin to discuss - re different situations; accessibility - for non-visual users; non obvious stuff</li> 
+          <li>review 'error messages' content</li>   
           <li>pppa - ordering the titles? rules / think about - assume rule is Freehold, leasehold (if multiple leaseholds, what order? title number?, age?, random?)</li>
           <li>words (as per now?) - for when a result has no pppa/title available here</li>
           <li>what to do with duplicated postal addresses? (real world example below - Managers Office)</li>
@@ -59,6 +60,7 @@
           <li>still only 50 results (we believe we can do 100 addresses)</li>
           <li>consider how many results per page - currently 20</li>
           <li>consider markup under pppa</li>
+          <li>add hyperlinks / content from UR, PO, Analytics - to research, hypotheses, and how to measure</li>
         </ul>
       </p>
       
@@ -69,8 +71,8 @@
         <ul class="list list-bullet">         
           <li><a href="{{path}}/pe12re/start">Search PE1 2RE</a>  
             <p>PE1 2RE is a 'perfect' postcode in real world - perfectly registered + all titles returned. We've removed personal details, and shifted the property numbers, and tweaked to demonstrate variances in data</p>
+            <p>Postcode only search, all addresses share a Freehold.  Each has an individual Leashold</p>
             <ul class="list list-bullet">
-              <li>Postcode only search, all addresses share a Freehold.  Each has an individual Leashold</li>
               <li>multi title - 42 Lincoln Gate, PE1 2RE (all addresses work - but 42 works best)</li>
               <li>single title - where postal address doesn't match A1 desc - 43 Lincoln Gate, PE1 2RE</li>
               <li>single title - where postal address does match (leasehold) - 44 Lincoln Gate, PE1 2RE</li>
@@ -105,15 +107,15 @@
           <li>pick and buy the wrong title</li>
           <li>don't undertsand tenures</li>
         </ul>
-        <a href="">detailed breakdown of user pain with searching (google drive)</a>
-      </p>     
+      </p>  
+      <p><a href="">detailed breakdown of user pain with searching (google drive)</a></p>   
 
 
       <h2 class="heading-medium">How to measure things</h2>
       <p>our more specific hypotheses of what will happen - and how to test/measure it</p>
       <p>
-        <ul class="list list-bullet">
-          <li>More people will succeed in finding the place (address) a) first time; b) overall.<br>(because - results match mental model; are complete; are in a logical order)
+        <ul class="list list-number">
+          <li>more people will succeed in finding the place (address) a) first time; b) overall.<br>(because - results match mental model; are complete; are in a logical order)
             <ul class="list-bullet">
               <li>"i can't find it" - feedback should decrease</li>
               <li>we will get less (%) of people doing non postcode search</li>
@@ -122,7 +124,7 @@
               <li>less deliberation (time spent) on a results page</li>          
             </ul>
           </li>
-          <li>More people will succeed in finding the title record they need / want a) first time; b) at all.
+          <li>more people will succeed in finding the title record they need / want a) first time; b) at all.
             <br>(because - place to title is clearer;)
             <ul class="list-bullet">
               <li>less 'churn' - around the search / search results - before leaving / going to about (pppa or about title)</li>
@@ -132,7 +134,7 @@
             </ul>
           </li>
           <li>negative feedback about 'search' will decrease and it will get more specific</li>
-          <li>New - page per property address
+          <li>new - page per property address
             <ul class="list-bullet">
               <li>we'll get people leaving the service at this page</li>
               <li>we'll get new feedback about being confused by this page / titles
