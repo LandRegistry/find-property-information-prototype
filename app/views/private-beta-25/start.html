@@ -55,11 +55,14 @@
           <li>search result is the 'postal address' (addressbase delivery point address)</li>
           <li>where we dont have anything available for a postal address - explain why/what to do</li>
           <li>always encourage user to use postcode - if no search result provided, say postcode is needed</li>
-          <li>if search term is not a postcode - behaviour is like current production (search results are result per title, no 'page for the property address' (pppa)).</li>
+          <li><del>if search term is not a postcode - behaviour is like current production (search results are result per title, no 'page for the property address' (pppa)).</del><!-- (Fri 06 oct) -->
+          </li>
           <li>postcode search is only things with an address - i.e. no land, or buildings that dont have a postal address (e.g, electricity substation)</li>
           <li>search results ordering rules - 
-            <br>if addressbase has a numeric house number - results will be numerical. (1, 2, 3, 10)
-            <br>if addressbase doesn't have a numeric house number (eg no number / number is an non numeric field) - results will be alpha numeric - e.g. 1, 10, 2, 3
+            <ul class="list-bullet" style="margin-top:5px;">
+              <li>if addressbase has a numeric house number - results will be numerical. (1, 2, 3, 10)</li>
+              <li>if addressbase doesn't have a numeric house number (eg no number / number is an non numeric field) - results will be alpha numeric - e.g. 1, 10, 2, 3</li>
+            </ul>
           </li>
 
           <li>new - 'page per property address' (pppa) if address has >1 title record</li>
@@ -86,8 +89,10 @@
           <li>review 'error messages' content</li>  
           <li>words (to re-check with Sarah) - for when a result has no pppa/title available here</li> 
           <li>pppa - ordering the titles.
-            <br>Freehold first, then leasehold
-            <br>if more than one of a tenure - e.g. leasehold - then order those tenure records alphabetically by A1 property description.
+            <ul class="list-bullet" style="margin-top:5px;">
+              <li>Freehold first, then leasehold</li>
+              <li>if more than one of a tenure - e.g. leasehold - then order those tenure records alphabetically by A1 property description.</li>
+            </ul>
           </li>         
           <li>what to do with duplicated postal addresses? (real world example below - Managers Office)</li>
           <li>Out of scope? if only 1 title for the address and the address and A1 adddress differ - help user resolve that (result is postal, page per title addr is A1 prope desc)</li>
@@ -105,7 +110,7 @@
       
      
       <h2 id="examples" class="heading-large">Example pages</h2>
-      <h3 class="heading-medium">if user searches with a postcode (what we encourage)</h3>
+      <h3 class="heading-medium">if user searches with a postcode (what we'll enforce)</h3>
       <p>
         <ul class="list list-bullet">         
           <li><a href="{{path}}/pe12re/start">Search PE1 2RE</a>  
@@ -124,11 +129,15 @@
       </p>
 
       <h3 class="heading-medium">if user doesn't search with a postcode</h3>
-      <p>
-        search works like currently in production.  results are titles, no pppa (page per property address) 
+      <p><del>
+        search works like currently in production.  results are titles, no pppa (page per property address)</del> 
+        <!-- (Fri 06 Oct) -->
       </p>
-      <p><a href="{{path}}/pe12re/start">Search PE1 2RE</a>, then try changing to a non postcode, e.g. 'PE1 2RE, 28' - best looked at in prodcution service it has better data.
-      </p>
+      <p><del>
+        <!-- <a href="{{path}}/pe12re/start">Search PE1 2RE</a> -->
+        Search PE1 2RE, then try changing to a non postcode, e.g. 'PE1 2RE, 28' - best looked at in prodcution service it has better data.
+      </del></p>
+      <p>'error' message - asking for a postcode</p> 
       <div>
         <p><a class="back-to-top" href="#top">back to top</a></p>
       </div>
@@ -140,7 +149,7 @@
           <li>don't understand why places (addresses) are missing</li>
           <li>don't know what to do if they can't see the place they want</li>
           <li>struggle picking the right record (title) - we expect people to!</li>
-            <ul>
+            <ul class="list-bullet" style="margin-top:5px;">
               <li>because - A1 property description</li>
               <li>multiple titles at an address</li>
               <li>don't know which will contain the right information they seek (eg the owner)</li>
