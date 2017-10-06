@@ -158,16 +158,13 @@ window.validate.validators.find_property_information_postcode_search_form = func
     return 'a postcode is needed';
   }
 
-  if(!postcode_regexp.test(value.toUpperCase().replace(/\s/, ''))) {
-    // redirect to v25 
-    // form action = ../search_results ie..
-    // http://localhost:3000/private-beta-25/search_results?search_term=AA&search-button=Search#
-    document.getElementById('search-form').action = "../search_results";
-  //  return 'not a valid postcode';
-  }
-  else {
-    document.getElementById('search-form').action = "../pe12re/search_results";
-  }
+  // send people between postcode and non-postcode versions of search
+  // if(!postcode_regexp.test(value.toUpperCase().replace(/\s/, ''))) {
+  //   document.getElementById('search-form').action = "../search_results";
+  // }
+  // else {
+  //   document.getElementById('search-form').action = "../pe12re/search_results";
+  // }
 
 };
   </script>
