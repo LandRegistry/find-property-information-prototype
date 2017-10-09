@@ -18,7 +18,12 @@
   }*/
 
   .back-to-top::before {
-    /*content: "&uarr;";*/
+    content: "\2191 ";
+    /*font-weight: 800;*/
+  }
+
+  .dashed-list li::before {
+    content: "\2014  ";
   }
 
 
@@ -38,14 +43,14 @@
 
       <p class="lede">this proto/documentation is almost complete</p>
 
-      <p>Contents
-      <ul>
+      <h2>Contents</h2>
+      <ol class="dashed-list">
         <li><a href="#rules">How it works</a></li>
         <li><a href="#examples">Examples</a></li>
         <li><a href="#solving">Problems we're trying to solve/reduce</a></li>
         <li><a href="#measuring">How we'll measure if it's successful</a></li>
-      </ul>
-      </p>
+      </ol>
+      
 
       <h2 id="rules" class="heading-large">How it works - description of expected behaviour</h2>
       <p>Not all these 'rules' / described behaviour are shown, or obvious, in the prototype examples - so for clarity they are listed here</p> 
@@ -78,7 +83,7 @@
         </ul>
       </p>
       <div>
-        <p><a class="back-to-top" href="#top">back to top</a></p>
+        <p class="back-to-top"><a href="#top">contents</a></p>
       </div>
 
       <h3 id="wip" class="heading-medium">Still working through</h3>
@@ -105,7 +110,7 @@
         </ul>
       </p>
       <div>
-        <p><a class="back-to-top" href="#top">back to top</a></p>
+        <p class="back-to-top"><a href="#top">contents</a></p>
       </div>
       
      
@@ -139,7 +144,7 @@
       </del></p>
       <p>'error' message - asking for a postcode</p> 
       <div>
-        <p><a class="back-to-top" href="#top">back to top</a></p>
+        <p class="back-to-top"><a href="#top">contents</a></p>
       </div>
 
       <h2 id="solving" class="heading-large">Problems people have - pain that we're are trying to reduce</h2>
@@ -161,7 +166,7 @@
       </p>  
       <p><span class="bold">To be done: </span><a href="">detailed breakdown of user pain with searching (google drive)</a></p>   
       <div>
-        <p><a class="back-to-top" href="#top">back to top</a></p>
+        <p class="back-to-top"><a href="#top">contents</a></p>
       </div>
 
       <h2 id="measuring" class="heading-medium">How to measure improvments</h2>
@@ -216,7 +221,7 @@
         </ul>
       </p>
       <div>
-        <p><a class="back-to-top" href="#top">back to top</a></p>
+        <p class="back-to-top"><a href="#top">contents</a></p>
       </div>
 
 
