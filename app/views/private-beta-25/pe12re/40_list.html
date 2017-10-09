@@ -5,6 +5,8 @@
   Information available to buy
 {% endblock %}
 
+
+
 {% block head_additionals %}
 
 <style type="text/css">
@@ -32,6 +34,7 @@
     font-weight: normal;
   }
 
+
 </style>
 
 {% endblock %}
@@ -43,12 +46,6 @@
 {% endblock %}
 
 {% block body %}
-
-<script>
-  let params = (new URL(document.location)).searchParams;
-  let addr = params.get("addr");
-</script>
-
 <h1 class="heading-xlarge">Information available to buy</h1>
 
   <!-- <p>You'll get a summary of the information HM Land Registry holds for this property title.</p> -->
@@ -66,9 +63,7 @@
 
       <h2 class="visuallyhidden">Postal address</h2>
       <div class="address heading-large spacing-top-flush">
-      
-        <span>
-        <script>document.write(addr);</script> Lincoln Gate</span>
+        <span>40 Lincoln Gate</span>
         <span>Lincoln Road</span>
         <span>Peterborough</span>
         <span>PE1 2RE</span>
@@ -82,7 +77,7 @@
   <div class="grid-row spacing-top-flush">
     <div class="column-two-thirds tablet-column-two-thirds">
 
-      <h2 class="heading-large">There are 2 records (&lsquo;property titles&rsquo;) for this address</h2>
+      <h2 class="heading-large">There are 3 records (&lsquo;property titles&rsquo;) for this address</h2>
 
       <a class="split-detail-trigger" href="#what-is-the-difference">What&apos;s the difference between freehold and leasehold? </a>
       <div class="split-detail-contents" id="what-is-the-difference">
@@ -105,7 +100,7 @@
           <h3 class="heading-medium">Freehold<span class="lede">, described as:</span></h3>
             <dd class="bold-medium spacing-bottom-single">
               <a href="freehold">
-                <div class="address">           
+                <div class="address">          
                   <span>land and buildings on the south side of Cobden Avenue and the west side of Lincoln Road</span>             
                   <span>Peterborough</span>
                 </div>
@@ -116,22 +111,31 @@
         <li>
           <h3 class="heading-medium">Leasehold<span class="lede">, described as:</span></h3>
             <dd class="bold-medium spacing-bottom-single">
-            <script>
-              document.write('<a href="leasehold?addr=' + 'Managers Office' + '">');
-            </script>
-       
+              <a href="leasehold?addr=Residential units at Lincoln Gate">
                 <div class="address">
-                  <span>Managers Office</span>
-                  <span>Lincoln Gate</span> 
+                  <span>Residential units at Lincoln Gate</span> 
                   <span>Lincoln Road</span>
                   <span>Peterborough</span>
                   <span>PE1 2RE</span>
                 </div>
               </a>
             </dd>
-            <p>This is for 2 addresses in this postcode</p>
+            <p>This covers 27 addresses in this postcode</p>
         </li>
-
+        <li>
+          <h3 class="heading-medium">Leasehold<span class="lede">, described as:</span></h3>
+            <dd class="bold-medium spacing-bottom-single">
+              <a href="leasehold?addr=40 Lincoln Gate">
+                <div class="address">
+                  <span>40 Lincoln Gate</span> 
+                  <span>Lincoln Road</span>
+                  <span>Peterborough</span>
+                  <span>PE1 2RE</span>
+                </div>
+              </a>
+            </dd>
+            <p>This is for just this address</p>
+        </li>
       </ol>
 
     </div>
