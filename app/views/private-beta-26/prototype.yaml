@@ -1,5 +1,5 @@
 name: search results - addresses not titles
-date: 2017-09-27
+date: 2017-10-31
 
 stickers: 
   status: plan to ship this
@@ -9,8 +9,9 @@ stickers:
 
 
 description: 
+  - iteration of V25, now we've learnt more from real data / written code
   - search results are are a list of addresses in that postcode
-  - new 'page per property address'
+  - property address page for every address (address in the results that is a link)
 
 changelog:
   - done...
