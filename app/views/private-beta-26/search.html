@@ -1,0 +1,70 @@
+{% extends "./layout/layout.html" %}
+{% from "./includes/search_form.html" import search_form %}
+
+{% block title %}Search{% endblock %}
+
+{% block body %}
+  <h1 class="heading-large">Search for land or property</h1>
+
+  <div class="grid-row spacing-top-single">
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+      <!-- <p class="spacing-bottom-single">You can get a summary of information about registered property or land in England and Wales, even if you don’t own it.</p> -->
+
+      {{ search_form() }}
+
+      <div class="panel panel-border-narrow">
+        <p>This service needs a postcode. If you don't know the postcode, <a href="https://eservices.landregistry.gov.uk/wps/portal/Property_Search">use the Find a Property service</a> instead to search by street address, title number or by using a map.</p>
+      </div>
+      
+    </div>
+  </div>
+{% endblock %}
+
+{% block js_bottom %}
+  <script>
+window.validate.validators.find_property_information_postcode_search_form = function(value, options, key, attributes) {
+
+
+  var parts = {
+    '{fst}': 'ABCDEFGHIJKLMNOPRSTUWYZ',
+    '{sec}': 'ABCDEFGHKLMNOPQRSTUVWXY',
+    '{thd}': 'ABCDEFGHJKMNPRSTUVWXY',
+    '{fth}': 'ABEHMNPRVWXY',
+    '{inward}': 'ABDEFGHJLNPQRSTUWXYZ'
+  }
+
+  var rules = [
+    '^[{fst}][1-9]\\d[{inward}][{inward}]$',
+    '^[{fst}][1-9]\\d\\d[{inward}][{inward}]$',
+    '^[{fst}][{sec}]\\d\\d[{inward}][{inward}]$',
+    '^[{fst}][{sec}][1-9]\\d\\d[{inward}][{inward}]$',
+    '^[{fst}][1-9][{thd}]\\d[{inward}][{inward}]$',
+    '^[{fst}][{sec}][1-9][{fth}]\\d[{inward}][{inward}]$'
+  ];
+
+  var postcode_regexp = rules.join('|');
+
+  for(var i in parts) {
+    if(parts.hasOwnProperty(i)) {
+      postcode_regexp = postcode_regexp.replace(new RegExp(i, 'g'), parts[i])
+    }
+  }
+
+  postcode_regexp = new RegExp(postcode_regexp);
+
+  if(!value) {
+    return 'a postcode is needed';
+  }
+
+  // send people between postcode and non-postcode versions of search
+  // if(!postcode_regexp.test(value.toUpperCase().replace(/\s/, ''))) {
+  //   document.getElementById('search-form').action = "../search_results";
+  // }
+  // else {
+  //   document.getElementById('search-form').action = "../pe12re/search_results";
+  // }
+
+};
+  </script>
+{% endblock %}

@@ -1,0 +1,240 @@
+{% extends "./layout/layout.html" %}
+
+{% block page_title %}
+  Better search
+{% endblock %}
+
+{% block head_additionals %}
+
+<style type="text/css">
+
+
+  .hyp-list >li {
+    margin-bottom:25px;
+  }
+
+/*  .hyp-list >ul >li {
+    margin-bottom:5px;
+  }*/
+
+  .back-to-top::before {
+    content: "\2191 ";
+    /*font-weight: 800;*/
+  }
+
+  .dashed-list li::before {
+    content: "\2014  ";
+  }
+
+
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+  
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 id="top" class="heading-xlarge">Improve search</h1>
+
+      <p class="lede">this proto/documentation is almost complete</p>
+
+      <h2>Contents</h2>
+      <ol class="dashed-list">
+        <li><a href="#rules">How it works</a></li>
+        <li><a href="#examples">Examples</a></li>
+        <li><a href="#solving">Problems we're trying to solve/reduce</a></li>
+        <li><a href="#measuring">How we'll measure if it's successful</a></li>
+      </ol>
+      
+
+      <h2 id="rules" class="heading-large">How it works - description of expected behaviour</h2>
+      <p>Not all these 'rules' / described behaviour are shown, or obvious, in the prototype examples - so for clarity they are listed here</p> 
+      <p>
+        <ul class="list-bullet">
+          <li>a result for every address in a postcode (whether we have something or not) (what the Royal Mail would show)</li>
+          <li>search result is the 'postal address' (addressbase delivery point address)</li>
+          <li>where we dont have anything available for a postal address - explain why/what to do</li>
+          <li>always encourage user to use postcode - if no search result provided, say postcode is needed</li>
+          <li><del>if search term is not a postcode - behaviour is like current production (search results are result per title, no 'page for the property address' (pppa)).</del><!-- (Fri 06 oct) -->
+          </li>
+          <li>postcode search is only things with an address - i.e. no land, or buildings that dont have a postal address (e.g, electricity substation)</li>
+          <li>search results ordering rules - 
+            <ul class="list-bullet" style="margin-top:5px;">
+              <li>if addressbase has a numeric house number - results will be numerical. (1, 2, 3, 10)</li>
+              <li>if addressbase doesn't have a numeric house number (eg no number / number is an non numeric field) - results will be alpha numeric - e.g. 1, 10, 2, 3</li>
+            </ul>
+          </li>
+
+          <li>new - 'page per property address' (pppa) if address has >1 title record</li>
+          <li>'page per property address' - contains a link to each title at that address</li>
+          <li>if address = 1 title, address link goes to 'about this property' (title) page</li>
+          <li>'about this property' (title) page current 'return to search results link' to return to pppa instead (if that was the route), and link text to reflect the page name it's going back to</li>
+          <li>'confirm your order' page current 'return to search results link' in pay box to return to pppa instead (if that was the route), and link text to reflect the page name it's going back to</li>
+          <li>for any address, the titles available may not be every title actually recorded/associated to that postal address</li>
+          <li>Only show tenures on the pppa page - caution titles don't get intorduced here.  Caution information starts to appear on 'about this property</li>
+          <li>improved content on 'page per property address' - title, address, what we've got, which title i want, what the title applies to, back to results</li>
+          <li>Content that refers to 'the number' of things - is dynamic - e.g. 2 records / 'covers all 27' / 'just this address'</li>
+          <li>100 results max per search - increasing from the current 50.</li>
+        </ul>
+      </p>
+      <div>
+        <p class="back-to-top"><a href="#top">contents</a></p>
+      </div>
+
+      <h3 id="wip" class="heading-medium">Still working through</h3>
+      <p>things still being considered / being worked through</p>
+      <p>
+        <ul class="list-bullet">     
+          <li>further content/design to discuss - re different data situations; accessibility - for non-visual users; backlink text to pppa; non obvious stuff</li> 
+          <li>review 'error messages' content</li>  
+          <li>words (to re-check with Sarah) - for when a result has no pppa/title available here</li> 
+          <li>pppa - ordering the titles.
+            <ul class="list-bullet" style="margin-top:5px;">
+              <li>Freehold first, then leasehold</li>
+              <li>if more than one of a tenure - e.g. leasehold - then order those tenure records alphabetically by A1 property description.</li>
+            </ul>
+          </li>         
+          <li>what to do with duplicated postal addresses? (real world example below - Managers Office)</li>
+          <li>Out of scope? if only 1 title for the address and the address and A1 adddress differ - help user resolve that (result is postal, page per title addr is A1 prope desc)</li>
+          <li>what to do about - we are the source of truth/assurance/onward journey - We don't know for any address if the titles we show is the true picture. People will assume whatever we show is a full and true record of what gov holds.  Do we explain that this list of titles might not be everything? Do that on the pppa page?  i.e. Should we always have a pppa page to help explain?  e.g what if we've pulled back one title result for a property - and it's the leasehold? (there must be a freehold). Note: this is the same problem fpi and Fap currently have, but as were are now changing search/results/pppa should we address this?</li>
+          <li>different model for pppa - always have one - have one for every address (has benefits - discuss)</li>
+          <li>Think about responsiveness of this page.  e.g. mobile: on pppa get address before the map?</li>
+          <li>consider how many results per page - currently 20</li>
+          <li>consider markup under pppa</li>
+          <li>add hyperlinks / content from UR, PO, Analytics - to research, hypotheses, and how to measure</li>
+        </ul>
+      </p>
+      <div>
+        <p class="back-to-top"><a href="#top">contents</a></p>
+      </div>
+      
+     
+      <h2 id="examples" class="heading-large">Example pages</h2>
+      <h3 class="heading-medium">if user searches with a postcode (what we'll enforce)</h3>
+      <p>
+        <ul class="list list-bullet">         
+          <li><a href="{{path}}/pe12re/start">Search PE1 2RE</a>  
+            <p>PE1 2RE is a 'perfect' postcode in real world - perfectly registered + all titles returned. We've removed personal details, and shifted the property numbers, and tweaked to demonstrate variances in data</p>
+            <p>Postcode only search, all addresses (except 43 &amp; 44) share a Freehold.  Each has an individual Leashold</p>
+            <ul class="list list-bullet">
+              <li>multi title - 42 Lincoln Gate, PE1 2RE (all addresses work - but 42 works best)</li>
+              <li>single title - where postal address doesn't match A1 desc - 43 Lincoln Gate, PE1 2RE</li>
+              <li>single title - where postal address does match (leasehold) - 44 Lincoln Gate, PE1 2RE</li>
+              <li>no information available - 37 and 45 Lincoln Gate, PE1 2RE</li>
+              <li>multi title - duplicate postal address in the Royal Mail/address base data - Managers Office and Sheltered Housing, Managers Office (leasehold title will have a singluar A1, but 2 postal addresses)</li>
+              <li>multi title - caution against freehold.  41 Lincoln Gate, PE1 2RE</li>
+              <li>multi title (3 titles) - 40 Lincoln Gate, PE1 2RE</li>
+            </ul>
+          </li>        
+        </ul>
+      </p>
+
+      <h3 class="heading-medium">if user doesn't search with a postcode</h3>
+      <p><del>
+        search works like currently in production.  results are titles, no pppa (page per property address)</del> 
+        <!-- (Fri 06 Oct) -->
+      </p>
+      <p><del>
+        <!-- <a href="{{path}}/pe12re/start">Search PE1 2RE</a> -->
+        Search PE1 2RE, then try changing to a non postcode, e.g. 'PE1 2RE, 28' - best looked at in prodcution service it has better data.
+      </del></p>
+      <p>'error' message - asking for a postcode</p> 
+      <div>
+        <p class="back-to-top"><a href="#top">contents</a></p>
+      </div>
+
+      <h2 id="solving" class="heading-large">Problems people have - pain that we're are trying to reduce</h2>
+      <p>our general hypothesis is that we will lessen these problems</p>
+      <p>People:
+        <ul class="list-bullet">
+          <li>don't understand why places (addresses) are missing</li>
+          <li>don't know what to do if they can't see the place they want</li>
+          <li>struggle picking the right record (title) - we expect people to!</li>
+            <ul class="list-bullet" style="margin-top:5px;">
+              <li>because - A1 property description</li>
+              <li>multiple titles at an address</li>
+              <li>don't know which will contain the right information they seek (eg the owner)</li>
+            </ul>
+          <li>don't understand a place can have more than one title record</li>
+          <li>pick and buy the wrong title</li>
+          <li>don't undertsand tenures</li>
+        </ul>
+      </p>  
+      <p><span class="bold">To be done: </span><a href="">detailed breakdown of user pain with searching (google drive)</a></p>   
+      <div>
+        <p class="back-to-top"><a href="#top">contents</a></p>
+      </div>
+
+      <h2 id="measuring" class="heading-medium">How to measure improvments</h2>
+      <p>our more specific hypotheses of what will happen - and how to test/measure it</p>
+      <p><span class="bold">Note:</span> We may need to baseline existing data before we ship</p>
+      <p>
+        <ul class="hyp-list list-number">
+          <li>more people will succeed in finding the place (address) 
+            <br>a) first time; 
+            <br>b) overall.
+            <br>because - results match mental model; are complete; are in a logical order.
+            <ul class="list-bullet" style="margin-top:15px;">
+              <li>"i can't find it" - feedback should decrease</li>
+              <li>we will get less (%) of people doing non postcode search</li>
+              <li>less 'churn' - around the search / search results - before leaving / going to about (pppa or about title)</li>
+              <li>less 'back and forth' - between results and about page(s) (pppa and about)</li>   
+              <li>less deliberation (time spent) on a results page</li>          
+            </ul>
+          </li>
+          <li>more people will succeed in finding the title record they need / want 
+            <br>a) first time; 
+            <br>b) overall.
+            <br>because - place to title is clearer;
+            <ul class="list-bullet" style="margin-top:15px;">
+              <li>less 'churn' - around the search / search results - before leaving / going to about (pppa or about title)</li>
+              <li>less 'back and forth' - between results and about page(s) (pppa and about)<br>i.e. less deliberation</li>  
+              <li>we see a decrease in the difference between searches and next stage - start of completion</li>   
+              <li>we see an increase in completion because - its easier to get what you came for</li> 
+            </ul>
+          </li>
+          <li>feedback about 'search'
+            <ul class="list-bullet" style="margin-top:15px;">
+              <li>will decrease - overall amount</li>
+              <li>will get more specific (less 'search is rubbish', more 'why don't you have anything for x'</li>         
+            </ul>  
+          </li>
+          <li>new - page per property address
+            <ul class="list-bullet">
+              <li>we'll get people leaving the service at this page</li>
+              <li>we'll get new feedback about being confused by this page / titles.  This feedabck will be specifically about being confused by 'things' (i.e. titles)
+                <br><span class="bold">Note:</span> if we can track this feedback to this page - it will be very beneficial
+              </li>
+              <li>people will spend a long time on this page (because they have to make a choice thats hard for them) - should see this in analytics.</li>
+              <li>Measure how well the 'whats the difference between Freehold and Leashold' works - in getting people to pick the title they need.
+                <ul class="list-bullet" style="margin-top:15px;">
+                  <li>I'd like to measure how may people open the accordion. (best ever copy / but accordions have always cause people problems)</li>
+                  <li>Are people who open the accordion more successful in picking the right title / completion rate</li>  
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </p>
+      <div>
+        <p class="back-to-top"><a href="#top">contents</a></p>
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+
+</main>
+
+{% endblock %}
+
+

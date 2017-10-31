@@ -1,0 +1,397 @@
+{% extends "./layout/layout.html" %}
+
+{% block page_title %}
+  Search results examples
+{% endblock %}
+
+{% block head_additionals %}
+
+<style type="text/css">
+
+  .example1 .children--address-list {
+    border-left: 1px solid #bfc1c3;
+  }
+
+  .example1 .children--address-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 5px;
+  }
+
+
+  .example1 .children--address-list li:before {
+    content: '';
+    left: 0;
+    top: 50%;
+    position: absolute;
+    border-top: 1px solid #bfc1c3;
+    width: 15px;
+  }
+
+  .example1 .children--address-list li:last-child:after {
+    content: '';
+    left: -1px;
+    top: 50%;
+    bottom: 0;
+    position: absolute;
+    border-left: 1px solid #fff;
+  }
+
+  ol li div {
+    margin-left: 15px;
+  }
+
+  .children--address-list li div {
+    margin-left: 0px;
+  }
+
+  .children--address-list {
+    margin-left: 15px;
+  }
+
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+  
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-large">examples where the address is the link to the property record</h2>
+      <p>Showing some options, but also asking a lot of questions (user, how we have stuff stored, technology).  Need to add more real world examples of how buildings/sub buildings are organised and how we have stored the titles, and ho wthey can/cannot be linked</p>
+      <p>Also see <a href="search_results_examples_1">search results - tenure is hyperlink</a></p>
+
+    </div>
+  </div>
+
+  <h2 class="heading-large">one title per address</h2>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-medium">one title per address</h2>
+      <div class="example1">
+
+        <ol>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">5 Mandela Way, Southampton, SO15 5RZ</a>
+            </h2>
+            <div class="font-xsmall">
+              Freehold title, HP724501
+            </div>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">6 Mandela Way, Southampton, SO15 5RZ</a>
+            </h2>
+            <div class="font-xsmall">
+              Freehold title, HP704400
+            </div>
+
+            <ol class="children--address-list">
+              <li>
+                <h2 class="heading-small collapse-bottom">
+                  <a href="#">Flat 1, 6 Mandela Way, Southampton, SO15 5RZ</a>
+                </h2>
+                <div class="font-xsmall">
+                  Leasehold title, HP725748
+                </div>
+              </li>
+              <li>
+                <h2 class="heading-small collapse-bottom">
+                  <a href="#">Flat 2, 6 Mandela Way, Southampton, SO15 5RZ</a>
+                </h2>
+                <div class="font-xsmall">
+                  Leasehold title, HP725749
+                </div>
+              </li>
+            </ol>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">7 Mandela Way, Southampton, SO15 5RZ</a>
+            </h2>
+            <div class="font-xsmall">
+              Freehold title, HP726948
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">8 Mandela Way, Southampton, SO15 5RZ</a>
+            </h2>
+            <div class="font-xsmall">
+              Freehold title, HP725454
+            </div>
+          </li>
+
+        </ol>
+
+
+      </div>
+    </div>
+
+    <div class="column-one-third">
+      <h2 class="heading-medium">one title per address</h2>
+      <ul class="list-bullet font-small">
+        <li>link per address becasue 1 title per address - link to 'about this property record'</li>
+        <li>result organised by address - numeric, (containing building first), then sub building</li>
+      </ul>
+
+    </div>
+  </div>
+
+  <h2 class="heading-large">multiple titles at an address</h2>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-medium">page per property address</h2>
+      <div class="example1">
+
+        <ol>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">5 Mandela Way, Southampton, SO15 5RZ</a>
+            </h2>
+            <div class="font-xsmall">
+              Freehold title, HP724501</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">6 Mandela Way, Southampton, SO15 5RZ</a>
+            </h2>
+            <div class="font-xsmall">
+              Freehold title, HP704400
+            </div>
+            <div class="font-xsmall">
+              Leasehold title, HP725748
+            </div>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">7 Mandela Way, Southampton, SO15 5RZ</a>
+            </h2>
+            <div class="font-xsmall">
+              Freehold title, HP704400
+            </div>
+            <div class="font-xsmall">
+              Leasehold title, HP725749
+            </div>
+          </li>
+
+        </ol>
+
+
+      </div>
+    </div>
+
+    <div class="column-one-third">
+      <h2 class="heading-medium"></h2>
+      <ul class="list-bullet font-small">
+        <li>page per property address</li>
+        <li>could be new page for all links.</li>
+        <li>could be: if only one title, goes to about this property (title).  If multiple title goes to new page (where multi titles explained)</li>
+      </ul>
+
+    </div>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-medium">opt 2</h2>
+
+        <ol>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">5 Mandela Way, Southampton, SO15 5RZ</a>
+            </h2>
+            <div class="font-xsmall">
+              Freehold title, HP724501
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">Flat 1, 6 Mandela Way, Southampton, SO15 5RZ</a>
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP704400</a>
+            </div>
+            <div class="font-xsmall">
+              <a href="#">Leasehold title, HP725748</a>
+            </div>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">Flat 2, 6 Mandela Way, Southampton, SO15 5RZ</a>
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP704400</a>
+            </div>
+            <div class="font-xsmall">
+              <a href="#">Leasehold title, HP725749</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">7 Mandela Way, Southampton, SO15 5RZ</a>
+            </h2>
+            <div class="font-xsmall">
+              Freehold title, HP726948
+            </div>
+          </li>
+
+        </ol>
+
+
+    </div>
+
+    <div class="column-one-third">
+      <h2 class="heading-medium">notes</h2>
+      <ul class="list-bullet font-small">
+        <li>page per property address</li>
+        <li>As opt 1, but where multi title is a link, goes direct to page per title</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-medium">opt 3</h2>
+      <div class="example1">
+        <ol>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              5 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP724501</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">6 Mandela Way, Southampton, SO15 5RZ</a>
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP704400</a>
+            </div>
+            <div class="font-xsmall">
+              <a href="#">Leasehold title, HP725748</a>
+            </div>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">7 Mandela Way, Southampton, SO15 5RZ</a>
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP704400</a>
+            </div>
+            <div class="font-xsmall">
+              <a href="#">Leasehold title, HP725749</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              8 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP726948</a>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+
+    </div>
+
+    <div class="column-one-third">
+      <h2 class="heading-medium">notes</h2>
+      <ul class="list-bullet font-small">
+        <li>behaviour opt 2, but different styling</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-medium">opt 4</h2>
+
+        <ol>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">5 Mandela Way, Southampton, SO15 5RZ</a>
+            </h2>
+            <div class="font-xsmall">
+              Freehold title
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">Flat 1, 6 Mandela Way, Southampton, SO15 5RZ</a>
+            </h2>
+            <div class="font-xsmall">
+              Freehold &amp; Leasehold titles
+            </div>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">Flat 2, 6 Mandela Way, Southampton, SO15 5RZ</a>
+            </h2>
+            <div class="font-xsmall">
+              2 property titles at this address: Freehold &amp; Leasehold
+            </div>
+
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              <a href="#">7 Mandela Way, Southampton, SO15 5RZ</a>
+            </h2>
+            <div class="font-xsmall">
+              Freehold title, HP726948
+            </div>
+          </li>
+
+        </ol>
+
+
+    </div>
+
+    <div class="column-one-third">
+      <h2 class="heading-medium">notes</h2>
+      <ul class="list-bullet font-small">
+        <li>page per property address</li>
+        <li>if multi titles, new page when follow address link</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid-row spacing-top-double">
+    <div class="column-two-thirds">
+      <ul class="list-bullet">
+        <li><a href="{{path}}/search_results_examples_1">search results - title is hyperlink</a></li>
+        <li><a href="{{path}}/search_results_examples_3">search results - when we don't have a record</a></li>
+        <li><a href="{{path}}/address_base_search">search</a></li>
+        <li><a href="{{path}}/address_base_search_intro">addressbase search introduction</a></li>
+        <li><a href="/">prototype start page</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+
+</main>
+
+{% endblock %}
+
+
