@@ -2,8 +2,8 @@ name: search results - addresses not titles
 date: 2017-09-27
 
 stickers: 
-  status: plan to ship this
-  construction: almost complete
+  status: initial idea
+  construction: 
   tested: 
 
 
@@ -11,8 +11,18 @@ stickers:
 description: 
   - search results are are a list of addresses in that postcode
   - new 'page per property address'
+  - our best ever citizen search
 
 changelog:
+  - todo...
+  - see wall - postcode examples
+  - property address page - every time
+  - scenario postcodes - document and name
+  - route to different postcodes?  poss not - 
+  - land and properties - properties only - double check
+  - search button / input box length
+  - new url structure
+  -
   - done...
   - every address in a postcode
   - result per address

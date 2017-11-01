@@ -1,8 +1,8 @@
-name: search results - addresses not titles
+name: results are addresses + page per address
 date: 2017-10-31
 
 stickers: 
-  status: plan to ship this
+  status: we plan to ship this
   construction: almost complete
   tested: 
 
@@ -10,8 +10,9 @@ stickers:
 
 description: 
   - iteration of V25, now we've learnt more from real data / written code
+  - ambition = best ever search (we should define best)
   - search results are are a list of addresses in that postcode
-  - property address page for every address (address in the results that is a link)
+  - property address page for every address (each result that is a link)
 
 changelog:
   - done...
