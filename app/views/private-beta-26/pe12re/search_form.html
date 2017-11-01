@@ -16,11 +16,13 @@
       {% if h1 %}</h1>{% endif %}
 
       {%if autofocus %}
-        <input class="form-control" id="search_term2" name="search_term" type="text" value="{{value}}" autofocus="autofocus">
+        <input class="form-control form-control-1-2" id="search_term2" name="search_term" type="text" value="{{value}}" autofocus="autofocus">
       {% else %}
-        <input class="form-control" id="search_term2" name="search_term" type="text" value="{{value}}">
+        <input class="form-control form-control-1-2" id="search_term2" name="search_term" type="text" value="{{value}}">
       {% endif %}
 
+    </div>
+    <div class="form-group">
       <input class="button" type="submit" name="search-button" value="Search" id="search_button">
     </div>
   </form>
