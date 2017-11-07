@@ -16,13 +16,14 @@ description:
 
 changelog:
   - todo...
-  - Result limit message
-  - This address covers 27 other addresses in this postcode
-  - Some of the results still redirect you through to the about page, if there's only 1 title
+  - Result limit message (put example page in)
+  - This address covers 27 other addresses in this postcode (remove form existing examples)
+  - Some of the results still redirect you through to the about page, if there's only 1 title (fix existing examples)
   - Back link from about page should go to  the address page and should say "Back to information available to buy"
-  - No demo of company names on the address list
+  - No demo of company names on the address list (PL4 6JH)
   - No demo of missing titles on the address page
   -
+  - make an index / llc demo page?
   - see wall - postcode examples
   - property address page - every time
   - scenario postcodes - document and name
