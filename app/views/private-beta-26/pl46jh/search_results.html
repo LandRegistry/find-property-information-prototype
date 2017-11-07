@@ -93,10 +93,10 @@
 
   <div class="grid-row spacing-top-single">
     <div class="column-two-thirds tablet-column-two-thirds spacing-bottom-single">
-      {{ search_form(h1=true,autofocus=false,label='Search results for',value='PE1 2RE') }}
+      {{ search_form(h1=true,autofocus=false,label='Search results for',value='PL4 6JH') }}
 
       <!-- <h2 class="font-xsmall expand-bottom-half">{{ results['number_results'] }} result{% if results['number_results'] > 1 %}s{% endif %} found</h2> -->
-      <h2 class="font-small">27 addresses found</h2>
+      <h2 class="font-small">15 addresses found</h2>
       <!-- <h2>&nbsp;</h2> -->
       {{ results(page) }}
 
@@ -104,7 +104,7 @@
       {% if results['number_pages'] %}
         {{ pagination(page, results['number_pages'],search_term=data.search_term) }}
       {% endif %}
-      {{ pagination(page, 2, 'PE1 2RE') }}
+      {{ pagination(page, 1, 'PL4 6JH') }}
       <p class="spacing-top-double font-xsmall">Use of this address data is subject to <a href="os_terms">Ordnance Survey licence terms and conditions</a></p>
     </div>
 
