@@ -32,8 +32,9 @@ changelog:
   - search button / input box length
   - new url structure
   - make it usable/a usable thing for llc conference
+  - remove map form pa page
   -
-  - done...
+  - done - previously - needs uding some of these...
   - every address in a postcode
   - result per address
   - page per property if address has >1 title record
@@ -44,6 +45,11 @@ changelog:
   - content (remember error states)
   - if not postcode search - results per title?
   - page per title back link returns to page per property (if that was the route)
+  -
+  - done...
+  - PL4 6JH - results list
+  - remove map on property address page
+
 
 
 
