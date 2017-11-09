@@ -122,7 +122,7 @@ If you’re unhappy with the title summary information or any other aspect of th
 
 If you’re unhappy with the answer you receive, follow [HM Land Registry’s internal complaints procedure](https://www.gov.uk/government/organisations/land-registry/about/complaints-procedure).
 
-If you’re still unhappy with the answer or need any advice, contact the [Information Commissioner’s Office (ICO)](https://ico.org.uk/concerns/getting/). The ICO can investigate your complaint independently from HM Land Registry.
+If you’re still unhappy with the answer or need any advice, contact the [Independent Complaints Reviewer's Office (ICR)](http://www.icrev.org.uk/). The ICR can investigate your complaint independently from HM Land Registry.
 
 Important: HM Land Registry is not directly responsible for the security or privacy of information you provide when making a transaction through the service’s online payment provider. If you have an issue with this, you should:
 
