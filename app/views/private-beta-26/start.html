@@ -1,0 +1,153 @@
+{% extends "./layout/layout.html" %}
+
+{% block page_title %}
+  Better search
+{% endblock %}
+
+{% block head_additionals %}
+
+<style type="text/css">
+
+
+  .hyp-list >li {
+    margin-bottom:25px;
+  }
+
+/*  .hyp-list >ul >li {
+    margin-bottom:5px;
+  }*/
+
+  .back-to-top::before {
+    content: "\2191 ";
+    /*font-weight: 800;*/
+  }
+
+  .list-dashed li::before {
+    content: "\2014  ";
+  }
+
+  .note {
+    font-size: 16px;
+    color: grey;
+  }
+
+
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+  
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 id="top" class="heading-xlarge">Improved search</h1>
+
+      <p class="lede">Our most user centric search - 
+        <ul class="lede list-bullet">
+          <li>all the addresses in the postcode</li>
+          <li>page per address</li>
+          <li>links to each property record for that address*
+            <br><span class="note">* that we can ascertain, and have in available in the service</span></li>
+        </ul>
+      </p>
+      <p class="lede">best ever search, because: 
+        <ul class="lede list-bullet">
+          <li>user's mental model - not org mental model of places</li>
+          <li>all the addresses</li>
+          <li>page per address - to assist in picking the right record for a place</li>
+        </ul>
+      </p>
+
+      <h2>Contents</h2>
+      <ol class="list-dashed">
+        <li><a href="#rules">What it does, that's new</a></li>
+        <li><a href="#examples">Examples</a>
+          <ul style="margin-left:25px;" class="list-dashed">
+            <li><a href="{{path}}/pe12re/start">PE1 2RE - custom built flats</a></li>
+            <li><a href="{{path}}/pl46jh/start">PL4 6JH - 'High Street', miscellaneous businesses and flats</a></li>
+          </ul>
+        </li>
+        <li><a href="#more">More information about this version / search</a></li>
+      </ol>
+      
+
+      <h2 id="rules" class="heading-large">What is does, that's new</h2> 
+      <p>
+        <ul class="list-bullet">
+          <li>a result for every address in a postcode (whether we have something or not) (what the Royal Mail would show)</li>
+          <li>search result is the 'postal address' (addressbase delivery point address)</li>
+          <li>where we dont have anything available for a postal address - explain why/what to do</li>
+          <li>only postcode search</li>
+          <li>new - 'page per property address' - contains a link to each title at that address*
+            <br><span class="note" >* what we know we've got, and what is available in this service</span></li>
+          <li>100 results per search - increasing from the current 50. And it's 100 addresses, not just 50 titles</li>
+        </ul>
+      </p>
+      <div>
+        <p class="back-to-top"><a href="#top">contents</a></p>
+      </div>
+       
+      <h2 id="examples" class="heading-large">Example pages</h2>
+      <p>
+        <ul class="list list-bullet">         
+          <li><a href="{{path}}/pe12re/start">Search PE1 2RE - custom built flats</a>  
+            <p>PE1 2RE is an example of custom built set of flats (sheltered housing)
+              <br><span class="note">We've removed personal details, and shifted the property numbers, and tweaked to demonstrate variances in data</span></p>
+            <p>Postcode only search, all addresses (except 43 &amp; 44) share a Freehold.  Each has an individual Leashold</p>
+            <ul class="list list-bullet">
+              <li>multi title - 42 Lincoln Gate, PE1 2RE (all addresses work - but 42 works best)</li>
+              <li>single title - where postal address doesn't match A1 desc - 43 Lincoln Gate, PE1 2RE</li>
+              <li>single title - where postal address does match (leasehold) - 44 Lincoln Gate, PE1 2RE</li>
+              <li>no information available - 37 and 45 Lincoln Gate, PE1 2RE</li>
+              <li>multi title - duplicate postal address in the Royal Mail/address base data - Managers Office and Sheltered Housing, Managers Office (leasehold title will have a singluar A1, but 2 postal addresses)</li>
+              <li>multi title - caution against freehold.  41 Lincoln Gate, PE1 2RE</li>
+              <li>multi title (3 titles) - 40 Lincoln Gate, PE1 2RE</li>
+            </ul>
+          </li> 
+          <li><a href="{{path}}/pl46jh/start">Search PL4 6JH - 'High Street', miscellaneous businesses and flats</a>  
+            <p>PL4 6JH is an example of a 'High st' - mix of businesses and flats
+              <br><span class="note">We've removed personal details, and tweaked to demonstrate variances in data</span></p>
+<!--             <p>Postcode only search, all addresses (except 43 &amp; 44) share a Freehold.  Each has an individual Leashold</p> -->
+            <ul class="list list-bullet">
+              <li>multi title, freehold not available here. 61-63 Mutley Plain
+                <!-- http://localhost:3000/private-beta-26/pl46jh/pa_61-63?addr=Flat -->
+              </li>
+<!--               <li>multi title - 42 Lincoln Gate, PE1 2RE (all addresses work - but 42 works best)</li>
+              <li>single title - where postal address doesn't match A1 desc - 43 Lincoln Gate, PE1 2RE</li>
+              <li>single title - where postal address does match (leasehold) - 44 Lincoln Gate, PE1 2RE</li>
+              <li>no information available - 37 and 45 Lincoln Gate, PE1 2RE</li>
+              <li>multi title - duplicate postal address in the Royal Mail/address base data - Managers Office and Sheltered Housing, Managers Office (leasehold title will have a singluar A1, but 2 postal addresses)</li>
+              <li>multi title - caution against freehold.  41 Lincoln Gate, PE1 2RE</li>
+              <li>multi title (3 titles) - 40 Lincoln Gate, PE1 2RE</li> -->
+            </ul>
+          </li>          
+        </ul>
+      </p>
+      <div>
+        <p class="back-to-top"><a href="#top">contents</a></p>
+      </div>
+
+      <h2 id="more" class="heading-large">More information about this version / Search</h2>
+      <p>What problems does this search try to solve, and how will we measure if it is successful?  What assumptions have we made and what haven't we done yet?</p>
+      <p>More of our <a href="{{path}}/about-this-version">thinking about search and this version of search</a> we're shipping</p>
+
+      <div>
+        <p class="back-to-top"><a href="#top">contents</a></p>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+</main>
+
+{% endblock %}
+
+

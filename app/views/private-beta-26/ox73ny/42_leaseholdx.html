@@ -1,0 +1,140 @@
+{% extends "../layout/layout.html" %}
+
+
+{% block page_title %}
+  About this property title
+{% endblock %}
+
+{% block head_additionals %}
+
+{% endblock %}
+
+{% block body %}
+<h1 class="heading-large spacing-top-single">About this property title</h1>
+
+  <!-- <p>You'll get a summary of the information HM Land Registry holds for this property title.</p> -->
+  <div class="grid-row column-flip spacing-top-single">
+
+    <div class="column-one-third tablet-column-one-third spacing-bottom-single">
+
+        <div class="map polygon" id="map">
+          <p>The map relies on JavaScript being enabled in your browser.</p>
+        </div>
+        <p class="font-xsmall">This map shows the rough location and extent of the title, <strong class="bold">not the legal boundary.</strong></p>
+
+    </div>
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <dl class="definition-tabular definition-tabular-sectioned">
+
+          <dt>Property description</dt>
+          <dd class="bold-medium">
+            <div class="address">
+              <span>42 Lincoln Gate</span> 
+              <span>Lincoln Road</span>
+              <span>Peterborough</span>
+              <span>PE1 2RE</span>
+            </div>
+          </dd>
+
+<!--         <dt>Title number</dt>
+        <dd class="bold-small">{{ title['data']['title_number'] }}</dd> -->
+
+        <dt class="spacing-top-single">Tenure type</dt>
+        <dd class="spacing-top-single">
+          <strong class="bold">Leasehold</strong>
+          <a class="split-detail-trigger font-xsmall" href="#what-is-tenure">What does this mean?</a>
+
+          <div class="split-detail-contents" id="what-is-tenure">
+            <div class="panel panel-border-narrow font-xsmall">
+
+                <p>You own a freehold building and land outright. It is yours until you sell it or give it away.</p>
+                <p>Most houses are freehold. Most flats are leasehold. That means someone else owns the freehold for the building the flat is in.</p>
+                <p><b class="bold">If you want to know who owns a particular flat, you probably need the leasehold instead.</b></p>
+                <p>Houses can also be leasehold and usually are if they’re bought through a shared ownership scheme.</p>
+
+            </div>
+          </div>
+
+          <p class="font-xsmall">A property can have both freehold and leasehold titles. To get a different tenure for this address, <a href="42_list" data-back-link>go back</a> and select the one you need.</p>
+        </dd>
+
+      </dl>
+
+    </div>
+  </div>
+
+
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <div class="text">
+        <h2 class="heading-medium spacing-top-flush">Pay £3 to find out:</h2>
+
+        <ul class="list list-bullet">
+          <li>who owns this leashold property (name and address)</li>
+          <li>how much they paid</li>
+          <li>if there is a mortgage - the name and address of the lender</li>
+          <li>title number (the unique reference number)</li>
+        </ul>
+      </div>
+
+      <h2 class="heading-medium">How to buy this information</h2>
+
+      <ol class="list example-icon-list">
+
+        <li><span class="circle circle-step-large spacing-right-half">1</span><strong class="bold">create an account</strong></li>
+
+        <li><span class="circle circle-step-large spacing-right-half">2</span><strong class="bold">pay online</strong> by debit or credit card</li>
+
+      </ol>
+
+      <p>This information will be displayed on-screen and a copy available to be downloaded (PDF).</p>
+
+<!--       <div class="panel panel-border-narrow">
+        If you've already used this service and created an account, sign in with the email address you used before.
+      </div> -->
+
+      <div class="spacing-top-double"> <!-- sign-in / creat account -->
+        <p>
+          <a class="button" href="create_account?title_number={{title['data']['title_number']}}" role="button">Create a new account</a>
+        </p>
+
+        <p class="spacing-top-half spacing-bottom-half"><strong class="bold">or</strong></p>
+
+        <p>
+          <a class="button" href="sign_in?title_number={{title['data']['title_number']}}" role="button">Sign in with an existing account</a>
+        </p>
+      </div>
+
+      <p class="spacing-top-double">
+      <!-- <a href="42_list">&lt; Back to address page</a> -->
+        <a class="back-link" href="{{path}}/ox73ny/search_results">
+          <span class="back-link-destination">Back to address page</span>
+        </a>
+      </p>
+
+
+    </div>
+  </div>
+
+    <!-- leasehold - 3 The Ribbon Factory -->
+<!--     <script>
+      var indexData = {"crs": {"properties": {"name": "urn:ogc:def:crs:EPSG::27700"}, "type": "name"}, "geometry": {"coordinates": [[[433512.12, 279144.92], [433512.932, 279144.708], [433514.903, 279144.193], [433515.075, 279144.147], [433521.36, 279142.51], [433521.85, 279144.35], [433522.16, 279145.51], [433522.47, 279146.66], [433522.78, 279147.82], [433522.816, 279147.955], [433523.937, 279152.164], [433524.17, 279153.04], [433525.588, 279154.0], [433526.0, 279154.28], [433523.32, 279158.26], [433521.84, 279159.56], [433520.092, 279160.82], [433515.13, 279164.4], [433500.0, 279154.58], [433486.04, 279145.13], [433491.374, 279137.157], [433491.6, 279136.82], [433500.0, 279142.43], [433501.58, 279143.49], [433504.24, 279139.5], [433504.779, 279139.871], [433512.12, 279144.92]]], "type": "Polygon"}, "properties": {"colour": 1, "feature_id": 4019, "graphic_type": "Bordered Polygon", "render_attributes": {"border_colour": 1, "border_width": 0, "exterior_edge_colour": 1, "exterior_edge_thickness": 2.0, "fill_colour": 25, "fill_style": 9, "render_level": "0"}, "width": 0}, "type": "Feature"};
+    </script>    -->
+
+    <script>
+      var indexData = {"crs": {"properties": {"name": "urn:ogc:def:crs:EPSG::27700"}, "type": "name"}, "geometry": {"coordinates": [[[519072, 299525.05], [519072.8, 299518.15], [519078.5, 299519], [519077.5, 299526], [519072, 299525.05]]], "type": "Polygon"}, "properties": {"colour": 1, "feature_id": 4019, "graphic_type": "Bordered Polygon", "render_attributes": {"border_colour": 1, "border_width": 0, "exterior_edge_colour": 1, "exterior_edge_thickness": 2.0, "fill_colour": 25, "fill_style": 9, "render_level": "0"}, "width": 0}, "type": "Feature"};
+    </script>
+
+    <script defer src="/public/app/javascripts/map.js"></script>
+
+
+{% endblock %}
+  
+
+
+

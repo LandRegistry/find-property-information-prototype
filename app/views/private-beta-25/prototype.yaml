@@ -2,8 +2,8 @@ name: search results - addresses not titles
 date: 2017-09-27
 
 stickers: 
-  status: plan to ship this
-  construction: almost complete
+  status: initial idea
+  construction: 
   tested: 
 
 
@@ -11,6 +11,7 @@ stickers:
 description: 
   - search results are are a list of addresses in that postcode
   - new 'page per property address'
+  - our best ever citizen search
 
 changelog:
   - done...

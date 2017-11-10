@@ -1,0 +1,50 @@
+name: results are addresses + page per address
+date: 2017-11-07
+
+stickers: 
+  status: we plan to ship this
+  construction: almost complete
+  tested: 
+
+
+
+description: 
+  - iteration of V25, now we've learnt more from real data / written code
+  - ambition = best ever search (we should define best)
+  - search results are are a list of addresses in that postcode
+  - property address page for every address (each result that is a link)
+
+changelog:
+  - todo...
+  - Result limit message (put example page in)
+  - This address covers 27 other addresses in this postcode (remove form existing examples)
+  - Some of the results still redirect you through to the about page, if there's only 1 title (fix existing examples)
+  - Back link from about page should go to  the address page and should say "Back to information available to buy"
+  - No demo of company names on the address list (PL4 6JH)
+  - No demo of missing titles on the address page
+  -
+  - make an index / llc demo page?
+  - see wall - postcode examples
+  - property address page - every time
+  - scenario postcodes - document and name
+  - route to different postcodes?  poss not - 
+  - land and properties - properties only - double check
+  - search button / input box length
+  - new url structure
+  - make it usable/a usable thing for llc conference
+  - PL4 6JH maps
+  - ordering examples
+  -
+  - done - previously - needs uding some of these...
+  - every address in a postcode
+  - result per address
+  - page per property - link to each about this title page  -
+  - PL4 6JH - results list
+  - remove map on property address page
+  - terms of use - ICR
+
+
+
+
+
+

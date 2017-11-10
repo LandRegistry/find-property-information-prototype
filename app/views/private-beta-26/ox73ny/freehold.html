@@ -1,0 +1,153 @@
+{% extends "../layout/layout.html" %}
+
+
+{% block page_title %}
+  About this property title
+{% endblock %}
+
+{% block head_additionals %}
+
+{% endblock %}
+
+{% block header_primary %}
+<!--       <p>
+        <a class="back-link" href="{{path}}/ox73ny/42_list">
+          <span class="back-link-destination">Back to address page</span>
+        </a>
+      </p> -->
+{% endblock %}
+
+{% block body %}
+
+<script>
+  let params = (new URL(document.location)).searchParams;
+  let addr = params.get("addr");
+</script>
+
+<h1 class="heading-large spacing-top-single">About this property title</h1>
+
+  <!-- <p>You'll get a summary of the information HM Land Registry holds for this property title.</p> -->
+  <div class="grid-row column-flip spacing-top-single">
+
+    <div class="column-one-third tablet-column-one-third spacing-bottom-single">
+
+        <div class="map polygon" id="map">
+          <p>The map relies on JavaScript being enabled in your browser.</p>
+        </div>
+        <p class="font-xsmall">This map shows the rough location and extent of the title, <strong class="bold">not the legal boundary.</strong></p>
+
+    </div>
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <dl class="definition-tabular definition-tabular-sectioned">
+
+          <dt>Property description</dt>
+          <dd class="bold-medium">
+            <div class="address">
+              <script>document.write(addr);</script></span>
+                <span>Mill End</span>
+                <span>Chadlington</span>
+                <span>Chipping Norton</span>
+                <span>OX7 3NY</span>
+            </div>
+          </dd>
+
+<!--         <dt>Title number</dt>
+        <dd class="bold-small">{{ title['data']['title_number'] }}</dd> -->
+
+        <dt class="spacing-top-single">Tenure type</dt>
+        <dd class="spacing-top-single">
+          <strong class="bold">Freehold</strong>
+          <a class="split-detail-trigger font-xsmall" href="#what-is-tenure">What does this mean?</a>
+
+          <div class="split-detail-contents" id="what-is-tenure">
+            <div class="panel panel-border-narrow font-xsmall">
+
+                <p>You own a freehold building and land outright. It is yours until you sell it or give it away.</p>
+                <p>Most houses are freehold. Most flats are leasehold. That means someone else owns the freehold for the building the flat is in.</p>
+                <p><b class="bold">If you want to know who owns a particular flat, you probably need the leasehold instead.</b></p>
+                <p>Houses can also be leasehold and usually are if they’re bought through a shared ownership scheme.</p>
+
+            </div>
+          </div>
+
+          <p class="font-xsmall">A property can have both freehold and leasehold titles. To get a different tenure for this address, <a href="generic_ppp" data-back-link>go back</a> and select the one you need.</p>
+        </dd>
+
+      </dl>
+
+    </div>
+  </div>
+
+
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <div class="text">
+        <h2 class="heading-medium spacing-top-flush">Pay £3 to find out:</h2>
+
+        <ul class="list list-bullet">
+          <li>who owns this property (name and address)</li>
+          <!-- <li>how much they paid (if available)</li> -->
+          <li>if there is a mortgage - the name and address of the lender</li>
+          <li>title number (the unique reference number)</li>
+        </ul>
+      </div>
+
+      <h2 class="heading-medium">How to buy this information</h2>
+
+      <ol class="list example-icon-list">
+
+        <li><span class="circle circle-step-large spacing-right-half">1</span><strong class="bold">create an account</strong></li>
+
+        <li><span class="circle circle-step-large spacing-right-half">2</span><strong class="bold">pay online</strong> by debit or credit card</li>
+
+      </ol>
+
+      <p>This information will be displayed on-screen and a copy available to be downloaded (PDF).</p>
+
+<!--       <div class="panel panel-border-narrow">
+        If you've already used this service and created an account, sign in with the email address you used before.
+      </div> -->
+
+      <div class="spacing-top-double"> <!-- sign-in / creat account -->
+        <p>
+          <a class="button" href="create_account_f?title_number={{title['data']['title_number']}}" role="button">Create a new account</a>
+        </p>
+
+        <p class="spacing-top-half spacing-bottom-half"><strong class="bold">or</strong></p>
+
+        <p>
+          <a class="button" href="sign_in_f?title_number={{title['data']['title_number']}}" role="button">Sign in with an existing account</a>
+        </p>
+      </div>
+
+      <p class="spacing-top-double">
+      <!-- <a href="42_list">&lt; Back to address page</a> -->
+        <a class="back-link" href="{{path}}/ox73ny/generic_ppp">
+          <span class="back-link-destination">Back to address page</span>
+        </a>
+      </p>
+
+    </div>
+  </div>
+
+    <!-- freehold - covers every address in this postcode -->
+    <script>
+
+      var indexData = {"crs": {"properties": {"name": "urn:ogc:def:crs:EPSG::27700"}, "type": "name"}, "geometry": {"coordinates": [[[432451.004, 222513.426], [432451.684, 222510.506], [432452.654, 222510.736], [432454.639, 222500.989], [432456.119, 222501.199], [432457.079, 222497.893], [432459.761, 222499.008], [432460.053, 222498.859], [432461.037, 222498.389], [432462.47, 222493.34], [432463.286, 222490.458], [432463.916, 222490.798], [432467.693, 222493.01], [432468.709, 222493.556], [432469.299, 222493.909], [432470.222, 222494.439], [432466.828, 222501.107], [432466.547, 222501.759], [432460.763, 222499.354], [432460.58, 222500.0], [432460.28, 222501.04], [432459.73, 222502.99], [432459.68, 222503.18], [432457.31, 222512.89], [432456.848, 222514.807], [432451.004, 222513.426]]], "type": "Polygon"}, "properties": {"colour": 0, "feature_id": 4019, "graphic_type": "Bordered Polygon", "render_attributes": {"border_colour": 0, "border_width": 0, "exterior_edge_colour": 1, "exterior_edge_thickness": 2.0, "fill_colour": 25, "fill_style": 9, "render_level": "0"}, "width": 0}, "type": "Feature"};
+    
+    </script>
+    <script defer src="/public/app/javascripts/map.js"></script>
+    <script src="/public/javascripts/leaflet.js"></script>
+
+
+
+{% endblock %}
+  
+
+
+

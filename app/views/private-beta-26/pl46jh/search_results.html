@@ -1,0 +1,167 @@
+{% extends "../layout/layout.html" %}
+{% from "./search_form.html" import search_form %}
+{% from "../includes/register_teaser.html" import register_teaser %}
+{% from "../includes/pagination.html" import pagination %}
+{% from "./results.html" import results %}
+
+{% block title %}Search results{% endblock %}
+
+{% block head_additionals %}
+
+
+<style type="text/css">
+
+  .address-delivery-points-list li {
+    margin-top:1.25em;
+  }
+
+</style>
+
+<style type="text/css">
+
+/*  .example1 ol li div {
+    margin-left: 15px;
+  }*/
+
+  .example1 h2 {
+    margin-top: 30px;
+    font-weight: normal;
+  }
+
+</style>
+
+<style type="text/css">
+
+  .example1 .children--address-list {
+    border-left: 1px solid #bfc1c3;
+  }
+
+  .example1 .children--address-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 5px;
+  }
+
+
+  .example1 .children--address-list li:before {
+    content: '';
+    left: 0;
+    top: 50%;
+    position: absolute;
+    border-top: 1px solid #bfc1c3;
+    width: 15px;
+  }
+
+  .example1 .children--address-list li:last-child:after {
+    content: '';
+    left: -1px;
+    top: 50%;
+    bottom: 0;
+    position: absolute;
+    border-left: 1px solid #fff;
+  }
+
+/*  ol li div {
+    margin-left: 15px;
+  }*/
+
+  .children--address-list li div {
+    margin-left: 0px;
+  }
+
+  .children--address-list {
+    margin-left: 5px;
+  }
+
+  .example1 .children--address-list h2 {
+    margin-top: 15px;
+    padding-top: 5px;
+  }
+
+
+</style>
+
+{% endblock %}
+
+{% block body %}
+
+  {% if data.page %}
+    {% set page = data.page %}
+  {% else %}
+    {% set page = 1 %}
+  {% endif %}
+
+  <div class="grid-row spacing-top-single">
+    <div class="column-two-thirds tablet-column-two-thirds spacing-bottom-single">
+      {{ search_form(h1=true,autofocus=false,label='Search results for',value='PL4 6JH') }}
+
+      <!-- <h2 class="font-xsmall expand-bottom-half">{{ results['number_results'] }} result{% if results['number_results'] > 1 %}s{% endif %} found</h2> -->
+      <h2 class="font-small">15 addresses found</h2>
+      <!-- <h2>&nbsp;</h2> -->
+      {{ results(page) }}
+
+      
+      {% if results['number_pages'] %}
+        {{ pagination(page, results['number_pages'],search_term=data.search_term) }}
+      {% endif %}
+      {{ pagination(page, 1, 'PL4 6JH') }}
+      <p class="spacing-top-double font-xsmall">Use of this address data is subject to <a href="https://www.ordnancesurvey.co.uk/about/governance/policies/hm-land-registry-find-property-information-service.html">Ordnance Survey licence terms and conditions</a></p>
+    </div>
+
+    <div class="column-one-third tablet-column-one-third">
+      <aside class="supplementary-panel">
+        <h2 class="heading-medium">Need help with this service?</h2>
+        <p>If the property you want isn't listed, use the <a rel="external" href="https://eservices.landregistry.gov.uk/wps/portal/Property_Search">Find a Property service</a> instead to search by street address, title number or by using a map.</p>
+        
+      </aside>
+    </div>
+  </div>
+{% endblock %}
+
+{% block js_bottom %}
+  <script>
+window.validate.validators.find_property_information_postcode_search_form = function(value, options, key, attributes) {
+
+
+  var parts = {
+    '{fst}': 'ABCDEFGHIJKLMNOPRSTUWYZ',
+    '{sec}': 'ABCDEFGHKLMNOPQRSTUVWXY',
+    '{thd}': 'ABCDEFGHJKMNPRSTUVWXY',
+    '{fth}': 'ABEHMNPRVWXY',
+    '{inward}': 'ABDEFGHJLNPQRSTUWXYZ'
+  }
+
+  var rules = [
+    '^[{fst}][1-9]\\d[{inward}][{inward}]$',
+    '^[{fst}][1-9]\\d\\d[{inward}][{inward}]$',
+    '^[{fst}][{sec}]\\d\\d[{inward}][{inward}]$',
+    '^[{fst}][{sec}][1-9]\\d\\d[{inward}][{inward}]$',
+    '^[{fst}][1-9][{thd}]\\d[{inward}][{inward}]$',
+    '^[{fst}][{sec}][1-9][{fth}]\\d[{inward}][{inward}]$'
+  ];
+
+  var postcode_regexp = rules.join('|');
+
+  for(var i in parts) {
+    if(parts.hasOwnProperty(i)) {
+      postcode_regexp = postcode_regexp.replace(new RegExp(i, 'g'), parts[i])
+    }
+  }
+
+  postcode_regexp = new RegExp(postcode_regexp);
+
+  if(!value) {
+    return 'Enter a valid postcode';
+  }
+
+  // send people between postcode and non-postcode versions of search
+  // if(!postcode_regexp.test(value.toUpperCase().replace(/\s/, ''))) {
+  //   document.getElementById('search-form').action = "../search_results";
+  // }
+  // else {
+  //   document.getElementById('search-form').action = "../pe12re/search_results";
+  // }
+
+};
+  </script>
+{% endblock %}

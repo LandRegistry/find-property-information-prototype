@@ -1,0 +1,173 @@
+{% extends "../layout/layout.html" %}
+
+
+{% block page_title %}
+  Search results examples
+{% endblock %}
+
+{% block head_additionals %}
+
+<style type="text/css">
+
+  .tenure-panel {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-top:1em;
+    margin-bottom: 1em;
+    background-color: #F0F0F0;
+    border-style: none;
+  }
+
+  .property-list li {
+    font-size: 24px;
+    margin-left: 5px;
+    padding-left: 15px;
+  }
+
+  .property-list li p {
+    font-size: 18px;
+  }
+
+</style>
+
+{% endblock %}
+
+{% block body %}
+<h1 class="heading-large spacing-top-single visually-hidden">About this property</h1>
+
+  <!-- <p>You'll get a summary of the information HM Land Registry holds for this property title.</p> -->
+  <div class="grid-row column-flip spacing-top-single">
+
+    <div class="column-one-third tablet-column-one-third spacing-bottom-single">
+
+        <div class="map polygonx" id="map">
+          <p>The map relies on JavaScript being enabled in your browser.</p>
+        </div>
+
+    </div>
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <h2 class="visuallyhidden">Postal address</h2>
+      <div class="address heading-large spacing-top-flush">
+        <span class="heading-xlarge spacing-top-flush spacing-bottom-third">Apartment 3</span>
+        <span>Ribbon Factory</span>
+        <span>New Buildings</span> 
+        <span>Coventry</span> 
+        <span>CV1 1FE</span>
+      </div> 
+
+    </div>
+
+  </div> <!-- end row -->
+
+
+  <div class="grid-row spacing-top-flush">
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <h2 class="heading-large">3 property titles at this address</h2>
+
+      <a class="split-detail-trigger" href="#what-is-a-title">What is a property title?</a>
+      <div class="split-detail-contents" id="what-is-a-title">
+        <div class="panel panel-border-narrow font-xsmall">
+            <ul class="list-bullet spacing-bottom-single">
+              <li>Property records are called titles</li>
+              <li>freeholds and leaseholds are the most common types of title</li>
+            </ul>
+            <p>You own a freehold building and land outright. It is yours until you sell it or give it away.</p>
+            <p>Most houses are freehold. Most flats are leasehold. That means someone else owns the freehold for the building the flat is in.</p>
+            <p>Houses can also be leasehold and usually are if they’re bought through a shared ownership scheme.</p>
+        </div>
+      </div>
+
+
+    </div>
+  </div> <!-- end row -->
+
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <ol class="property-list list-number">
+        <li>
+          <h3 class="heading-medium">Freehold <span class="lede">title, described as:</span></h3>
+            <dd class="bold-medium spacing-bottom-single">
+              <a href="apartment3-freehold">
+                <div class="address">           
+                  <span>1 to 6 The Ribbon Factory</span>             
+                  <span>New Buildings</span>
+                  <span>Coventry</span>
+                </div>
+              </a>
+            </dd>
+            <p>This freehold title covers multiple addresses</p>
+        </li>
+        <li>
+          <h3 class="heading-medium">Leasehold <span class="lede">title, described as:</span></h3>
+            <dd class="bold-medium spacing-bottom-single">
+              <a href="apartment3-sharedlease">
+                <div class="address">
+                  <span>Residential Units at the Ribbon Factory and garages</span> 
+                  <span>CV1 1FE</span>
+                </div>
+              </a>
+            </dd>
+            <p>This leasehold title covers multiple addresses</p>
+        </li>
+        <li>
+          <h3 class="heading-medium">Leasehold <span class="lede">title, described as:</span></h3>
+            <dd class="bold-medium spacing-bottom-single">
+              <a href="apartment3-leasehold">
+                <div class="address">
+                  <span>3 The Ribbon Factory</span>
+                  <span>New Buildings</span> 
+                  <span>Coventry</span> 
+                  <span>CV1 1FE</span>
+                </div>
+              </a>
+            </dd>
+            <p>This leasehold title only applies to this address</p>
+        </li>
+      </ol>
+
+    </div>
+
+  </div> <!-- end row -->
+
+
+
+
+  <div class="row">
+  <p class="spacing-top-single spacing-bottom-double">
+
+      <a class="back-link" href="{{path}}/address_base_results">
+    
+      <span class="back-link-destination">Search results</span>
+      </a>
+    </p>
+  </div>
+
+    <!-- freehold - 1 to 6 -->
+    <script>
+      var indexData = {"crs": {"properties": {"name": "urn:ogc:def:crs:EPSG::27700"}, "type": "name"}, "geometry": {"coordinates": [[[433512.12, 279144.92], [433512.932, 279144.708], [433514.903, 279144.193], [433515.075, 279144.147], [433521.36, 279142.51], [433521.85, 279144.35], [433522.16, 279145.51], [433522.47, 279146.66], [433522.78, 279147.82], [433522.816, 279147.955], [433523.937, 279152.164], [433524.17, 279153.04], [433525.588, 279154.0], [433526.0, 279154.28], [433523.32, 279158.26], [433521.84, 279159.56], [433520.092, 279160.82], [433515.13, 279164.4], [433500.0, 279154.58], [433486.04, 279145.13], [433491.374, 279137.157], [433491.6, 279136.82], [433500.0, 279142.43], [433501.58, 279143.49], [433504.24, 279139.5], [433504.779, 279139.871], [433512.12, 279144.92]]], "type": "Polygon"}, "properties": {"colour": 1, "feature_id": 4019, "graphic_type": "Bordered Polygon", "render_attributes": {"border_colour": 1, "border_width": 0, "exterior_edge_colour": 1, "exterior_edge_thickness": 2.0, "fill_colour": 25, "fill_style": 9, "render_level": "0"}, "width": 0}, "type": "Feature"};
+    </script>
+
+    <!-- leasehold - Residential Units -->
+<!--     <script>
+      var indexData = {"crs": {"properties": {"name": "urn:ogc:def:crs:EPSG::27700"}, "type": "name"}, "geometry": {"coordinates": [[[433512.12, 279144.92], [433512.932, 279144.708], [433514.903, 279144.193], [433515.075, 279144.147], [433521.36, 279142.51], [433521.85, 279144.35], [433522.16, 279145.51], [433522.47, 279146.66], [433522.78, 279147.82], [433522.816, 279147.955], [433523.937, 279152.164], [433524.17, 279153.04], [433525.588, 279154.0], [433526.0, 279154.28], [433523.32, 279158.26], [433521.84, 279159.56], [433520.092, 279160.82], [433515.13, 279164.4], [433500.0, 279154.58], [433486.04, 279145.13], [433491.374, 279137.157], [433491.6, 279136.82], [433500.0, 279142.43], [433501.58, 279143.49], [433504.24, 279139.5], [433504.779, 279139.871], [433512.12, 279144.92]]], "type": "Polygon"}, "properties": {"colour": 1, "feature_id": 4019, "graphic_type": "Bordered Polygon", "render_attributes": {"border_colour": 1, "border_width": 0, "exterior_edge_colour": 1, "exterior_edge_thickness": 2.0, "fill_colour": 25, "fill_style": 9, "render_level": "0"}, "width": 0}, "type": "Feature"};
+    </script> -->
+
+    <!-- leasehold - 3 The Ribbon Factory -->
+<!--     <script>
+      var indexData = {"crs": {"properties": {"name": "urn:ogc:def:crs:EPSG::27700"}, "type": "name"}, "geometry": {"coordinates": [[[433512.12, 279144.92], [433512.932, 279144.708], [433514.903, 279144.193], [433515.075, 279144.147], [433521.36, 279142.51], [433521.85, 279144.35], [433522.16, 279145.51], [433522.47, 279146.66], [433522.78, 279147.82], [433522.816, 279147.955], [433523.937, 279152.164], [433524.17, 279153.04], [433525.588, 279154.0], [433526.0, 279154.28], [433523.32, 279158.26], [433521.84, 279159.56], [433520.092, 279160.82], [433515.13, 279164.4], [433500.0, 279154.58], [433486.04, 279145.13], [433491.374, 279137.157], [433491.6, 279136.82], [433500.0, 279142.43], [433501.58, 279143.49], [433504.24, 279139.5], [433504.779, 279139.871], [433512.12, 279144.92]]], "type": "Polygon"}, "properties": {"colour": 1, "feature_id": 4019, "graphic_type": "Bordered Polygon", "render_attributes": {"border_colour": 1, "border_width": 0, "exterior_edge_colour": 1, "exterior_edge_thickness": 2.0, "fill_colour": 25, "fill_style": 9, "render_level": "0"}, "width": 0}, "type": "Feature"};
+    </script>    -->
+
+    <script defer src="/public/app/javascripts/map.js"></script>
+
+  </div>
+{% endblock %}
+  
+
+
+

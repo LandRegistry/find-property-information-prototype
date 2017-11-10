@@ -1,0 +1,806 @@
+{% extends "./layout/layout.html" %}
+
+{% block page_title %}
+  Search results examples
+{% endblock %}
+
+{% block head_additionals %}
+
+<style type="text/css">
+
+  .example1 .children--address-list {
+    border-left: 1px solid #bfc1c3;
+  }
+
+  .example1 .children--address-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 5px;
+  }
+
+
+  .example1 .children--address-list li:before {
+    content: '';
+    left: 0;
+    top: 50%;
+    position: absolute;
+    border-top: 1px solid #bfc1c3;
+    width: 15px;
+  }
+
+  .example1 .children--address-list li:last-child:after {
+    content: '';
+    left: -1px;
+    top: 50%;
+    bottom: 0;
+    position: absolute;
+    border-left: 1px solid #fff;
+  }
+
+  ol li div {
+    margin-left: 15px;
+  }
+
+  .children--address-list li div {
+    margin-left: 0px;
+  }
+
+  .children--address-list {
+    margin-left: 15px;
+  }
+
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+<main id="content" role="main" tabindex="-1">
+  
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-large">examples where the tenure is the link to the property record</h2>
+      <p>Showing some options, but also asking a lot of questions (user, how we have stuff stored, technology).  Need to add more real world examples of how buildings/sub buildings are organised and how we have stored the titles, and ho wthey can/cannot be linked</p>
+      <p>Also see <a href="search_results_examples_2">search results - address is hyperlink</a></p>
+
+    </div>
+  </div>
+
+  <h2 class="heading-large">titles with Royal Mail address</h2>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-medium">2 flats in a building - example 1</h2>
+      <div class="example1">
+
+        <ol>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              5 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP724501</a>
+            </div>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              6 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP704400</a>
+            </div>
+
+            <ol class="children--address-list">
+              <li>
+                <h2 class="heading-small collapse-bottom">
+                  Flat 1, 6 Mandela Way, Southampton, SO15 5RZ
+                </h2>
+                <div class="font-xsmall">
+                  <a href="#">Leasehold title, HP725748</a>
+                </div>
+              </li>
+              <li>
+                <h2 class="heading-small collapse-bottom">
+                  Flat 2, 6 Mandela Way, Southampton, SO15 5RZ
+                </h2>
+                <div class="font-xsmall">
+                  <a href="#">Leasehold title, HP725749</a>
+                </div>
+              </li>
+            </ol>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              7 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP726948</a>
+            </div>
+          </li>
+
+        </ol>
+
+
+      </div>
+    </div>
+
+    <div class="column-one-third">
+      <h2 class="heading-medium">2 flats in a building</h2>
+      <ul class="list-bullet font-small">
+        <li>often title for no 6 would be removed</li>
+        <li>page per title record link (not page per property/address)</li>
+        <li>result organised by address - numeric, (containing building first), then sub building</li>
+      </ul>
+
+    </div>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-medium">2 flats in a building - example 2</h2>
+      <div class="example1">
+
+        <ol>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              5 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP724501</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              Flat 1, 6 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP704400</a>
+            </div>
+            <div class="font-xsmall">
+              <a href="#">Leasehold title, HP725748</a>
+            </div>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              Flat 2, 6 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP704400</a>
+            </div>
+            <div class="font-xsmall">
+              <a href="#">Leasehold title, HP725749</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              7 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP726948</a>
+            </div>
+          </li>
+
+        </ol>
+
+
+      </div>
+    </div>
+
+    <div class="column-one-third">
+      <h2 class="heading-medium">2 flats in a building</h2>
+      <ul class="list-bullet font-small">
+        <li>when title for no 6 has been removed</li>
+        <li>page per title record link (not page per property/address)</li>
+        <li>result organised by address - numeric, (containing building first), then sub building</li>
+      </ul>
+
+    </div>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-medium">whole building freehold and leasehold</h2>
+
+        <ol>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              5 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP724501</a>
+            </div>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              6 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP704400</a>
+            </div>
+            <div class="font-xsmall">
+              <a href="#">Leasehold title, HP725749</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              7 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP726948</a>
+            </div>
+          </li>
+
+        </ol>
+
+
+    </div>
+
+    <div class="column-one-third">
+      <h2 class="heading-medium">notes</h2>
+      <ul class="list-bullet font-small">
+        <li>page per title record link (not page per property/address)</li>
+        <li>every leashold is associated with a freehold</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-medium">whole building freehold and leasehold 2</h2>
+      <div class="example1">
+        <ol>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              5 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP724501</a>
+            </div>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              6 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <ol class="children--address-list">
+              <li>
+                <div class="font-xsmall">
+                  <a href="#">Freehold title, HP704400</a>
+                </div>
+              </li>
+              <li>
+                <div class="font-xsmall">
+                  <a href="#">Leasehold title, HP725749</a>
+                </div>
+              </li>
+            </ol>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              7 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP746909</a>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+
+    </div>
+
+    <div class="column-one-third">
+      <h2 class="heading-medium">notes</h2>
+      <ul class="list-bullet font-small">
+        <li>page per title record link (not page per property/address)</li>
+        <li>every leasehold is associated with a freehold</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-medium">whole building freehold and multiple leaseholds</h2>
+      <div class="example1">
+        <ol>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              5 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP724501</a>
+            </div>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              6 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <ol class="children--address-list">
+              <li>
+                <div class="font-xsmall">
+                  <a href="#">Freehold title, HP704400</a>
+                </div>
+              </li>
+              <li>
+                <div class="font-xsmall">
+                  <a href="#">Leasehold title, HP725749</a>
+                </div>
+              </li>
+              <li>
+                <div class="font-xsmall">
+                  <a href="#">Leasehold title, HP725750</a>
+                </div>
+              </li>
+              <li>
+                <div class="font-xsmall">
+                  <a href="#">Leasehold title, HP725751</a>
+                </div>
+              </li>
+            </ol>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              7 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP726948</a>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+
+
+    </div>
+
+    <div class="column-one-third">
+      <h2 class="heading-medium">notes</h2>
+      <ul class="list-bullet font-small">
+        <li>page per title record link (not page per property/address)</li>
+        <li>every leasehold is associated with a freehold</li>
+        <li>multiple leases - e.g. head and sub leases?</li>
+        <li>multiple leases - e.g. management company and individual leasholder?</li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  <h2 class="heading-large">non numeric / ordering / titles with no Royal Mail address</h2>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-medium">example 1</h2>
+      <div class="example1">
+        <ol>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              5 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP724501</a>
+            </div>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              6 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <ol class="children--address-list">
+              <li>
+                <div class="font-xsmall">
+                  <a href="#">Freehold title, HP704400</a>
+                </div>
+              </li>
+              <li>
+                <div class="font-xsmall">
+                  <a href="#">Leasehold title, HP725749</a>
+                </div>
+              </li>
+            </ol>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              7 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP726948</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              "Church house", Mandela Way, Southampton, (SO15 5RZ)
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP726348</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              blair court, Mandela Way, Southampton, (SO15 5RZ)
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP7264014</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              the former sites of 24-44 Mandela Way, Southampton, (SO15 5RZ)
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP726555</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              the site of a wall at the back of 65 and 67 Mandela Way, Southampton, (SO15 5RZ)
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP726777</a>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+
+    </div>
+
+    <div class="column-one-third">
+      <h2 class="heading-medium">notes</h2>
+      <ul class="list-bullet font-small">
+        <li>page per title record link (not page per property/address)</li>
+        <li>mix of titles wth a deliverypoint address and titles we can associate to a postcode - results show addressbase addr &amp; A1 property descriptions?</li>
+        <li>How do we order the results?</li>
+        <li>What will we include if this list is more than 100 - how can people refine a search if they don't know whats not shown - can we explain whats not shown</li>
+        <li>is it better to limit the scope of the search results to produce a result set that is better explained - more importantly we can explain better what's not here</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-medium">number problems :)</h2>
+      <div class="example1">
+        <ol>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              Flat 1014 Mandela House, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Leasehold title, HP724501</a>
+            </div>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              Flat 1015 Mandela House, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Leasehold title, HP725749</a>
+            </div>
+
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              Flat 701 Mandela House, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Leasehold title, HP726948</a>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+
+    </div>
+
+    <div class="column-one-third">
+      <h2 class="heading-medium">notes</h2>
+      <ul class="list-bullet font-small">
+        <li>page per title record link (not page per property/address)</li>
+        <li>SE18 6JH = real world example</li>
+        <li>shouldnt every leasehold be also associated with a freehold</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <h2 class="heading-large">when we don't have a record</h2>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-medium">example 1</h2>
+      <div class="example1">
+        <ol>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              5 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              Freehold record exists. but not in this service (currently), use FaP
+            </div>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              6 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <ol class="children--address-list">
+              <li>
+                <div class="font-xsmall">
+                  <a href="#">Freehold title, HP704400</a>
+                </div>
+              </li>
+              <li>
+                <div class="font-xsmall">
+                  Leashold record exists. but not in this service (currently), use FaP
+                </div>
+              </li>
+            </ol>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              7 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <p>
+              No title record exists for this address.</p>
+              <ul class="list-bullet">
+                <li>This might mean the property is not yet registered: <a href="#">register this property</a></li>
+                <li>This might be that the address exists but a property does not (mistake in the Royal Mail DB)</li>
+              </ul>
+              <p>
+                If you think something about this address is incorrect, please <a href="">report a mistake</a>
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              the site of a wall at the back of 65 and 67 Mandela Way, Southampton, (SO15 5RZ)
+            </h2>
+            <div class="font-xsmall">
+              <p>
+                Freehold record exists. but not in this service (currently - not yet migrated, v old record), use FaP
+              </p>
+              <p>
+                If you think something about this description of land or property is incorrect, please <a href="">report a mistake</a>
+              </p>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+
+    </div>
+
+    <div class="column-one-third">
+      <h2 class="heading-medium">notes</h2>
+      <ul class="list-bullet font-small">
+        <li>Not migrated to SOR yet</li>
+        <li>property not registered</li>
+        <li>Mistake: Address exists on Royal Mail DB, but not in real world</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <h2 class="heading-large">when we have a records, but weird (user will think)</h2>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h2 class="heading-medium">example 1</h2>
+      <div class="example1">
+        <ol>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              5 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP726948</a>
+            </div>
+            <div class="font-xsmall">
+              This property is newly built - this address might not be in common use yet
+            </div>
+          </li>
+          
+        </ol>
+      </div>
+
+    </div>
+
+    <div class="column-one-third">
+      <h2 class="heading-medium">notes</h2>
+      <ul class="list-bullet font-small">
+        <li>new build - we have given the title an address, but LA / RM not updated records</li>
+        <li>new build, we have given address, address exists in realworld, but AddressBase/Our systems not yet updated (synchonisation lag)</li>
+        <li>multiple addresses for same title record (not showing how to deal with this)</li>
+        <li>Mistake: Duplicate UPRN's - 1 address 2 UPRN's</li>
+        <li>Mistake: Duplicate UPRN's - 2 address(es) 2 UPRN's, but actually one property</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="grid-row">
+    <h2 class="heading-large">tenures and 'class of title'</h2>
+    <div class="column-two-thirds">
+      
+      <div class="example1">
+
+        <ol>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              1 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP724501</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              2 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Leasehold - title, HP704400</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              3 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Freehold title, HP704400</a>
+            </div>
+            <div class="font-xsmall">
+              <a href="#">Leasehold title, HP725748</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              5 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Airspace - title, HP724501</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              6 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Advertising Hoardings - title, HP704400</a>
+            </div>
+          </li>
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              7 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Foreshores - title, HP704400</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              8 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Gable end - title, HP726948</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              9 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Mines and minerals - title, HP726948</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              10 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Fabric lease - title, HP726948</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              11 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Caution - title, HP726948</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              12 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Profit a prendre - title, HP726948</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              13 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Mineral rights - title, HP726948</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              14 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Franchises (affecting and relating) - title, HP726948</a>
+            </div>
+          </li>
+
+          <li>
+            <h2 class="heading-small collapse-bottom">
+              15 Mandela Way, Southampton, SO15 5RZ
+            </h2>
+            <div class="font-xsmall">
+              <a href="#">Rent charges - title, HP726948</a>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </div>
+
+    <div class="column-one-third">
+      <h2 class="heading-medium">notes</h2>
+      <p>link is tenure or class of title</p>
+      <p>User questions/confusion</p>
+      <ul class="list-bullet">      
+        <li>what are these? - users don't understand tenures</li>
+        <li>why are there 2 things at one address?</li>
+        <li>where is no 4?</li>
+      </ul>
+
+    </div>
+  </div>
+
+
+  <div class="grid-row spacing-top-double">
+    <div class="column-two-thirds">
+      <ul class="list-bullet">
+        <li><a href="{{path}}/search_results_examples_2">search results - address is hyperlink</a></li>
+        <li><a href="{{path}}/search_results_examples_3">search results - when we don't have a record</a></li>
+        <li><a href="{{path}}/address_base_search">search</a></li>
+        <li><a href="{{path}}/address_base_search_intro">addressbase search introduction</a></li>
+        <li><a href="/">prototype start page</a></li>
+      </ul>
+
+    </div>
+  </div>
+
+
+
+</main>
+
+{% endblock %}
+
+

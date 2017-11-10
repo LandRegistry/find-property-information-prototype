@@ -1,0 +1,157 @@
+{% extends "../layout/layout.html" %}
+
+
+{% block page_title %}
+  Information available to buy
+{% endblock %}
+
+{% block head_additionals %}
+
+<style type="text/css">
+
+  .tenure-panel {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-top:1em;
+    margin-bottom: 1em;
+    background-color: #F0F0F0;
+    border-style: none;
+  }
+
+  .property-list li {
+    font-size: 24px;
+    margin-left: 5px;
+    padding-left: 15px;
+  }
+
+  .property-list li p {
+    font-size: 18px;
+  }
+
+  .property-list .address {
+    font-weight: normal;
+  }
+
+  .font-xxsmall {
+    font-size:12px;
+  }
+
+</style>
+
+{% endblock %}
+
+{% block header_primary %}
+  <a class="back-link" href="" data-back-link>
+    <span class="back-link-destination">Back to search results</span>
+  </a>
+{% endblock %}
+
+{% block body %}
+
+<script>
+  let params = (new URL(document.location)).searchParams;
+  let addr = params.get("addr");
+</script>
+
+<h1 class="heading-xlarge">Information available to buy</h1>
+
+  <div class="grid-row spacing-top-single">
+  <!-- <div class="grid-row column-flip spacing-top-single"> -->
+
+<!--     <div class="column-one-third tablet-column-one-third spacing-bottom-single">
+
+        <div class="map polygonx" id="map">
+          <p>The map relies on JavaScript being enabled in your browser.</p>
+        </div>
+        <p class="font-xxsmall">Use of the pin marker on the map (including the associated coordinates and the link between the address and its location) is subject to <a href="os_terms">Ordnance Survey licence terms and conditions</a></p>
+
+    </div> -->
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      
+      <div class="address heading-large spacing-top-flush">
+      
+        <span><script>document.write(addr);</script> Lincoln Gate</span>
+        <span>Lincoln Road</span>
+        <span>Peterborough</span>
+        <span>PE1 2RE</span>
+      </div> 
+
+    </div>
+
+  </div> <!-- end row -->
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <h2 class="heading-large">There is 1 record (&lsquo;property title&rsquo;) for this address</h2>
+
+      <details>
+        <summary>What&apos;s the difference between freehold and leasehold?</summary>
+        <div class="panel panel-border-narrow font-xsmall">
+          <p>If you own the freehold for land or a building you own it outright - it&apos;s yours until you sell it or give it away. Most houses are freehold.</p>
+          <p>If you own the leasehold for land or a building you own it for a fixed period of time. Most flats are leasehold - the blocks they&apos;re in are usually freehold. All leasehold properties will have a freehold title.</p>
+        </div>
+      </details>
+
+    </div>
+  </div> <!-- end row -->
+
+
+  <div class="grid-row spacing-top-flush">
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <ol class="property-list list-number">
+        <li>
+          <h3 class="heading-medium">Freehold<span class="lede">, described as:</span></h3>
+            <dd class="bold-medium spacing-bottom-single">
+            <script>
+              document.write('<a href="freehold?addr=' + addr + '">');
+            </script>      
+                <div class="address">
+                  <span>land and buildings on the south side of Cobden Avenue and the west side of Lincoln Road</span>             
+                  <span>Peterborough</span>
+                </div>
+              </a>
+            </dd>
+            <!-- <p>This is for just this address</p> -->
+        </li>
+
+      </ol>
+
+    </div>
+
+  </div> <!-- end row -->
+
+
+
+<!-- 
+  <div class="row">
+  <p class="spacing-top-single spacing-bottom-double">
+
+      <a class="back-link" href="{{path}}/pe12re/search_results">
+    
+      <span class="back-link-destination">Search results</span>
+      </a>
+    </p>
+  </div> -->
+
+    <!-- 71 - freehold -->
+    <script>
+      var indexData = {"crs": {"properties": {"name": "urn:ogc:def:crs:EPSG::27700"}, "type": "name"}, "geometry": {"coordinates": [[[519034.468, 299525.035], [519034.15, 299525.05], [519033.9, 299519.5], [519033.2, 299519.52], [519031.7, 299516.15], [519019.8, 299514.7], [519019.534, 299511.903], [519019.3, 299509.45], [519019.1, 299509.05], [519018.9, 299508.7], [519018.8, 299508.5], [519018.6, 299508.2], [519018.35, 299507.9], [519018.1, 299507.65], [519017.85, 299507.35], [519017.35, 299506.95], [519016.45, 299506.5], [519016.0, 299506.35], [519015.75, 299506.3], [519015.15, 299506.2], [519014.9, 299506.2], [519014.35, 299506.3], [519014.2, 299506.31], [519014.75, 299502.85], [519014.85, 299500.0], [519015.14, 299494.83], [519015.63, 299486.35], [519015.75, 299484.2], [519015.99, 299481.5], [519016.32, 299477.79], [519017.14, 299468.53], [519035.1, 299470.44], [519035.65, 299470.5], [519036.25, 299466.5], [519096.95, 299474.55], [519100.86, 299475.053], [519100.15, 299481.05], [519099.45, 299486.5], [519097.53, 299500.0], [519096.9, 299504.2], [519096.3, 299509.35], [519093.05, 299534.1], [519070.488, 299535.141], [519059.7, 299535.64], [519055.15, 299535.87], [519048.0, 299536.23], [519044.5, 299536.4], [519037.3, 299536.75], [519035.1, 299536.95], [519032.996, 299536.992], [519033.1, 299536.15], [519034.468, 299525.035]], [[519048.866, 299508.94], [519049.118, 299506.439], [519045.895, 299506.02], [519045.6, 299508.45]]], "type": "Polygon"}, "properties": {"colour": 1, "feature_id": 4019, "graphic_type": "Bordered Polygon", "render_attributes": {"border_colour": 1, "border_width": 0, "exterior_edge_colour": 1, "exterior_edge_thickness": 2.0, "fill_colour": 25, "fill_style": 9, "render_level": "0"}, "width": 0}, "type": "Feature"};
+    </script>
+
+
+
+
+    <script defer src="/public/app/javascripts/map.js"></script>
+
+  </div>
+{% endblock %}
+  
+
+
+
