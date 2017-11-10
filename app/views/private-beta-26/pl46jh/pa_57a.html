@@ -50,7 +50,7 @@
 
 <script>
   let params = (new URL(document.location)).searchParams;
-  let addr = params.get("addr");
+  let addr1 = params.get("addr1");
 </script>
 
 <h1 class="heading-xlarge">Information available to buy</h1>
@@ -72,7 +72,7 @@
       
       <div class="address heading-large spacing-top-flush">
       
-        <span><script>document.write(addr);</script> Mutley Plain</span>
+        <span><script>document.write(addr1);</script> Mutley Plain</span>
         <span>Plymouth</span>
         <span>PL4 6JH</span>
       </div> 
@@ -108,10 +108,10 @@
           <h3 class="heading-medium">Leasehold<span class="lede">, described as:</span></h3>
             <dd class="bold-medium spacing-bottom-single">
             <script>
-              document.write('<a href="leasehold?addr=' + addr + '">');
+              document.write('<a href="leasehold?addr1=' + addr1 + '">');
             </script>      
                 <div class="address">
-                  <span><script>document.write(addr);</script> Mutley Plain</span>
+                  <span><script>document.write(addr1);</script> Mutley Plain</span>
                   <span>Plymouth</span>
                   <span>PL4 6JH</span>
                 </div>
