@@ -1,0 +1,168 @@
+{% extends "../layout/layout.html" %}
+{% from "../includes/back_link.html" import back_link %}
+
+{% block head_additionals %}
+
+  <style type="text/css">
+  .font-xxsmall {
+    font-size:12px;
+  }
+  </style>
+
+{% endblock %}
+
+{% block title %}About this property title{% endblock %}
+
+{% block header_primary %}
+  <a class="back-link" href="" data-back-link>
+    <span class="back-link-destination">Back to address page</span>
+  </a>
+{% endblock %}
+
+{% block body %}
+
+<script>
+  let params = (new URL(document.location)).searchParams;
+  let orgname = params.get("orgname");
+  let addr1 = params.get("addr1");
+</script>
+
+  <h1 class="heading-large">About this property</h1>
+
+  <p>You'll get a summary of the information HM Land Registry holds for this property title.</p>
+
+  <div class="grid-row spacing-top-single">
+
+
+    <!-- property info -->
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <dl class="definition-tabular definition-tabular-sectioned">
+
+        <dt>Address</dt>
+        <dd class="bold-medium">
+          <div class="address">
+            <script>if length(orgname) >1 then document.write(orgname);</script>
+            <script>document.write(addr1);</script> Mutley Plain</span>
+            <span>Plymouth</span>
+            <span>PL4 6JH</span>
+          </div>
+        </dd>
+
+        <dt class="spacing-top-single">Tenure type</dt>
+        <dd class="spacing-top-single">
+          <strong class="bold">Leasehold</strong>
+          <a class="split-detail-trigger font-xsmall" href="#what-is-tenure">What does this mean?</a>
+
+          <div class="split-detail-contents" id="what-is-tenure">
+            <div class="panel panel-border-narrow font-xsmall">
+
+                <p>You own a freehold building and land outright. It is yours until you sell it or give it away.</p>
+                <p>Most houses are freehold. Most flats are leasehold. That means someone else owns the freehold for the building the flat is in.</p>
+                <p><b class="bold">If you want to know who owns a particular flat, you probably need the leasehold instead.</b></p>
+                <p>Houses can also be leasehold and usually are if they’re bought through a shared ownership scheme.</p>
+
+            </div>
+          </div>
+
+          <p class="font-xsmall">A property can have both freehold and leasehold titles. To get a different tenure for this address, <a href="" data-back-link>go back</a> and select the one you need.</p>
+        </dd>
+
+      </dl>
+
+<!--       <div class="text">
+        <h2 class="heading-medium spacing-top-single">Pay £3 to find out:</h2>
+
+        <ul class="list list-bullet">
+          {% if title['is_caution_title'] %}
+            <li>the cautioner's name and address (<strong class="bold">the owner isn't available from this service</strong>)</li>
+          {% else %}
+            <li>who owns this property (name and address)</li>
+            <li>how much they paid (if available)</li>
+            <li>if there is a mortgage - the name and address of the lender</li>
+          {% endif %}
+
+          {% if not session.isLoggedIn %}
+            <li>title number (the unique reference number)</li>
+          {% endif %}
+        </ul>
+      </div> -->
+
+      <div class="text">
+
+          <h2 class="heading-medium spacing-top-single">The summary will tell you</h2>
+        
+        <ul class="list list-bullet">
+
+            <li>current leaseholder's name and address</li>
+            <li>what was paid for the property – you won't get this if it was bought before April 2000, if they paid less than £100, or if HM Land Registry have agreed not to record the price</li>
+            <li>if there is a mortgage on the property, the lender's name and address</li>
+
+        </ul>
+
+        <p class="spacing-top-single">This information can change if we receive an application. This service is unable to tell you whether or not there is an application pending with the Land Registry.</p>
+      </div>
+
+    </div> <!-- end property text column -->
+
+    <!-- map column -->
+    <div class="column-one-third tablet-column-one-third spacing-bottom-single mobile-spacing-top-hack">
+        <div class="map polygonx" id="map">
+          <p>Your browser must have JavaScript enabled in order to use the map.</p>
+        </div>
+        <p class="font-xxsmall">Use of the pin marker on the map (including the associated coordinates and the link between the address and its location) is subject to <a href="os_terms">Ordnance Survey licence terms and conditions</a></p>
+    </div>
+
+  </div> <!-- end row -->
+
+
+    <div class="grid-row spacing-top-singlex">
+
+      <div class="column-two-thirds tablet-column-two-thirds">
+
+        <!-- <h2 class="heading-medium">How to buy this information</h2> -->
+        <h2 class="heading-medium">The summary costs £3 inc VAT <span class="font-small">(£2.50+VAT)</span></h2>
+
+        <ol class="list example-icon-list">
+
+          <li><span class="circle circle-step-large spacing-right-half">1</span><strong class="bold">create an account</strong></li>
+
+          <li><span class="circle circle-step-large spacing-right-half">2</span><strong class="bold">pay online</strong> by debit or credit card</li>
+
+        </ol>
+
+
+
+        <div class="panel panel-border-narrow">
+          If you've already used this service and created an account, sign in with the email address you used before.
+        </div>
+
+        <div class="spacing-top-double"> <!-- sign-in / creat account -->
+          <p>
+            <a class="button" href="create_account?title_number={{title['data']['title_number']}}" role="button">Create a new account</a>
+          </p>
+
+          <p class="spacing-top-half spacing-bottom-half"><strong class="bold">or</strong></p>
+
+          <p>
+            <a class="button" href="sign_in?title_number={{title['data']['title_number']}}" role="button">Sign in with an existing account</a>
+          </p>
+        </div>
+
+      <p class="spacing-top-single">
+      <!-- <a href="42_list">&lt; Back to address page</a> -->
+        <a class="back-link" href="" data-back-link>
+          <span class="back-link-destination">Back to address page</span>
+        </a>
+      </p>
+
+      </div>
+    </div>
+
+
+    <script>
+      var indexData = {"crs": {"properties": {"name": "urn:ogc:def:crs:EPSG::27700"}, "type": "name"}, "geometry": {"coordinates": [[[248390.5, 55810.45], [248416.35, 55814.8], [248415.25, 55821.2], [248410.95, 55820.6], [248402.25, 55819.25], [248389.22, 55817.15], [248390.5, 55810.45]]], "type": "Polygon"}, "properties": {"colour": 1, "feature_id": 4019, "graphic_type": "Bordered Polygon", "render_attributes": {"border_colour": 1, "border_width": 0, "exterior_edge_colour": 1, "exterior_edge_thickness": 2.0, "fill_colour": 25, "fill_style": 9, "render_level": "0"}, "width": 0}, "type": "Feature"}
+    </script>
+
+    <script defer src="{{ asset_path }}app/javascripts/map.js"></script>
+{% endblock %}

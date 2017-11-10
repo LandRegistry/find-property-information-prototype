@@ -50,6 +50,7 @@
 
 <script>
   let params = (new URL(document.location)).searchParams;
+  let buildname = params.get("buildname");
   let addr1 = params.get("addr1");
 </script>
 
@@ -72,6 +73,7 @@
       
       <div class="address heading-large spacing-top-flush">
       
+        <script>if (buildname.length >4) { document.write(buildname) };</script>
         <span><script>document.write(addr1);</script> Mutley Plain</span>
         <span>Plymouth</span>
         <span>PL4 6JH</span>
@@ -85,7 +87,7 @@
   <div class="grid-row">
     <div class="column-two-thirds tablet-column-two-thirds">
 
-      <h2 class="heading-large">There is 1 record (&lsquo;property title&rsquo;) for this address</h2>
+      <h2 class="heading-large">There are 2 records (&lsquo;property titles&rsquo;) for this address</h2>
 
       <details>
         <summary>What&apos;s the difference between freehold and leasehold?</summary>
@@ -105,19 +107,29 @@
 
       <ol class="property-list list-number">
         <li>
-          <h3 class="heading-medium">Leasehold<span class="lede">, described as:</span></h3>
-            <dd class="bold-medium spacing-bottom-single">
+          <h3 class="heading-medium">Freehold<span class="lede">, described as:</span></h3>
             <script>
-              document.write('<a href="leasehold_5x?addr1=' + addr1 + '">');
+            document.write('<a href="freehold_4x?addr1=' + addr1 + '&buildname=' + buildname + '">');
+            </script> 
+              <div class="address"> 
+                <script>if (buildname.length >4) { document.write(buildname) };</script>         
+                <span><script>document.write(addr1);</script> Mutley Plain</span>
+                <span>Plymouth</span>
+                <span>PL4 6JH</span>
+              </div>
+            </a>
+        </li>
+        <li>
+          <h3 class="heading-medium">Leasehold<span class="lede">, described as:</span></h3>
+            <script>
+              document.write('<a href="leasehold_4x?addr1=' + addr1 + '">');
             </script>      
-                <div class="address">
-                  <span><script>document.write(addr1);</script> Mutley Plain</span>
-                  <span>Plymouth</span>
-                  <span>PL4 6JH</span>
-                </div>
-              </a>
-            </dd>
-            <!-- <p>This is for just this address</p> -->
+              <div class="address">
+                <span><script>document.write(addr1);</script> Mutley Plain</span>
+                <span>Plymouth</span>
+                <span>PL4 6JH</span>
+              </div>
+            </a>
         </li>
 
       </ol>
