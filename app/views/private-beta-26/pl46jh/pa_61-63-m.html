@@ -50,10 +50,13 @@
 
 <script>
   let params = (new URL(document.location)).searchParams;
+  let buildname = params.get("buildname");
   let addr1 = params.get("addr1");
 </script>
 
-<h1 class="heading-xlarge">Information available to buy</h1>
+<h1 class="heading-xlarge">Information available to buy 
+  <!-- <span class="visuallyhidden">for property</span> -->
+</h1>
 
   <div class="grid-row spacing-top-single">
   <!-- <div class="grid-row column-flip spacing-top-single"> -->
@@ -69,10 +72,11 @@
 
     <div class="column-two-thirds tablet-column-two-thirds">
 
-      
+      <!--  -->
       <div class="address heading-large spacing-top-flush">
       
-        <span><script>document.write(addr1);</script> Mutley Plain</span>
+        <span><script>document.write(buildname);</script></span>
+        <span>61-63 Mutley Plain</span>
         <span>Plymouth</span>
         <span>PL4 6JH</span>
       </div> 
@@ -105,19 +109,12 @@
 
       <ol class="property-list list-number">
         <li>
-          <h3 class="heading-medium">Leasehold<span class="lede">, described as:</span></h3>
-            <dd class="bold-medium spacing-bottom-single">
-            <script>
-              document.write('<a href="leasehold_5x?addr1=' + addr1 + '">');
-            </script>      
-                <div class="address">
-                  <span><script>document.write(addr1);</script> Mutley Plain</span>
-                  <span>Plymouth</span>
-                  <span>PL4 6JH</span>
-                </div>
-              </a>
-            </dd>
-            <!-- <p>This is for just this address</p> -->
+          <h3 class="heading-medium">Freehold<span class="lede">, no title information found</span></h3>
+            <p class="spacing-bottom-single">
+              This service is new and some information isn't available here yet. 
+              <br>Try <a href="https://eservices.landregistry.gov.uk/wps/portal/Property_Search">searching on HM Land Registry 'Find a Property' service</a> instead.
+            </p>
+            <!-- <p>This covers all 27 addresses in this postcode</p> -->
         </li>
 
       </ol>
