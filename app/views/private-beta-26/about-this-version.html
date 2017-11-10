@@ -39,11 +39,13 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 id="top" class="heading-xlarge">Improve search</h1>
+      <h1 id="top" class="heading-xlarge">Improve search - more information</h1>
 
-      <p class="lede">this proto/documentation is almost complete</p>
+      <p class="lede">More in depth information about what we're making / have made.  Includin some of the things we know it doesn't do - yet.</p>
 
-      <h2>Contents</h2>
+      <p><a href="{{path}}/start">return to the introduction</a></p>
+
+      <h2 class="heading-medium">Contents</h2>
       <ol class="dashed-list">
         <li><a href="#rules">How it works</a></li>
         <li><a href="#examples">Examples</a></li>
@@ -54,13 +56,13 @@
 
       <h2 id="rules" class="heading-large">How it works - description of expected behaviour</h2>
       <p>Not all these 'rules' / described behaviour are shown, or obvious, in the prototype examples - so for clarity they are listed here</p> 
-      <p>
+<!--       <p>
         <ul class="list-bullet">
           <li>a result for every address in a postcode (whether we have something or not) (what the Royal Mail would show)</li>
           <li>search result is the 'postal address' (addressbase delivery point address)</li>
           <li>where we dont have anything available for a postal address - explain why/what to do</li>
           <li>always encourage user to use postcode - if no search result provided, say postcode is needed</li>
-          <li><del>if search term is not a postcode - behaviour is like current production (search results are result per title, no 'page for the property address' (pppa)).</del><!-- (Fri 06 oct) -->
+          <li><del>if search term is not a postcode - behaviour is like current production (search results are result per title, no 'page for the property address' (pppa)).</del>
           </li>
           <li>postcode search is only things with an address - i.e. no land, or buildings that dont have a postal address (e.g, electricity substation)</li>
           <li>search results ordering rules - 
@@ -81,14 +83,14 @@
           <li>Content that refers to 'the number' of things - is dynamic - e.g. 2 records / 'covers all 27' / 'just this address'</li>
           <li>100 results max per search - increasing from the current 50.</li>
         </ul>
-      </p>
+      </p> -->
       <div>
         <p class="back-to-top"><a href="#top">contents</a></p>
       </div>
 
       <h3 id="wip" class="heading-medium">Still working through</h3>
       <p>things still being considered / being worked through</p>
-      <p>
+<!--       <p>
         <ul class="list-bullet">     
           <li>further content/design to discuss - re different data situations; accessibility - for non-visual users; backlink text to pppa; non obvious stuff</li> 
           <li>review 'error messages' content</li>  
@@ -108,15 +110,16 @@
           <li>consider markup under pppa</li>
           <li>add hyperlinks / content from UR, PO, Analytics - to research, hypotheses, and how to measure</li>
         </ul>
-      </p>
+      </p> -->
       <div>
         <p class="back-to-top"><a href="#top">contents</a></p>
       </div>
       
      
       <h2 id="examples" class="heading-large">Example pages</h2>
-      <h3 class="heading-medium">if user searches with a postcode (what we'll enforce)</h3>
-      <p>
+      <p>these are on the <a href="{{path}}/start">introductory page</a></p>
+      <h3 class="heading-medium">if user searches with a postcode</h3>
+<!--       <p>
         <ul class="list list-bullet">         
           <li><a href="{{path}}/pe12re/start">Search PE1 2RE</a>  
             <p>PE1 2RE is a 'perfect' postcode in real world - perfectly registered + all titles returned. We've removed personal details, and shifted the property numbers, and tweaked to demonstrate variances in data</p>
@@ -126,24 +129,17 @@
               <li>single title - where postal address doesn't match A1 desc - 43 Lincoln Gate, PE1 2RE</li>
               <li>single title - where postal address does match (leasehold) - 44 Lincoln Gate, PE1 2RE</li>
               <li>no information available - 37 and 45 Lincoln Gate, PE1 2RE</li>
-              <li>multi title - duplicate postal address in the Royal Mail/address base data - Managers Office and Sheltered Housing, Managers Office (leasehold title will have a singluar A1, but 2 postal addresses)</li>
+              <li>multi title - duplicate postal address in the Royal Mail/address base data - Managers Office and Sheltered Housing, Managers Office (leasehold title will have a singular A1, but 2 postal addresses)</li>
               <li>multi title - caution against freehold.  41 Lincoln Gate, PE1 2RE</li>
               <li>multi title (3 titles) - 40 Lincoln Gate, PE1 2RE</li>
             </ul>
           </li>        
         </ul>
-      </p>
+      </p> -->
 
       <h3 class="heading-medium">if user doesn't search with a postcode</h3>
-      <p><del>
-        search works like currently in production.  results are titles, no pppa (page per property address)</del> 
-        <!-- (Fri 06 Oct) -->
       </p>
-      <p><del>
-        <!-- <a href="{{path}}/pe12re/start">Search PE1 2RE</a> -->
-        Search PE1 2RE, then try changing to a non postcode, e.g. 'PE1 2RE, 28' - best looked at in prodcution service it has better data.
-      </del></p>
-      <p>'error' message - asking for a postcode</p> 
+      <p>ask user for a postcode</p> 
       <div>
         <p class="back-to-top"><a href="#top">contents</a></p>
       </div>
@@ -166,11 +162,11 @@
         </ul>
       </p>  
       <p><span class="bold">To be done: </span><a href="">detailed breakdown of user pain with searching (google drive)</a></p>   
-      <div>
+<!--       <div>
         <p class="back-to-top"><a href="#top">contents</a></p>
-      </div>
+      </div> -->
 
-      <h2 id="measuring" class="heading-medium">How to measure improvments</h2>
+      <h2 id="measuring" class="heading-large">How to measure improvments</h2>
       <p>our more specific hypotheses of what will happen - and how to test/measure it</p>
       <p><span class="bold">Note:</span> We may need to baseline existing data before we ship</p>
       <p>
@@ -207,7 +203,7 @@
           <li>new - page per property address
             <ul class="list-bullet">
               <li>we'll get people leaving the service at this page</li>
-              <li>we'll get new feedback about being confused by this page / titles.  This feedabck will be specifically about being confused by 'things' (i.e. titles)
+              <li>we'll get new feedback about being confused by this page / titles.  This feedback will be specifically about being confused by 'things' (i.e. titles)
                 <br><span class="bold">Note:</span> if we can track this feedback to this page - it will be very beneficial
               </li>
               <li>people will spend a long time on this page (because they have to make a choice thats hard for them) - should see this in analytics.</li>
