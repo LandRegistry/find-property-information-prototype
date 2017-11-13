@@ -14,7 +14,7 @@
 {% block title %}Confirm your purchase{% endblock %}
 
 {% block header_primary %}
-  <a class="back-link" href="{{path}}/pe12re/42_list">
+   <a class="back-link" href="{{path}}/pe12re/42_list">
     <span class="back-link-destination">Back to information available to buy</span>
   </a>
 {% endblock %}
@@ -61,7 +61,7 @@
 
         <dt class="spacing-bottom-single">Tenure type</dt>
         <dd class="spacing-bottom-single">
-          <strong class="bold">Freehold</strong>
+          <strong class="bold">Leasehold</strong>
           <a class="split-detail-trigger font-xsmall" href="#what-is-tenure">What does this mean?</a>
 
           <div class="split-detail-contents" id="what-is-tenure">
@@ -106,8 +106,7 @@
         <h2 class="heading-medium spacing-top-single">The summary will tell you</h2>
 
         <ul class="list list-bullet">
-          <li>current owner's name and address</li>
-          <li>what was paid for the property – you won't get this if it was bought before April 2000, if they paid less than £100, or if HM Land Registry have agreed not to record the price</li>
+          <li>current leaseholder's name and address</li><li>what was paid for the property – you won't get this if it was bought before April 2000, if they paid less than £100, or if HM Land Registry have agreed not to record the price</li>
           <li>if there is a mortgage on the property, the lender's name and address</li>
         </ul>
 
@@ -133,7 +132,7 @@
 
       <div class="panel panel-simple">
 
-        <form action="{{path}}/pl46jh/worldpay_1_f?title_number={{data.title_number}}" method="POST" novalidate data-clientside-validation="pay_form_validation" data-clientside-validation-no-summary>
+        <form action="{{path}}/pl46jh/worldpay_1?title_number={{data.title_number}}" method="POST" novalidate data-clientside-validation="pay_form_validation" data-clientside-validation-no-summary>
 
           <input name="title_number" value="{{data.title_number}}" type="hidden" />
           <input name="email" value="{{data.email}}" type="hidden" />
@@ -218,11 +217,6 @@
       terms.addEventListener('change', change);
     })();
   </script> -->
-
-    <!-- Leasehold for 42 -->
-<!--     <script>
-      var indexData = {"crs": {"properties": {"name": "urn:ogc:def:crs:EPSG::27700"}, "type": "name"}, "geometry": {"coordinates": [[[519072, 299525.05], [519072.8, 299518.15], [519078.5, 299519], [519077.5, 299526], [519072, 299525.05]]], "type": "Polygon"}, "properties": {"colour": 1, "feature_id": 4019, "graphic_type": "Bordered Polygon", "render_attributes": {"border_colour": 1, "border_width": 0, "exterior_edge_colour": 1, "exterior_edge_thickness": 2.0, "fill_colour": 25, "fill_style": 9, "render_level": "0"}, "width": 0}, "type": "Feature"};
-    </script> -->
 
     <script>
       var indexData = {"crs": {"properties": {"name": "urn:ogc:def:crs:EPSG::27700"}, "type": "name"}, "geometry": {"coordinates": [[[248390.5, 55810.45], [248416.35, 55814.8], [248415.25, 55821.2], [248410.95, 55820.6], [248402.25, 55819.25], [248389.22, 55817.15], [248390.5, 55810.45]]], "type": "Polygon"}, "properties": {"colour": 1, "feature_id": 4019, "graphic_type": "Bordered Polygon", "render_attributes": {"border_colour": 1, "border_width": 0, "exterior_edge_colour": 1, "exterior_edge_thickness": 2.0, "fill_colour": 25, "fill_style": 9, "render_level": "0"}, "width": 0}, "type": "Feature"}

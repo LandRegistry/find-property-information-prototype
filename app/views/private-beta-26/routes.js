@@ -96,6 +96,14 @@ router.get('/pe12re/sign_out', function(req, res) {
   })
 });
 
+router.get('/pl46jh/sign_out', function(req, res) {
+  req.session.isLoggedIn = false;
+
+  req.session.destroy(function() {
+    return res.render(path.join(__dirname, '/pl46jh/signed_out'));
+  })
+});
+
 
 router.get('/', function(req, res) {
   res.render(path.join(__dirname, 'start'));
