@@ -51,9 +51,10 @@
         <dt class="spacing-bottom-single">Address</dt>
         <dd class="bold-medium spacing-bottom-single">
           <div class="address">
-            <span>{{ data.addr }}</span>
-            <span>Peterborough</span>
-            <span>PE1 2RE</span>
+            <span>{{ data.buildname }}</span>
+            <span>{{ data.addr1 }}</span>
+            <span>Plymouth</span>
+            <span>PL4 6JH</span>
           </div>
         </dd>
 
@@ -132,11 +133,12 @@
 
       <div class="panel panel-simple">
 
-        <form action="{{path}}/pe12re/worldpay_1_f?title_number={{data.title_number}}" method="POST" novalidate data-clientside-validation="pay_form_validation" data-clientside-validation-no-summary>
+        <form action="{{path}}/pl46jh/worldpay_1_f?title_number={{data.title_number}}" method="POST" novalidate data-clientside-validation="pay_form_validation" data-clientside-validation-no-summary>
 
           <input name="title_number" value="{{data.title_number}}" type="hidden" />
           <input name="email" value="{{data.email}}" type="hidden" />
-          <input name="addr" value="{{data.addr}}" type="hidden" />
+          <input name="buildname" value="{{data.buildname}}" type="hidden" />
+          <input name="addr1" value="{{data.addr1}}" type="hidden" />
 
           <h2 class="heading-medium spacing-top-third">How to pay</h2>
           <p>This information costs £3 inc VAT. Payment will be taken by WorldPay on HM Land Registry's behalf.</p>
@@ -223,7 +225,7 @@
     </script> -->
 
     <script>
-      var indexData = {"crs": {"properties": {"name": "urn:ogc:def:crs:EPSG::27700"}, "type": "name"}, "geometry": {"coordinates": [[[519034.468, 299525.035], [519034.15, 299525.05], [519033.9, 299519.5], [519033.2, 299519.52], [519031.7, 299516.15], [519019.8, 299514.7], [519019.534, 299511.903], [519019.3, 299509.45], [519019.1, 299509.05], [519018.9, 299508.7], [519018.8, 299508.5], [519018.6, 299508.2], [519018.35, 299507.9], [519018.1, 299507.65], [519017.85, 299507.35], [519017.35, 299506.95], [519016.45, 299506.5], [519016.0, 299506.35], [519015.75, 299506.3], [519015.15, 299506.2], [519014.9, 299506.2], [519014.35, 299506.3], [519014.2, 299506.31], [519014.75, 299502.85], [519014.85, 299500.0], [519015.14, 299494.83], [519015.63, 299486.35], [519015.75, 299484.2], [519015.99, 299481.5], [519016.32, 299477.79], [519017.14, 299468.53], [519035.1, 299470.44], [519035.65, 299470.5], [519036.25, 299466.5], [519096.95, 299474.55], [519100.86, 299475.053], [519100.15, 299481.05], [519099.45, 299486.5], [519097.53, 299500.0], [519096.9, 299504.2], [519096.3, 299509.35], [519093.05, 299534.1], [519070.488, 299535.141], [519059.7, 299535.64], [519055.15, 299535.87], [519048.0, 299536.23], [519044.5, 299536.4], [519037.3, 299536.75], [519035.1, 299536.95], [519032.996, 299536.992], [519033.1, 299536.15], [519034.468, 299525.035]]], "type": "Polygon"}, "properties": {"colour": 1, "feature_id": 4019, "graphic_type": "Bordered Polygon", "render_attributes": {"border_colour": 1, "border_width": 0, "exterior_edge_colour": 1, "exterior_edge_thickness": 2.0, "fill_colour": 25, "fill_style": 9, "render_level": "0"}, "width": 0}, "type": "Feature"};
+      var indexData = {"crs": {"properties": {"name": "urn:ogc:def:crs:EPSG::27700"}, "type": "name"}, "geometry": {"coordinates": [[[248390.5, 55810.45], [248416.35, 55814.8], [248415.25, 55821.2], [248410.95, 55820.6], [248402.25, 55819.25], [248389.22, 55817.15], [248390.5, 55810.45]]], "type": "Polygon"}, "properties": {"colour": 1, "feature_id": 4019, "graphic_type": "Bordered Polygon", "render_attributes": {"border_colour": 1, "border_width": 0, "exterior_edge_colour": 1, "exterior_edge_thickness": 2.0, "fill_colour": 25, "fill_style": 9, "render_level": "0"}, "width": 0}, "type": "Feature"}
     </script>
     <script defer src="{{ asset_path }}app/javascripts/map.js"></script>
 {% endblock %}

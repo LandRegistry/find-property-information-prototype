@@ -21,11 +21,6 @@
 
 {% block body %}
 
-<script>
-  let params = (new URL(document.location)).searchParams;
-  let buildname = params.get("buildname");
-  let addr1 = params.get("addr1");
-</script>
 
   <h1 class="heading-large">About this property</h1>
 
@@ -42,8 +37,8 @@
         <dt>Address</dt>
         <dd class="bold-medium">
           <div class="address">
-            <script>if (buildname.length >4) { document.write(buildname) };</script>
-            <span><script>document.write(addr1);</script> Mutley Plain</span>
+            <span>{{ data.buildname }}</span>
+            <span>{{ data.addr1 }}</span>
             <span>Plymouth</span>
             <span>PL4 6JH</span>
           </div>
@@ -137,16 +132,28 @@
           If you've already used this service and created an account, sign in with the email address you used before.
         </div>
 
-        <div class="spacing-top-double"> <!-- sign-in / creat account -->
-          <p>
-            <a class="button" href="create_account_f?title_number={{title['data']['title_number']}}" role="button">Create a new account</a>
-          </p>
+        <div class="spacing-top-double"> <!-- sign-in / create account -->
+          <form method="GET" action="{{path}}/pl46jh/create_account_f?title_number={{title['data']['title_number']}}" id="create-acc-form"  novalidate data-clientside-validation="login_form_validation_c">
+
+            <input name="buildname" value="{{data.buildname}}" type="hidden" />
+            <input name="addr1" value="{{data.addr1}}" type="hidden" />
+    <!--         <input name="tenure" value="{{data.tenure}}" type="hidden" />
+            <input name="caution" value="{{data.caution}}" type="hidden" /> -->
+            
+            <input type="submit" class="button" value="Create a new account">
+          </form>
 
           <p class="spacing-top-half spacing-bottom-half"><strong class="bold">or</strong></p>
 
-          <p>
-            <a class="button" href="sign_in_f?title_number={{title['data']['title_number']}}" role="button">Sign in with an existing account</a>
-          </p>
+          <form method="GET" action="{{path}}/pl46jh/sign_in_f?title_number={{title['data']['title_number']}}" id="sign-in-form"  novalidate data-clientside-validation="login_form_validation_s">
+
+            <input name="buildname" value="{{data.buildname}}" type="hidden" />
+            <input name="addr1" value="{{data.addr1}}" type="hidden" />
+    <!--         <input name="tenure" value="{{data.tenure}}" type="hidden" />
+            <input name="caution" value="{{data.caution}}" type="hidden" /> -->
+
+            <input type="submit" class="button" value="Sign in with an existing account">
+          </form>
         </div>
 
       <p class="spacing-top-single">

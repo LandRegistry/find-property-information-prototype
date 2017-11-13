@@ -48,11 +48,6 @@
 
 {% block body %}
 
-<script>
-  let params = (new URL(document.location)).searchParams;
-  let buildname = params.get("buildname");
-  let addr1 = params.get("addr1");
-</script>
 
 <h1 class="heading-xlarge">Information available to buy 
   <!-- <span class="visuallyhidden">for property</span> -->
@@ -75,8 +70,8 @@
       <!--  -->
       <div class="address heading-large spacing-top-flush">
       
-        <span><script>document.write(buildname);</script></span>
-        <span>61-63 Mutley Plain</span>
+        <span>{{ data.buildname }}</span>
+        <span>{{ data.addr1 }}</span>
         <span>Plymouth</span>
         <span>PL4 6JH</span>
       </div> 

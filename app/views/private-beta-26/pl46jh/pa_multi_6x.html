@@ -48,11 +48,6 @@
 
 {% block body %}
 
-<script>
-  let params = (new URL(document.location)).searchParams;
-  let buildname = params.get("buildname");
-  let addr1 = params.get("addr1");
-</script>
 
 <h1 class="heading-xlarge">Information available to buy</h1>
 
@@ -73,9 +68,8 @@
       
       <div class="address heading-large spacing-top-flush">
       
-        <span><script>document.write(buildname);</script></span>
-        <span><script>document.write(addr1);</script></span>
-        <span>Mutley Plain</span>
+        <span>{{ data.buildname }}</span>
+        <span>{{ data.addr1 }}</span>
         <span>Plymouth</span>
         <span>PL4 6JH</span>
       </div> 
@@ -109,11 +103,10 @@
       <ol class="property-list list-number">
         <li>
           <h3 class="heading-medium">Freehold<span class="lede">, described as:</span></h3>
-            <script>
-            document.write('<a href="freehold?addr1=' + addr1 + '">');
-            </script> 
+
+            <a href="freehold?addr1={{data.addr1}}">
               <div class="address">           
-                <span><script>document.write(addr1);</script> Mutley Plain</span>
+                <span>{{ data.addr1 }}</span>
                 <span>Plymouth</span>
                 <span>PL4 6JH</span>
               </div>
@@ -121,11 +114,9 @@
         </li>
         <li>
           <h3 class="heading-medium">Leasehold<span class="lede">, described as:</span></h3>
-            <script>
-              document.write('<a href="leasehold?addr1=' + addr1 + '">');
-            </script>      
+            <a href="leasehold?addr1={{data.addr1}}">     
               <div class="address">
-                <span><script>document.write(addr1);</script> Mutley Plain</span>
+                <span>{{ data.addr1 }}</span>
                 <span>Plymouth</span>
                 <span>PL4 6JH</span>
               </div>
