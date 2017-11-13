@@ -88,6 +88,14 @@ router.get('/sign_out', function(req, res) {
   })
 });
 
+router.get('/pe12re/sign_out', function(req, res) {
+  req.session.isLoggedIn = false;
+
+  req.session.destroy(function() {
+    return res.render(path.join(__dirname, '/pe12re/signed_out'));
+  })
+});
+
 
 router.get('/', function(req, res) {
   res.render(path.join(__dirname, 'start'));
