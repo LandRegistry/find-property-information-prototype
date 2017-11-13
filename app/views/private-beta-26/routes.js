@@ -79,6 +79,15 @@ router.get('/sign_out', function(req, res) {
   })
 });
 
+
+router.get('/sign_out', function(req, res) {
+  req.session.isLoggedIn = false;
+
+  req.session.destroy(function() {
+    return res.render(path.join(__dirname, '/signed_out'));
+  })
+});
+
 router.get('/pe12re/sign_out', function(req, res) {
   req.session.isLoggedIn = false;
 
@@ -86,6 +95,15 @@ router.get('/pe12re/sign_out', function(req, res) {
     return res.render(path.join(__dirname, '/pe12re/signed_out'));
   })
 });
+
+router.get('/pl46jh/sign_out', function(req, res) {
+  req.session.isLoggedIn = false;
+
+  req.session.destroy(function() {
+    return res.render(path.join(__dirname, '/pl46jh/signed_out'));
+  })
+});
+
 
 router.get('/', function(req, res) {
   res.render(path.join(__dirname, 'start'));

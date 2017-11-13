@@ -18,7 +18,7 @@
 
       <h1 class="heading-large" style="margin-top:0px;">Sign in</h1>
 
-      <form method="GET" action="{{path}}/pe12re/confirm_your_purchase" id="login-form"  novalidate data-clientside-validation="login_form_validation">
+      <form method="GET" action="{{path}}/pl46jh/confirm_your_purchase" id="login-form"  novalidate data-clientside-validation="login_form_validation">
 
         <!-- <p class="lede">or <a href="create_account?title_number={{data.title_number}}" class="register-link">register to use this service</a></p> -->
 
@@ -30,7 +30,10 @@
         <!-- it will instantly log the user in. This is obviously not how "real" -->
         <!-- sign-ins work! It is a massive hack for prototyping only -->
         <input name="do_sign_in" value="true" type="hidden" />
-        <input name="addr" value="42 Lincoln Gate" type="hidden" />
+        <input name="buildname" value="{{data.buildname}}" type="hidden" />
+        <input name="addr1" value="{{data.addr1}}" type="hidden" />
+        <input name="tenure" value="{{data.tenure}}" type="hidden" />
+        <input name="caution" value="{{data.caution}}" type="hidden" />
 
         <!-- Email -->
         <div class="form-group">
@@ -68,7 +71,7 @@
 
 
       <div class="panel panel-border-narrow spacing-bottom-single spacing-top-double">
-        <p>Forgotten your password? <a href="{{path}}/pe12re/reset/password/send_email?title_number={{data.title_number}}">Reset your password</a></p>
+        <p>Forgotten your password? <a href="{{path}}/pl46jh/reset/password/send_email?title_number={{data.title_number}}">Reset your password</a></p>
       </div>
 
       <div class="panel panel-border-narrow spacing-bottom-single">
