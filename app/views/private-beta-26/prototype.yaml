@@ -3,7 +3,7 @@ date: 2017-11-07
 
 stickers: 
   status: we plan to ship this
-  construction: almost complete
+  construction: complete, 14-11-17
   tested: 
 
 
@@ -15,34 +15,23 @@ description:
   - property address page for every address (each result that is a link)
 
 changelog:
-  - todo...
-  - Result limit message (put example page in)
-  - Some of the results still redirect you through to the about page, if there's only 1 title (fix existing examples)
-  - Back link from about page should go to the address page and should say "Back to information available to buy"
-  - make intro list all the examples we've encoded
+  - todo... (not urgent)
+  - Result limit message - >100 addresses (put example page in)
   -
-  - make an index / llc demo page?
-  - see wall - postcode examples
-  - property address page - every time
-  - scenario postcodes - document and name
-  - route to different postcodes?  poss not - 
-  - land and properties - properties only - double check
-  - search button / input box length
-  - new url structure
-  - make it usable/a usable thing for llc conference
-  - ordering examples
-  -
-  - done - previously - needs uding some of these...
+  - done...
   - every address in a postcode
   - result per address
-  - page per property - link to each about this title page  -
+  - page per property - link to each about this title page
   - PL4 6JH - results list
   - remove map on property address page
   - terms of use - ICR
-  - This address covers 27 other addresses in this postcode (remove form existing examples)
-  - demo of company names on the address list (PL4 6JH)
-  - demo of missing titles on the address page
-  - PL4 6JH maps
+  - Back link from about page should go to the address page and should say "Back to information available to buy"
+  - remove content about - This title covers x other addresses in this postcode
+  - company names on the address list (PL4 6JH)
+  - missing titles on the address page
+  - ordering results - see PL4 6JH
+  - search button position
+  - search input box length
 
 
 

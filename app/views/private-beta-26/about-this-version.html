@@ -41,7 +41,7 @@
     <div class="column-two-thirds">
       <h1 id="top" class="heading-xlarge">Improve search - more information</h1>
 
-      <p class="lede">More in depth information about what we're making / have made.  Includin some of the things we know it doesn't do - yet.</p>
+      <p class="lede">More in depth information about what we're making / have made.  Including some of the things we know it doesn't do - yet.</p>
 
       <p><a href="{{path}}/start">return to the introduction</a></p>
 
@@ -88,8 +88,8 @@
         <p class="back-to-top"><a href="#top">contents</a></p>
       </div>
 
-      <h3 id="wip" class="heading-medium">Still working through</h3>
-      <p>things still being considered / being worked through</p>
+<!--       <h3 id="wip" class="heading-medium">Still working through</h3>
+      <p>things still being considered / being worked through</p> -->
 <!--       <p>
         <ul class="list-bullet">     
           <li>further content/design to discuss - re different data situations; accessibility - for non-visual users; backlink text to pppa; non obvious stuff</li> 
@@ -111,14 +111,14 @@
           <li>add hyperlinks / content from UR, PO, Analytics - to research, hypotheses, and how to measure</li>
         </ul>
       </p> -->
-      <div>
+<!--       <div>
         <p class="back-to-top"><a href="#top">contents</a></p>
-      </div>
+      </div> -->
       
      
-      <h2 id="examples" class="heading-large">Example pages</h2>
+<!--       <h2 id="examples" class="heading-large">Example pages</h2>
       <p>these are on the <a href="{{path}}/start">introductory page</a></p>
-      <h3 class="heading-medium">if user searches with a postcode</h3>
+      <h3 class="heading-medium">if user searches with a postcode</h3> -->
 <!--       <p>
         <ul class="list list-bullet">         
           <li><a href="{{path}}/pe12re/start">Search PE1 2RE</a>  
@@ -137,12 +137,12 @@
         </ul>
       </p> -->
 
-      <h3 class="heading-medium">if user doesn't search with a postcode</h3>
+<!--       <h3 class="heading-medium">if user doesn't search with a postcode</h3>
       </p>
       <p>ask user for a postcode</p> 
       <div>
         <p class="back-to-top"><a href="#top">contents</a></p>
-      </div>
+      </div> -->
 
       <h2 id="solving" class="heading-large">Problems people have - pain that we're are trying to reduce</h2>
       <p>our general hypothesis is that we will lessen these problems</p>
@@ -170,7 +170,7 @@
       <p>our more specific hypotheses of what will happen - and how to test/measure it</p>
       <p><span class="bold">Note:</span> We may need to baseline existing data before we ship</p>
       <p>
-        <ul class="hyp-list list-number">
+        <ol class="hyp-list list-number">
           <li>more people will succeed in finding the place (address) 
             <br>a) first time; 
             <br>b) overall.
@@ -215,7 +215,15 @@
               </li>
             </ul>
           </li>
-        </ul>
+          <li>miscellaneous
+            <ul class="list-bullet">
+              <li>we will display max 100 addresses. We think there are about 50 postcodes with more than 100 addresses.  Monitor how many times the user hits the limit - and what postcode it is.</li>
+              <li>ordering addresses is difficult.  Can be very hard for user to find their result, especially when paginated (20 per 'page').  Find more ordering rules based on feedback/looking at our database - they will need documenting and testing.</li>
+              <li>we currently show 20 results per page (this was an arbitrary number).  Keep an eye on feedback / pagination events and perhaps try changing the limit - e.g. where is the sweet spot (mode?)</li>
+              <li>there are lots of titles that cannot be found by user - because the way the data is linked / our apps built.  Users wont know this - try to fix / explain / show size of / give forward journey / record instances not found by people.</li>
+            </ul>
+          </li>
+        </ol>
       </p>
       <div>
         <p class="back-to-top"><a href="#top">contents</a></p>
