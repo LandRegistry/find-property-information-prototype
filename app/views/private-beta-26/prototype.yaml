@@ -10,13 +10,17 @@ stickers:
 
 description: 
   - iteration of V25, now we've learnt more from real data / written code
-  - ambition = best ever search (we should define best)
+  - ambition = best ever public search
   - search results are are a list of addresses in that postcode
   - property address page for every address (each result that is a link)
 
 changelog:
   - todo... (not urgent)
   - Result limit message - >100 addresses (put example page in)
+  - we should define/communicate better what we mean by *best*
+  - document on about page - descrive the non obvious behavious - e.g. ordering
+  - about page - add link to user pain google doc on search probelms
+
   -
   - done...
   - every address in a postcode
@@ -32,6 +36,7 @@ changelog:
   - ordering results - see PL4 6JH
   - search button position
   - search input box length
+
 
 
 
