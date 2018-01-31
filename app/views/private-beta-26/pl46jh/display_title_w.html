@@ -4,20 +4,36 @@
 {% block title %}Summary for property title {{ title.number }}{% endblock %}
 
 {% block header_primary %}
-  {{ back_link(title='Search again', url=path + '/pl46jh/search',historyBased=false) }}
+  {{ back_link(title='Chwilio eto', url=path + '/pl46jh/search',historyBased=false) }}
 {% endblock %}
 
 {% block header_secondary %}
-  {% include '../includes/language_switcher.html' %}
+<div class="language-switcher">
+  <form method="get">
+      <span class="language-switcher-current">
+        <span class="visuallyhidden">Iaith bresennol:</span> Cymraeg
+      </span>
+
+      <button type="submit" class="language-switcher-button" name="language" value="en">
+        <span class="visuallyhidden">Switch to</span> English
+      </button>
+  </form>
+</div>
 {% endblock %}
 
 {% block body %}
 
-  <h1 class="heading-large spacing-top-single">Summary of title PB472033</h1>
+  <h1 class="heading-large spacing-top-single">Crynodeb o deitl PB472033</h1>
+  <!-- Summary of title = Crynodeb o deitl -->
+  <!-- Summary of caution title = Crynodeb o deitl rhybuddiad -->
 
-    <!-- <p class="font-xsmall">This title was last changed on <time datetime="{{ title.last_changed_datetime }}">{{ title.last_changed_date }} at {{ title.last_changed_time }}</time></p> -->
-    <p class="text">Purchased on <span id="today-time"></span></p>
-    <p class="text">This information can change if we receive an application. This service is unable to tell you whether or not there is an application pending with HM Land Registry.</p>
+
+    <!-- todo: make this work with moment.js -->
+    <!-- <p class="text">Prynwyd ar <span id="today-time"></span></p> -->
+    <p class="text">Prynwyd ar 31 Ionawr 2018 am 11:34:38</p>
+
+
+    <p class="text">Gall y wybodaeth hon newid os cawn gais. Ni all y gwasanaeth hwn ddweud wrthych a oes cais yn aros i’w brosesu gyda Chofrestrfa Tir EM ai peidio.</p>
 
 
 
@@ -37,7 +53,9 @@
 
       <dl class="definition-tabular definition-tabular-sectioned">
 
-        <dt>Address</dt>
+        <dt>Cyfeiriad</dt> 
+        <!-- address = Cyfeiriad -->
+        <!-- addresses = Cyfeiriadau -->
         <dd class="bold-medium">
           <div class="address">
             <span>{{ data.buildname }}</span>
@@ -50,11 +68,19 @@
         </dt>
 
 
-        <dt>Leaseholder</dt>
+        <dt>???????</dt>
+        <!-- Leaseholder =  -->
+        <!-- Leaseholders =  -->
+        <!-- Owner = Perchennog -->
+        <!-- Owners = Perchnogion -->
+        <!-- Caution = Rhybuddiwr -->
+        <!-- Cautioners = Rhybuddwyr -->
           <dd>
             <h2 class="bold">Ms Lorna Winbourne</h2>
 
-            <h3 class="visuallyhidden">Addresses</h3>
+            <h3 class="visuallyhidden">Cyfeiriad</h3>
+            <!-- address = Cyfeiriad -->
+            <!-- addresses = Cyfeiriadau -->
               <div class="address spacing-top-half">
                 <span>{{ data.buildname }}</span>
                 <span>{{ data.addr1 }}</span>
@@ -64,11 +90,15 @@
           </dd>
 
 
-        <dt>Lender</dt>
+        <dt>Rhoddwr benthyg</dt>
+        <!-- lender = Rhoddwr benthyg -->
+        <!-- lenders ? do we do this in English? = ???  -->
           <dd>
             <h2 class="bold">Royal Bank of Scotland</h2>
 
-            <h3 class="visuallyhidden">Addresses</h3>
+            <h3 class="visuallyhidden">Cyfeiriad</h3>
+            <!-- address = Cyfeiriad -->
+            <!-- addresses = Cyfeiriadau -->
               <div class="address spacing-top-half">
                 <span>Queen street</span>
                 <span>Aberdeen</span>
@@ -76,29 +106,30 @@
               </div>
           </dd>
 
-        <dt>Tenure type</dt>
+        <dt>Math o ddaliadaeth</dt>
         <dd class="bold-small">Leasehold</dd>
 
 <!--         <dt>Title number</dt>
         <dd class="bold-small">{{ title['data']['title_number'] }}</dd> -->
 
-        <dt>Price paid</dt>
+        <dt>Pris a dalwyd</dt>
         <dd class="bold-small">£235,000</dd>
 
       </dl>
 
-      <!-- <p class="font-xsmall">This title was last changed on <time datetime="{{ title.last_changed_datetime }}">{{ title.last_changed_date }} at {{ title.last_changed_time }}</time></p> -->
-      <p class="spacing-top-single">This title was last changed on 21 August 2017 at 15:34:23</p>
+
+      <!-- <p class="spacing-top-single">This title was last changed on 21 August 2017 at 15:34:23</p> -->
+      <p class="spacing-top-single">Newidiwyd y teitl hwn ddiwethaf ar 21 Awst 2017 am 15:34:23</p>
       
 
 
       <div class="printhidden">
         <div class="panel panel-simple">
-            <h2 class="heading-medium spacing-top-third">Download or print</h2>
-            <p>If you want to keep this information or need a VAT receipt            
+            <h2 class="heading-medium spacing-top-third">Llwytho i lawr neu Argraffu</h2>
+            <p>Os ydych am gadw&apos;r wybodaeth hon neu os oes angen derbynneb TAW arnoch            
               <ul class="list list-bullet" style="margin-bottom: 10px;">
-                  <li><a href="../images/PB472033.pdf" download="Summary-of-title-PB472033.pdf">download a copy<span class="visuallyhidden"> of this property summary</span></a></li>
-                  <li><a href="#" data-print >print a copy<span class="visuallyhidden"> of this property summary</span></a></li>        
+                  <li><a href="../images/PB472033.pdf" download="Summary-of-title-PB472033.pdf">lawrlwytho copi<span class="visuallyhidden"> o grynodeb yr eiddo hwn</span></a></li>
+                  <li><a href="#" data-print >argraffu copi<span class="visuallyhidden"> o grynodeb yr eiddo hwn</span></a></li>        
               </ul>
             </p>
 
@@ -108,36 +139,35 @@
 
       <div class="printhidden">
 
-        <h2 class="heading-medium collapse-top">What did you think of this service?</h2>
-        <p><a rel="external" href="mailto:digital-register-feedback@digital.landregistry.gov.uk">Please give us your feedback</a> (takes 30 seconds). <br>This is a new service and your feedback will help us improve it.</p>
-
+        <h2 class="heading-medium collapse-top">Beth yw eich barn am y gwasanaeth hwn?</h2>
+        <p><a rel="external" href="mailto:digital-register-feedback@digital.landregistry.gov.uk">Rhowch eich adborth os gwelwch yn dda</a>  (mae’n cymryd 30 eiliad). <br>Gwasanaeth newydd yw hwn – bydd eich adborth yn ein helpu i’w wella.</p>
       </div>
 
         <hr>
 
         <div class="vat-receipt page-break-block font-xsmall">
 
-          <h2 class="heading-medium">VAT receipt</h2>
+          <h2 class="heading-medium">Derbynneb TAW</h2>
           <div class="grid-row">
             <div class="column-two-thirds mobile-column-one-half">
               <dl class="definition-tabular definition-tabular-1-2">
                 
-                <dt>Date</dt>
+                <dt>Dyddiad</dt>
                 <dd><span id="today-time2"></span></dd>
           
-                <dt>Transaction ID</dt>
+                <dt>Dynodwr Trafodiad</dt>
                 <dd>4303813508</dd>
             
-                <dt>Description</dt>
-                <dd>Summary of title: PB472033</dd>
+                <dt>Disgrifiad</dt>
+                <dd>Crynodeb o deitl: PB472033</dd>
               
-                <dt>Net amount</dt>
+                <dt>Swm net</dt>
                 <dd>£2.50</dd>
               
-                <dt>VAT @ 20%</dt>
+                <dt>TAW @ 20%</dt>
                 <dd>£0.50</dd>
                             
-                <dt>Total inc VAT</dt>
+                <dt>Cyfanswm gan gynnwys TAW</dt>
                 <dd>£3.00</dd>
               
               </dl>
@@ -145,7 +175,7 @@
             <div class="column-one-third mobile-column-one-half">
               
                 <div itemscope="" itemtype="http://schema.org/Organization">
-                  <span itemprop="name" class="bold">HM Land Registry</span>
+                  <span itemprop="name" class="bold">Cofrestrfa Tir EM</span>
                   <div class="address" itemscope="" itemtype="http://schema.org/PostalAddress">
                     <span itemprop="streetAddress">Trafalgar house<br>1 Bedford Park</span>
                     <span itemprop="addressLocality">Croydon</span>
@@ -168,8 +198,10 @@
     <div class="column-two-thirds">
 
       <div class="panel panel-border-narrow spacing-top-single printhidden">
-       <!--  <p>If you have any problems with your purchase, you can <a href="https://www.gov.uk/government/organisations/land-registry/about/access-and-opening">contact HM Land Registry</a>.</p> -->
-        <p>If you have any problems with your purchase, you can contact HM Land Registry using the <a href="http://landregistry.custhelp.com/app/contactus_general/">general enquiry contact form</a> or call <b class="bold">0300 006 0411</b>.</p>
+
+        <!-- <p>If you have any problems with your purchase, you can contact HM Land Registry using the <a href="http://landregistry.custhelp.com/app/contactus_general/">general enquiry contact form</a> or call <b class="bold">0300 006 0411</b>.</p> -->
+
+        <p>Os oes gennych unrhyw broblemau gyda’ch pryniant, gallwch gysylltu â Chofrestrfa Tir EM <a href="http://landregistry.custhelp.com/app/contactus_general_enq_w/">gan ddefnyddio’r ffurflen gysylltu ar gyfer ymholiadau cyffredinol</a> neu ffonio <b class="bold">0300 006 0422</b> (0300 006 0411 am wasanaeth Saesneg).</p> 
         
       </div>
 
@@ -185,11 +217,11 @@
 
 
       <div class="printhidden">
-        <h2 class="heading-medium">What next</h2>
+        <h2 class="heading-medium">Beth nesaf</h2>
         <ul class="list list-bullet">
-          <li><a href="{{path}}/pl46jh/search">Search again</a></li>
-          <li><a href="https://gov.uk">Return to GOV.UK</a></li>
-          <li><a href="{{path}}/pl46jh/sign_out">Sign out</a></li>
+          <li><a href="{{path}}/pl46jh/search">Chwilio eto</a></li>
+          <li><a href="https://gov.uk">Yn ôl i GOV.UK</a></li>
+          <li><a href="{{path}}/pl46jh/sign_out">Allgofnodi</a></li>
         </ul>
       </div>
 
