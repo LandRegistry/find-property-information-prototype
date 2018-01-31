@@ -1,0 +1,260 @@
+{% extends "../layout/layout.html" %}
+{% from "../includes/back_link.html" import back_link %}
+
+{% block title %}Summary for property title {{ title.number }}{% endblock %}
+
+{% block header_primary %}
+  {{ back_link(title='Chwilio eto', url=path + '/pl46jh/search',historyBased=false) }}
+{% endblock %}
+
+{% block header_secondary %}
+<div class="language-switcher">
+  <form method="get">
+      <span class="language-switcher-current">
+        <span class="visuallyhidden">Iaith bresennol:</span> Cymraeg
+      </span>
+
+      <button type="submit" class="language-switcher-button" name="language" value="en">
+        <!-- <span class="visuallyhidden">Switch to</span>  -->
+        English
+      </button>
+  </form>
+</div>
+{% endblock %}
+
+{% block body %}
+
+  <h1 class="heading-large spacing-top-single">Crynodeb o deitl PB472033</h1>
+  <!-- Summary of title = Crynodeb o deitl -->
+  <!-- Summary of caution title = Crynodeb o deitl rhybuddiad -->
+
+
+    <!-- todo: make this work with moment.js -->
+    <!-- <p class="text">Prynwyd ar <span id="today-time"></span></p> -->
+    <p class="text">Prynwyd ar 31 Ionawr 2018 am 11:34:38</p>
+
+
+    <p class="text">Gall y wybodaeth hon newid os cawn gais. Ni all y gwasanaeth hwn ddweud wrthych a oes cais yn aros i’w brosesu gyda Chofrestrfa Tir EM ai peidio.</p>
+
+
+
+  <div class="grid-row column-flip spacing-top-single">
+    <div class="column-one-third tablet-column-one-third spacing-bottom-single">
+
+<!--       {% if title.indexPolygon %}
+        <div class="map polygon" id="map">
+          <p>The map relies on JavaScript being enabled in your browser.</p>
+        </div>
+
+        <p class="font-xsmall">This map shows the property's rough extent and location, <strong class="bold">not legal boundaries.</strong></p>
+      {% endif %} -->
+    </div>
+
+    <div class="column-two-thirds tablet-column-two-thirds">
+
+      <dl class="definition-tabular definition-tabular-sectioned">
+
+        <dt>Cyfeiriad</dt> 
+        <!-- address = Cyfeiriad -->
+        <!-- addresses = Cyfeiriadau -->
+        <dd class="bold-medium">
+          <div class="address">
+            <span>{{ data.buildname }}</span>
+            <span>{{ data.addr1 }}</span>
+            <span>Plymouth</span>
+            <span>PL4 6JH</span>
+          </div>
+        </dd>
+
+        </dt>
+
+
+        <dt>Lesddeiliad</dt>
+        <!-- Leaseholder = Lesddeiliad -->
+        <!-- Leaseholders = Lesddeiliaid -->
+        <!-- Owner = Perchennog -->
+        <!-- Owners = Perchnogion -->
+        <!-- Caution = Rhybuddiwr -->
+        <!-- Cautioners = Rhybuddwyr -->
+          <dd>
+            <h2 class="bold">Ms Lorna Winbourne</h2>
+
+            <h3 class="visuallyhidden">Cyfeiriadau</h3>
+            <!-- address = Cyfeiriad -->
+            <!-- addresses = Cyfeiriadau -->
+              <div class="address spacing-top-half">
+                <span>{{ data.buildname }}</span>
+                <span>{{ data.addr1 }}</span>
+                <span>Plymouth</span>
+                <span>PL4 6JH</span>
+              </div>
+          </dd>
+
+
+        <dt>Rhoddwr benthyg</dt>
+        <!-- lender = Rhoddwr benthyg -->
+        <!-- lenders ? do we do this in English? = ???  -->
+          <dd>
+            <h2 class="bold">Royal Bank of Scotland</h2>
+
+            <h3 class="visuallyhidden">Cyfeiriadau</h3>
+            <!-- address = Cyfeiriad -->
+            <!-- addresses = Cyfeiriadau -->
+              <div class="address spacing-top-half">
+                <span>Queen street</span>
+                <span>Aberdeen</span>
+                <span>AB10 1AN</span>
+              </div>
+          </dd>
+
+        <dt>Math o ddaliadaeth</dt>
+        <dd class="bold-small">Leasehold</dd>
+
+<!--         <dt>Title number</dt>
+        <dd class="bold-small">{{ title['data']['title_number'] }}</dd> -->
+
+        <dt>Pris a dalwyd</dt>
+        <dd class="bold-small">£235,000</dd>
+
+      </dl>
+
+
+      <!-- <p class="spacing-top-single">This title was last changed on 21 August 2017 at 15:34:23</p> -->
+      <p class="spacing-top-single">Newidiwyd y teitl hwn ddiwethaf ar 21 Awst 2017 am 15:34:23</p>
+      
+
+
+      <div class="printhidden">
+        <div class="panel panel-simple">
+            <h2 class="heading-medium spacing-top-third">Llwytho i lawr neu Argraffu</h2>
+            <p>Os ydych am gadw&apos;r wybodaeth hon neu os oes angen derbynneb TAW arnoch            
+              <ul class="list list-bullet" style="margin-bottom: 10px;">
+                  <li><a href="../images/PB472033.pdf" download="Summary-of-title-PB472033.pdf">lawrlwytho copi<span class="visuallyhidden"> o grynodeb yr eiddo hwn</span></a></li>
+                  <li><a href="#" data-print >argraffu copi<span class="visuallyhidden"> o grynodeb yr eiddo hwn</span></a></li>        
+              </ul>
+            </p>
+
+        </div>
+      </div>
+
+
+      <div class="printhidden">
+        <h2 class="heading-medium collapse-top">Beth yw eich barn am y gwasanaeth hwn?</h2>
+        <p><a rel="external" href="mailto:digital-register-feedback@digital.landregistry.gov.uk">Rhowch eich adborth os gwelwch yn dda</a>  (mae’n cymryd 30 eiliad). <br>Gwasanaeth newydd yw hwn – bydd eich adborth yn ein helpu i’w wella.</p>
+      </div>
+
+        <hr>
+
+        <div class="vat-receipt page-break-block font-xsmall">
+
+          <h2 class="heading-medium">Derbynneb TAW</h2>
+          <div class="grid-row">
+            <div class="column-two-thirds mobile-column-one-half">
+              <dl class="definition-tabular definition-tabular-1-2">
+                
+                <dt>Dyddiad</dt>
+                <dd><span id="today-time2"></span></dd>
+          
+                <dt>Dynodwr Trafodiad</dt>
+                <dd>4303813508</dd>
+            
+                <dt>Disgrifiad</dt>
+                <dd>Crynodeb o deitl: PB472033</dd>
+              
+                <dt>Swm net</dt>
+                <dd>£2.50</dd>
+              
+                <dt>TAW @ 20%</dt>
+                <dd>£0.50</dd>
+                            
+                <dt>Cyfanswm gan gynnwys TAW</dt>
+                <dd>£3.00</dd>
+              
+              </dl>
+            </div>
+            <div class="column-one-third mobile-column-one-half">
+              
+                <div itemscope="" itemtype="http://schema.org/Organization">
+                  <span itemprop="name" class="bold">Cofrestrfa Tir EM</span>
+                  <div class="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+                    <span itemprop="streetAddress">Trafalgar house<br>1 Bedford Park</span>
+                    <span itemprop="addressLocality">Croydon</span>
+                    <span itemprop="postalCode">CR0 2AQ</span>
+                  </div>
+                </div>
+               
+                <p class="spacing-top-single-third"><strong class="bold">Rhif cofrestru TAW:</strong><br> GB 8888 181 53</p>             
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <div class="panel panel-border-narrow spacing-top-single printhidden">
+
+        <!-- <p>If you have any problems with your purchase, you can contact HM Land Registry using the <a href="http://landregistry.custhelp.com/app/contactus_general/">general enquiry contact form</a> or call <b class="bold">0300 006 0411</b>.</p> -->
+
+        <p>Os oes gennych unrhyw broblemau gyda’ch pryniant, gallwch gysylltu â Chofrestrfa Tir EM gan ddefnyddio’r <a href="http://landregistry.custhelp.com/app/contactus_general_enq_w/">ffurflen gysylltu ar gyfer ymholiadau cyffredinol</a> neu ffonio <b class="bold">0300 006 0422</b> (0300 006 0411 am wasanaeth Saesneg).</p> 
+        
+      </div>
+
+      <div class="panel panel-border-narrow spacing-top-single printonly text">
+        <!-- <p>If you have any problems with your purchase, you can contact HM Land Registry on <b class="bold">0300 006 0411</b>.</p> -->
+
+        <p>Os oes gennych unrhyw broblemau gyda’ch pryniant, gallwch gysylltu â Chofrestrfa Tir EM gan ddefnyddio’r <a href="http://landregistry.custhelp.com/app/contactus_general_enq_w/">ffurflen gysylltu ar gyfer ymholiadau cyffredinol</a> neu ffonio <b class="bold">0300 006 0422</b> (0300 006 0411 am wasanaeth Saesneg).</p>
+        
+      </div>
+
+      <hr>
+
+
+
+
+      <div class="printhidden">
+        <h2 class="heading-medium">Beth nesaf</h2>
+        <ul class="list list-bullet">
+          <li><a href="{{path}}/pl46jh/search">Chwilio eto</a></li>
+          <li><a href="https://gov.uk">Yn ôl i GOV.UK</a></li>
+          <li><a href="{{path}}/pl46jh/sign_out">Allgofnodi</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+  {% if title.indexPolygon %}
+<!--     <script>
+      var indexData = {{ title['indexPolygon'] | json | safe }};
+    </script> -->
+    <!-- <script defer src="{{ asset_path }}app/javascripts/map.js"></script> -->
+  {% endif %}
+
+  <script src="{{ asset_path }}app/javascripts/moment.js"></script>
+  <script>
+    var date = moment().format('DD MMMM YYYY'); // November 18th 2016
+
+    span = document.getElementById('today');
+    txt = document.createTextNode(date);
+    span.innerText = txt.textContent;
+  </script>
+
+  <script>
+    var dateTime = moment().format('DD MMMM YYYY [at] H:mm:ss'); // November 18th 2016, 14:50:43
+
+    span1 = document.getElementById('today-time');
+    txt1 = document.createTextNode(dateTime);
+    span1.innerText = txt1.textContent;
+
+    span2 = document.getElementById('today-time2');
+    span2.innerText = txt1.textContent;
+
+  </script>
+
+
+  
+{% endblock %}
