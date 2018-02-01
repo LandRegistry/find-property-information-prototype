@@ -9,7 +9,17 @@
 
     <div class="column-one-third" style="text-align: right">
       {% if session.isLoggedIn and not suppressSignOutLink %}
-        <a class="font-xsmall" href="sign_out">Sign out</a>
+        {% if showWelshSignOutLink %}
+          <a class="font-xsmall" href="sign_out">Allgofnodi</a>
+        {% else %}
+          <a class="font-xsmall" href="sign_out">Sign out</a>
+        {% endif %}
+      {% elif showSignOutLink %}
+        {% if showWelshSignOutLink %}
+          <a class="font-xsmall" href="sign_out">Allgofnodi</a>
+        {% else %}
+          <a class="font-xsmall" href="sign_out">Sign out</a>
+        {% endif %}
       {% endif %}
     </div>
   </div>
