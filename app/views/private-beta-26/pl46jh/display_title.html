@@ -8,7 +8,19 @@
 {% endblock %}
 
 {% block header_secondary %}
-  {% include '../includes/language_switcher.html' %}
+<div class="language-switcher">
+  <form method="get">
+      <span class="language-switcher-current">
+        <span class="visuallyhidden">Current language:</span> English
+      </span>
+
+      <a href="/private-beta-26/pl46jh/display_title_w?title_number=&buildname=&addr1=61-63+Mutley+Plain&x=64&y=15" class="language-switcher-button">
+        <!-- <span class="visuallyhidden">Switch to</span>  -->
+        Cymraeg
+      </a>
+  </form>
+</div>
+
 {% endblock %}
 
 {% block body %}
